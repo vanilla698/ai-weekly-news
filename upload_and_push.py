@@ -9,12 +9,12 @@ from datetime import datetime
 HTML_FILE = "ai_auto_news_preview.html"
 GITHUB_API = "https://api.github.com"
 DINGTALK_WEBHOOK = os.environ.get("DINGTALK_WEBHOOK", "")
-TOKEN_GITHUBN = os.environ.get("TOKEN_GITHUB", "")
+TOKEN_GITHUB = os.environ.get("TOKEN_GITHUB", "")
 
 def create_gist(filename, content):
     """创建公开 Gist，返回 URL"""
-    if not TOKEN_GITHUBN:
-        print("[ERROR] TOKEN_GITHUBN not set — add it to repo Secrets")
+    if not TOKEN_GITHUB:
+        print("[ERROR] TOKEN_GITHUB not set — add it to repo Secrets")
         sys.exit(1)
     today = datetime.now()
     issue = 36 + (today - datetime(2026, 9, 2)).days // 7
@@ -22,7 +22,7 @@ def create_gist(filename, content):
     gist_name = f"ai-weekly-news-{date_str}-issue{issue}.html"
 
     headers = {
-        "Authorization": f"token {TOKEN_GITHUBN}",
+        "Authorization": f"token {TOKEN_GITHUB}",
         "Accept": "application/vnd.github.v3+json",
         "Content-Type": "application/json",
     }
