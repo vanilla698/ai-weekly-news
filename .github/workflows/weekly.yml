@@ -1,0 +1,43 @@
+name: Weekly AI Auto News Push
+
+on:
+  schedule:
+    - cron: "0 0 * * 3"
+  workflow_dispatch:
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Generate news HTML
+        run: python3 generate_news.py
+        env:
+          DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
+
+      - name: Upload HTML to catbox and send DingTalk
+        run: python3 upload_and_push.py
+        env:
+          DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
+
+      - name: Commit & Push
+        run: |
+          git config user.name "Mavis Bot"
+          git config user.email "mavis@ai-weekly-news"
+          git add -A
+          git diff --staged --quiet || git commit -m "📡 Weekly push: $(date '+%Y-%m-%d %H:%M')"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
