@@ -1,30 +1,26 @@
 #!/usr/bin/env python3
 """
-upload_and_push.py — 上传 HTML 到 catbox 并推送钉钉消息
+upload_and_push.py — 上传 HTML 并推送钉钉
 """
 import os, sys, requests
 from datetime import datetime
 
 HTML_FILE = "ai_auto_news_preview.html"
-CATBOX_URL = "https://catbox.moe/user/api.php"
-LITTERBOX_URL = "https://litter.catbox.moe/resources/internals/api.php"
+# 免费文件托管，永久存储
+UPLOAD_URL = "https://0x0.st"
 DINGTALK_WEBHOOK = os.environ.get("DINGTALK_WEBHOOK", "")
-CATBOX_PERMANENT = os.environ.get("CATBOX_PERMANENT", "")
 
-def upload_to_catbox(path):
+def upload_file(path):
     if not os.path.exists(path):
         print(f"[ERROR] File not found: {path}")
         sys.exit(1)
-    endpoint = CATBOX_URL if CATBOX_PERMANENT == "1" else LITTERBOX_URL
-    label = "permanent" if CATBOX_PERMANENT == "1" else "72h temp"
-    print(f"[INFO] Uploading to catbox ({label})...")
+    print(f"[INFO] Uploading to 0x0.st...")
     with open(path, "rb") as f:
-        files = {"reqtype": (None, "fileupload"), "fileToUpload": (path, f, "text/html")}
-        resp = requests.post(endpoint, files=files, timeout=60)
+        resp = requests.post(UPLOAD_URL, files={"file": (path, f)}, timeout=120)
         resp.raise_for_status()
     url = resp.text.strip()
     if not url.startswith("http"):
-        print(f"[ERROR] catbox returned: {url}")
+        print(f"[ERROR] 0x0.st returned: {url}")
         sys.exit(1)
     print(f"[OK] Uploaded: {url}")
     return url
@@ -64,7 +60,7 @@ def main():
     if not os.path.exists(HTML_FILE):
         print(f"[ERROR] {HTML_FILE} not found — run generate_news.py first")
         sys.exit(1)
-    url = upload_to_catbox(HTML_FILE)
+    url = upload_file(HTML_FILE)
     send_dingtalk(url)
     print(f"=== Done! URL: {url} ===")
 
