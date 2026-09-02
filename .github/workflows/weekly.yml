@@ -20,24 +20,13 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4
+        run: pip install requests
 
       - name: Generate news HTML
         run: python3 generate_news.py
-        env:
-          DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
 
-      - name: Upload HTML to catbox and send DingTalk
+      - name: Upload to Gist and send DingTalk
         run: python3 upload_and_push.py
         env:
           DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
-
-      - name: Commit & Push
-        run: |
-          git config user.name "Mavis Bot"
-          git config user.email "mavis@ai-weekly-news"
-          git add -A
-          git diff --staged --quiet || git commit -m "📡 Weekly push: $(date '+%Y-%m-%d %H:%M')"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}   # ← 修正这里
