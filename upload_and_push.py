@@ -1,29 +1,54 @@
 #!/usr/bin/env python3
 """
-upload_and_push.py — 上传 HTML 并推送钉钉
+upload_and_push.py — 把 HTML 发布到 GitHub Gist 并推送钉钉
+GitHub Gist 永久免费，URL 稳定不变
 """
-import os, sys, requests
+import os, sys, json, base64, requests
 from datetime import datetime
 
 HTML_FILE = "ai_auto_news_preview.html"
-# 免费文件托管，永久存储
-UPLOAD_URL = "https://0x0.st"
+GITHUB_API = "https://api.github.com"
 DINGTALK_WEBHOOK = os.environ.get("DINGTALK_WEBHOOK", "")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
-def upload_file(path):
-    if not os.path.exists(path):
-        print(f"[ERROR] File not found: {path}")
+def create_gist(filename, content):
+    """创建公开 Gist，返回 URL"""
+    if not GITHUB_TOKEN:
+        print("[ERROR] GITHUB_TOKEN not set — add it to repo Secrets")
         sys.exit(1)
-    print(f"[INFO] Uploading to 0x0.st...")
-    with open(path, "rb") as f:
-        resp = requests.post(UPLOAD_URL, files={"file": (path, f)}, timeout=120)
-        resp.raise_for_status()
-    url = resp.text.strip()
-    if not url.startswith("http"):
-        print(f"[ERROR] 0x0.st returned: {url}")
-        sys.exit(1)
-    print(f"[OK] Uploaded: {url}")
-    return url
+    today = datetime.now()
+    issue = 36 + (today - datetime(2026, 9, 2)).days // 7
+    date_str = today.strftime("%Y%m%d")
+    gist_name = f"ai-weekly-news-{date_str}-issue{issue}.html"
+
+    headers = {
+        "Authorization": f"token {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github.v3+json",
+        "Content-Type": "application/json",
+    }
+    payload = {
+        "description": f"AI汽车科技每周情报 第{issue}期 | {date_str} | 每周三08:00自动推送",
+        "public": True,
+        "files": {
+            gist_name: {
+                "content": content,
+            }
+        },
+    }
+    resp = requests.post(
+        f"{GITHUB_API}/gists",
+        headers=headers,
+        json=payload,
+        timeout=30,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    # raw URL 指向 HTML 文件
+    gist_url = data["files"][gist_name]["raw_url"].replace("gist.githubusercontent.com", "gist.githubusercontent.com")
+    html_url = data["html_url"]
+    print(f"[OK] Gist created: {html_url}")
+    print(f"[OK] Raw HTML: {gist_url}")
+    return gist_url, html_url
 
 def send_dingtalk(url):
     if not DINGTALK_WEBHOOK:
@@ -60,7 +85,10 @@ def main():
     if not os.path.exists(HTML_FILE):
         print(f"[ERROR] {HTML_FILE} not found — run generate_news.py first")
         sys.exit(1)
-    url = upload_file(HTML_FILE)
+    with open(HTML_FILE, encoding="utf-8") as f:
+        content = f.read()
+    # Gist raw URL 直接作为公开访问地址
+    url, gist_url = create_gist(HTML_FILE, content)
     send_dingtalk(url)
     print(f"=== Done! URL: {url} ===")
 
