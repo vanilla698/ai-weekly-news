@@ -25,8 +25,18 @@ jobs:
       - name: Generate news HTML
         run: python3 generate_news.py
 
-      - name: Upload to Gist and send DingTalk
+      - name: Commit generated HTML
+        run: |
+          git config user.name "Mavis Bot"
+          git config user.email "mavis@ai-weekly-news"
+          git add ai_auto_news_preview.html
+          git commit -m "📡 $(date '+%Y-%m-%d %H:%M') 自动更新情报"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Send DingTalk notification
         run: python3 upload_and_push.py
         env:
           DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
-          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}   # ← 修正这里
+          GITHUB_REPO: ${{ github.repository }}
