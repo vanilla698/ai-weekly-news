@@ -12,7 +12,7 @@ GITHUB_REPO = os.environ.get("GITHUB_REPO", "vanilla698/ai-weekly-news")
 def get_html_url():
     """GitHub raw 文件永久 URL"""
     branch = "main"
-    return f"https://raw.githubusercontent.com/{GITHUB_REPO}/{branch}/{HTML_FILE}"
+return f"https://github.com/{GITHUB_REPO}/blob/{branch}/{HTML_FILE}"
 
 def send_dingtalk(url):
     if not DINGTALK_WEBHOOK:
