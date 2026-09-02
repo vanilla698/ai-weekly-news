@@ -5,6 +5,8 @@ on:
     - cron: "0 0 * * 3"
   workflow_dispatch:
 
+permissions: write-all   # ← 加这一行，赋予 Actions 写权限
+
 jobs:
   push:
     runs-on: ubuntu-latest
@@ -32,8 +34,6 @@ jobs:
           git add ai_auto_news_preview.html
           git commit -m "📡 $(date '+%Y-%m-%d %H:%M') 自动更新情报"
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Send DingTalk notification
         run: python3 upload_and_push.py
