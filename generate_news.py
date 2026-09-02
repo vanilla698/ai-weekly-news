@@ -1,12 +1,8 @@
 # AI 汽车科技每周情报 · 生成脚本
-import requests
 import json
-import re
 import os
 from datetime import datetime
 
-DINGTALK_WEBHOOK = os.environ.get("DINGTALK_WEBHOOK", "https://oapi.dingtalk.com/robot/send?access_token=e42881c7bddd79898cd1a6cba522e02971bb58e191dbc6e18d3d769ebf68060d")
-SECURITY_KEYWORD = "情报"
 OUTPUT_HTML = "ai_auto_news_preview.html"
 OUTPUT_JSON = "news_data.json"
 
@@ -73,152 +69,194 @@ NEWS_DATA = {
     ],
 }
 
+
+def esc(s):
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+
+
+def stories_html(items):
+    return "".join(
+        '<div class="story">'
+        f'<a class="link-title" href="{esc(item["link"])}" target="_blank">{esc(item["title"])}</a>'
+        f'<div class="story-summary">{esc(item["summary"])}</div>'
+        f'<div class="story-meta"><a href="{esc(item["link"])}" target="_blank">{esc(item["source"])} →</a></div>'
+        '</div>'
+        for item in items
+    )
+
+
+def hbox_html(title, content, color):
+    return (
+        f'<div class="hbox {color}">'
+        f'<strong>{esc(title)}</strong>{content}'
+        '</div>'
+    )
+
+
+def paper_html(papers):
+    return "".join(
+        '<div class="paper-item">'
+        f'<a class="paper-link" href="https://arxiv.org/abs/{p["id"]}" target="_blank">{esc(p["title"])}</a>'
+        f'<div class="paper-meta">{esc(p["authors"])} · arXiv:{p["id"]}</div>'
+        f'<div class="paper-summary">{esc(p["summary"])}</div>'
+        '</div>'
+        for p in papers
+    )
+
+
+def gh_html(ghs):
+    return "".join(
+        '<div class="github-item">'
+        f'<div class="gh-stars">&#9733; {esc(g["name"])} — {g["stars"]} stars</div>'
+        f'<a class="gh-link" href="{g["link"]}" target="_blank">{esc(g["name"])}</a>'
+        f'<div class="gh-summary">{esc(g["summary"])}</div>'
+        '</div>'
+        for g in ghs
+    )
+
+
 def build_html(data):
     today = datetime.now()
     issue = 36 + (today - datetime(2026, 9, 2)).days // 7
     date_str = today.strftime("%Y年%-m月%-d日")
 
-    kp_items = "".join(f'<div class="kp-item"><strong>{k}</strong></div>' for k in data["key_points"])
+    kp_items = "".join(
+        f'<div class="kp-item"><strong>{esc(k)}</strong></div>'
+        for k in data["key_points"]
+    )
 
-    def stories_block(items):
-        return "".join(f'''<div class="story">
-            <a class="link-title" href="{it["link"]}" target="_blank">{it["title"]}</a>
-            <div class="story-summary">{it["summary"]}</div>
-            <div class="story-meta"><a href="{it["link"]}" target="_blank">{it["source"]} →</a></div>
-            </div>''' for it in items)
+    summary_blocks = "".join(
+        hbox_html(s["title"], esc(s["content"]), s["color"])
+        for s in data["summary"]
+    )
 
-    def hbox_block(title, content, color="gold"):
-        return f'''<div class="hbox {color}"><strong>{title}</strong>{content}</div>'''
+    leadership_blocks = "".join(
+        hbox_html(
+            item["title"],
+            f'{esc(item["summary"])}<div class="src"><a href="{esc(item["link"])}" target="_blank">来源：{esc(item["source"])} &#8594;</a></div>',
+            "gold",
+        )
+        for item in data["leadership"]
+    )
 
-    def paper_block(papers):
-        return "".join(f'''<div class="paper-item">
-            <a class="paper-link" href="https://arxiv.org/abs/{p["id"]}" target="_blank">{p["title"]}</a>
-            <div class="paper-meta">{p["authors"]} · arXiv:{p["id"]}</div>
-            <div class="paper-summary">{p["summary"]}</div>
-            </div>''' for p in papers)
+    return "\n".join([
+        "<!DOCTYPE html>",
+        '<html lang="zh-CN">',
+        "<head>",
+        '<meta charset="UTF-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+        f"<title>AI汽车科技每周情报 | {date_str}</title>",
+        '<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">',
+        "<style>",
+        ":root{--ink:#111;--ink-mid:#3a3a3a;--ink-light:#666;--ink-faint:#999;--rule:#222;--rule-light:#ddd;--accent:#c0392b;--accent-blue:#1a3a5c;--accent-gold:#8b6914;--accent-green:#1a5c2a;--accent-purple:#5c1a5c;--paper:#faf9f6;--paper-dark:#ede9e0;}",
+        "* {margin:0;padding:0;box-sizing:border-box}",
+        "body{font-family:'Noto Sans SC',sans-serif;background:var(--paper);color:var(--ink);font-size:13px;line-height:1.5;}",
+        "#root{width:90vw;margin:0 auto;}",
+        ".masthead{border-top:4px solid var(--ink);border-bottom:2px solid var(--ink);padding:6px 0 5px;margin-bottom:8px;display:flex;align-items:center;}",
+        ".mh-left{font-size:10px;color:var(--ink-light);line-height:1.8;white-space:nowrap;}",
+        ".mh-center{flex:1;text-align:center;}",
+        ".mh-center h1{font-family:'Noto Serif SC',serif;font-size:clamp(20px,3.5vw,38px);font-weight:900;letter-spacing:.18em;line-height:1.1;}",
+        ".mh-center .sub{font-size:clamp(9px,1vw,11px);letter-spacing:.25em;color:var(--ink-light);margin-top:2px;}",
+        ".mh-right{font-size:10px;color:var(--ink-light);line-height:1.8;text-align:right;white-space:nowrap;}",
+        ".kp-bar{display:flex;gap:0;border:1.5px solid var(--ink);margin-bottom:6px;flex-wrap:wrap;}",
+        ".kp-item{flex:1;min-width:180px;padding:7px 10px;border-right:1.5px solid var(--ink);font-size:11.5px;line-height:1.5;color:var(--ink-mid);}",
+        ".kp-item:last-child{border-right:none;}",
+        ".kp-item strong{color:var(--ink);font-size:12px;display:block;}",
+        ".sec-hdr{display:flex;align-items:center;gap:8px;margin:8px 0 5px;}",
+        ".sec-num{font-family:'Noto Serif SC',serif;font-size:11px;font-weight:700;color:#fff;background:var(--ink);padding:1px 5px;white-space:nowrap;}",
+        ".sec-num.blue{background:var(--accent-blue);}.sec-num.gold{background:var(--accent-gold);}.sec-num.green{background:var(--accent-green);}.sec-num.purple{background:var(--accent-purple);}.sec-num.accent{background:var(--accent);}",
+        ".sec-rule{flex:1;height:1.5px;}",
+        ".sec-title{font-family:'Noto Serif SC',serif;font-size:clamp(13px,1.8vw,16px);font-weight:700;white-space:nowrap;letter-spacing:.08em;}",
+        ".sec-title.accent{color:var(--accent);}.sec-title.blue{color:var(--accent-blue);}.sec-title.gold{color:var(--accent-gold);}.sec-title.green{color:var(--accent-green);}.sec-title.purple{color:var(--accent-purple);}",
+        ".main-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;align-items:start;}",
+        ".col{display:flex;flex-direction:column;gap:0;}",
+        ".col-left{border-right:1px solid var(--rule-light);padding-right:10px;}",
+        ".col-mid{border-right:1px solid var(--rule-light);padding:0 10px;}",
+        ".col-right{padding-left:10px;}",
+        ".story{padding:5px 0;border-bottom:1px dashed var(--rule-light);}",
+        ".story:last-child{border-bottom:none;}",
+        "a.link-title{font-family:'Noto Serif SC',serif;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;display:block;line-height:1.4;}",
+        "a.link-title:hover{color:var(--accent);}",
+        ".story-summary{font-size:11.5px;color:var(--ink-mid);line-height:1.55;margin-top:3px;}",
+        ".story-meta{font-size:10px;color:var(--accent);margin-top:3px;font-weight:500;}",
+        ".story-meta a{color:var(--accent);text-decoration:none;}",
+        ".story-meta a:hover{text-decoration:underline;}",
+        ".hbox{border-top:2.5px solid var(--accent);background:var(--paper-dark);padding:6px 9px;margin:5px 0;font-size:11.5px;line-height:1.6;color:var(--ink-mid);}",
+        ".hbox.blue{border-color:var(--accent-blue);}.hbox.gold{border-color:var(--accent-gold);}.hbox.green{border-color:var(--accent-green);}.hbox.purple{border-color:var(--accent-purple);}",
+        ".hbox strong{color:var(--ink);font-size:12.5px;display:block;margin-bottom:2px;font-family:'Noto Serif SC',serif;}",
+        ".hbox .src{font-size:10px;color:var(--ink-faint);margin-top:3px;}.hbox .src a{color:var(--accent-gold);text-decoration:none;}.hbox .src a:hover{text-decoration:underline;}",
+        ".paper-item,.github-item{padding:5px 0;border-bottom:1px dashed var(--rule-light);}",
+        ".paper-item:last-child,.github-item:last-child{border-bottom:none;}",
+        "a.paper-link{font-family:'Noto Serif SC',serif;font-size:12.5px;font-weight:700;color:var(--ink);text-decoration:none;display:block;line-height:1.4;margin-bottom:2px;}",
+        "a.paper-link:hover{color:var(--accent-purple);}",
+        ".paper-meta{font-size:9.5px;color:var(--accent-purple);font-weight:600;margin-bottom:2px;}",
+        ".paper-summary{font-size:11px;color:var(--ink-mid);line-height:1.55;}",
+        ".gh-stars{font-size:9.5px;color:var(--accent-purple);font-weight:700;margin-bottom:2px;}",
+        "a.gh-link{font-size:12px;font-weight:700;color:var(--ink);text-decoration:none;display:block;margin-bottom:2px;}",
+        "a.gh-link:hover{color:var(--accent-purple);}",
+        ".gh-summary{font-size:11px;color:var(--ink-mid);line-height:1.55;}",
+        ".multi-col{columns:2;column-gap:16px;}",
+        ".multi-col .story,.multi-col .paper-item,.multi-col .github-item,.multi-col .hbox{break-inside:avoid;}",
+        ".footer{border-top:2px solid var(--ink);margin-top:8px;padding:5px 0;font-size:10px;color:var(--ink-faint);display:flex;justify-content:space-between;letter-spacing:.05em;}",
+        "@media(max-width:900px){.main-grid{grid-template-columns:1fr 1fr;}.col-right{border-left:1px solid var(--rule-light);padding-left:10px;}.multi-col{columns:1;}}",
+        "@media(max-width:600px){.main-grid{grid-template-columns:1fr;}.col-left,.col-mid{border-right:none;padding-right:0;}.col-right{border-left:none;padding-left:0;}}",
+        "</style>",
+        "</head>",
+        "<body>",
+        '<div id="root">',
+        "<header class=\"masthead\">",
+        f'<div class="mh-left">{date_str} · 星期三<br>第 {issue} 期 · 总第 {issue+484} 期<br>每周三 08:00 推送</div>',
+        '<div class="mh-center"><h1>AI · 汽车科技每周情报</h1><div class="sub">AI科技 · 车企动态 · 汽车AI技术 · 技术论文 · 行业总结</div></div>',
+        '<div class="mh-right">关键词：情报<br>订阅：钉钉群推送</div>',
+        "</header>",
+        f'<div class="kp-bar">{kp_items}</div>',
+        '<div class="main-grid">',
+        # --- 左侧栏 ---
+        '<div class="col col-left">',
+        '<div class="sec-hdr"><span class="sec-num accent">01</span><div class="sec-rule" style="background:var(--accent);"></div><span class="sec-title accent">AI 圈 新 闻</span></div>',
+        f'<div class="multi-col">{stories_html(data["ai_news"])}</div>',
+        '<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num accent">06</span><div class="sec-rule" style="background:var(--accent);"></div><span class="sec-title accent">AI 圈 深 度</span></div>',
+        f'<div class="multi-col">{stories_html(data["ai_deep"])}</div>',
+        hbox_html("中央网信办：AI 面临五大安全风险", "技术先天脆弱性、模型失控、智能体自主行动、误用滥用及全球技术霸权五方面挑战，需加强治理与监管协作。", "blue"),
+        '<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">07</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">本 周 总 结</span></div>',
+        f'<div class="multi-col">{summary_blocks}</div>',
+        "</div>",
+        # --- 中间栏 ---
+        '<div class="col col-mid">',
+        '<div class="sec-hdr"><span class="sec-num blue">02</span><div class="sec-rule" style="background:var(--accent-blue);"></div><span class="sec-title blue">车 企 科 技</span></div>',
+        f'<div class="multi-col">{stories_html(data["auto_tech"])}</div>',
+        '<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">03</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">领 导 变 动</span></div>',
+        f'<div class="multi-col">{leadership_blocks}</div>',
+        '<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num green">04</span><div class="sec-rule" style="background:var(--accent-green);"></div><span class="sec-title green">汽 车 AI 技 术</span></div>',
+        f'<div class="multi-col">{stories_html(data["auto_ai"])}</div>',
+        "</div>",
+        # --- 右侧栏 ---
+        '<div class="col col-right">',
+        '<div class="sec-hdr"><span class="sec-num purple">05</span><div class="sec-rule" style="background:var(--accent-purple);"></div><span class="sec-title purple">技 术 论 文</span></div>',
+        f'<div class="multi-col">{paper_html(data["papers"])}</div>',
+        '<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num purple">&#9733;</span><div class="sec-rule" style="background:var(--accent-purple);"></div><span class="sec-title purple">GitHub 开 源</span></div>',
+        f'<div class="multi-col">{gh_html(data["github"])}</div>',
+        "</div>",
+        "</div>",
+        f'<footer class="footer"><span>&#128250; 本情报由 Mavis 每周自动抓取整理</span><span>每周三 08:00 定时推送至钉钉群</span><span>第 {issue} 期 · {date_str}</span></footer>',
+        "</div>",
+        "</body>",
+        "</html>",
+    ])
 
-    def gh_block(ghs):
-        return "".join(f'''<div class="github-item">
-            <div class="gh-stars">⭐ {g["name"]} — {g["stars"]} stars</div>
-            <a class="gh-link" href="{g["link"]}" target="_blank">{g["name"]}</a>
-            <div class="gh-summary">{g["summary"]}</div>
-            </div>''' for g in ghs)
-
-    summary_blocks = "".join(hbox_block(s["title"], s["content"], s["color"]) for s in data["summary"])
-
-    return f"""<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI汽车科技每周情报 | {date_str}</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{{--ink:#111;--ink-mid:#3a3a3a;--ink-light:#666;--ink-faint:#999;--rule:#222;--rule-light:#ddd;--accent:#c0392b;--accent-blue:#1a3a5c;--accent-gold:#8b6914;--accent-green:#1a5c2a;--accent-purple:#5c1a5c;--paper:#faf9f6;--paper-dark:#ede9e0;}}
-*{{margin:0;padding:0;box-sizing:border-box}}
-body{{font-family:'Noto Sans SC',sans-serif;background:var(--paper);color:var(--ink);font-size:13px;line-height:1.5;}}
-#root{{width:90vw;margin:0 auto;}}
-.masthead{{border-top:4px solid var(--ink);border-bottom:2px solid var(--ink);padding:6px 0 5px;margin-bottom:8px;display:flex;align-items:center;gap:0;}}
-.mh-left{{font-size:10px;color:var(--ink-light);line-height:1.8;white-space:nowrap;}}
-.mh-center{{flex:1;text-align:center;}}
-.mh-center h1{{font-family:'Noto Serif SC',serif;font-size:clamp(20px,3.5vw,38px);font-weight:900;letter-spacing:.18em;line-height:1.1;}}
-.mh-center .sub{{font-size:clamp(9px,1vw,11px);letter-spacing:.25em;color:var(--ink-light);margin-top:2px;}}
-.mh-right{{font-size:10px;color:var(--ink-light);line-height:1.8;text-align:right;white-space:nowrap;}}
-.kp-bar{{display:flex;gap:0;border:1.5px solid var(--ink);margin-bottom:6px;flex-wrap:wrap;}}
-.kp-item{{flex:1;min-width:180px;padding:7px 10px;border-right:1.5px solid var(--ink);font-size:11.5px;line-height:1.5;color:var(--ink-mid);}}
-.kp-item:last-child{{border-right:none;}}
-.kp-item strong{{color:var(--ink);font-size:12px;display:block;margin-bottom:1px;}}
-.sec-hdr{{display:flex;align-items:center;gap:8px;margin:8px 0 5px;}}
-.sec-num{{font-family:'Noto Serif SC',serif;font-size:11px;font-weight:700;color:#fff;background:var(--ink);padding:1px 5px;white-space:nowrap;letter-spacing:.05em;}}
-.sec-num.blue{{background:var(--accent-blue);}}.sec-num.gold{{background:var(--accent-gold);}}.sec-num.green{{background:var(--accent-green);}}.sec-num.purple{{background:var(--accent-purple);}}.sec-num.accent{{background:var(--accent);}}
-.sec-rule{{flex:1;height:1.5px;}}
-.sec-title{{font-family:'Noto Serif SC',serif;font-size:clamp(13px,1.8vw,16px);font-weight:700;white-space:nowrap;letter-spacing:.08em;}}
-.sec-title.ink{{color:var(--ink);}}.sec-title.blue{{color:var(--accent-blue);}}.sec-title.gold{{color:var(--accent-gold);}}.sec-title.green{{color:var(--accent-green);}}.sec-title.purple{{color:var(--accent-purple);}}.sec-title.accent{{color:var(--accent);}}
-.main-grid{{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;align-items:start;}}
-.col{{display:flex;flex-direction:column;gap:0;}}
-.col-left{{border-right:1px solid var(--rule-light);padding-right:10px;}}
-.col-mid{{border-right:1px solid var(--rule-light);padding:0 10px;}}
-.col-right{{padding-left:10px;}}
-.story{{padding:5px 0;border-bottom:1px dashed var(--rule-light);}}
-.story:last-child{{border-bottom:none;}}
-a.link-title{{font-family:'Noto Serif SC',serif;font-size:13px;font-weight:700;color:var(--ink);text-decoration:none;display:block;line-height:1.4;}}
-a.link-title:hover{{color:var(--accent);}}
-.story-summary{{font-size:11.5px;color:var(--ink-mid);line-height:1.55;margin-top:3px;}}
-.story-meta{{font-size:10px;color:var(--accent);margin-top:3px;font-weight:500;}}
-.story-meta a{{color:var(--accent);text-decoration:none;}}
-.story-meta a:hover{{text-decoration:underline;}}
-.hbox{{border-top:2.5px solid var(--accent);background:var(--paper-dark);padding:6px 9px;margin:5px 0;font-size:11.5px;line-height:1.6;color:var(--ink-mid);}}
-.hbox.blue{{border-color:var(--accent-blue);}}.hbox.gold{{border-color:var(--accent-gold);}}.hbox.green{{border-color:var(--accent-green);}}.hbox.purple{{border-color:var(--accent-purple);}}.hbox.ink{{border-color:var(--ink);}}
-.hbox strong{{color:var(--ink);font-size:12.5px;display:block;margin-bottom:2px;font-family:'Noto Serif SC',serif;}}
-.hbox .src{{font-size:10px;color:var(--ink-faint);margin-top:3px;}}.hbox .src a{{color:var(--accent-gold);text-decoration:none;}}.hbox .src a:hover{{text-decoration:underline;}}
-.paper-item,.github-item{{padding:5px 0;border-bottom:1px dashed var(--rule-light);}}
-.paper-item:last-child,.github-item:last-child{{border-bottom:none;}}
-a.paper-link{{font-family:'Noto Serif SC',serif;font-size:12.5px;font-weight:700;color:var(--ink);text-decoration:none;display:block;line-height:1.4;margin-bottom:2px;}}
-a.paper-link:hover{{color:var(--accent-purple);}}
-.paper-meta{{font-size:9.5px;color:var(--accent-purple);font-weight:600;margin-bottom:2px;}}
-.paper-summary{{font-size:11px;color:var(--ink-mid);line-height:1.55;}}
-.gh-stars{{font-size:9.5px;color:var(--accent-purple);font-weight:700;margin-bottom:2px;}}
-a.gh-link{{font-size:12px;font-weight:700;color:var(--ink);text-decoration:none;display:block;margin-bottom:2px;}}
-a.gh-link:hover{{color:var(--accent-purple);}}
-.gh-summary{{font-size:11px;color:var(--ink-mid);line-height:1.55;}}
-.multi-col{{columns:2;column-gap:16px;}}
-.multi-col .story,.multi-col .paper-item,.multi-col .github-item,.multi-col .hbox{{break-inside:avoid;page-break-inside:avoid;}}
-.footer{{border-top:2px solid var(--ink);margin-top:8px;padding:5px 0;font-size:10px;color:var(--ink-faint);display:flex;justify-content:space-between;letter-spacing:.05em;}}
-@media(max-width:900px){{.main-grid{{grid-template-columns:1fr 1fr;}}.col-right{{border-left:1px solid var(--rule-light);padding-left:10px;}}.multi-col{{columns:1;}}}
-@media(max-width:600px){{.main-grid{{grid-template-columns:1fr;}}.col-left,.col-mid{{border-right:none;padding-right:0;}}.col-right{{border-left:none;padding-left:0;}}}}
-</style>
-</head>
-<body>
-<div id="root">
-<header class="masthead">
-<div class="mh-left">{date_str} · 星期三<br>第 {issue} 期 · 总第 {issue+484} 期<br>每周三 08:00 推送</div>
-<div class="mh-center"><h1>AI · 汽车科技每周情报</h1><div class="sub">AI科技 · 车企动态 · 汽车AI技术 · 技术论文 · 行业总结</div></div>
-<div class="mh-right">关键词：情报<br>订阅：钉钉群推送</div>
-</header>
-<div class="kp-bar">{kp_items}</div>
-<div class="main-grid">
-<div class="col col-left">
-<div class="sec-hdr"><span class="sec-num accent">01</span><div class="sec-rule" style="background:var(--accent);"></div><span class="sec-title accent">AI 圈 新 闻</span></div>
-<div class="stories multi-col">{stories_block(data["ai_news"])}</div>
-<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num accent">06</span><div class="sec-rule" style="background:var(--accent);"></div><span class="sec-title accent">AI 圈 深 度</span></div>
-<div class="stories multi-col">{stories_block(data["ai_deep"])}</div>
-<div class="hbox blue"><strong>中央网信办：AI 面临五大安全风险</strong>技术先天脆弱性、模型失控、智能体自主行动、误用滥用及全球技术霸权五方面挑战，需加强治理与监管协作。</div>
-<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">07</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">本 周 总 结</span></div>
-<div class="stories multi-col">{summary_blocks}</div>
-</div>
-<div class="col col-mid">
-<div class="sec-hdr"><span class="sec-num blue">02</span><div class="sec-rule" style="background:var(--accent-blue);"></div><span class="sec-title blue">车 企 科 技</span></div>
-<div class="stories multi-col">{stories_block(data["auto_tech"])}</div>
-<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">03</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">领 导 变 动</span></div>
-<div class="stories multi-col">{"".join(hbox_block(f'<strong>{it["title"]}</strong>{it["summary"]}<div class="src"><a href="{it["link"]}" target="_blank">来源：{it["source"]} →</a></div>', "", "gold") for it in data["leadership"])}</div>
-<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num green">04</span><div class="sec-rule" style="background:var(--accent-green);"></div><span class="sec-title green">汽 车 AI 技 术</span></div>
-<div class="stories multi-col">{stories_block(data["auto_ai"])}</div>
-</div>
-<div class="col col-right">
-<div class="sec-hdr"><span class="sec-num purple">05</span><div class="sec-rule" style="background:var(--accent-purple);"></div><span class="sec-title purple">技 术 论 文</span></div>
-<div class="papers-grid multi-col">{paper_block(data["papers"])}</div>
-<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num purple" style="background:var(--accent-purple);font-size:13px;">⭐</span><div class="sec-rule" style="background:var(--accent-purple);"></div><span class="sec-title purple">GitHub 开 源</span></div>
-<div class="ghs-grid multi-col">{gh_block(data["github"])}</div>
-</div>
-</div>
-<footer class="footer"><span>📡 本情报由 Mavis 每周自动抓取整理</span><span>每周三 08:00 定时推送至钉钉群</span><span>第 {issue} 期 · {date_str}</span></footer>
-</div>
-</body>
-</html>"""
 
 def main():
-    os.makedirs(os.path.dirname(os.path.abspath(__file__)) or ".", exist_ok=True)
-    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(NEWS_DATA, f, ensure_ascii=False, indent=2)
-    print(f"✅ {OUTPUT_JSON} 已保存")
     html = build_html(NEWS_DATA)
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"✅ {OUTPUT_HTML} 已生成，共 {len(html)} 字符")
+    print(f"[OK] {OUTPUT_HTML} generated, {len(html)} chars")
+    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+        json.dump(NEWS_DATA, f, ensure_ascii=False, indent=2)
+    print(f"[OK] {OUTPUT_JSON} saved")
     today = datetime.now()
     issue = 36 + (today - datetime(2026, 9, 2)).days // 7
-    print(f"📅 当前为第 {issue} 期（{today.strftime('%Y年%m月%d日')}）")
-    print(f"📝 每周三 08:00 自动推送至钉钉群")
+    print(f"Issue #{issue} | {today.strftime('%Y-%m-%d')}")
+
 
 if __name__ == "__main__":
     main()
