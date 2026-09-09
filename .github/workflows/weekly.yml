@@ -5,7 +5,8 @@ on:
     - cron: "0 0 * * 3"
   workflow_dispatch:
 
-permissions: write-all   # ← 加这一行，赋予 Actions 写权限
+permissions:
+  contents: write
 
 jobs:
   push:
@@ -32,11 +33,10 @@ jobs:
           git config user.name "Mavis Bot"
           git config user.email "mavis@ai-weekly-news"
           git add ai_auto_news_preview.html || true
-          git commit -m "📡 $(date '+%Y-%m-%d %H:%M') 自动更新情报" || echo "No changes to commit"
-          git push || echo "Push skipped"
+          git commit -m "📡 $(date '+%Y-%m-%d %H:%M') 自动更新" || echo "no changes"
+          git push || echo "push skipped"
 
-      - name: Send DingTalk notification
+      - name: Push to DingTalk
         run: python3 upload_and_push.py
         env:
           DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
