@@ -39,4 +39,4 @@ jobs:
         run: python3 upload_and_push.py
         env:
           DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
-          TOKEN_GITHUB: ${{ secrets.TOKEN_GITHUB }}
+          GH_TOKEN: ${{ github.token }}   
