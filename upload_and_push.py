@@ -6,7 +6,7 @@ import os, sys, subprocess, requests
 from datetime import datetime
 
 HTML_FILE = "ai_auto_news_preview.html"
-DINGTALK_WEBHOOK = os.environ.get("DINGTALK_WEBHOOK", "")
+GITHUB_TOKEN = os.environ.get("GH_TOKEN", "") 
 
 def create_gist(filename):
     """用 gh CLI 创建公开 Gist"""
