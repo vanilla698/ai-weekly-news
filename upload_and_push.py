@@ -1,18 +1,46 @@
 #!/usr/bin/env python3
 """
-upload_and_push.py — 推送钉钉消息，HTML 通过 GitHub 原始文件 URL 访问
+upload_and_push.py — 发布到 GitHub Gist 并推送钉钉
 """
 import os, sys, requests
 from datetime import datetime
 
 HTML_FILE = "ai_auto_news_preview.html"
+GITHUB_API = "https://api.github.com"
 DINGTALK_WEBHOOK = os.environ.get("DINGTALK_WEBHOOK", "")
-GITHUB_REPO = os.environ.get("GITHUB_REPO", "vanilla698/ai-weekly-news")
+GITHUB_TOKEN = os.environ.get("TOKEN_GITHUB", "")
 
-def get_html_url():
-    """GitHub raw 文件永久 URL"""
-    branch = "main"
-return f"https://github.com/{GITHUB_REPO}/blob/{branch}/{HTML_FILE}"
+def create_gist(filename, content):
+    if not GITHUB_TOKEN:
+        print("[ERROR] TOKEN_GITHUB not set")
+        sys.exit(1)
+    today = datetime.now()
+    issue = 36 + (today - datetime(2026, 9, 2)).days // 7
+    date_str = today.strftime("%Y%m%d")
+    gist_name = f"ai-weekly-news-{date_str}-i{issue}.html"
+    headers = {
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
+        "Accept": "application/vnd.github.v3+json",
+        "Content-Type": "application/json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    payload = {
+        "description": f"AI汽车科技每周情报 第{issue}期 {date_str}",
+        "public": True,
+        "files": {gist_name: {"content": content}},
+    }
+    resp = requests.post(
+        f"{GITHUB_API}/gists",
+        headers=headers,
+        json=payload,
+        timeout=30,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    gist_url = data["html_url"]
+    raw_url = data["files"][gist_name]["raw_url"]
+    print(f"[OK] Gist: {gist_url}")
+    return raw_url
 
 def send_dingtalk(url):
     if not DINGTALK_WEBHOOK:
@@ -46,10 +74,14 @@ def send_dingtalk(url):
 def main():
     print(f"=== AI汽车科技每周情报 · 发布 ===")
     print(f"Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    url = get_html_url()
-    print(f"[INFO] HTML URL: {url}")
+    if not os.path.exists(HTML_FILE):
+        print(f"[ERROR] {HTML_FILE} not found")
+        sys.exit(1)
+    with open(HTML_FILE, encoding="utf-8") as f:
+        content = f.read()
+    url = create_gist(HTML_FILE, content)
     send_dingtalk(url)
-    print(f"=== Done! ===")
+    print(f"=== Done! URL: {url} ===")
 
 if __name__ == "__main__":
     main()
