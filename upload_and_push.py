@@ -1,32 +1,39 @@
 #!/usr/bin/env python3
-"""
-upload_and_push.py — 用 gh CLI 创建 Gist 并推送钉钉
-"""
-import os, sys, subprocess, requests
+import os, sys, requests
 from datetime import datetime
 
 HTML_FILE = "ai_auto_news_preview.html"
-GITHUB_TOKEN = os.environ.get("GH_TOKEN", "") 
+DINGTALK_WEBHOOK = os.environ.get("DINGTALK_WEBHOOK", "")
+GH_TOKEN = os.environ.get("GH_TOKEN", "")
 
-def create_gist(filename):
-    """用 gh CLI 创建公开 Gist"""
+def create_gist():
+    if not GH_TOKEN:
+        print("[ERROR] GH_TOKEN not set in Secrets")
+        sys.exit(1)
+    with open(HTML_FILE, encoding="utf-8") as f:
+        content = f.read()
     today = datetime.now()
     issue = 36 + (today - datetime(2026, 9, 2)).days // 7
-    date_str = today.strftime("%Y%m%d")
-    desc = f"AI汽车科技每周情报 第{issue}期 {date_str}"
-    result = subprocess.run(
-        ["gh", "gist", "create", filename, "--desc", desc, "--public"],
-        capture_output=True, text=True, timeout=30,
+    gist_name = f"ai-weekly-news-{today.strftime('%Y%m%d')}-i{issue}.html"
+    resp = requests.post(
+        "https://api.github.com/gists",
+        headers={
+            "Authorization": f"Bearer {GH_TOKEN}",
+            "Accept": "application/vnd.github.v3+json",
+            "Content-Type": "application/json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        },
+        json={
+            "description": f"AI汽车科技每周情报 第{issue}期",
+            "public": True,
+            "files": {gist_name: {"content": content}},
+        },
+        timeout=30,
     )
-    if result.returncode != 0:
-        print(f"[ERROR] gh gist failed: {result.stderr}")
-        sys.exit(1)
-    gist_url = result.stdout.strip()
-    print(f"[OK] Gist: {gist_url}")
-    # raw URL 用于钉钉打开时直接渲染 HTML
-    raw_url = gist_url.replace("https://gist.github.com/", "https://gist.githubusercontent.com/") + "/raw/" + filename
-    print(f"[OK] Raw: {raw_url}")
-    return raw_url
+    resp.raise_for_status()
+    data = resp.json()
+    print(f"[OK] Gist: {data['html_url']}")
+    return data["files"][gist_name]["raw_url"]
 
 def send_dingtalk(url):
     if not DINGTALK_WEBHOOK:
@@ -34,38 +41,27 @@ def send_dingtalk(url):
         return
     today = datetime.now()
     issue = 36 + (today - datetime(2026, 9, 2)).days // 7
-    date_str = today.strftime("%Y年%m月%d日")
-    wk = ["一","二","三","四","五","六","日"][today.weekday()]
     body = {
         "msgtype": "markdown",
         "markdown": {
             "title": f"AI汽车科技每周情报 | 第{issue}期",
             "text": (
                 f"## 📡 AI汽车科技每周情报 | 第{issue}期\n\n"
-                f"📅 {date_str} · 星期{wk}\n\n"
-                f"> 大模型竞争 · 具身智能 · 车企人事 · 汽车AI技术 · 技术论文与开源生态\n\n"
-                f"👉 [点击查看完整情报]({url})\n\n"
-                f"---\n\n"
-                f"🔔 每周三 08:00 自动推送 · GitHub Actions 驱动\n"
+                f"📅 {today.strftime('%Y年%m月%d日')} · 星期{['一','二','三','四','五','六','日'][today.weekday()]}\n\n"
+                f"👉 [点击查看带样式完整情报]({url})\n\n"
+                f"🔔 每周三 08:00 自动推送\n"
             ),
         },
     }
-    resp = requests.post(DINGTALK_WEBHOOK, json=body, timeout=15)
-    result = resp.json()
-    if result.get("errcode") != 0:
-        print(f"[ERROR] DingTalk: {result}")
-    else:
-        print("[OK] DingTalk message sent")
+    r = requests.post(DINGTALK_WEBHOOK, json=body, timeout=15)
+    result = r.json()
+    print("[OK] DingTalk sent" if result.get("errcode") == 0 else f"[ERROR] {result}")
 
 def main():
     print(f"=== AI汽车科技每周情报 · 发布 ===")
-    print(f"Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    if not os.path.exists(HTML_FILE):
-        print(f"[ERROR] {HTML_FILE} not found")
-        sys.exit(1)
-    url = create_gist(HTML_FILE)
+    url = create_gist()
     send_dingtalk(url)
-    print(f"=== Done! URL: {url} ===")
+    print(f"=== Done: {url} ===")
 
 if __name__ == "__main__":
     main()
