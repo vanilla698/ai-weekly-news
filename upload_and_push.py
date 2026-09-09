@@ -9,8 +9,7 @@ from datetime import datetime
 DINGTALK_WEBHOOK = os.environ.get("DINGTALK_WEBHOOK", "")
 
 def get_html_url():
-    """htmlpreview.github.io 渲染 raw HTML，公开可视化"""
-    return "https://htmlpreview.github.io/?https://raw.githubusercontent.com/vanilla698/ai-weekly-news/main/ai_auto_news_preview.html"
+    return "https://vanilla698.github.io/ai-weekly-news/ai_auto_news_preview.html"
 
 def send_dingtalk():
     if not DINGTALK_WEBHOOK:
