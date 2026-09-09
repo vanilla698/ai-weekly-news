@@ -1,45 +1,31 @@
 #!/usr/bin/env python3
 """
-upload_and_push.py — 发布到 GitHub Gist 并推送钉钉
+upload_and_push.py — 用 gh CLI 创建 Gist 并推送钉钉
 """
-import os, sys, requests
+import os, sys, subprocess, requests
 from datetime import datetime
 
 HTML_FILE = "ai_auto_news_preview.html"
-GITHUB_API = "https://api.github.com"
 DINGTALK_WEBHOOK = os.environ.get("DINGTALK_WEBHOOK", "")
-GITHUB_TOKEN = os.environ.get("TOKEN_GITHUB", "")
 
-def create_gist(filename, content):
-    if not GITHUB_TOKEN:
-        print("[ERROR] TOKEN_GITHUB not set")
-        sys.exit(1)
+def create_gist(filename):
+    """用 gh CLI 创建公开 Gist"""
     today = datetime.now()
     issue = 36 + (today - datetime(2026, 9, 2)).days // 7
     date_str = today.strftime("%Y%m%d")
-    gist_name = f"ai-weekly-news-{date_str}-i{issue}.html"
-    headers = {
-        "Authorization": f"Bearer {GITHUB_TOKEN}",
-        "Accept": "application/vnd.github.v3+json",
-        "Content-Type": "application/json",
-        "X-GitHub-Api-Version": "2022-11-28",
-    }
-    payload = {
-        "description": f"AI汽车科技每周情报 第{issue}期 {date_str}",
-        "public": True,
-        "files": {gist_name: {"content": content}},
-    }
-    resp = requests.post(
-        f"{GITHUB_API}/gists",
-        headers=headers,
-        json=payload,
-        timeout=30,
+    desc = f"AI汽车科技每周情报 第{issue}期 {date_str}"
+    result = subprocess.run(
+        ["gh", "gist", "create", filename, "--desc", desc, "--public"],
+        capture_output=True, text=True, timeout=30,
     )
-    resp.raise_for_status()
-    data = resp.json()
-    gist_url = data["html_url"]
-    raw_url = data["files"][gist_name]["raw_url"]
+    if result.returncode != 0:
+        print(f"[ERROR] gh gist failed: {result.stderr}")
+        sys.exit(1)
+    gist_url = result.stdout.strip()
     print(f"[OK] Gist: {gist_url}")
+    # raw URL 用于钉钉打开时直接渲染 HTML
+    raw_url = gist_url.replace("https://gist.github.com/", "https://gist.githubusercontent.com/") + "/raw/" + filename
+    print(f"[OK] Raw: {raw_url}")
     return raw_url
 
 def send_dingtalk(url):
@@ -77,9 +63,7 @@ def main():
     if not os.path.exists(HTML_FILE):
         print(f"[ERROR] {HTML_FILE} not found")
         sys.exit(1)
-    with open(HTML_FILE, encoding="utf-8") as f:
-        content = f.read()
-    url = create_gist(HTML_FILE, content)
+    url = create_gist(HTML_FILE)
     send_dingtalk(url)
     print(f"=== Done! URL: {url} ===")
 
