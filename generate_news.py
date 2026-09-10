@@ -493,7 +493,8 @@ def main():
     today = datetime.now()
     issue = 36 + (today - datetime(2026, 9, 2)).days // 7
     week_tag = today.strftime("%Y%m%d")
-    archive_filename = f"{week_tag}-issue{issue}.html"
+    week_tag_full = today.strftime("%Y%m%d-%H%M")
+    archive_filename = f"{week_tag_full}-issue{issue}.html"
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     archive_path = os.path.join(OUTPUT_DIR, archive_filename)
 
@@ -501,7 +502,9 @@ def main():
     raw = fetch_all()
     print(f"\n📦 总计: AI 论文 {len(raw['papers_ai']) + len(raw['papers_ro']) + len(raw['papers_cl'])} 篇 | AI 巨头 {len(raw['ai_giants'])} | 车企 {len(raw['auto_companies'])} | 中文 {len(raw['cn_tech'])} | HN {len(raw['hn'])} | HF 模型 {len(raw['hf_models'])}")
 
-    raw_path = os.path.join(OUTPUT_DIR, f"raw-{week_tag}.json")
+    # 加小时分钟，确保每次跑都有独立归档文件
+    week_tag_full = today.strftime("%Y%m%d-%H%M")
+    raw_path = os.path.join(OUTPUT_DIR, f"raw-{week_tag_full}.json")
     with open(raw_path, "w", encoding="utf-8") as f:
         json.dump(raw, f, ensure_ascii=False, indent=2)
 
@@ -509,7 +512,7 @@ def main():
     news_data = call_llm(raw)
     print(f"📰 AI 整理完成，模块数: {len(news_data)}")
 
-    json_path = os.path.join(OUTPUT_DIR, f"data-{week_tag}.json")
+    json_path = os.path.join(OUTPUT_DIR, f"data-{week_tag_full}.json")
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(news_data, f, ensure_ascii=False, indent=2)
     with open(JSON_FILE, "w", encoding="utf-8") as f:
