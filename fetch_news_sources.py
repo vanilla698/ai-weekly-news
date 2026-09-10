@@ -31,7 +31,7 @@ def load_config():
 # ============================================================
 # RSS 抓取
 # ============================================================
-def fetch_rss(url, source_name, max_items=5, days_limit=7):
+def fetch_rss(url, source_name, max_items=5, days_limit=1):
     if not HAS_FEEDPARSER:
         print(f"  [SKIP] {source_name}: feedparser not installed")
         return []

@@ -14,7 +14,7 @@ def send_dingtalk():
         print("[SKIP] DINGTALK_WEBHOOK not set")
         return
     today = datetime.now()
-    issue = 36 + (today - datetime(2026, 9, 2)).days // 7
+    issue = 36 + (today - datetime(2026, 9, 2)).days
     date_str = today.strftime("%Y年%m月%d日")
     wk = ["一","二","三","四","五","六","日"][today.weekday()]
 
@@ -24,11 +24,11 @@ def send_dingtalk():
     body = {
         "msgtype": "markdown",
         "markdown": {
-            "title": f"AI汽车科技每周情报 | 第{issue}期",
+            "title": f"AI汽车科技每日情报 | 第{issue}期",
             "text": (
-                f"## 📡 AI汽车科技每周情报 | 第{issue}期\n\n"
+                f"## 📡 AI汽车科技每日情报 | 第{issue}期\n\n"
                 f"📅 {date_str} · 星期{wk}\n\n"
-                f"🔔 每周三 08:00 自动推送 · 数据全网实时抓取\n\n"
+                f"🔔 每天 09:00 自动推送 · 数据全网实时抓取\n\n"
                 f"---\n\n"
                 f"👉 [点击查看本期完整情报]({latest_url})\n\n"
                 f"📋 [查看所有历史归档列表]({index_url})\n\n"

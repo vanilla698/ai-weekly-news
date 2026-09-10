@@ -1,0 +1,57 @@
+{
+  "_comment": "顶层配置 - 修改后只需 commit 这一个文件即可",
+  "_usage": "执行 python3 generate_news.py 时会自动同步到 .github/workflows/weekly.yml",
+
+  "schedule": {
+    "_comment": "推送频率 - cron 表达式（GitHub Actions UTC 时间）",
+    "_example": "0 1 * * * = 每天北京时间 9:00；0 0 * * 3 = 每周三 8:00",
+    "cron": "0 1 * * *",
+    "description": "每天 09:00（北京时间）自动推送"
+  },
+
+  "issue": {
+    "_comment": "期号计算方式",
+    "base_date": "2026-09-02",
+    "base_issue": 36,
+    "unit": "day"
+  },
+
+  "fetch_window": {
+    "_comment": "抓取时间窗（天）",
+    "rss_days": 1,
+    "hn_days": 1,
+    "hf_days_limit": 7,
+    "arxiv_max_per_category": 10
+  },
+
+  "output": {
+    "_comment": "输出配置",
+    "archive_dir": "news",
+    "filename_format": "{date}-{time}-issue{issue}.html",
+    "enable_index_page": true,
+    "enable_archive": true
+  },
+
+  "dingtalk": {
+    "_comment": "钉钉消息配置",
+    "title_format": "AI汽车科技每日情报 | 第{issue}期",
+    "show_key_points": true,
+    "show_link": true,
+    "show_history_link": true
+  },
+
+  "data": {
+    "_comment": "数据完整性配置",
+    "ensure_even": true,
+    "min_items_per_module": 2,
+    "enable_ai_summary": true
+  },
+
+  "deepseek": {
+    "_comment": "DeepSeek API 配置",
+    "api_key_env": "DEEPSEEK_API_KEY",
+    "model": "deepseek-chat",
+    "temperature": 0.7,
+    "max_tokens": 6000
+  }
+}

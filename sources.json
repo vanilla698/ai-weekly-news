@@ -52,7 +52,7 @@
       "name_zh": "Hacker News 热门",
       "max_items": 8,
       "min_points": 50,
-      "days": 7,
+      "days": 1,
       "keywords": ["ai", "ml", "llm", "gpt", "claude", "agent", "model", "robot", "anthropic", "hugging"]
     },
     "huggingface_models": {
@@ -60,7 +60,7 @@
       "name_zh": "HuggingFace 热门模型",
       "max_items": 20,
       "min_likes": 10,
-      "days_limit": 30
+      "days_limit": 7
     }
   },
 

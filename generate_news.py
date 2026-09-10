@@ -480,8 +480,9 @@ a.model-name:hover{color:var(--accent);}
 
 def build_html(data, archive_filename):
     today = datetime.now()
-    issue = 36 + (today - datetime(2026, 9, 2)).days // 7
+    issue = 36 + (today - datetime(2026, 9, 2)).days
     date_str = today.strftime("%Y年%-m月%-d日")
+    weekday_cn = ["一","二","三","四","五","六","日"][today.weekday()]
     kp_items = "".join(f'<div class="kp-item"><strong>{esc(k)}</strong></div>' for k in data.get("key_points", []))
     summary_blocks = "".join(
         hbox_html(s["title"], esc(s["content"]), s.get("color", "gold"))
@@ -493,15 +494,15 @@ def build_html(data, archive_filename):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI汽车科技每周情报 | {date_str} 第{issue}期</title>
+<title>AI汽车科技每日情报 | {date_str} 第{issue}期</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 </head>
 <body>
 <div id="root">
 <header class="masthead">
-<div class="mh-left">{date_str} · 星期三<br>第 {issue} 期 · 总第 {issue+484} 期<br>归档：{archive_filename}</div>
-<div class="mh-center"><h1>AI · 汽车科技每周情报</h1><div class="sub">AI科技 · 车企动态 · 汽车AI · 模型新闻 · 技术论文 · GitHub开源</div></div>
+<div class="mh-left">{date_str} · 星期{weekday_cn}<br>第 {issue} 期 · 总第 {issue+484} 期<br>归档：{archive_filename}</div>
+<div class="mh-center"><h1>AI · 汽车科技每日情报</h1><div class="sub">AI科技 · 车企动态 · 汽车AI · 模型新闻 · 技术论文 · GitHub开源</div></div>
 <div class="mh-right">关键词：情报<br>订阅：钉钉群推送</div>
 </header>
 <div class="kp-bar">{kp_items}</div>
@@ -511,7 +512,7 @@ def build_html(data, archive_filename):
 <div class="multi-col">{stories_html(data.get("ai_news", []))}</div>
 <div class="sec-hdr" style="margin-top:6px;"><span class="sec-num accent">06</span><div class="sec-rule" style="background:var(--accent);"></div><span class="sec-title accent">AI 圈 深 度</span></div>
 <div class="multi-col">{stories_html(data.get("ai_deep", []))}</div>
-<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">09</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">本 周 总 结</span></div>
+<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">09</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">本 日 总 结</span></div>
 <div class="multi-col">{summary_blocks}</div>
 </div>
 <div class="col col-mid">
@@ -532,7 +533,7 @@ def build_html(data, archive_filename):
 </div>
 </div>
 <footer class="footer">
-<span>📡 本情报由 Mavis 每周自动抓取整理</span>
+<span>📡 本情报由 Mavis 每日自动抓取整理</span>
 <span><a href="index.html" style="color:var(--accent-gold);text-decoration:none;font-weight:700;">📋 查看历史归档</a></span>
 <span>第 {issue} 期 · {date_str}</span>
 </footer>
@@ -543,8 +544,12 @@ def build_html(data, archive_filename):
 
 # ========== 5. 主流程 ==========
 def main():
+    # 先同步 workflow（如果 config.json 改了 cron，weekly.yml 自动跟着变）
+    sync_workflow()
+
     today = datetime.now()
-    issue = 36 + (today - datetime(2026, 9, 2)).days // 7
+    # 每天一期，期号从 2026-09-02 起递增
+    issue = 36 + (today - datetime(2026, 9, 2)).days
     week_tag = today.strftime("%Y%m%d")
     week_tag_full = today.strftime("%Y%m%d-%H%M")
     archive_filename = f"{week_tag_full}-issue{issue}.html"
@@ -622,11 +627,15 @@ def build_index_page():
         for it in files
     ])
 
+    # 读取顶层配置里的推送说明
+    config = load_top_config() or {}
+    sched_desc = config.get("schedule", {}).get("description", "每天 09:00 自动更新")
+
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>AI 汽车科技每周情报 · 历史归档</title>
+<title>AI 汽车科技情报 · 历史归档</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 *{{margin:0;padding:0;box-sizing:border-box}}
@@ -645,13 +654,13 @@ li a:hover{{color:#c0392b;}}
 </head>
 <body>
 <div class="wrap">
-<h1>AI · 汽车科技每周情报</h1>
+<h1>AI · 汽车科技情报</h1>
 <div class="sub">历 史 归 档 列 表</div>
 <a class="latest" href="latest.html">📡 查看最新一期</a>
 <ul>
 {list_items or '<li class="empty">暂无历史归档</li>'}
 </ul>
-<div class="sub" style="margin-top:30px;">共 {len(files)} 期 · 每周三 08:00 自动更新</div>
+<div class="sub" style="margin-top:30px;">共 {len(files)} 期 · {esc(sched_desc)}</div>
 </div>
 </body>
 </html>"""
@@ -659,6 +668,84 @@ li a:hover{{color:#c0392b;}}
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"📋 列表页: {index_path}（共 {len(files)} 期）")
+
+
+# ========== 7. 同步 weekly.yml（根据 config.json）==========
+def load_top_config():
+    """加载顶层 config.json"""
+    path = os.path.join(SCRIPT_DIR if False else os.path.dirname(os.path.abspath(__file__)), "config.json")
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"[WARN] 加载 config.json 失败: {e}")
+        return None
+
+
+WEEKLY_YML_TEMPLATE = """name: Weekly AI Auto News Push
+
+on:
+  schedule:
+    - cron: "{cron}"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          node-version: "24"
+
+      - name: Install dependencies
+        run: pip install requests feedparser
+
+      - name: Generate news HTML
+        run: python3 generate_news.py
+        env:
+          DEEPSEEK_API_KEY: ${{{{ secrets.DEEPSEEK_API_KEY }}}}
+
+      - name: Commit generated files
+        run: |
+          git config user.name "Mavis Bot"
+          git config user.email "mavis@ai-weekly-news"
+          git add news/ || true
+          git add config.json sources.json || true
+          git add .github/workflows/weekly.yml || true
+          git commit -m "📡 $(date '+%Y-%m-%d %H:%M') 自动更新" || echo "no changes"
+          git push || echo "push skipped"
+
+      - name: Push to DingTalk
+        run: python3 upload_and_push.py
+        env:
+          DINGTALK_WEBHOOK: ${{{{ secrets.DINGTALK_WEBHOOK }}}}
+"""
+
+
+def sync_workflow():
+    """根据 config.json 同步 .github/workflows/weekly.yml 的 cron"""
+    config = load_top_config()
+    if not config:
+        return
+    cron = config.get("schedule", {}).get("cron", "0 1 * * *")
+    workflow_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".github", "workflows", "weekly.yml")
+    os.makedirs(os.path.dirname(workflow_path), exist_ok=True)
+    content = WEEKLY_YML_TEMPLATE.format(cron=cron)
+    with open(workflow_path, "w", encoding="utf-8") as f:
+        f.write(content)
+    print(f"⚙️  同步 weekly.yml: cron = {cron}")
 
 
 if __name__ == "__main__":
