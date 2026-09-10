@@ -1,0 +1,739 @@
+{
+  "fetched_at": "2026-09-10T11:07:47.874509",
+  "papers_ai": [
+    {
+      "title": "Show-Harness: Just a VLM Agent Can Play Robots",
+      "summary": "Foundation vision-language models (VLMs) exhibit broad intelligence about the world, yet translating this intelligence into robot control remains challenging. We present Show-Harness, an Embodied Harness that enables VLMs to \"play\" robots through a compact semantic interface linking intent to action",
+      "link": "http://arxiv.org/abs/2609.10522v1",
+      "authors": [
+        "Yanzhe Chen",
+        "Zechen Bai",
+        "Zhijun Cao"
+      ]
+    },
+    {
+      "title": "IBIB: A Protocol for Measuring Enterprise AI Systems by Serving Route, Not Model Identifier",
+      "summary": "Enterprises deploy systems, not checkpoints. Usable capability depends jointly on weights, serving route, precision, output contract, and harness, yet all 18 audited benchmarks score advertised model identifiers. We treat this as measurement error and give a protocol that makes it reportable. It has",
+      "link": "http://arxiv.org/abs/2609.10494v1",
+      "authors": [
+        "Blake Stenstrom",
+        "Charangan Vasantharajan",
+        "Brian Sathianathan"
+      ]
+    },
+    {
+      "title": "Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization",
+      "summary": "Joint-Embedding Predictive Architecture (JEPA) world models learn a compact latent representation of the world that supports prediction and planning, but their capability to learn physics and generate physically realistic dynamics remains hitherto untested. In this work, we introduce SemiGroup-JEPA ",
+      "link": "http://arxiv.org/abs/2609.10464v1",
+      "authors": [
+        "Andy Zeyi Liu",
+        "Haoran Sun",
+        "Lucas Baker"
+      ]
+    },
+    {
+      "title": "JarvisGUI: Towards Cross-Device GUI Agents with Dynamic Task Composition",
+      "summary": "Real-world GUI usage frequently involves workflows that span multiple devices and platforms, requiring the transfer of intermediate results, maintenance of shared state, and coordination across heterogeneous environments. However, existing GUI benchmarks overwhelmingly evaluate agents on single-devi",
+      "link": "http://arxiv.org/abs/2609.10451v1",
+      "authors": [
+        "Zixiang Chen",
+        "Yuheng Lu",
+        "Zihao Cheng"
+      ]
+    },
+    {
+      "title": "ConvMem: Convolutional Memory for Long-Context Reasoning",
+      "summary": "While Large Language Models (LLMs) have demonstrated impressive capabilities, they often struggle with extremely long contexts due to fixed context limits. To address this, sequential approaches like MemAgent extend the effective context by reading text in segments and iteratively updating a fixed-s",
+      "link": "http://arxiv.org/abs/2609.10441v1",
+      "authors": [
+        "Hongming Zhang",
+        "Zhaozhen Gu",
+        "Fengshuo Bai"
+      ]
+    },
+    {
+      "title": "Forgetting Only What Matters: Layer-Selective Unlearning toward Robust LLMs",
+      "summary": "Large Language Models (LLMs) can memorize and reproduce sensitive, copyrighted, or otherwise undesirable training content, creating privacy, safety, and regulatory concerns. Machine unlearning offers a practical alternative to full retraining, but many existing methods apply broad or fixed parameter",
+      "link": "http://arxiv.org/abs/2609.10439v1",
+      "authors": [
+        "Ravi Ranjan",
+        "Olivera Kotevska",
+        "Agoritsa Polyzou"
+      ]
+    },
+    {
+      "title": "Emergency Department Revisit Quality Review Screening: Exploring Human Decision-Making and Artificial Intelligence Support",
+      "summary": "Background: Emergency Department (ED) return visits are commonly reviewed for quality assurance, but are often limited (e.g., to revisits within 48-72 hours) to increase actionable finding yield while minimizing chart review burden. Those limitations may lead to missed quality improvement opportunit",
+      "link": "http://arxiv.org/abs/2609.10421v1",
+      "authors": [
+        "Jonathan A. Handler",
+        "Marlene I. Robles-Granda",
+        "Jacob E. Mefford"
+      ]
+    },
+    {
+      "title": "Fortunate Recall: Ontology-Driven Memory Lifecycle Management for Persistent Coherence in LLMs",
+      "summary": "Current LLM memory systems treat all personal facts identically, so stores grow without bound while retrieval precision degrades. The core challenge is lifecycle management: which memories should persist, which should be replaced, and at what rate, conditioned on the behavioral type of each fact. Fo",
+      "link": "http://arxiv.org/abs/2609.10413v1",
+      "authors": [
+        "Ansuman Mullick",
+        "Eray Tüzün"
+      ]
+    },
+    {
+      "title": "Can Foundation Models Moderate Online Content? Evaluating Instruction- vs. Example-Driven Policy Operationalization",
+      "summary": "The growing complexity of content moderation policies presents a critical challenge for their consistent operationalization. While foundation models possess the basic capabilities needed to confront this challenge, whether they can reliably moderate online content remains an unanswered question. In ",
+      "link": "http://arxiv.org/abs/2609.10410v1",
+      "authors": [
+        "Ayan Majumdar",
+        "Shounak Paul",
+        "Pushpdeep Singh"
+      ]
+    },
+    {
+      "title": "MOONWALK: Mediating Operations with Intent-Evidence-Action Alignment Across Junior-Supervisor Review Workflows in Animation/VFX Pre-Production",
+      "summary": "Animation and VFX pre-production review requires teams to translate loosely specified creative intent--briefs, evolving specifications, heterogeneous references, and verbal decisions--into revisions that junior artists can execute without repeated clarification. In practice, criteria drift across it",
+      "link": "http://arxiv.org/abs/2609.10385v1",
+      "authors": [
+        "Shih-Yu Lai",
+        "Wen-Fan Wang",
+        "Sai Ling"
+      ]
+    }
+  ],
+  "papers_ro": [
+    {
+      "title": "Show-Harness: Just a VLM Agent Can Play Robots",
+      "summary": "Foundation vision-language models (VLMs) exhibit broad intelligence about the world, yet translating this intelligence into robot control remains challenging. We present Show-Harness, an Embodied Harness that enables VLMs to \"play\" robots through a compact semantic interface linking intent to action",
+      "link": "http://arxiv.org/abs/2609.10522v1",
+      "authors": [
+        "Yanzhe Chen",
+        "Zechen Bai",
+        "Zhijun Cao"
+      ]
+    },
+    {
+      "title": "DUET-DINO: Simultaneous Cross-View World Modeling for Latent Planning in Robot Manipulation",
+      "summary": "Action-conditioned latent world models predict future visual representations, enabling zero-shot goal-conditioned robot planning and control. However, their predictions for fine-grained spatial and rotational actions are unreliable for full 7-DoF end-effector control. To address this gap, we introdu",
+      "link": "http://arxiv.org/abs/2609.10506v1",
+      "authors": [
+        "Nisarga Nilavadi",
+        "Ralf Römer",
+        "Moritz Reuss"
+      ]
+    },
+    {
+      "title": "Coastal Environment Generation with HoloOcean",
+      "summary": "Marine robotic simulation provides a safe and inexpensive method of developing and testing algorithms for unmanned underwater vehicle (UUV) and unmanned surface vessel (USV) autonomy and perception before full field deployment. However, these simulations are often limited by the availability of simu",
+      "link": "http://arxiv.org/abs/2609.10484v1",
+      "authors": [
+        "Abigail Austin",
+        "Brady Moon",
+        "Joshua G. Mangelson"
+      ]
+    },
+    {
+      "title": "Multi-Agent Reinforcement Learning for Autonomous UAV Exploration in Wildfire Response",
+      "summary": "This study develops a deep reinforcement learning framework for training Unmanned Aerial Vehicle (UAV) agents to navigate and monitor simulated wildfire environments. Results show that agents learn increasingly stable and effective behaviors over time, as demonstrated by converging loss trends, impr",
+      "link": "http://arxiv.org/abs/2609.10433v1",
+      "authors": [
+        "Caden Chandra",
+        "Jerry Ng"
+      ]
+    },
+    {
+      "title": "Frequency-Conditioned Flow Matching for Vision-Language-Action Models",
+      "summary": "Robot actions are temporally correlated trajectories whose frequency components encode motion at different scales with highly non-uniform energy distributions. Yet Flow Matching--based vision-language-action (VLA) models typically generate actions in temporal coordinates, without explicitly modeling",
+      "link": "http://arxiv.org/abs/2609.10405v1",
+      "authors": [
+        "Haochen Niu",
+        "Shengye Dong",
+        "Hao Liu"
+      ]
+    },
+    {
+      "title": "A traffic management system for large and heterogeneous vehicles in narrow industrial environments",
+      "summary": "The coordination of Automated Guided Vehicles (AGVs) in high-density industrial environments represents a critical challenge within Logistics 4.0, as traditional traffic management methods often lead to inefficiencies caused by negotiation-based priority assignment. To overcome the resulting limitat",
+      "link": "http://arxiv.org/abs/2609.10400v1",
+      "authors": [
+        "Alessandro Bonetti",
+        "Silvia Proia",
+        "Simone Guidetti"
+      ]
+    },
+    {
+      "title": "Data-Driven Risk Fields for Safer End-to-End Autonomous Driving",
+      "summary": "Safety is a fundamental requirement for autonomous driving, yet existing end-to-end driving models still lack explicit risk-aware learning capacities. Existing rule-based risk models provide interpretable safety priors, yet their absolute risk scores depend on handcrafted functions, coefficients, an",
+      "link": "http://arxiv.org/abs/2609.10377v1",
+      "authors": [
+        "Yuanxin Tian",
+        "Zhiyuan Liu",
+        "Jinhao Li"
+      ]
+    },
+    {
+      "title": "PACE: Perceived-Latency-Aware Cascading Service Routing and Filler Control for QoE-Efficient Retrieval-Augmented Dialogue Serving",
+      "summary": "We present the PACE, a framework for retrieval-augmented dialogue serving that formalizes Perceived Time-to-First-Response (PTFR) as a QoE objective and minimizes it under quality/cost constraints. Unlike prior work on cascaded routing, semantic caching, or adaptive retrieval, PACE jointly controls ",
+      "link": "http://arxiv.org/abs/2609.10372v1",
+      "authors": [
+        "Lin Huang",
+        "Yujuan Tan",
+        "Weisheng Li"
+      ]
+    },
+    {
+      "title": "A Confidence-Aware Multimodal Fusion Framework for Industrial Human-Robot Collaboration",
+      "summary": "A confidence-aware multimodal fusion framework (CAMF) is proposed to realize reliable human intention prediction for industrial human-robot collaboration. This framework fuses four heterogeneous modalities including object 6D pose, gaze, skeletal motion and IMU-based hand motion. It embeds a confide",
+      "link": "http://arxiv.org/abs/2609.10339v1",
+      "authors": [
+        "Xinyu Liu",
+        "Qiqi Dong",
+        "Boya Jia"
+      ]
+    },
+    {
+      "title": "Odometer-Agnostic Drift Correction Using OpenStreetMap Lane Geometry",
+      "summary": "Despite significant progress in odometry estimation, long-term drift remains a fundamental limitation of incremental pose integration, especially in large-scale or loop-free environments. Existing map-assisted methods can reduce drift, but often depend on dense maps, sensor-specific processing, or c",
+      "link": "http://arxiv.org/abs/2609.10336v1",
+      "authors": [
+        "Joaquin Caballero",
+        "Emilio Garcia-Fidalgo",
+        "Alberto Ortiz"
+      ]
+    }
+  ],
+  "papers_cl": [
+    {
+      "title": "IdeaAMBIG: Benchmarking Implementation-Critical Gaps in Research-Idea Specifications",
+      "summary": "A research idea may be novel, coherent, and scientifically plausible, yet its proposed method may remain insufficiently specified for faithful implementation. We study the codification readiness of implementation-facing research-method specifications, defined by whether they provide sufficient metho",
+      "link": "http://arxiv.org/abs/2609.10539v1",
+      "authors": [
+        "Yiling Ma",
+        "Yilun Zhao",
+        "Sihong Wu"
+      ]
+    },
+    {
+      "title": "IBIB: A Protocol for Measuring Enterprise AI Systems by Serving Route, Not Model Identifier",
+      "summary": "Enterprises deploy systems, not checkpoints. Usable capability depends jointly on weights, serving route, precision, output contract, and harness, yet all 18 audited benchmarks score advertised model identifiers. We treat this as measurement error and give a protocol that makes it reportable. It has",
+      "link": "http://arxiv.org/abs/2609.10494v1",
+      "authors": [
+        "Blake Stenstrom",
+        "Charangan Vasantharajan",
+        "Brian Sathianathan"
+      ]
+    },
+    {
+      "title": "Building Multilingual Bridges: Data Mixing as the Pillar of Generalization for In-Language Reasoning",
+      "summary": "Reasoning language models have made substantial advances on a variety of complex tasks, yet their capabilities remain overwhelmingly English-centric: models primarily reason in English regardless of the language they are prompted in. This is inaccessible for non-English-speaking users, risks losing ",
+      "link": "http://arxiv.org/abs/2609.10445v1",
+      "authors": [
+        "Mehrnaz Mofakhami",
+        "Ananya Sahu",
+        "Alejandro R. Salamanca"
+      ]
+    },
+    {
+      "title": "ConvMem: Convolutional Memory for Long-Context Reasoning",
+      "summary": "While Large Language Models (LLMs) have demonstrated impressive capabilities, they often struggle with extremely long contexts due to fixed context limits. To address this, sequential approaches like MemAgent extend the effective context by reading text in segments and iteratively updating a fixed-s",
+      "link": "http://arxiv.org/abs/2609.10441v1",
+      "authors": [
+        "Hongming Zhang",
+        "Zhaozhen Gu",
+        "Fengshuo Bai"
+      ]
+    },
+    {
+      "title": "Do speech foundation models really learn words?",
+      "summary": "Self-supervised speech foundation models are now used in a wide array of downstream applications, including traditional speech recognition and as the basis for tokens in speech-aware language models. Attempts to understand their usefulness have largely focused on probing their representations' abili",
+      "link": "http://arxiv.org/abs/2609.10434v1",
+      "authors": [
+        "Robin Huo",
+        "Ewan Dunbar"
+      ]
+    },
+    {
+      "title": "Can Foundation Models Moderate Online Content? Evaluating Instruction- vs. Example-Driven Policy Operationalization",
+      "summary": "The growing complexity of content moderation policies presents a critical challenge for their consistent operationalization. While foundation models possess the basic capabilities needed to confront this challenge, whether they can reliably moderate online content remains an unanswered question. In ",
+      "link": "http://arxiv.org/abs/2609.10410v1",
+      "authors": [
+        "Ayan Majumdar",
+        "Shounak Paul",
+        "Pushpdeep Singh"
+      ]
+    },
+    {
+      "title": "Retrofitting Code Using LLMs to Support Exceptional Behavior",
+      "summary": "Exception Related Code (ERC), which includes throw statements, conditions (if statements) that guard those throw statements, and try/catch blocks, is an essential component of software systems, allowing developers to detect and handle exceptional states that deviate from the expected program behavio",
+      "link": "http://arxiv.org/abs/2609.10397v1",
+      "authors": [
+        "Linghan Zhong",
+        "Jiyang Zhang",
+        "Jayanth Srinivasa"
+      ]
+    },
+    {
+      "title": "Rosetta at AlexandriaX-2026: LoRA-Adapted NileChat for Context-Aware Dialectal Arabic Dialogue Translation",
+      "summary": "This paper describes the Rosetta system for Subtask 1 (Context-Aware English-to-Dialectal Arabic Dialogue Translation) of the AlexandriaX shared task, participating in both constrained and unconstrained tracks. The approach fine-tunes a LoRA adapter on NileChat-3B using structured system/user prompt",
+      "link": "http://arxiv.org/abs/2609.10395v1",
+      "authors": [
+        "Nada Esmaeil",
+        "Fathima Rena",
+        "Sibi Subhash"
+      ]
+    },
+    {
+      "title": "Why Is Video Still So Expensive? A Survey of Inference-Efficiency Mechanisms in Video and Audiovisual LLMs",
+      "summary": "Video understanding has rapidly evolved toward video large language models (VideoLLMs): systems that couple video representations with pretrained large language models and condition generation on a textual prompt. Their strong performance on captioning, question answering, retrieval and temporal gro",
+      "link": "http://arxiv.org/abs/2609.10355v1",
+      "authors": [
+        "Killian Steunou",
+        "Yannis Tevissen",
+        "Mounîm A. El Yacoubi"
+      ]
+    },
+    {
+      "title": "From Symbolic Perception to Logical Deduction: A Framework for Guiding Language Models in Geometric Reasoning",
+      "summary": "Plane geometry remains a significant challenge in AI, requiring the integration of visual perception and mathematical reasoning. While Large Multimodal Models (LMMs) naturally handle visuo-linguistic inputs, they are often computationally intensive and opaque. We demonstrate that a pure Large Langua",
+      "link": "http://arxiv.org/abs/2609.10335v1",
+      "authors": [
+        "Weichen Dai",
+        "Rafael Medeiros Cabral",
+        "Ziyi Shou"
+      ]
+    }
+  ],
+  "ai_giants": [
+    {
+      "title": "The AI policy window is open. We need to act.",
+      "summary": "Chris Lehane argues that stronger AI capabilities require stronger safety evidence, shared standards, and durable policy action while the policy window remains open.",
+      "link": "https://openai.com/index/ai-policy-window",
+      "source": "OpenAI",
+      "published": "2026-09-09T13:00:00"
+    },
+    {
+      "title": "Paul Christiano joins OpenAI Foundation Board",
+      "summary": "Paul Christiano joins the OpenAI Foundation Board and its Safety and Security Committee, bringing experience in AI alignment, safety, and standards.",
+      "link": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
+      "source": "OpenAI",
+      "published": "2026-09-09T17:00:00"
+    },
+    {
+      "title": "Get ready for the game with new football features in Search",
+      "summary": "An illustrated graphic set against a vibrant green background featuring American football elements, including a gold trophy, a blue helmet, a silver whistle, a football, a mini scoreboard, and play di",
+      "link": "https://blog.google/products-and-platforms/products/search/football-features-google-search/",
+      "source": "Google AI",
+      "published": "2026-09-09T16:00:00"
+    },
+    {
+      "title": "Recreating a 70-year love story frame by frame",
+      "summary": "An elderly couple sitting in a movie theater. Overlayed are \"Teulluride Film Festival\" and \"Love, Rendered\"",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/love-rendered-film/",
+      "source": "Google AI",
+      "published": "2026-09-09T16:00:00"
+    },
+    {
+      "title": "NVIDIA Brings Real-Time AI to Broadcast, Sports and Global Streaming at IBC",
+      "summary": "At the IBC conference, running Sept. 11-14 in Amsterdam, the creative, technology and business communities are coming together to turn ideas into action and discuss innovations across the media and en",
+      "link": "https://blogs.nvidia.com/blog/ibc-news-2026/",
+      "source": "NVIDIA",
+      "published": "2026-09-09T16:00:42"
+    },
+    {
+      "title": "IBM releases SOTA Granite Time Series PatchTST-FM-r2 model with commercial-friendly license",
+      "summary": "",
+      "link": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series",
+      "source": "HuggingFace Blog",
+      "published": "2026-09-09T15:36:24"
+    }
+  ],
+  "auto_companies": [],
+  "cn_tech": [
+    {
+      "title": "理想 i6 换上中创新航电芯，极氪 9X 光辉、Model Y 性能版现身，9 月新车提前看",
+      "summary": "长城也许该思考一下命名的延续性了。#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679445?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-10T02:36:19"
+    },
+    {
+      "title": "iPhone Duo 首发上手：唯一值两万元的折叠屏",
+      "summary": "宛若透明，全方位超预期#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679531?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-10T00:00:28"
+    },
+    {
+      "title": "苹果进入特努斯时代，首发 15999 元折叠屏 iPhone；Deepseek 被曝备战科创板 IPO；谷歌埃森哲组建千人 FDE 团队 | 极客早知道",
+      "summary": " 苹果首款折叠 iPhone Duo 亮相，国行 15999 元起 北京时间 9 月 10 日凌晨，苹果发布首款折叠手机 iPhone Duo，国行 15999 元起，10 月 16 日开启预售，23 日正式发售。同场推出 iPhone 18 Pro 系列，9999 元起；标准版 iPhone 18 推迟至明年春季发布。  该机采用书本式内折设计，内外屏尺寸与小米 18 Fold 接近，价格高出 ",
+      "link": "http://www.geekpark.net/news/370089",
+      "source": "极客公园",
+      "published": "2026-09-10T00:58:59"
+    },
+    {
+      "title": "苹果第一台折叠 iPhone，15999 元起",
+      "summary": "  iPhone Duo，国行 15999 元起  作者｜张勇毅 编辑｜靖宇  北京时间今天凌晨，苹果发布了第一台折叠屏手机，名字叫 iPhone Duo。国行 15999 元起，10 月 16 日晚 8 点预购，10 月 23 日发售。同场发布的 iPhone 18 Pro 系列 9999 元起，9 月 12 日晚 8 点预购，18 日发售。  三天前，小米发布了 18 Fold：外屏 5.38",
+      "link": "http://www.geekpark.net/news/370088",
+      "source": "极客公园",
+      "published": "2026-09-09T19:43:09"
+    },
+    {
+      "title": "通用汽车 CEO：我们仍把电动汽车当作最终目标，燃油车会继续生产",
+      "summary": "IT之家 9 月 10 日消息，通用汽车 CEO 玛丽 · 博拉昨日接受《财富》杂志采访时透露，尽管美国电动汽车普及速度放缓，但公司仍将电动汽车视作“最终目标”。这名 CEO 预计，到 2030 年，电动汽车将占通用汽车销量的 40% 至 50%。未来数年内，通用仍将继续生产燃油车和混动汽车。IT之家从原报道获悉，玛丽 · 博拉还认为，美国市场无法普及电动汽车的原因在于监管和政治环境。她认为中国、",
+      "link": "https://www.ithome.com/1/000/964.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T11:04:41"
+    },
+    {
+      "title": "《GTA 6》开发者谈如何让讽刺内容经久不衰：避开短命网络热梗",
+      "summary": "IT之家 9 月 10 日消息，讽刺是《侠盗猎车手》（GTA）系列不可或缺的一部分，不过目前已开启预购的《GTA 6》，却让开发商 Rockstar 面临一道棘手的难题：游戏自 2015 年便启动开发，也就是说，当初撰写剧情时紧贴时事的热点话题，等到游戏正式上线、玩家上手体验时，可能早已过时。但这并不意味着 Rockstar 会放弃社会讽刺内容。Rockstar 开发主管罗布 · 纳尔逊在接受游戏",
+      "link": "https://www.ithome.com/1/000/963.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T11:04:04"
+    },
+    {
+      "title": "瑞浦兰钧回应近期网传视频：有关事件在公司一基地内发生，“限制员工如厕”与事实不符",
+      "summary": "IT之家 9 月 10 日消息，瑞浦兰钧能源今天（10 日）傍晚发表声明称，针对近期网络传播的相关视频，经核实，该事件发生于该公司嘉善基地。瑞浦兰钧称，当事员工因个人原因，主动提出离职申请并要求即时办结。依据公司管理流程，手续办理需一定时限，双方未能就办结时间达成一致，随后该员工情绪失控，做出过激行为。事发当日，在公安机关的见证下，该事件已得到妥善解决。IT之家从声明获悉，瑞浦兰钧称，网传“限制员",
+      "link": "https://www.ithome.com/1/000/962.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T11:00:22"
+    },
+    {
+      "title": "849 元支持主动降噪：苹果 AirPods 5 耳机江苏、吉林可享政府补贴",
+      "summary": "苹果今日宣布推出 AirPods 5，支持主动降噪，国行定价 999 元起。今日京东自营开启预售，收货地址江苏、吉林可享政府补贴，实付 849.15 元起：京东 Apple AirPods 5 支持主动降噪国补后 849 元直达链接京东 Apple AirPods 5 搭配无线充电盒 增强续航国补后 977 元直达链接AirPods 5 采用全新多孔声学架构，具备新一代自适应均衡功能，打造更具沉浸",
+      "link": "https://www.ithome.com/1/000/961.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T10:57:48"
+    },
+    {
+      "title": "iPhone 18 Pro 充电速度大幅提升，但需使用苹果 40W 动态电源适配器",
+      "summary": "IT之家 9 月 10 日消息，全新 iPhone 18 Pro 不仅续航表现较前代大幅提升，有线充电速度也进一步加快。苹果表示，要实现这款新 iPhone 的满速快充，需搭配其 40 瓦动态电源适配器（峰值输出 60 瓦）及 USB-C 数据线。这套组合能让手机达到最高充电速率，比前代 Pro 机型快约 33%。据IT之家了解，在 60 瓦充电规格的支持下，iPhone 18 Pro 从零充至 ",
+      "link": "https://www.ithome.com/1/000/960.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T10:54:34"
+    },
+    {
+      "title": "育碧将简化 Steam 版游戏启动流程，玩家不需额外打开 Ubisoft Connect PC 启动器",
+      "summary": "IT之家 9 月 10 日消息，据外媒 Gamesradar 今天（10 日）报道，育碧准备取消 PC 玩家必须使用自家启动器的要求，改用直接整合进游戏的连接服务。今后，玩家可以直接通过 Steam 启动游戏，整个过程只需要 Steam，不必再额外打开育碧自己的启动器。这一变化出现在育碧为《波斯王子：失落的王冠》发布的一份 Steam 更新说明中。育碧在公告中宣布推出 Ubisoft Connec",
+      "link": "https://www.ithome.com/1/000/958.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T10:39:32"
+    },
+    {
+      "title": "梁其伟详解《影之刃零》游戏：四种难度可选、一周目可白金",
+      "summary": "IT之家 9 月 10 日消息，灵游坊首席执行官梁其伟今日在B站发文，详解《影之刃零》游戏的难度、武器等机制。IT之家了解到，《影之刃零》将有“入阵者”“破局者”“逆天者”和“六十六天”四种难度可选，难度逐级递增。其中，“入阵者”可以让任何没有动作游戏经验的玩家轻松游玩，体验剧情，探索地图，并仍然能够享受到战斗的乐趣。开发团队已经将敌人 AI 和动画设计成“复杂的简单难度”，敌人将玩家包围时，玩家",
+      "link": "https://www.ithome.com/1/000/957.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T10:30:38"
+    },
+    {
+      "title": "李想：马赫 VLA 2.0 今起向已交付 AD Max 的理想车型推送，覆盖近百万车主",
+      "summary": "IT之家 9 月 10 日消息，理想汽车 CEO 李想今天（10 日）傍晚发文宣布：经过这几个月的模型蒸馏、平台适配和多轮验证，马赫 VLA 2.0 从今天开始陆续推送至已交付 AD Max 的车型，覆盖近百万车主。李想表示：“我们认为新技术的出现和应用，不应抛弃老用户，而是要更好地服务老用户，这需要有态度与能力的双重加持，近百万 Orin 和 Thor 平台的车主是我们最宝贵的资产。我们能够第一",
+      "link": "https://www.ithome.com/1/000/955.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T10:27:18"
+    },
+    {
+      "title": "无人车拐点：中国供应链降维打击",
+      "summary": "自动驾驶的竞争，已经从技术验证阶段，进入了制度效率与成本结构的对决。",
+      "link": "https://www.tmtpost.com/8135479.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T10:50:06"
+    },
+    {
+      "title": "智谱“既要又要”",
+      "summary": "离“中国版Anthropic”还有多远？",
+      "link": "https://www.tmtpost.com/8134990.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T10:50:03"
+    },
+    {
+      "title": "新Siri终于开始理解用户“个人上下文”了",
+      "summary": "Siri AI本月上线，苹果手表实时感知",
+      "link": "https://www.tmtpost.com/8134782.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T10:30:04"
+    },
+    {
+      "title": "当iPhone终于“折”起来，谁能抢到下一代手机定义权？",
+      "summary": "万元折叠密集出场，有人骂贵，有人真想买",
+      "link": "https://www.tmtpost.com/8135480.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T10:30:02"
+    },
+    {
+      "title": "GPT6发布之际，一位硅谷工程师首谈眼中的“混蛋”马斯克、AGI、智能平权与人类可能面对的可怕未来",
+      "summary": "GPT6 Astra 最强模型正式上线。一期封存 3 个月的深度对谈，终于可以放出来了。嘉宾赵迪，现任 OpenAI Infra 工程师，曾与马斯克共事 7 年。这一期，我们聊 X、Codex、Grok、大模型 Infra、世界模型，也聊他眼中的前老板“世界上最混蛋的人”马斯克，以及 OpenAI 所追求的“智能平权”。",
+      "link": "https://www.tmtpost.com/8135077.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T10:30:00"
+    },
+    {
+      "title": "GPT-6 Astra × V2Fun：当大模型开始“调度”3D生成，AI建模的范式正在转移",
+      "summary": "从代码生成，走向模型协同",
+      "link": "https://www.tmtpost.com/8134523.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T10:12:44"
+    },
+    {
+      "title": "一支笔、一只狗、一套能力：京东的AI硬件爆款方法论",
+      "summary": "线上的入口早已成型，物理世界的入口，京东正打算一支笔、一盏灯、一台烤箱、一架轮椅地去攒。",
+      "link": "https://www.tmtpost.com/8135125.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T09:56:29"
+    },
+    {
+      "title": "那只旅行的青蛙，揭开了游戏IP生意最残酷的一面",
+      "summary": "《旅行青蛙》运营八年后因IP授权到期停运。一款成熟IP能帮游戏公司降低研发和冷启动风险，却也意味着持续分账、授权期限和更弱的长期控制权。相比自研，买IP究竟省了什么，又付出了什么？",
+      "link": "https://www.tmtpost.com/8134315.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T09:17:16"
+    }
+  ],
+  "hn": [
+    {
+      "title": "Shopify acquires Tailwind",
+      "summary": "💬 403 评论 · ⬆️ 1045 赞",
+      "link": "https://tailwindcss.com/blog/tailwind-is-joining-shopify",
+      "source": "Hacker News"
+    },
+    {
+      "title": "AirPods 5",
+      "summary": "💬 391 评论 · ⬆️ 460 赞",
+      "link": "https://www.apple.com/newsroom/2026/09/apple-introduces-airpods-5-with-best-in-class-open-ear-active-noise-cancellation/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Desert Ant Labs: local, fast models that run on device",
+      "summary": "💬 96 评论 · ⬆️ 450 赞",
+      "link": "https://desertant.com/blog/introducing-desert-ant-labs/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "GPT-6 Astra, looped transformers, and hidden reasoning",
+      "summary": "💬 143 评论 · ⬆️ 443 赞",
+      "link": "https://magazine.sebastianraschka.com/p/gpt-6-astra-looped-transformers-and",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Anthropic Is Building a Predictive Surveillance System to Monitor Activists",
+      "summary": "💬 165 评论 · ⬆️ 292 赞",
+      "link": "https://prospect.org/2026/09/09/anthropic-artificial-intelligence-surveillance-system-monitor-activists/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "OpenAI might have stolen another major proof",
+      "summary": "💬 123 评论 · ⬆️ 240 赞",
+      "link": "https://twitter.com/ValerioCapraro/status/2097791836269977996",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Qwen 3.8 follows GPT-5.5 Pro reasoning prefills",
+      "summary": "💬 85 评论 · ⬆️ 219 赞",
+      "link": "https://gist.github.com/wsxiaoys/e0286dc6bb624ff5fdf49e7f4c528ba3",
+      "source": "Hacker News"
+    }
+  ],
+  "hf_models": [
+    {
+      "model_id": "Qwen/Qwen3.8-27B",
+      "title": "Qwen/Qwen3.8-27B",
+      "pipeline": "image-text-to-text",
+      "downloads": 7322476,
+      "likes": 14573,
+      "downloads_str": "7.3M",
+      "summary": "📥 7.3M 下载 · ⭐ 14573 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-dev",
+      "title": "black-forest-labs/FLUX.1-dev",
+      "pipeline": "text-to-image",
+      "downloads": 807843,
+      "likes": 14567,
+      "downloads_str": "807.8k",
+      "summary": "📥 807.8k 下载 · ⭐ 14567 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "title": "deepseek-ai/DeepSeek-R1",
+      "pipeline": "text-generation",
+      "downloads": 709327,
+      "likes": 13619,
+      "downloads_str": "709.3k",
+      "summary": "📥 709.3k 下载 · ⭐ 13619 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1"
+    },
+    {
+      "model_id": "moonshotai/Kimi-K3",
+      "title": "moonshotai/Kimi-K3",
+      "pipeline": "image-text-to-text",
+      "downloads": 2319885,
+      "likes": 11265,
+      "downloads_str": "2.3M",
+      "summary": "📥 2.3M 下载 · ⭐ 11265 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/moonshotai/Kimi-K3"
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
+      "title": "stabilityai/stable-diffusion-xl-base-1.0",
+      "pipeline": "text-to-image",
+      "downloads": 2140894,
+      "likes": 8130,
+      "downloads_str": "2.1M",
+      "summary": "📥 2.1M 下载 · ⭐ 8130 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
+    },
+    {
+      "model_id": "CompVis/stable-diffusion-v1-4",
+      "title": "CompVis/stable-diffusion-v1-4",
+      "pipeline": "text-to-image",
+      "downloads": 590356,
+      "likes": 7062,
+      "downloads_str": "590.4k",
+      "summary": "📥 590.4k 下载 · ⭐ 7062 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/CompVis/stable-diffusion-v1-4"
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "title": "meta-llama/Llama-3.1-8B-Instruct",
+      "pipeline": "text-generation",
+      "downloads": 5630964,
+      "likes": 6870,
+      "downloads_str": "5.6M",
+      "summary": "📥 5.6M 下载 · ⭐ 6870 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "model_id": "hexgrad/Kokoro-82M",
+      "title": "hexgrad/Kokoro-82M",
+      "pipeline": "text-to-speech",
+      "downloads": 11643539,
+      "likes": 6842,
+      "downloads_str": "11.6M",
+      "summary": "📥 11.6M 下载 · ⭐ 6842 赞 · 🏷️ text-to-speech",
+      "link": "https://huggingface.co/hexgrad/Kokoro-82M"
+    },
+    {
+      "model_id": "meta-llama/Meta-Llama-3-8B",
+      "title": "meta-llama/Meta-Llama-3-8B",
+      "pipeline": "text-generation",
+      "downloads": 327218,
+      "likes": 6651,
+      "downloads_str": "327.2k",
+      "summary": "📥 327.2k 下载 · ⭐ 6651 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Meta-Llama-3-8B"
+    },
+    {
+      "model_id": "openai/whisper-large-v3",
+      "title": "openai/whisper-large-v3",
+      "pipeline": "automatic-speech-recognition",
+      "downloads": 5051898,
+      "likes": 6258,
+      "downloads_str": "5.1M",
+      "summary": "📥 5.1M 下载 · ⭐ 6258 赞 · 🏷️ automatic-speech-recognition",
+      "link": "https://huggingface.co/openai/whisper-large-v3"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-schnell",
+      "title": "black-forest-labs/FLUX.1-schnell",
+      "pipeline": "text-to-image",
+      "downloads": 750427,
+      "likes": 5759,
+      "downloads_str": "750.4k",
+      "summary": "📥 750.4k 下载 · ⭐ 5759 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-schnell"
+    },
+    {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "title": "sentence-transformers/all-MiniLM-L6-v2",
+      "pipeline": "sentence-similarity",
+      "downloads": 254324263,
+      "likes": 5725,
+      "downloads_str": "254.3M",
+      "summary": "📥 254.3M 下载 · ⭐ 5725 赞 · 🏷️ sentence-similarity",
+      "link": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-V4-Pro",
+      "title": "deepseek-ai/DeepSeek-V4-Pro",
+      "pipeline": "text-generation",
+      "downloads": 612515,
+      "likes": 5517,
+      "downloads_str": "612.5k",
+      "summary": "📥 612.5k 下载 · ⭐ 5517 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
+    },
+    {
+      "model_id": "Tongyi-MAI/Z-Image-Turbo",
+      "title": "Tongyi-MAI/Z-Image-Turbo",
+      "pipeline": "text-to-image",
+      "downloads": 693697,
+      "likes": 5220,
+      "downloads_str": "693.7k",
+      "summary": "📥 693.7k 下载 · ⭐ 5220 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo"
+    },
+    {
+      "model_id": "openai/gpt-oss-120b",
+      "title": "openai/gpt-oss-120b",
+      "pipeline": "text-generation",
+      "downloads": 5445917,
+      "likes": 5185,
+      "downloads_str": "5.4M",
+      "summary": "📥 5.4M 下载 · ⭐ 5185 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/openai/gpt-oss-120b"
+    },
+    {
+      "model_id": "MiniMaxAI/MiniMax-H3",
+      "title": "MiniMaxAI/MiniMax-H3",
+      "pipeline": "image-text-to-video",
+      "downloads": 5080204,
+      "likes": 5105,
+      "downloads_str": "5.1M",
+      "summary": "📥 5.1M 下载 · ⭐ 5105 赞 · 🏷️ image-text-to-video",
+      "link": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+    },
+    {
+      "model_id": "zai-org/GLM-5.2",
+      "title": "zai-org/GLM-5.2",
+      "pipeline": "text-generation",
+      "downloads": 934841,
+      "likes": 5076,
+      "downloads_str": "934.8k",
+      "summary": "📥 934.8k 下载 · ⭐ 5076 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/zai-org/GLM-5.2"
+    },
+    {
+      "model_id": "Qwen/Qwen3.8-Flash-Next",
+      "title": "Qwen/Qwen3.8-Flash-Next",
+      "pipeline": "image-text-to-text",
+      "downloads": 564079,
+      "likes": 5058,
+      "downloads_str": "564.1k",
+      "summary": "📥 564.1k 下载 · ⭐ 5058 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+    },
+    {
+      "model_id": "bigscience/bloom",
+      "title": "bigscience/bloom",
+      "pipeline": "text-generation",
+      "downloads": 16371,
+      "likes": 5043,
+      "downloads_str": "16.4k",
+      "summary": "📥 16.4k 下载 · ⭐ 5043 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/bigscience/bloom"
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-3-medium",
+      "title": "stabilityai/stable-diffusion-3-medium",
+      "pipeline": "text-to-image",
+      "downloads": 4294,
+      "likes": 5023,
+      "downloads_str": "4.3k",
+      "summary": "📥 4.3k 下载 · ⭐ 5023 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/stabilityai/stable-diffusion-3-medium"
+    }
+  ]
+}
