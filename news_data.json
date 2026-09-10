@@ -1,0 +1,247 @@
+{
+  "key_points": [
+    "🤖 Claude Fable 5.1：成本↓25%，Agent任务成本最高↓45%，多项基准超越GPT-5.6 Sol",
+    "💰 英伟达收购HF：129亿美元，若完成成AI领域最大收购",
+    "🔔 车企人事密集调整：李书福辞任吉利董事会主席，Stellantis同日完成三大品牌CEO换帅",
+    "🤝 具身智能爆发：小鹏机器人估值63亿美元；DeepSeek V4 Flash Vision开源"
+  ],
+  "ai_news": [
+    {
+      "title": "Anthropic 发布 Claude Fable 5.1，典型任务成本降低 25%",
+      "summary": "Agent 化任务成本最高降 45%，缓存读取价格降低 75%，长周期任务能力大幅强化，多项基准超越 GPT-5.6 Sol。",
+      "link": "https://news.qq.com/rain/a/20260902A03TQ800",
+      "source": "腾讯新闻"
+    },
+    {
+      "title": "英伟达 129 亿美元收购 Hugging Face，AI 最大收购案",
+      "summary": "英伟达从 GPU 延伸至开源模型生态核心入口，收购若完成将改写 AI 产业格局。",
+      "link": "https://www.163.com/dy/article/L5O0SEHT0556L4CJ.html",
+      "source": "网易"
+    },
+    {
+      "title": "DeepSeek V4 Flash Vision 开源多模态模型正式发布",
+      "summary": "MIT 许可开源，添加视觉理解能力，保持与 V4 Flash 相当的文本 Agent 性能。",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp",
+      "source": "Hugging Face"
+    },
+    {
+      "title": "OpenAI 广告业务年化营收突破 10 亿美元，上线仅 200 天",
+      "summary": "嵌入 ChatGPT 对话场景与 DALL-E 内容页，预计 2026 年全年广告收入达 12.7 亿美元。",
+      "link": "https://www.zhiguf.com/focusnews_detail/2335689",
+      "source": "指股网"
+    }
+  ],
+  "auto_tech": [
+    {
+      "title": "小鹏机器人首轮融资超 9 亿美元，估值突破 63 亿美元",
+      "summary": "刷新中国具身智能单轮私募融资纪录，投资方包括 IDG、腾讯、阿里等。",
+      "link": "https://www.163.com/dy/article/L5O0SEHT0556L4CJ.html",
+      "source": "网易"
+    },
+    {
+      "title": "比亚迪天神之眼成本降至 5000 元以内，10 万级国民车也能城市 NOA",
+      "summary": "成功搭载于起售价仅 7.88 万元的海鸥车型，智驾功能进一步下探大众市场。",
+      "link": "https://hj.pcauto.com.cn/article/3198054",
+      "source": "太平洋汽车"
+    },
+    {
+      "title": "努比亚 NaviX Ultra 入网，全球首款 AI 智能体手机 9 月上市",
+      "summary": "搭载豆包手机助手，可跨应用执行订票、导航等多步骤任务。",
+      "link": "https://new.qq.com/rain/a/20260902A03BKD00",
+      "source": "腾讯网"
+    },
+    {
+      "title": "英伟达 FY27 Q2 财报超预期，2028 财年增长指引约 70%",
+      "summary": "AI 服务器订单和积压订单同步大增，光通信、超节点国产算力、液冷三条主线迎催化窗口。",
+      "link": "https://new.qq.com/rain/a/20260902A03HAX00",
+      "source": "腾讯网"
+    },
+    {
+      "title": "戴尔多业务线联动，AI 服务器积压订单 950 亿美元创新高",
+      "summary": "营收同比增长 58% 至 470 亿美元创历史新高，全年指引上调 250 亿美元。",
+      "link": "https://news.qq.com/rain/a/20260902A03TQ800",
+      "source": "腾讯新闻"
+    }
+  ],
+  "leadership": [
+    {
+      "title": "李书福辞任吉利汽车董事会主席，安聪慧接任",
+      "summary": "获任终身荣誉主席，淦家阅任行政总裁。李：\"汽车产业是没有尽头的马拉松。\"",
+      "link": "https://www.zgswcn.com/news.html?aid=366950",
+      "source": "中国商报网"
+    },
+    {
+      "title": "东风汽车副总经理黄勇调任中国航空工业集团",
+      "summary": "曾任一汽丰田党委书记，调任中航工业集团董事、党组副书记。",
+      "link": "https://www.toutiao.com/article/7680572878546420234",
+      "source": "头条"
+    },
+    {
+      "title": "Stellantis：Arnaud Belloni 重返，任菲亚特/阿巴斯/蓝旗亚 CEO",
+      "summary": "9月1日生效，兼任欧洲区首席营销官。Xavier Chardon 兼任 DS 品牌 CEO。",
+      "link": "https://www.just-auto.com/news/arnaud-belloni-fiat-abarth-lancia-ceo",
+      "source": "Stellantis 官方"
+    },
+    {
+      "title": "Kevin Barbian 接任奔驰马来西亚 COO",
+      "summary": "9月1日正式出任，曾主导 Mercedes-EQ 数字化转型及\"零售未来\"计划。",
+      "link": "https://www.carsifu.my/news/kevin-barbian-is-new-coo-of-mercedes-benz-cars-malaysia",
+      "source": "CarSifu"
+    }
+  ],
+  "auto_ai": [
+    {
+      "title": "天工 Ultra 夺冠全球首个人形机器人半程马拉松",
+      "summary": "北京人形机器人创新中心研发，在结构设计、动力驱动、多模态传感器融合方面取得重大突破。",
+      "link": "https://www.gov.cn",
+      "source": "政府公告"
+    },
+    {
+      "title": "高盛：人形机器人整机均价 2035 年降至 2.13 万美元",
+      "summary": "整机均价将从 2025 年的 4.18 万美元降至 2035 年的 2.13 万美元，降幅约 49%。",
+      "link": "https://ai.yesky.com/439/369939.shtml",
+      "source": "天极网"
+    },
+    {
+      "title": "华为 + 阿里 9 月双大会密集召开，国产算力再迎催化",
+      "summary": "9月17-19日华为全联接大会、22-24日阿里云栖大会将密集发布超节点与算力基础设施进展。",
+      "link": "https://new.qq.com/rain/a/20260902A03HAX00",
+      "source": "腾讯网"
+    },
+    {
+      "title": "DeepSeek 赋能智能座舱，20 余家车企宣布融合",
+      "summary": "比亚迪、吉利、奇瑞、长安、东风等 20 余家车企与 DeepSeek 达成技术融合。",
+      "link": "https://world.huanqiu.com",
+      "source": "环球网"
+    },
+    {
+      "title": "工信部：年内培育超 2000 家 AI 应用服务商",
+      "summary": "2026 年底 AI 应用服务商资源池突破 2000 家，2025 年 AI 核心产业规模已超 1.2 万亿元。",
+      "link": "https://www.zhiguf.com/focusnews_detail/2335689",
+      "source": "指股网"
+    }
+  ],
+  "papers": [
+    {
+      "title": "DS-Lighting — 数据科学自动化 Agent 工具包",
+      "id": "2608.28590",
+      "authors": "港科大",
+      "summary": "统一 Agent 工具包，将任务表示、执行状态、输出约束和评估反馈显式化，提升数据科学工作流可复现性。"
+    },
+    {
+      "title": "Aspire — 模型能否从模糊目标自主进化？",
+      "id": "2608.31111",
+      "authors": "ByteDance",
+      "summary": "首个模糊目标驱动的自进化基准，Agent 须自主诊断能力缺口、构建训练信号。权重级增益仍不稳定。"
+    },
+    {
+      "title": "NavMCP — 将基础模型搭建为物理世界智能体",
+      "id": "2608.30396",
+      "authors": "上交大 + 阿里",
+      "summary": "结合 VLM 推理智能体与 NFM 执行器实现长时程导航，在 Unitree Go2 机器人上验证优于基线。"
+    },
+    {
+      "title": "Answer Probing — LLM 多样化解决方案探索",
+      "id": "2608.30345",
+      "authors": "中科大 + 清华",
+      "summary": "APTS 树搜索方法提升多推理任务的解决方案多样性，经实验证实有效性与鲁棒性。"
+    },
+    {
+      "title": "Thea — 具身智能体的 Harness 范式",
+      "id": "2608.11246",
+      "authors": "arXiv cs.AI/cs.RO",
+      "summary": "将编码 Agent 的 Harness 范式扩展至物理世界，引入 Scene Graph as Context，在真实环境中完成长时程任务。"
+    },
+    {
+      "title": "Rapid On-Robot Learning — 机器人快速学习动态操控技能",
+      "id": "2608.26800",
+      "authors": "arXiv cs.RO",
+      "summary": "双手机器人在 5 分钟真实交互中学会 5 种杂耍模式，regularized memory-based learning 在 sim2real 差距下仍有效。"
+    },
+    {
+      "title": "Gating Before Commitment — 自动驾驶意图分歧检测",
+      "id": "2608.26074",
+      "authors": "arXiv cs.RO",
+      "summary": "在车辆执行操作前检测意图分歧，防止交互后决策失败，为自动驾驶安全提供新框架。"
+    }
+  ],
+  "github": [
+    {
+      "name": "deepseek-ai/deepseek-harness",
+      "stars": "206k",
+      "summary": "DeepSeek 官方 Agent 开发框架，\"万物皆插件\"，Standard/PTC/Minimal/Creative 四种运行模式。MIT 许可。",
+      "link": "https://github.com/deepseek-ai/deepseek-harness"
+    },
+    {
+      "name": "calesthio/OpenMontage",
+      "stars": "32k",
+      "summary": "开源 AI 视频制作系统，12 条生产流水线，$0.15~$1.33 生成完整视频。",
+      "link": "https://github.com/calesthio/OpenMontage"
+    },
+    {
+      "name": "topoteretes/cognee",
+      "stars": "29.6k",
+      "summary": "向量嵌入 + 知识图谱为 Agent 提供跨会话持久化长时记忆，兼容 Claude Code、Codex、Cursor。",
+      "link": "https://github.com/topoteretes/cognee"
+    },
+    {
+      "name": "openai/codex",
+      "stars": "116k",
+      "summary": "OpenAI 开源轻量级终端编码 Agent，Rust 编写，支持 VS Code、Cursor、Windsurf。ChatGPT Plus/Pro 内置。",
+      "link": "https://github.com/openai/codex"
+    },
+    {
+      "name": "usail-hkust/dslighting",
+      "stars": "33",
+      "summary": "港科大 DS-Lighting 完整源码仓库，含数据/工作流/执行/评估四层架构，AGPL-3.0 许可。",
+      "link": "https://github.com/usail-hkust/dslighting"
+    }
+  ],
+  "ai_deep": [
+    {
+      "title": "马斯克：AI 或令全球经济年增 20~30 万亿美元",
+      "summary": "G20 连线预测人形机器人十年内将达 10 亿台；2027 年底 AI 或可完成几乎所有数字化工作。",
+      "link": "https://news.qq.com/rain/a/20260902A03TQ800",
+      "source": "腾讯新闻"
+    },
+    {
+      "title": "OpenAI 断供 Cursor，Anthropic 随即表态支持 Claude",
+      "summary": "OpenAI 因 SpaceX 违约终止向 Cursor 供模，Anthropic 迅速增加算力支持 Claude 部署。",
+      "link": "https://new.qq.com/rain/a/20260902A03BKD00",
+      "source": "腾讯网"
+    },
+    {
+      "title": "宇树科技股价接近\"腰斩\"，人形机器人资本降温",
+      "summary": "股价相比上市首日跌幅达 48.6%，人形机器人板块资本热度出现分化。",
+      "link": "https://ai.yesky.com/439/369939.shtml",
+      "source": "天极网"
+    }
+  ],
+  "summary": [
+    {
+      "title": "大模型竞争全面转向性价比",
+      "content": "Claude Fable 5.1 成本大降 25%~45%，DeepSeek V4 Flash Vision 开源多模态——性能差距收窄，性价比成核心竞争力。",
+      "color": "gold"
+    },
+    {
+      "title": "车企人事密集调整，跨国联动成主旋律",
+      "content": "李书福辞任吉利董事会主席，Stellantis 同期完成欧洲区高管大换血，东风黄勇调任中航工业。",
+      "color": "gold"
+    },
+    {
+      "title": "具身智能融资爆发，资本开始分化",
+      "content": "小鹏机器人估值 63 亿，天工 Ultra 夺冠马拉松；但宇树股价腰斩，纯概念炒作退潮。",
+      "color": "gold"
+    },
+    {
+      "title": "汽车 AI 从\"尝鲜\"走向\"刚需\"",
+      "content": "比亚迪智驾下探至 7.88 万、NaviX Ultra 入网、DeepSeek 赋能座舱——汽车 AI 化从高端标配走向大众刚需。",
+      "color": "green"
+    },
+    {
+      "title": "AI 技术论文与开源生态并进",
+      "content": "DeepSeek V4 Flash Vision 开源多模态、微软 FaultSense 提升 MoE 推理可靠性；DeepSeek Harness 206k star，Agent 基础设施走向成熟。",
+      "color": "purple"
+    }
+  ]
+}
