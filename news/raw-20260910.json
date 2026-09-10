@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-10T09:07:36.305799",
+  "fetched_at": "2026-09-10T09:17:37.681042",
   "papers_ai": [
     {
       "title": "Show-Harness: Just a VLM Agent Can Play Robots",
@@ -363,25 +363,32 @@
       "published": "2026-09-09T07:07:04"
     },
     {
-      "title": "高德发布全球首个 3D 原生城市世界模型 ABot-Earth 0.7，实现从星球到街景的全尺寸 AI 生成",
-      "summary": "IT之家 9 月 10 日消息，今日阿里巴巴集团旗下高德正式发布全球首个 3D 原生城市世界模型 ABot-Earth 0.7。依托 3D 原生技术架构与高德海量时空数据积累，ABot-Earth 0.7 支持从星球到街景的一体化全尺寸 AI 生成，并将多种空间信息组织为可连续进入、自由探索和实时交互的三维数字孪生世界，从而构建起目前覆盖范围最广的数字地球，覆盖超过 196 个国家和地区。“大模型",
-      "link": "https://www.ithome.com/1/000/890.htm",
+      "title": "不止 Anthropic 的 Mythos 5，欧盟机构已获准访问 OpenAI GPT-6 Astra 模型",
+      "summary": "IT之家 9 月 10 日消息，据路透社报道，欧盟委员会发言人当地时间周四证实，欧盟网络与信息安全局（ENISA）已获准访问 Anthropic 的 Mythos 5 人工智能模型，目前正处于测试阶段。该发言人同时表示，ENISA 同样获准访问 OpenAI 的最新模型 GPT-6-Astra。IT之家注意到，美国白宫此前出台限制措施，禁止外国机构访问美国公司的高性能 AI 模型。虽然后来白宫放宽",
+      "link": "https://www.ithome.com/1/000/898.htm",
       "source": "IT之家",
-      "published": "2026-09-10T09:02:24"
+      "published": "2026-09-10T09:11:03"
     },
     {
-      "title": "意大利汽车行业协会呼吁欧盟：对超额中国汽车及零部件征收 80% 关税",
-      "summary": "IT之家 9 月 10 日消息，据路透社报道，意大利汽车供应商协会 Anfia 主席近日呼吁欧盟，对超出一定额度的中国产汽车及零部件征收 80% 的关税，以保护欧洲汽车产业。Anfia 主席罗伯托 · 瓦瓦索里（Roberto Vavassori）接受采访时表示，中国进口汽车在欧盟年度新车注册量中占比不超过 8% 的部分可享受零关税，超出该上限的部分则征收 80% 的关税。他指出，这一关税机制应同",
-      "link": "https://www.ithome.com/1/000/886.htm",
+      "title": "可检测身边的人是否戴着 Meta 智能眼镜，波兰开发者打造“Zuckoff”应用",
+      "summary": "IT之家 9 月 10 日消息，据《商业内幕》今天报道，波兰软件开发者帕维乌 · 希德沃夫斯基（Pawel Szydlowski）最近开发了一款应用，可以检测身边的人是否戴着 Meta 智能眼镜拍摄 POV 视频。帕维乌今年 30 岁。他之前在 YouTube 等平台刷到过一些视频，内容是有人利用智能眼镜拍摄恶搞视频，并刻意将镜头对准那些毫不知情的陌生人，这让他感到不安。据介绍，他开发的这款应用名",
+      "link": "https://www.ithome.com/1/000/896.htm",
       "source": "IT之家",
-      "published": "2026-09-10T08:56:08"
+      "published": "2026-09-10T09:09:06"
     },
     {
-      "title": "中国企业获西班牙首张 L4 自动驾驶乘用车运营牌照，文远知行 Robotaxi 年内当地上线",
-      "summary": "IT之家 9 月 10 日消息，据文远知行官方公众号，文远知行 WeRide 今天宣布与国际出行服务巨头 Uber、Moove Cars 集团旗下自动驾驶业务部门 AVOMO 联合宣布，在马德里政府的支持下，三方正式获得西班牙交通总局（DGT）依据 ES-AV 框架颁发的西班牙首张 L4 级自动驾驶乘用车运营牌照，获准在公共道路开展车辆部署。待完成各项准备工作并满足相关运营及监管要求后，文远知行、",
-      "link": "https://www.ithome.com/1/000/885.htm",
+      "title": "集邦咨询：苹果首款折叠机带动供应链升级，预估今年 iPhone Duo 市占近 25%",
+      "summary": "IT之家 9 月 10 日消息，TrendForce 集邦咨询今天（10 日）新闻发布研报指出，预估 2026 年 iPhone Duo 出货量约 500 万台，将可助力苹果在折叠手机市场取得约 24.8% 市占率。TrendForce 集邦咨询预估，2026 年全球折叠手机出货量约 2,020 万台，较 2025 年微幅成长 0.5%。若排除苹果的贡献，2026 年安卓品牌合计出货量仅约 1,5",
+      "link": "https://www.ithome.com/1/000/895.htm",
       "source": "IT之家",
-      "published": "2026-09-10T08:55:01"
+      "published": "2026-09-10T09:08:51"
+    },
+    {
+      "title": "独家｜荣耀退股进入实际退款阶段，已有离职员工收到“回头钱”",
+      "summary": "五年过去，荣耀仍处于上市辅导阶段，而这批最早参与“荣耀IPO故事”的人，选择把钱拿回来。",
+      "link": "https://www.tmtpost.com/8135022.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T09:05:21"
     },
     {
       "title": "央企，给老工业基地换引擎",
@@ -396,13 +403,6 @@
       "link": "https://www.tmtpost.com/8135325.html",
       "source": "钛媒体",
       "published": "2026-09-10T07:23:27"
-    },
-    {
-      "title": "上市公司TOP5济安评估（8月31日至9月6日）",
-      "summary": "本周机构调研热度较上周有所回落，核心原因是半年报披露节奏变化导致的调研需求降温，半年报披露收官，调研热度环比下降。调研数据不仅反映了资金关注方向，也折射出当前行业景气度的变化趋势。谁是本周最受机构青睐的公司？",
-      "link": "https://www.tmtpost.com/8135313.html",
-      "source": "钛媒体",
-      "published": "2026-09-10T07:23:08"
     }
   ],
   "hn": [
@@ -420,13 +420,13 @@
     },
     {
       "title": "Claude, change the “Add to Cart” button to blue",
-      "summary": "💬 430 评论 · ⬆️ 1110 赞",
+      "summary": "💬 430 评论 · ⬆️ 1111 赞",
       "link": "https://opusfived.dev/",
       "source": "Hacker News"
     },
     {
       "title": "Shopify acquires Tailwind",
-      "summary": "💬 391 评论 · ⬆️ 1021 赞",
+      "summary": "💬 393 评论 · ⬆️ 1024 赞",
       "link": "https://tailwindcss.com/blog/tailwind-is-joining-shopify",
       "source": "Hacker News"
     },
@@ -458,10 +458,10 @@
       "model_id": "Qwen/Qwen3.8-27B",
       "title": "Qwen/Qwen3.8-27B",
       "pipeline": "image-text-to-text",
-      "downloads": 6712160,
-      "likes": 14561,
-      "downloads_str": "6.7M",
-      "summary": "📥 6.7M 下载 · ⭐ 14561 赞 · 🏷️ image-text-to-text",
+      "downloads": 7322476,
+      "likes": 14562,
+      "downloads_str": "7.3M",
+      "summary": "📥 7.3M 下载 · ⭐ 14562 赞 · 🏷️ image-text-to-text",
       "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
     },
     {
@@ -479,9 +479,9 @@
       "title": "moonshotai/Kimi-K3",
       "pipeline": "image-text-to-text",
       "downloads": 2319885,
-      "likes": 11261,
+      "likes": 11263,
       "downloads_str": "2.3M",
-      "summary": "📥 2.3M 下载 · ⭐ 11261 赞 · 🏷️ image-text-to-text",
+      "summary": "📥 2.3M 下载 · ⭐ 11263 赞 · 🏷️ image-text-to-text",
       "link": "https://huggingface.co/moonshotai/Kimi-K3"
     },
     {
@@ -548,10 +548,10 @@
       "model_id": "MiniMaxAI/MiniMax-H3",
       "title": "MiniMaxAI/MiniMax-H3",
       "pipeline": "image-text-to-video",
-      "downloads": 4994268,
+      "downloads": 5080204,
       "likes": 5098,
-      "downloads_str": "5.0M",
-      "summary": "📥 5.0M 下载 · ⭐ 5098 赞 · 🏷️ image-text-to-video",
+      "downloads_str": "5.1M",
+      "summary": "📥 5.1M 下载 · ⭐ 5098 赞 · 🏷️ image-text-to-video",
       "link": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
     },
     {
@@ -568,30 +568,30 @@
       "model_id": "Qwen/Qwen3.8-Flash-Next",
       "title": "Qwen/Qwen3.8-Flash-Next",
       "pipeline": "image-text-to-text",
-      "downloads": 503263,
+      "downloads": 564079,
       "likes": 5056,
-      "downloads_str": "503.3k",
-      "summary": "📥 503.3k 下载 · ⭐ 5056 赞 · 🏷️ image-text-to-text",
+      "downloads_str": "564.1k",
+      "summary": "📥 564.1k 下载 · ⭐ 5056 赞 · 🏷️ image-text-to-text",
       "link": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
     },
     {
       "model_id": "unsloth/Qwen3.8-27B-GGUF",
       "title": "unsloth/Qwen3.8-27B-GGUF",
       "pipeline": "通用模型",
-      "downloads": 10675683,
+      "downloads": 11127203,
       "likes": 3802,
-      "downloads_str": "10.7M",
-      "summary": "📥 10.7M 下载 · ⭐ 3802 赞 · 🏷️ 通用模型",
+      "downloads_str": "11.1M",
+      "summary": "📥 11.1M 下载 · ⭐ 3802 赞 · 🏷️ 通用模型",
       "link": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF"
     },
     {
       "model_id": "Lightricks/LTX-2.5",
       "title": "Lightricks/LTX-2.5",
       "pipeline": "image-to-video",
-      "downloads": 1644796,
+      "downloads": 1740572,
       "likes": 3301,
-      "downloads_str": "1.6M",
-      "summary": "📥 1.6M 下载 · ⭐ 3301 赞 · 🏷️ image-to-video",
+      "downloads_str": "1.7M",
+      "summary": "📥 1.7M 下载 · ⭐ 3301 赞 · 🏷️ image-to-video",
       "link": "https://huggingface.co/Lightricks/LTX-2.5"
     }
   ]
