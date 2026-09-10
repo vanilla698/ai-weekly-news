@@ -1,210 +1,252 @@
 {
   "key_points": [
-    "🤖 VLM 智能体直接操控机器人，跨形态控制成热点",
-    "🧠 长上下文记忆与选择性遗忘成为 LLM 工程焦点",
-    "🚀 企业 AI 评测转向服务路由而非模型标识",
-    "🐙 GitHub 智能体框架与个人 AI 助手项目持续霸榜"
+    "🚀 高德发布全球首个3D原生城市世界模型ABot-Earth 0.7",
+    "📱 苹果首款折叠屏iPhone Duo发布，国行15999元起",
+    "🤖 文远知行获西班牙首张L4自动驾驶乘用车运营牌照",
+    "⚖️ 意大利汽车协会呼吁欧盟对中国汽车征收80%关税"
   ],
   "ai_news": [
     {
-      "title": "Show-Harness：仅靠 VLM 智能体就能操控机器人",
-      "summary": "提出 Show-Harness 框架，让基础视觉语言模型直接充当机器人控制器，无需额外训练即可完成多种操作任务。",
-      "link": "http://arxiv.org/abs/2609.10522v1",
-      "source": "arXiv"
+      "title": "OpenAI发布GPT-6 Astra，面向企业工作场景",
+      "summary": "OpenAI推出迄今最强企业模型GPT-6 Astra，具备高级推理、计算机操作等能力，面向商业场景优化。",
+      "link": "https://openai.com/index/gpt-6-astra-next-generation-work",
+      "source": "OpenAI"
     },
     {
-      "title": "IBIB：按服务路由而非模型标识衡量企业 AI 系统",
-      "summary": "针对企业部署实际，提出 IBIB 协议，从权重、服务路由、精度、输出契约和 harness 联合衡量可用能力。",
-      "link": "http://arxiv.org/abs/2609.10494v1",
-      "source": "arXiv"
+      "title": "高德发布全球首个3D原生城市世界模型ABot-Earth 0.7",
+      "summary": "阿里旗下高德发布3D原生城市世界模型，依托海量时空数据，实现从星球到街景的全尺寸AI生成。",
+      "link": "https://www.ithome.com/1/000/890.htm",
+      "source": "IT之家"
     },
     {
-      "title": "ConvMem：面向长上下文推理的卷积记忆",
-      "summary": "针对 LLM 固定上下文窗口限制，提出卷积记忆机制，提升超长上下文中的推理与信息保持能力。",
-      "link": "http://arxiv.org/abs/2609.10441v1",
-      "source": "arXiv"
+      "title": "千问办公发布多人工作台，重写企业软件最后一公里",
+      "summary": "千问办公推出多人协作工作台，瞄准企业软件协同痛点，探索AI原生办公新形态。",
+      "link": "http://www.geekpark.net/news/370061",
+      "source": "极客公园"
     },
     {
-      "title": "JarvisGUI：跨设备 GUI 智能体与动态任务组合",
-      "summary": "面向多设备、多平台工作流，提出 JarvisGUI 框架，支持中间结果传递与动态任务组合的跨设备 GUI 操作。",
-      "link": "http://arxiv.org/abs/2609.10451v1",
-      "source": "arXiv"
+      "title": "DeepMind发布AlphaGenome Atlas基因组预测图谱",
+      "summary": "AlphaGenome Atlas绘制人类基因组90亿个单字母DNA变异的分子效应预测图，推动基因组学研究。",
+      "link": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+      "source": "DeepMind"
     },
     {
-      "title": "Fortunate Recall：本体驱动的 LLM 记忆生命周期管理",
-      "summary": "针对 LLM 记忆系统无差别存储导致检索精度下降的问题，提出本体驱动的记忆生命周期管理方法。",
-      "link": "http://arxiv.org/abs/2609.10413v1",
-      "source": "arXiv"
+      "title": "NVIDIA在IFA 2026加速本地AI与下一代智能体",
+      "summary": "NVIDIA联合微软及合作伙伴在IFA 2026推出本地AI方案，推动前沿智能向终端设备下沉。",
+      "link": "https://blogs.nvidia.com/blog/local-ai-ifa-next-gen-agents-nv-pair-rtx-spark/",
+      "source": "NVIDIA"
     }
   ],
   "auto_tech": [
     {
-      "title": "DUET-DINO：机器人操作中同步跨视角世界建模与潜在规划",
-      "summary": "提出 DUET-DINO 方法，在机器人操作中同步进行跨视角世界建模，用于潜在空间规划，提升操作泛化性。",
-      "link": "http://arxiv.org/abs/2609.10506v1",
-      "source": "arXiv"
+      "title": "MINI Aceman SE纯电跨界车亮相",
+      "summary": "MINI Aceman SE以Ocean Wave Green配色带来都市驾驶新风格，定位全电动城市跨界车型。",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460396EN?language=en",
+      "source": "BMW"
     },
     {
-      "title": "HoloOcean 海岸环境生成",
-      "summary": "基于 HoloOcean 仿真平台，提出海岸环境自动生成方法，为海洋机器人研究提供多样化训练与测试场景。",
-      "link": "http://arxiv.org/abs/2609.10484v1",
-      "source": "arXiv"
+      "title": "理想i6换装中创新航电芯，9月新车提前看",
+      "summary": "理想i6改用中创新航电芯，极氪9X光辉、Model Y性能版等新车现身，9月车市竞争升温。",
+      "link": "https://www.ifanr.com/1679445?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿"
     },
     {
-      "title": "多智能体强化学习用于野火响应中的自主无人机探索",
-      "summary": "将多智能体强化学习应用于野火响应场景，实现多无人机协同自主探索与火情监测，提升应急响应效率。",
-      "link": "http://arxiv.org/abs/2609.10433v1",
-      "source": "arXiv"
+      "title": "意大利汽车协会呼吁欧盟对中国汽车征收80%关税",
+      "summary": "意大利汽车供应商协会Anfia主席呼吁欧盟对超额中国产汽车及零部件征收80%关税，保护欧洲产业。",
+      "link": "https://www.ithome.com/1/000/886.htm",
+      "source": "IT之家"
     },
     {
-      "title": "面向狭窄工业环境大型异构车辆的交通管理系统",
-      "summary": "针对狭窄工业环境中大型异构车辆调度难题，提出交通管理系统，优化路径规划与冲突消解，提升通行效率。",
-      "link": "http://arxiv.org/abs/2609.10400v1",
-      "source": "arXiv"
+      "title": "文远知行获西班牙首张L4自动驾驶运营牌照",
+      "summary": "文远知行联合Uber、AVOMO获马德里政府颁发的西班牙首张L4自动驾驶乘用车运营牌照，年内上线。",
+      "link": "https://www.ithome.com/1/000/885.htm",
+      "source": "IT之家"
     }
   ],
   "leadership": [
     {
-      "title": "NousResearch 发布 hermes-agent，星标超 24 万",
-      "summary": "NousResearch 推出 hermes-agent，定位为伴随用户成长的智能体，GitHub 星标数已达 243995。",
-      "link": "https://github.com/NousResearch/hermes-agent",
-      "source": "GitHub"
+      "title": "Brad Binder将于2027年加盟BMW Motorrad WorldSBK车队",
+      "summary": "Brad Binder将从2027年起驾驶BMW M 1000 RR，代表ROKiT BMW Motorrad WorldSBK车队出战。",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460598EN?language=en",
+      "source": "BMW"
     },
     {
-      "title": "HKUDS 开源 nanobot 个人 AI 智能体框架",
-      "summary": "HKUDS 发布超轻量自托管个人 AI 智能体框架 nanobot，支持 WebUI、工具、记忆、MCP 和多智能体工作流。",
-      "link": "https://github.com/HKUDS/nanobot",
-      "source": "GitHub"
+      "title": "本周暂无重大人事变动",
+      "summary": "除宝马摩托赛事车手签约外，本周车企层面暂无其他重大人事变动信息。",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460598EN?language=en",
+      "source": "BMW"
     }
   ],
   "auto_ai": [
     {
-      "title": "频率条件流匹配用于视觉-语言-动作模型",
-      "summary": "提出频率条件流匹配方法，改进视觉-语言-动作模型的生成质量与动作平滑性，提升机器人操作表现。",
-      "link": "http://arxiv.org/abs/2609.10405v1",
-      "source": "arXiv"
-    },
-    {
-      "title": "Show-Harness：VLM 智能体直接玩转机器人",
-      "summary": "同一框架在机器人领域同样适用，VLM 智能体无需专门训练即可完成机器人操控，降低具身智能门槛。",
+      "title": "Show-Harness：VLM智能体即可操控机器人",
+      "summary": "研究提出Show-Harness框架，让基础视觉语言模型智能体直接驱动机器人，降低机器人操控门槛。",
       "link": "http://arxiv.org/abs/2609.10522v1",
-      "source": "arXiv"
+      "source": "arXiv cs.RO"
     },
     {
-      "title": "DUET-DINO：跨视角世界模型助力机器人操作规划",
-      "summary": "通过同步跨视角世界建模，DUET-DINO 在潜在空间中进行规划，显著提升机器人操作任务的成功率。",
+      "title": "DUET-DINO：机器人操作中的跨视角世界建模",
+      "summary": "DUET-DINO实现同步跨视角世界建模，用于机器人操作中的潜在规划，提升零样本目标泛化能力。",
       "link": "http://arxiv.org/abs/2609.10506v1",
-      "source": "arXiv"
+      "source": "arXiv cs.RO"
+    },
+    {
+      "title": "频率条件流匹配用于视觉-语言-动作模型",
+      "summary": "研究提出频率条件流匹配方法，利用动作轨迹的频率分量编码运动信息，提升VLA模型表现。",
+      "link": "http://arxiv.org/abs/2609.10405v1",
+      "source": "arXiv cs.RO"
     }
   ],
   "papers": [
     {
-      "title": "Show-Harness：仅靠 VLM 智能体就能操控机器人",
-      "id": "2609.10522v1",
+      "title": "Show-Harness：VLM智能体即可操控机器人",
+      "id": "2609.10522",
       "authors": "未提供",
-      "summary": "提出 Show-Harness 框架，让基础视觉语言模型直接充当机器人控制器，无需额外训练即可完成多种操作任务。"
+      "summary": "提出Show-Harness框架，让基础视觉语言模型智能体直接操控机器人，弥合VLM世界知识与机器人执行间的鸿沟。"
     },
     {
-      "title": "IBIB：按服务路由而非模型标识衡量企业 AI 系统",
-      "id": "2609.10494v1",
+      "title": "IBIB：以服务路由而非模型标识衡量企业AI系统",
+      "id": "2609.10494",
       "authors": "未提供",
-      "summary": "针对企业部署实际，提出 IBIB 协议，从权重、服务路由、精度、输出契约和 harness 联合衡量可用能力。"
+      "summary": "提出IBIB协议，主张企业AI可用能力取决于权重、服务路由等系统整体，而非单一模型检查点。"
     },
     {
       "title": "Semigroup-JEPA：零样本物理泛化的潜在动力学一致性",
-      "id": "2609.10464v1",
+      "id": "2609.10464",
       "authors": "未提供",
-      "summary": "基于 JEPA 世界模型，提出 Semigroup-JEPA，通过潜在动力学一致性实现零样本物理泛化与规划。"
+      "summary": "基于半群结构改进JEPA世界模型，增强潜在动力学一致性，实现零样本物理场景泛化。"
     },
     {
-      "title": "JarvisGUI：跨设备 GUI 智能体与动态任务组合",
-      "id": "2609.10451v1",
+      "title": "JarvisGUI：面向跨设备GUI智能体的动态任务组合",
+      "id": "2609.10451",
       "authors": "未提供",
-      "summary": "面向多设备、多平台工作流，提出 JarvisGUI 框架，支持中间结果传递与动态任务组合的跨设备 GUI 操作。"
+      "summary": "针对跨多设备多平台的GUI工作流，提出JarvisGUI实现动态任务组合，提升跨设备智能体协作能力。"
     },
     {
       "title": "ConvMem：面向长上下文推理的卷积记忆",
-      "id": "2609.10441v1",
+      "id": "2609.10441",
       "authors": "未提供",
-      "summary": "针对 LLM 固定上下文窗口限制，提出卷积记忆机制，提升超长上下文中的推理与信息保持能力。"
+      "summary": "提出卷积记忆机制ConvMem，缓解大模型长上下文推理困难，提升长文本理解与推理性能。"
     }
   ],
   "github": [
     {
-      "name": "NousResearch/hermes-agent",
-      "stars": "243995",
-      "summary": "NousResearch 推出的智能体项目，定位为伴随用户成长的 AI agent，支持持续学习与个性化。",
-      "link": "https://github.com/NousResearch/hermes-agent"
+      "name": "collusion.wiki",
+      "stars": "2298",
+      "summary": "新发现OpenAI智能体留言板引发Hacker News热议，探讨多智能体自主交互与串谋风险。",
+      "link": "https://collusion.wiki/"
     },
     {
-      "name": "Panniantong/Agent-Reach",
-      "stars": "79125",
-      "summary": "为 AI 智能体提供互联网视野，一个 CLI 即可读取和搜索 Twitter、Reddit、YouTube 等多平台，零 API 费用。",
-      "link": "https://github.com/Panniantong/Agent-Reach"
+      "name": "openai/gpt-6-astra",
+      "stars": "2274",
+      "summary": "OpenAI发布GPT-6 Astra引发社区高度关注，讨论聚焦其企业推理与计算机操作能力。",
+      "link": "https://openai.com/index/gpt-6-astra/"
     },
     {
-      "name": "shareAI-lab/learn-claude-code",
-      "stars": "76459",
-      "summary": "从零构建的类 Claude Code 智能体 harness，强调 Bash 即可实现，适合学习智能体架构。",
-      "link": "https://github.com/shareAI-lab/learn-claude-code"
+      "name": "opusfived.dev",
+      "stars": "1110",
+      "summary": "开发者演示用Claude修改「加入购物车」按钮颜色，展示AI编码智能体的实用性与边界。",
+      "link": "https://opusfived.dev/"
     },
     {
-      "name": "thedaviddias/Front-End-Checklist",
-      "stars": "74087",
-      "summary": "现代 Web 开发必备清单，面向人类和 AI 智能体，覆盖前端开发关键检查项。",
-      "link": "https://github.com/thedaviddias/Front-End-Checklist"
+      "name": "tailwindcss/tailwind",
+      "stars": "1021",
+      "summary": "Shopify收购Tailwind CSS框架，社区讨论前端工具链与电商平台的整合前景。",
+      "link": "https://tailwindcss.com/blog/tailwind-is-joining-shopify"
     },
     {
-      "name": "career-ops-hq/career-ops",
-      "stars": "70856",
-      "summary": "开源 AI 求职工具，扫描职位门户、结构化评估、定制简历并跟踪申请，本地运行于 AI 编码 CLI。",
-      "link": "https://github.com/career-ops-hq/career-ops"
+      "name": "mistralai/mistral",
+      "stars": "841",
+      "summary": "Mistral完成30亿欧元融资，推进主权开源权重AI向前沿迈进，引发欧洲AI自主讨论。",
+      "link": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/"
     }
   ],
   "ai_deep": [
     {
-      "title": "VLM 智能体直接操控机器人，具身智能门槛再降低",
-      "summary": "Show-Harness 表明基础 VLM 无需专门训练即可控制机器人，这或将重塑具身智能的研发范式。",
-      "link": "http://arxiv.org/abs/2609.10522v1",
-      "source": "arXiv"
+      "title": "AI政策窗口已打开，需要立即行动",
+      "summary": "Chris Lehane撰文指出更强AI能力需要更强安全证据与共享标准，呼吁把握当前政策窗口期。",
+      "link": "https://openai.com/index/ai-policy-window",
+      "source": "OpenAI"
     },
     {
-      "title": "企业 AI 评测新范式：从模型标识转向服务路由",
-      "summary": "IBIB 协议提醒业界，企业 AI 能力取决于权重、路由、精度和 harness 的联合，而非单一模型检查点。",
-      "link": "http://arxiv.org/abs/2609.10494v1",
-      "source": "arXiv"
+      "title": "用LLM代笔写文章，你的智力拉链开了",
+      "summary": "文章批评用大模型代写文章导致思想空洞，呼吁写作者保持独立思辨与原创表达能力。",
+      "link": "https://bcantrill.dtrace.org/2025/12/05/your-intellectual-fly-is-open/",
+      "source": "Hacker News"
     },
     {
-      "title": "LLM 记忆管理走向精细化：本体驱动与选择性遗忘",
-      "summary": "Fortunate Recall 与 Layer-Selective Unlearning 分别从记忆生命周期和层选择性遗忘入手，提升 LLM 长期可用性。",
-      "link": "http://arxiv.org/abs/2609.10413v1",
-      "source": "arXiv"
+      "title": "安全为谁？拒绝话题的恰当子集而非整个话题",
+      "summary": "文章探讨AI安全对齐中过度拒答问题，主张精细区分话题子集，避免误伤合理请求。",
+      "link": "https://huggingface.co/blog/MultiverseComputingCAI/safety-for-whom",
+      "source": "HuggingFace"
+    }
+  ],
+  "models": [
+    {
+      "model_id": "black-forest-labs/FLUX.1-dev",
+      "pipeline": "text-to-image",
+      "downloads": "807.8K",
+      "likes": "14565",
+      "summary": "Black Forest Labs推出的高质量文生图扩散模型，社区下载与点赞量领先。",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+    },
+    {
+      "model_id": "Qwen/Qwen3.8-27B",
+      "pipeline": "image-text-to-text",
+      "downloads": "6.7M",
+      "likes": "14561",
+      "summary": "通义千问多模态大模型，支持图文输入，下载量超670万，社区热度极高。",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "pipeline": "text-generation",
+      "downloads": "709.3K",
+      "likes": "13617",
+      "summary": "DeepSeek开源推理大模型，以强推理能力与开放权重获得广泛关注。",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1"
+    },
+    {
+      "model_id": "moonshotai/Kimi-K3",
+      "pipeline": "image-text-to-text",
+      "downloads": "2.3M",
+      "likes": "11261",
+      "summary": "月之暗面Kimi-K3多模态模型，支持图文理解，下载量超230万。",
+      "link": "https://huggingface.co/moonshotai/Kimi-K3"
+    },
+    {
+      "model_id": "hexgrad/Kokoro-82M",
+      "pipeline": "text-to-speech",
+      "downloads": "11.6M",
+      "likes": "6841",
+      "summary": "轻量级82M参数语音合成模型，以高自然度与低资源占用广受欢迎。",
+      "link": "https://huggingface.co/hexgrad/Kokoro-82M"
     }
   ],
   "summary": [
     {
-      "title": "VLM 控制机器人",
-      "content": "Show-Harness 让基础 VLM 无需训练即可操控机器人，具身智能门槛降低。",
+      "title": "大模型持续迭代",
+      "content": "GPT-6 Astra发布，Qwen、Kimi等开源模型热度居高不下。",
       "color": "gold"
     },
     {
-      "title": "长上下文记忆",
-      "content": "ConvMem 与 Fortunate Recall 分别从卷积记忆和本体驱动管理提升 LLM 长上下文能力。",
+      "title": "自动驾驶出海提速",
+      "content": "文远知行获西班牙首张L4运营牌照，中国自动驾驶加速欧洲落地。",
       "color": "green"
     },
     {
-      "title": "企业 AI 评测",
-      "content": "IBIB 协议主张按服务路由而非模型标识衡量企业 AI 系统可用能力。",
+      "title": "机器人智能体升温",
+      "content": "VLM驱动机器人、跨视角世界建模等研究推动具身智能发展。",
       "color": "purple"
     },
     {
-      "title": "跨设备 GUI",
-      "content": "JarvisGUI 支持多设备工作流动态组合，推动 GUI 智能体实用化。",
+      "title": "贸易摩擦加剧",
+      "content": "意大利协会呼吁欧盟对中国汽车征收80%关税，出海承压。",
       "color": "gold"
     },
     {
-      "title": "GitHub 智能体热",
-      "content": "hermes-agent、nanobot 等个人 AI 智能体框架持续霸榜，生态活跃。",
+      "title": "AI治理受关注",
+      "content": "AI政策窗口、安全对齐与内容审核等治理议题持续升温。",
       "color": "green"
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-10T08:32:36.071193",
+  "fetched_at": "2026-09-10T09:07:36.305799",
   "papers_ai": [
     {
       "title": "Show-Harness: Just a VLM Agent Can Play Robots",
@@ -203,66 +203,396 @@
       ]
     }
   ],
-  "github": [
+  "ai_giants": [
     {
-      "name": "NousResearch/hermes-agent",
-      "description": "The agent that grows with you",
-      "stars": 243995,
-      "link": "https://github.com/NousResearch/hermes-agent"
+      "title": "The AI policy window is open. We need to act.",
+      "summary": "Chris Lehane argues that stronger AI capabilities require stronger safety evidence, shared standards, and durable policy action while the policy window remains open.",
+      "link": "https://openai.com/index/ai-policy-window",
+      "source": "OpenAI",
+      "published": "2026-09-09T13:00:00"
     },
     {
-      "name": "Panniantong/Agent-Reach",
-      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
-      "stars": 79125,
-      "link": "https://github.com/Panniantong/Agent-Reach"
+      "title": "GPT-6 Astra: The next generation in intelligence for work",
+      "summary": "Meet GPT-6 Astra, OpenAI’s most capable model for business, with advanced reasoning, computer use, and stronger writing and design judgment.",
+      "link": "https://openai.com/index/gpt-6-astra-next-generation-work",
+      "source": "OpenAI",
+      "published": "2026-09-09T11:00:00"
     },
     {
-      "name": "shareAI-lab/learn-claude-code",
-      "description": "Bash is all you need -  A nano claude code–like 「agent harness」, built from 0 to 1",
-      "stars": 76459,
-      "link": "https://github.com/shareAI-lab/learn-claude-code"
+      "title": "Paul Christiano joins OpenAI Foundation Board",
+      "summary": "Paul Christiano joins the OpenAI Foundation Board and its Safety and Security Committee, bringing experience in AI alignment, safety, and standards.",
+      "link": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
+      "source": "OpenAI",
+      "published": "2026-09-09T17:00:00"
     },
     {
-      "name": "thedaviddias/Front-End-Checklist",
-      "description": "🗂 The essential checklist for modern web development, for humans and AI agents",
-      "stars": 74087,
-      "link": "https://github.com/thedaviddias/Front-End-Checklist"
+      "title": "Get ready for the game with new football features in Search",
+      "summary": "An illustrated graphic set against a vibrant green background featuring American football elements, including a gold trophy, a blue helmet, a silver whistle, a football, a mini scoreboard, and play di",
+      "link": "https://blog.google/products-and-platforms/products/search/football-features-google-search/",
+      "source": "Google AI",
+      "published": "2026-09-09T16:00:00"
     },
     {
-      "name": "career-ops-hq/career-ops",
-      "description": "Open-source AI job search: scan job portals, evaluate listings into a structured A-H report with a global 1-5 score, tailor your CV, track applications — runs locally in your AI coding CLI (Claude Cod",
-      "stars": 70856,
-      "link": "https://github.com/career-ops-hq/career-ops"
+      "title": "Recreating a 70-year love story frame by frame",
+      "summary": "An elderly couple sitting in a movie theater. Overlayed are \"Teulluride Film Festival\" and \"Love, Rendered\"",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/love-rendered-film/",
+      "source": "Google AI",
+      "published": "2026-09-09T16:00:00"
     },
     {
-      "name": "ZhuLinsen/daily_stock_analysis",
-      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-f",
-      "stars": 64874,
-      "link": "https://github.com/ZhuLinsen/daily_stock_analysis"
+      "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
+      "summary": "AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants across the human genome.",
+      "link": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+      "source": "DeepMind",
+      "published": "2026-09-08T14:00:15"
     },
     {
-      "name": "hugohe3/ppt-master",
-      "description": "AI turns documents or topics into real, native PowerPoint decks—with native shapes, transitions and animations, data-backed charts and tables on demand, audio narration from speaker notes, and support",
-      "stars": 53443,
-      "link": "https://github.com/hugohe3/ppt-master"
+      "title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model",
+      "summary": "",
+      "link": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/",
+      "source": "DeepMind",
+      "published": "2026-09-03T15:02:08"
     },
     {
-      "name": "CherryHQ/cherry-studio",
-      "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to frontier LLMs",
-      "stars": 51627,
-      "link": "https://github.com/CherryHQ/cherry-studio"
+      "title": "NVIDIA Brings Real-Time AI to Broadcast, Sports and Global Streaming at IBC",
+      "summary": "At the IBC conference, running Sept. 11-14 in Amsterdam, the creative, technology and business communities are coming together to turn ideas into action and discuss innovations across the media and en",
+      "link": "https://blogs.nvidia.com/blog/ibc-news-2026/",
+      "source": "NVIDIA",
+      "published": "2026-09-09T16:00:42"
     },
     {
-      "name": "HKUDS/nanobot",
-      "description": "Ultra-lightweight, open-source, self-hosted personal AI agent framework in Python with WebUI, tools, memory, MCP, multi-agent workflows, automation, and chat apps",
-      "stars": 47969,
-      "link": "https://github.com/HKUDS/nanobot"
+      "title": "Sparks Fly: NVIDIA Accelerates Local AI at IFA 2026",
+      "summary": "Frontier intelligence is going local. At IFA 2026, NVIDIA, Microsoft and its partners are teaming up to provide faster inference and new tools that make agents easier to set up and run locally on NVID",
+      "link": "https://blogs.nvidia.com/blog/local-ai-ifa-next-gen-agents-nv-pair-rtx-spark/",
+      "source": "NVIDIA",
+      "published": "2026-09-03T16:00:59"
     },
     {
-      "name": "zhayujie/CowAgent",
-      "description": "Open-source super AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-agent, multi-model, multi-channel. Lightweight, extensible, one-line i",
-      "stars": 46870,
-      "link": "https://github.com/zhayujie/CowAgent"
+      "title": "‘NBA 2K27’ With NVIDIA DLSS 5 Leads 28 New Games Coming to GeForce NOW",
+      "summary": "September is here with 28 more games streaming on GeForce NOW this month, led by a slam dunk: NBA 2K27 with the NVIDIA DLSS 5 3D-Guided Neural Rendering feature. Through NVIDIA’s close collaboration w",
+      "link": "https://blogs.nvidia.com/blog/geforce-now-thursday-september-2026-games-list/",
+      "source": "NVIDIA",
+      "published": "2026-09-03T13:00:35"
+    },
+    {
+      "title": "IBM releases SOTA Granite Time Series PatchTST-FM-r2 model with commercial-friendly license",
+      "summary": "",
+      "link": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series",
+      "source": "HuggingFace",
+      "published": "2026-09-09T15:36:24"
+    },
+    {
+      "title": "Safety for Whom? Refusing the Right Subset of a Topic, Not the Whole Topic",
+      "summary": "",
+      "link": "https://huggingface.co/blog/MultiverseComputingCAI/safety-for-whom",
+      "source": "HuggingFace",
+      "published": "2026-09-08T14:23:07"
+    },
+    {
+      "title": "NeoMME: an efficient Multimodal-native and Multilingual Encoder",
+      "summary": "",
+      "link": "https://huggingface.co/blog/Hcompany/neomme",
+      "source": "HuggingFace",
+      "published": "2026-09-03T13:13:48"
+    }
+  ],
+  "auto_companies": [
+    {
+      "title": "Welcome, Brad: BMW Motorrad Motorsport welcomes Brad Binder as a new WorldSBK factory rider from 2027.",
+      "summary": "+++ Brad Binder will race the BMW M 1000 RR for the ROKiT BMW Motorrad WorldSBK Team from 2027. +++ Binder moves to WorldSBK after seven years in MotoGP. +++ Familiar faces: Binder and Miguel Oliveira",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460598EN?language=en",
+      "source": "BMW",
+      "published": "2026-09-09T15:01:00"
+    },
+    {
+      "title": "Preis der Nationalgalerie 2026: Opening of the exhibition “MAURIZIO CATTELAN. NIGHT”.",
+      "summary": "+++ The Italian artist’s first major solo exhibition in Germany +++ Key historical works and a new site-specific installation in the iconic Mies van der Rohe building +++ Exhibition dates: 10 Septembe",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460574EN?language=en",
+      "source": "BMW",
+      "published": "2026-09-09T10:09:00"
+    },
+    {
+      "title": "MINI Aceman SE: all-electric crossover for urban driving fun.",
+      "summary": "+++ The MINI Aceman SE in Ocean Wave Green brings a fresh look to the city +++ All-electric MINI crossover with 160 kW/218 hp and a range of up to 405 kilometres according to WLTP +++ Compact proporti",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460396EN?language=en",
+      "source": "BMW",
+      "published": "2026-09-08T22:01:00"
+    }
+  ],
+  "cn_tech": [
+    {
+      "title": "理想 i6 换上中创新航电芯，极氪 9X 光辉、Model Y 性能版现身，9 月新车提前看",
+      "summary": "长城也许该思考一下命名的延续性了。#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679445?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-10T02:36:19"
+    },
+    {
+      "title": "iPhone Duo 首发上手：唯一值两万元的折叠屏",
+      "summary": "宛若透明，全方位超预期#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679531?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-10T00:00:28"
+    },
+    {
+      "title": "GPT Images 2.5 突发上线！网友的「灵魂画作」一个比一个离谱",
+      "summary": "过于抽象#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679329?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-09T10:37:37"
+    },
+    {
+      "title": "苹果进入特努斯时代，首发 15999 元折叠屏 iPhone；Deepseek 被曝备战科创板 IPO；谷歌埃森哲组建千人 FDE 团队 | 极客早知道",
+      "summary": " 苹果首款折叠 iPhone Duo 亮相，国行 15999 元起 北京时间 9 月 10 日凌晨，苹果发布首款折叠手机 iPhone Duo，国行 15999 元起，10 月 16 日开启预售，23 日正式发售。同场推出 iPhone 18 Pro 系列，9999 元起；标准版 iPhone 18 推迟至明年春季发布。  该机采用书本式内折设计，内外屏尺寸与小米 18 Fold 接近，价格高出 ",
+      "link": "http://www.geekpark.net/news/370089",
+      "source": "极客公园",
+      "published": "2026-09-10T00:58:59"
+    },
+    {
+      "title": "苹果第一台折叠 iPhone，15999 元起",
+      "summary": "  iPhone Duo，国行 15999 元起  作者｜张勇毅 编辑｜靖宇  北京时间今天凌晨，苹果发布了第一台折叠屏手机，名字叫 iPhone Duo。国行 15999 元起，10 月 16 日晚 8 点预购，10 月 23 日发售。同场发布的 iPhone 18 Pro 系列 9999 元起，9 月 12 日晚 8 点预购，18 日发售。  三天前，小米发布了 18 Fold：外屏 5.38",
+      "link": "http://www.geekpark.net/news/370088",
+      "source": "极客公园",
+      "published": "2026-09-09T19:43:09"
+    },
+    {
+      "title": "千问办公发布多人工作台，重写企业软件的最后一公里",
+      "summary": " 作者｜Cynthia 编辑｜郑玄  2026 年 2 月 3 日，由 Anthropic 带头，华尔街替 SaaS 写好了讣告。 几天前，Anthropic 正式官宣把 Claude Cowork 的插件能力扩展到法律、销售、金融等知识工作。与普通聊天机器人不同，这些插件可以携带部门工作流、调用外部工具和数据，并按照预设规则完成一段具体工作。 市场很快把这种能力翻译成了另一个词：替代。2 月 3",
+      "link": "http://www.geekpark.net/news/370061",
+      "source": "极客公园",
+      "published": "2026-09-09T07:07:04"
+    },
+    {
+      "title": "高德发布全球首个 3D 原生城市世界模型 ABot-Earth 0.7，实现从星球到街景的全尺寸 AI 生成",
+      "summary": "IT之家 9 月 10 日消息，今日阿里巴巴集团旗下高德正式发布全球首个 3D 原生城市世界模型 ABot-Earth 0.7。依托 3D 原生技术架构与高德海量时空数据积累，ABot-Earth 0.7 支持从星球到街景的一体化全尺寸 AI 生成，并将多种空间信息组织为可连续进入、自由探索和实时交互的三维数字孪生世界，从而构建起目前覆盖范围最广的数字地球，覆盖超过 196 个国家和地区。“大模型",
+      "link": "https://www.ithome.com/1/000/890.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T09:02:24"
+    },
+    {
+      "title": "意大利汽车行业协会呼吁欧盟：对超额中国汽车及零部件征收 80% 关税",
+      "summary": "IT之家 9 月 10 日消息，据路透社报道，意大利汽车供应商协会 Anfia 主席近日呼吁欧盟，对超出一定额度的中国产汽车及零部件征收 80% 的关税，以保护欧洲汽车产业。Anfia 主席罗伯托 · 瓦瓦索里（Roberto Vavassori）接受采访时表示，中国进口汽车在欧盟年度新车注册量中占比不超过 8% 的部分可享受零关税，超出该上限的部分则征收 80% 的关税。他指出，这一关税机制应同",
+      "link": "https://www.ithome.com/1/000/886.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T08:56:08"
+    },
+    {
+      "title": "中国企业获西班牙首张 L4 自动驾驶乘用车运营牌照，文远知行 Robotaxi 年内当地上线",
+      "summary": "IT之家 9 月 10 日消息，据文远知行官方公众号，文远知行 WeRide 今天宣布与国际出行服务巨头 Uber、Moove Cars 集团旗下自动驾驶业务部门 AVOMO 联合宣布，在马德里政府的支持下，三方正式获得西班牙交通总局（DGT）依据 ES-AV 框架颁发的西班牙首张 L4 级自动驾驶乘用车运营牌照，获准在公共道路开展车辆部署。待完成各项准备工作并满足相关运营及监管要求后，文远知行、",
+      "link": "https://www.ithome.com/1/000/885.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T08:55:01"
+    },
+    {
+      "title": "央企，给老工业基地换引擎",
+      "summary": "这轮“央企进东北”，和过去不太一样。",
+      "link": "https://www.tmtpost.com/8135238.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T08:13:01"
+    },
+    {
+      "title": "基金市场概况与资产配置观点（08.31—09.06）",
+      "summary": "国内市场方面，8月制造业PMI为50.3%，较上月回升1.1个百分点，重回扩张区间，新订单、生产指数同步改善。非制造业商务活动指数51.2%，服务业景气边际修复。地产端，多地优化政策落地后，重点城市商品房成交环比有所改善，但同比仍处低位，政策传导效果仍需观察。央行维持流动性合理充裕，资金面平稳，市场等待8月社融、信贷数据验证信用扩张力度。",
+      "link": "https://www.tmtpost.com/8135325.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T07:23:27"
+    },
+    {
+      "title": "上市公司TOP5济安评估（8月31日至9月6日）",
+      "summary": "本周机构调研热度较上周有所回落，核心原因是半年报披露节奏变化导致的调研需求降温，半年报披露收官，调研热度环比下降。调研数据不仅反映了资金关注方向，也折射出当前行业景气度的变化趋势。谁是本周最受机构青睐的公司？",
+      "link": "https://www.tmtpost.com/8135313.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T07:23:08"
+    }
+  ],
+  "hn": [
+    {
+      "title": "Discovery of a new OpenAI agent message board",
+      "summary": "💬 1599 评论 · ⬆️ 2298 赞",
+      "link": "https://collusion.wiki/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "GPT-6 Astra",
+      "summary": "💬 2077 评论 · ⬆️ 2274 赞",
+      "link": "https://openai.com/index/gpt-6-astra/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Claude, change the “Add to Cart” button to blue",
+      "summary": "💬 430 评论 · ⬆️ 1110 赞",
+      "link": "https://opusfived.dev/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Shopify acquires Tailwind",
+      "summary": "💬 391 评论 · ⬆️ 1021 赞",
+      "link": "https://tailwindcss.com/blog/tailwind-is-joining-shopify",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Mistral raises €3B",
+      "summary": "💬 596 评论 · ⬆️ 841 赞",
+      "link": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Your intellectual fly is open when you use an LLM to author a post (2025)",
+      "summary": "💬 433 评论 · ⬆️ 728 赞",
+      "link": "https://bcantrill.dtrace.org/2025/12/05/your-intellectual-fly-is-open/",
+      "source": "Hacker News"
+    }
+  ],
+  "hf_models": [
+    {
+      "model_id": "black-forest-labs/FLUX.1-dev",
+      "title": "black-forest-labs/FLUX.1-dev",
+      "pipeline": "text-to-image",
+      "downloads": 807843,
+      "likes": 14565,
+      "downloads_str": "807.8k",
+      "summary": "📥 807.8k 下载 · ⭐ 14565 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+    },
+    {
+      "model_id": "Qwen/Qwen3.8-27B",
+      "title": "Qwen/Qwen3.8-27B",
+      "pipeline": "image-text-to-text",
+      "downloads": 6712160,
+      "likes": 14561,
+      "downloads_str": "6.7M",
+      "summary": "📥 6.7M 下载 · ⭐ 14561 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "title": "deepseek-ai/DeepSeek-R1",
+      "pipeline": "text-generation",
+      "downloads": 709327,
+      "likes": 13617,
+      "downloads_str": "709.3k",
+      "summary": "📥 709.3k 下载 · ⭐ 13617 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1"
+    },
+    {
+      "model_id": "moonshotai/Kimi-K3",
+      "title": "moonshotai/Kimi-K3",
+      "pipeline": "image-text-to-text",
+      "downloads": 2319885,
+      "likes": 11261,
+      "downloads_str": "2.3M",
+      "summary": "📥 2.3M 下载 · ⭐ 11261 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/moonshotai/Kimi-K3"
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
+      "title": "stabilityai/stable-diffusion-xl-base-1.0",
+      "pipeline": "text-to-image",
+      "downloads": 2140894,
+      "likes": 8128,
+      "downloads_str": "2.1M",
+      "summary": "📥 2.1M 下载 · ⭐ 8128 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
+    },
+    {
+      "model_id": "CompVis/stable-diffusion-v1-4",
+      "title": "CompVis/stable-diffusion-v1-4",
+      "pipeline": "text-to-image",
+      "downloads": 590356,
+      "likes": 7062,
+      "downloads_str": "590.4k",
+      "summary": "📥 590.4k 下载 · ⭐ 7062 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/CompVis/stable-diffusion-v1-4"
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "title": "meta-llama/Llama-3.1-8B-Instruct",
+      "pipeline": "text-generation",
+      "downloads": 5630964,
+      "likes": 6865,
+      "downloads_str": "5.6M",
+      "summary": "📥 5.6M 下载 · ⭐ 6865 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "model_id": "hexgrad/Kokoro-82M",
+      "title": "hexgrad/Kokoro-82M",
+      "pipeline": "text-to-speech",
+      "downloads": 11643539,
+      "likes": 6841,
+      "downloads_str": "11.6M",
+      "summary": "📥 11.6M 下载 · ⭐ 6841 赞 · 🏷️ text-to-speech",
+      "link": "https://huggingface.co/hexgrad/Kokoro-82M"
+    },
+    {
+      "model_id": "meta-llama/Meta-Llama-3-8B",
+      "title": "meta-llama/Meta-Llama-3-8B",
+      "pipeline": "text-generation",
+      "downloads": 327218,
+      "likes": 6651,
+      "downloads_str": "327.2k",
+      "summary": "📥 327.2k 下载 · ⭐ 6651 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Meta-Llama-3-8B"
+    },
+    {
+      "model_id": "openai/whisper-large-v3",
+      "title": "openai/whisper-large-v3",
+      "pipeline": "automatic-speech-recognition",
+      "downloads": 5051898,
+      "likes": 6257,
+      "downloads_str": "5.1M",
+      "summary": "📥 5.1M 下载 · ⭐ 6257 赞 · 🏷️ automatic-speech-recognition",
+      "link": "https://huggingface.co/openai/whisper-large-v3"
+    },
+    {
+      "model_id": "MiniMaxAI/MiniMax-H3",
+      "title": "MiniMaxAI/MiniMax-H3",
+      "pipeline": "image-text-to-video",
+      "downloads": 4994268,
+      "likes": 5098,
+      "downloads_str": "5.0M",
+      "summary": "📥 5.0M 下载 · ⭐ 5098 赞 · 🏷️ image-text-to-video",
+      "link": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+    },
+    {
+      "model_id": "zai-org/GLM-5.2",
+      "title": "zai-org/GLM-5.2",
+      "pipeline": "text-generation",
+      "downloads": 934841,
+      "likes": 5076,
+      "downloads_str": "934.8k",
+      "summary": "📥 934.8k 下载 · ⭐ 5076 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/zai-org/GLM-5.2"
+    },
+    {
+      "model_id": "Qwen/Qwen3.8-Flash-Next",
+      "title": "Qwen/Qwen3.8-Flash-Next",
+      "pipeline": "image-text-to-text",
+      "downloads": 503263,
+      "likes": 5056,
+      "downloads_str": "503.3k",
+      "summary": "📥 503.3k 下载 · ⭐ 5056 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+    },
+    {
+      "model_id": "unsloth/Qwen3.8-27B-GGUF",
+      "title": "unsloth/Qwen3.8-27B-GGUF",
+      "pipeline": "通用模型",
+      "downloads": 10675683,
+      "likes": 3802,
+      "downloads_str": "10.7M",
+      "summary": "📥 10.7M 下载 · ⭐ 3802 赞 · 🏷️ 通用模型",
+      "link": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+      "model_id": "Lightricks/LTX-2.5",
+      "title": "Lightricks/LTX-2.5",
+      "pipeline": "image-to-video",
+      "downloads": 1644796,
+      "likes": 3301,
+      "downloads_str": "1.6M",
+      "summary": "📥 1.6M 下载 · ⭐ 3301 赞 · 🏷️ image-to-video",
+      "link": "https://huggingface.co/Lightricks/LTX-2.5"
     }
   ]
 }
