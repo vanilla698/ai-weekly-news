@@ -52,19 +52,21 @@ def fetch_arxiv(category="cs.AI", max_results=8):
 
 
 # ========== 2. 抓取所有源（从 sources.json 加载）==========
-def ensure_even(items, source_pool=None, source_name=""):
-    """保证偶数条目"""
+def ensure_even(items, *source_pools):
+    """保证偶数条目，从多个候选池里补一条"""
     if not items:
         return items
     if len(items) % 2 == 0:
         return items
-    if source_pool and len(source_pool) > len(items):
-        existing_titles = {it.get("title", "")[:50] for it in items}
-        for extra in source_pool:
+    existing_titles = {it.get("title", "")[:50] for it in items}
+    for pool in source_pools:
+        for extra in pool:
             if extra.get("title", "")[:50] not in existing_titles:
                 items.append(extra)
-                print(f"  [+1] 从 {source_name} 补一条: {extra.get('title', '')[:50]}")
+                print(f"  [+1] 补一条: {extra.get('title', '')[:50]}")
                 break
+        if len(items) % 2 == 0:
+            return items
     if len(items) % 2 == 1:
         items = items[:-1]
     return items
@@ -529,7 +531,11 @@ def build_html(data, archive_filename):
 <div class="multi-col">{gh_html(data.get("github", []))}</div>
 </div>
 </div>
-<footer class="footer"><span>📡 本情报由 Mavis 每周自动抓取整理</span><span>数据源：arXiv + GitHub + HF + 7 大 RSS</span><span>第 {issue} 期 · {date_str}</span></footer>
+<footer class="footer">
+<span>📡 本情报由 Mavis 每周自动抓取整理</span>
+<span><a href="index.html" style="color:var(--accent-gold);text-decoration:none;font-weight:700;">📋 查看历史归档</a></span>
+<span>第 {issue} 期 · {date_str}</span>
+</footer>
 </div>
 </body>
 </html>"""
@@ -582,7 +588,77 @@ def main():
         f.write(html)
     print(f"📄 归档: {archive_path}")
     print(f"📄 最新: {latest_path}")
+
+    # Step 4: 生成/更新列表页 index.html
+    build_index_page()
+
     print(f"\n✅ 第 {issue} 期生成完成")
+
+
+# ========== 6. 列表页（所有历史归档）==========
+def build_index_page():
+    """扫描 news/ 目录下所有归档 HTML，生成 index.html 列表页"""
+    files = []
+    for f in sorted(os.listdir(OUTPUT_DIR), reverse=True):
+        if f.endswith(".html") and f.startswith("20") and f != "latest.html" and f != "index.html":
+            # 解析文件名：20260910-1015-issue37.html
+            m = re.match(r"(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})-issue(\d+)\.html", f)
+            if m:
+                y, mo, d, h, mi, issue = m.groups()
+                files.append({
+                    "filename": f,
+                    "datetime": f"{y}-{mo}-{d} {h}:{mi}",
+                    "date": f"{y}-{mo}-{d}",
+                    "time": f"{h}:{mi}",
+                    "issue": int(issue),
+                })
+
+    # 按时间倒序
+    files.sort(key=lambda x: x["datetime"], reverse=True)
+
+    # 列表项
+    list_items = "".join([
+        f'<li><a href="{it["filename"]}">第 {it["issue"]} 期 · {it["datetime"]}</a></li>'
+        for it in files
+    ])
+
+    html = f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>AI 汽车科技每周情报 · 历史归档</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{font-family:'Noto Sans SC',sans-serif;background:#faf9f6;color:#111;padding:40px 20px;line-height:1.6;}}
+.wrap{{max-width:720px;margin:0 auto;}}
+h1{{font-family:'Noto Serif SC',serif;font-size:32px;font-weight:900;text-align:center;letter-spacing:.1em;margin-bottom:8px;}}
+.sub{{text-align:center;color:#666;font-size:13px;letter-spacing:.15em;margin-bottom:30px;}}
+.latest{{display:block;text-align:center;padding:14px;background:#1a3a5c;color:#fff;text-decoration:none;border-radius:4px;margin-bottom:30px;font-size:15px;}}
+.latest:hover{{background:#c0392b;}}
+ul{{list-style:none;border-top:2px solid #111;}}
+li{{border-bottom:1px dashed #ccc;padding:14px 8px;}}
+li a{{font-family:'Noto Serif SC',serif;color:#111;text-decoration:none;font-size:15px;font-weight:700;display:block;}}
+li a:hover{{color:#c0392b;}}
+.empty{{text-align:center;color:#999;padding:40px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>AI · 汽车科技每周情报</h1>
+<div class="sub">历 史 归 档 列 表</div>
+<a class="latest" href="latest.html">📡 查看最新一期</a>
+<ul>
+{list_items or '<li class="empty">暂无历史归档</li>'}
+</ul>
+<div class="sub" style="margin-top:30px;">共 {len(files)} 期 · 每周三 08:00 自动更新</div>
+</div>
+</body>
+</html>"""
+    index_path = os.path.join(OUTPUT_DIR, "index.html")
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"📋 列表页: {index_path}（共 {len(files)} 期）")
 
 
 if __name__ == "__main__":
