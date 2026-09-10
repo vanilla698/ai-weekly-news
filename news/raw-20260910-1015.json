@@ -1,0 +1,598 @@
+{
+  "fetched_at": "2026-09-10T10:15:34.266479",
+  "papers_ai": [
+    {
+      "title": "Show-Harness: Just a VLM Agent Can Play Robots",
+      "summary": "Foundation vision-language models (VLMs) exhibit broad intelligence about the world, yet translating this intelligence into robot control remains challenging. We present Show-Harness, an Embodied Harness that enables VLMs to \"play\" robots through a compact semantic interface linking intent to action",
+      "link": "http://arxiv.org/abs/2609.10522v1",
+      "authors": [
+        "Yanzhe Chen",
+        "Zechen Bai",
+        "Zhijun Cao"
+      ]
+    },
+    {
+      "title": "IBIB: A Protocol for Measuring Enterprise AI Systems by Serving Route, Not Model Identifier",
+      "summary": "Enterprises deploy systems, not checkpoints. Usable capability depends jointly on weights, serving route, precision, output contract, and harness, yet all 18 audited benchmarks score advertised model identifiers. We treat this as measurement error and give a protocol that makes it reportable. It has",
+      "link": "http://arxiv.org/abs/2609.10494v1",
+      "authors": [
+        "Blake Stenstrom",
+        "Charangan Vasantharajan",
+        "Brian Sathianathan"
+      ]
+    },
+    {
+      "title": "Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization",
+      "summary": "Joint-Embedding Predictive Architecture (JEPA) world models learn a compact latent representation of the world that supports prediction and planning, but their capability to learn physics and generate physically realistic dynamics remains hitherto untested. In this work, we introduce SemiGroup-JEPA ",
+      "link": "http://arxiv.org/abs/2609.10464v1",
+      "authors": [
+        "Andy Zeyi Liu",
+        "Haoran Sun",
+        "Lucas Baker"
+      ]
+    },
+    {
+      "title": "JarvisGUI: Towards Cross-Device GUI Agents with Dynamic Task Composition",
+      "summary": "Real-world GUI usage frequently involves workflows that span multiple devices and platforms, requiring the transfer of intermediate results, maintenance of shared state, and coordination across heterogeneous environments. However, existing GUI benchmarks overwhelmingly evaluate agents on single-devi",
+      "link": "http://arxiv.org/abs/2609.10451v1",
+      "authors": [
+        "Zixiang Chen",
+        "Yuheng Lu",
+        "Zihao Cheng"
+      ]
+    },
+    {
+      "title": "ConvMem: Convolutional Memory for Long-Context Reasoning",
+      "summary": "While Large Language Models (LLMs) have demonstrated impressive capabilities, they often struggle with extremely long contexts due to fixed context limits. To address this, sequential approaches like MemAgent extend the effective context by reading text in segments and iteratively updating a fixed-s",
+      "link": "http://arxiv.org/abs/2609.10441v1",
+      "authors": [
+        "Hongming Zhang",
+        "Zhaozhen Gu",
+        "Fengshuo Bai"
+      ]
+    },
+    {
+      "title": "Forgetting Only What Matters: Layer-Selective Unlearning toward Robust LLMs",
+      "summary": "Large Language Models (LLMs) can memorize and reproduce sensitive, copyrighted, or otherwise undesirable training content, creating privacy, safety, and regulatory concerns. Machine unlearning offers a practical alternative to full retraining, but many existing methods apply broad or fixed parameter",
+      "link": "http://arxiv.org/abs/2609.10439v1",
+      "authors": [
+        "Ravi Ranjan",
+        "Olivera Kotevska",
+        "Agoritsa Polyzou"
+      ]
+    },
+    {
+      "title": "Emergency Department Revisit Quality Review Screening: Exploring Human Decision-Making and Artificial Intelligence Support",
+      "summary": "Background: Emergency Department (ED) return visits are commonly reviewed for quality assurance, but are often limited (e.g., to revisits within 48-72 hours) to increase actionable finding yield while minimizing chart review burden. Those limitations may lead to missed quality improvement opportunit",
+      "link": "http://arxiv.org/abs/2609.10421v1",
+      "authors": [
+        "Jonathan A. Handler",
+        "Marlene I. Robles-Granda",
+        "Jacob E. Mefford"
+      ]
+    },
+    {
+      "title": "Fortunate Recall: Ontology-Driven Memory Lifecycle Management for Persistent Coherence in LLMs",
+      "summary": "Current LLM memory systems treat all personal facts identically, so stores grow without bound while retrieval precision degrades. The core challenge is lifecycle management: which memories should persist, which should be replaced, and at what rate, conditioned on the behavioral type of each fact. Fo",
+      "link": "http://arxiv.org/abs/2609.10413v1",
+      "authors": [
+        "Ansuman Mullick",
+        "Eray Tüzün"
+      ]
+    }
+  ],
+  "papers_ro": [
+    {
+      "title": "Show-Harness: Just a VLM Agent Can Play Robots",
+      "summary": "Foundation vision-language models (VLMs) exhibit broad intelligence about the world, yet translating this intelligence into robot control remains challenging. We present Show-Harness, an Embodied Harness that enables VLMs to \"play\" robots through a compact semantic interface linking intent to action",
+      "link": "http://arxiv.org/abs/2609.10522v1",
+      "authors": [
+        "Yanzhe Chen",
+        "Zechen Bai",
+        "Zhijun Cao"
+      ]
+    },
+    {
+      "title": "DUET-DINO: Simultaneous Cross-View World Modeling for Latent Planning in Robot Manipulation",
+      "summary": "Action-conditioned latent world models predict future visual representations, enabling zero-shot goal-conditioned robot planning and control. However, their predictions for fine-grained spatial and rotational actions are unreliable for full 7-DoF end-effector control. To address this gap, we introdu",
+      "link": "http://arxiv.org/abs/2609.10506v1",
+      "authors": [
+        "Nisarga Nilavadi",
+        "Ralf Römer",
+        "Moritz Reuss"
+      ]
+    },
+    {
+      "title": "Coastal Environment Generation with HoloOcean",
+      "summary": "Marine robotic simulation provides a safe and inexpensive method of developing and testing algorithms for unmanned underwater vehicle (UUV) and unmanned surface vessel (USV) autonomy and perception before full field deployment. However, these simulations are often limited by the availability of simu",
+      "link": "http://arxiv.org/abs/2609.10484v1",
+      "authors": [
+        "Abigail Austin",
+        "Brady Moon",
+        "Joshua G. Mangelson"
+      ]
+    },
+    {
+      "title": "Multi-Agent Reinforcement Learning for Autonomous UAV Exploration in Wildfire Response",
+      "summary": "This study develops a deep reinforcement learning framework for training Unmanned Aerial Vehicle (UAV) agents to navigate and monitor simulated wildfire environments. Results show that agents learn increasingly stable and effective behaviors over time, as demonstrated by converging loss trends, impr",
+      "link": "http://arxiv.org/abs/2609.10433v1",
+      "authors": [
+        "Caden Chandra",
+        "Jerry Ng"
+      ]
+    },
+    {
+      "title": "Frequency-Conditioned Flow Matching for Vision-Language-Action Models",
+      "summary": "Robot actions are temporally correlated trajectories whose frequency components encode motion at different scales with highly non-uniform energy distributions. Yet Flow Matching--based vision-language-action (VLA) models typically generate actions in temporal coordinates, without explicitly modeling",
+      "link": "http://arxiv.org/abs/2609.10405v1",
+      "authors": [
+        "Haochen Niu",
+        "Shengye Dong",
+        "Hao Liu"
+      ]
+    },
+    {
+      "title": "A traffic management system for large and heterogeneous vehicles in narrow industrial environments",
+      "summary": "The coordination of Automated Guided Vehicles (AGVs) in high-density industrial environments represents a critical challenge within Logistics 4.0, as traditional traffic management methods often lead to inefficiencies caused by negotiation-based priority assignment. To overcome the resulting limitat",
+      "link": "http://arxiv.org/abs/2609.10400v1",
+      "authors": [
+        "Alessandro Bonetti",
+        "Silvia Proia",
+        "Simone Guidetti"
+      ]
+    }
+  ],
+  "papers_cl": [
+    {
+      "title": "IdeaAMBIG: Benchmarking Implementation-Critical Gaps in Research-Idea Specifications",
+      "summary": "A research idea may be novel, coherent, and scientifically plausible, yet its proposed method may remain insufficiently specified for faithful implementation. We study the codification readiness of implementation-facing research-method specifications, defined by whether they provide sufficient metho",
+      "link": "http://arxiv.org/abs/2609.10539v1",
+      "authors": [
+        "Yiling Ma",
+        "Yilun Zhao",
+        "Sihong Wu"
+      ]
+    },
+    {
+      "title": "IBIB: A Protocol for Measuring Enterprise AI Systems by Serving Route, Not Model Identifier",
+      "summary": "Enterprises deploy systems, not checkpoints. Usable capability depends jointly on weights, serving route, precision, output contract, and harness, yet all 18 audited benchmarks score advertised model identifiers. We treat this as measurement error and give a protocol that makes it reportable. It has",
+      "link": "http://arxiv.org/abs/2609.10494v1",
+      "authors": [
+        "Blake Stenstrom",
+        "Charangan Vasantharajan",
+        "Brian Sathianathan"
+      ]
+    },
+    {
+      "title": "Building Multilingual Bridges: Data Mixing as the Pillar of Generalization for In-Language Reasoning",
+      "summary": "Reasoning language models have made substantial advances on a variety of complex tasks, yet their capabilities remain overwhelmingly English-centric: models primarily reason in English regardless of the language they are prompted in. This is inaccessible for non-English-speaking users, risks losing ",
+      "link": "http://arxiv.org/abs/2609.10445v1",
+      "authors": [
+        "Mehrnaz Mofakhami",
+        "Ananya Sahu",
+        "Alejandro R. Salamanca"
+      ]
+    },
+    {
+      "title": "ConvMem: Convolutional Memory for Long-Context Reasoning",
+      "summary": "While Large Language Models (LLMs) have demonstrated impressive capabilities, they often struggle with extremely long contexts due to fixed context limits. To address this, sequential approaches like MemAgent extend the effective context by reading text in segments and iteratively updating a fixed-s",
+      "link": "http://arxiv.org/abs/2609.10441v1",
+      "authors": [
+        "Hongming Zhang",
+        "Zhaozhen Gu",
+        "Fengshuo Bai"
+      ]
+    },
+    {
+      "title": "Do speech foundation models really learn words?",
+      "summary": "Self-supervised speech foundation models are now used in a wide array of downstream applications, including traditional speech recognition and as the basis for tokens in speech-aware language models. Attempts to understand their usefulness have largely focused on probing their representations' abili",
+      "link": "http://arxiv.org/abs/2609.10434v1",
+      "authors": [
+        "Robin Huo",
+        "Ewan Dunbar"
+      ]
+    },
+    {
+      "title": "Can Foundation Models Moderate Online Content? Evaluating Instruction- vs. Example-Driven Policy Operationalization",
+      "summary": "The growing complexity of content moderation policies presents a critical challenge for their consistent operationalization. While foundation models possess the basic capabilities needed to confront this challenge, whether they can reliably moderate online content remains an unanswered question. In ",
+      "link": "http://arxiv.org/abs/2609.10410v1",
+      "authors": [
+        "Ayan Majumdar",
+        "Shounak Paul",
+        "Pushpdeep Singh"
+      ]
+    }
+  ],
+  "ai_giants": [
+    {
+      "title": "The AI policy window is open. We need to act.",
+      "summary": "Chris Lehane argues that stronger AI capabilities require stronger safety evidence, shared standards, and durable policy action while the policy window remains open.",
+      "link": "https://openai.com/index/ai-policy-window",
+      "source": "OpenAI",
+      "published": "2026-09-09T13:00:00"
+    },
+    {
+      "title": "GPT-6 Astra: The next generation in intelligence for work",
+      "summary": "Meet GPT-6 Astra, OpenAI’s most capable model for business, with advanced reasoning, computer use, and stronger writing and design judgment.",
+      "link": "https://openai.com/index/gpt-6-astra-next-generation-work",
+      "source": "OpenAI",
+      "published": "2026-09-09T11:00:00"
+    },
+    {
+      "title": "Paul Christiano joins OpenAI Foundation Board",
+      "summary": "Paul Christiano joins the OpenAI Foundation Board and its Safety and Security Committee, bringing experience in AI alignment, safety, and standards.",
+      "link": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
+      "source": "OpenAI",
+      "published": "2026-09-09T17:00:00"
+    },
+    {
+      "title": "Get ready for the game with new football features in Search",
+      "summary": "An illustrated graphic set against a vibrant green background featuring American football elements, including a gold trophy, a blue helmet, a silver whistle, a football, a mini scoreboard, and play di",
+      "link": "https://blog.google/products-and-platforms/products/search/football-features-google-search/",
+      "source": "Google AI",
+      "published": "2026-09-09T16:00:00"
+    },
+    {
+      "title": "Recreating a 70-year love story frame by frame",
+      "summary": "An elderly couple sitting in a movie theater. Overlayed are \"Teulluride Film Festival\" and \"Love, Rendered\"",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/love-rendered-film/",
+      "source": "Google AI",
+      "published": "2026-09-09T16:00:00"
+    },
+    {
+      "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
+      "summary": "AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants across the human genome.",
+      "link": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+      "source": "DeepMind",
+      "published": "2026-09-08T14:00:15"
+    },
+    {
+      "title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model",
+      "summary": "",
+      "link": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/",
+      "source": "DeepMind",
+      "published": "2026-09-03T15:02:08"
+    },
+    {
+      "title": "NVIDIA Brings Real-Time AI to Broadcast, Sports and Global Streaming at IBC",
+      "summary": "At the IBC conference, running Sept. 11-14 in Amsterdam, the creative, technology and business communities are coming together to turn ideas into action and discuss innovations across the media and en",
+      "link": "https://blogs.nvidia.com/blog/ibc-news-2026/",
+      "source": "NVIDIA",
+      "published": "2026-09-09T16:00:42"
+    },
+    {
+      "title": "Sparks Fly: NVIDIA Accelerates Local AI at IFA 2026",
+      "summary": "Frontier intelligence is going local. At IFA 2026, NVIDIA, Microsoft and its partners are teaming up to provide faster inference and new tools that make agents easier to set up and run locally on NVID",
+      "link": "https://blogs.nvidia.com/blog/local-ai-ifa-next-gen-agents-nv-pair-rtx-spark/",
+      "source": "NVIDIA",
+      "published": "2026-09-03T16:00:59"
+    },
+    {
+      "title": "‘NBA 2K27’ With NVIDIA DLSS 5 Leads 28 New Games Coming to GeForce NOW",
+      "summary": "September is here with 28 more games streaming on GeForce NOW this month, led by a slam dunk: NBA 2K27 with the NVIDIA DLSS 5 3D-Guided Neural Rendering feature. Through NVIDIA’s close collaboration w",
+      "link": "https://blogs.nvidia.com/blog/geforce-now-thursday-september-2026-games-list/",
+      "source": "NVIDIA",
+      "published": "2026-09-03T13:00:35"
+    },
+    {
+      "title": "IBM releases SOTA Granite Time Series PatchTST-FM-r2 model with commercial-friendly license",
+      "summary": "",
+      "link": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series",
+      "source": "HuggingFace",
+      "published": "2026-09-09T15:36:24"
+    },
+    {
+      "title": "Safety for Whom? Refusing the Right Subset of a Topic, Not the Whole Topic",
+      "summary": "",
+      "link": "https://huggingface.co/blog/MultiverseComputingCAI/safety-for-whom",
+      "source": "HuggingFace",
+      "published": "2026-09-08T14:23:07"
+    },
+    {
+      "title": "NeoMME: an efficient Multimodal-native and Multilingual Encoder",
+      "summary": "",
+      "link": "https://huggingface.co/blog/Hcompany/neomme",
+      "source": "HuggingFace",
+      "published": "2026-09-03T13:13:48"
+    }
+  ],
+  "auto_companies": [
+    {
+      "title": "Welcome, Brad: BMW Motorrad Motorsport welcomes Brad Binder as a new WorldSBK factory rider from 2027.",
+      "summary": "+++ Brad Binder will race the BMW M 1000 RR for the ROKiT BMW Motorrad WorldSBK Team from 2027. +++ Binder moves to WorldSBK after seven years in MotoGP. +++ Familiar faces: Binder and Miguel Oliveira",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460598EN?language=en",
+      "source": "BMW",
+      "published": "2026-09-09T15:01:00"
+    },
+    {
+      "title": "Preis der Nationalgalerie 2026: Opening of the exhibition “MAURIZIO CATTELAN. NIGHT”.",
+      "summary": "+++ The Italian artist’s first major solo exhibition in Germany +++ Key historical works and a new site-specific installation in the iconic Mies van der Rohe building +++ Exhibition dates: 10 Septembe",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460574EN?language=en",
+      "source": "BMW",
+      "published": "2026-09-09T10:09:00"
+    },
+    {
+      "title": "MINI Aceman SE: all-electric crossover for urban driving fun.",
+      "summary": "+++ The MINI Aceman SE in Ocean Wave Green brings a fresh look to the city +++ All-electric MINI crossover with 160 kW/218 hp and a range of up to 405 kilometres according to WLTP +++ Compact proporti",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460396EN?language=en",
+      "source": "BMW",
+      "published": "2026-09-08T22:01:00"
+    }
+  ],
+  "cn_tech": [
+    {
+      "title": "理想 i6 换上中创新航电芯，极氪 9X 光辉、Model Y 性能版现身，9 月新车提前看",
+      "summary": "长城也许该思考一下命名的延续性了。#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679445?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-10T02:36:19"
+    },
+    {
+      "title": "iPhone Duo 首发上手：唯一值两万元的折叠屏",
+      "summary": "宛若透明，全方位超预期#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679531?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-10T00:00:28"
+    },
+    {
+      "title": "GPT Images 2.5 突发上线！网友的「灵魂画作」一个比一个离谱",
+      "summary": "过于抽象#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679329?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-09T10:37:37"
+    },
+    {
+      "title": "苹果进入特努斯时代，首发 15999 元折叠屏 iPhone；Deepseek 被曝备战科创板 IPO；谷歌埃森哲组建千人 FDE 团队 | 极客早知道",
+      "summary": " 苹果首款折叠 iPhone Duo 亮相，国行 15999 元起 北京时间 9 月 10 日凌晨，苹果发布首款折叠手机 iPhone Duo，国行 15999 元起，10 月 16 日开启预售，23 日正式发售。同场推出 iPhone 18 Pro 系列，9999 元起；标准版 iPhone 18 推迟至明年春季发布。  该机采用书本式内折设计，内外屏尺寸与小米 18 Fold 接近，价格高出 ",
+      "link": "http://www.geekpark.net/news/370089",
+      "source": "极客公园",
+      "published": "2026-09-10T00:58:59"
+    },
+    {
+      "title": "苹果第一台折叠 iPhone，15999 元起",
+      "summary": "  iPhone Duo，国行 15999 元起  作者｜张勇毅 编辑｜靖宇  北京时间今天凌晨，苹果发布了第一台折叠屏手机，名字叫 iPhone Duo。国行 15999 元起，10 月 16 日晚 8 点预购，10 月 23 日发售。同场发布的 iPhone 18 Pro 系列 9999 元起，9 月 12 日晚 8 点预购，18 日发售。  三天前，小米发布了 18 Fold：外屏 5.38",
+      "link": "http://www.geekpark.net/news/370088",
+      "source": "极客公园",
+      "published": "2026-09-09T19:43:09"
+    },
+    {
+      "title": "千问办公发布多人工作台，重写企业软件的最后一公里",
+      "summary": " 作者｜Cynthia 编辑｜郑玄  2026 年 2 月 3 日，由 Anthropic 带头，华尔街替 SaaS 写好了讣告。 几天前，Anthropic 正式官宣把 Claude Cowork 的插件能力扩展到法律、销售、金融等知识工作。与普通聊天机器人不同，这些插件可以携带部门工作流、调用外部工具和数据，并按照预设规则完成一段具体工作。 市场很快把这种能力翻译成了另一个词：替代。2 月 3",
+      "link": "http://www.geekpark.net/news/370061",
+      "source": "极客公园",
+      "published": "2026-09-09T07:07:04"
+    },
+    {
+      "title": "DeepMind 工程师反驳“谷歌搞不出前沿模型”：Gemini 3.8 Cyber 已在多项测试中优于 Mythos",
+      "summary": "IT之家 9 月 10 日消息，AI 研究员伊森 · 莫利克（Ethan Mollick）今日在 X 平台发文称，谷歌已不再拥有前沿模型，这代表着谷歌将措施数学领域，以及网络安全领域。谷歌 DeepMind 工程师洛根 · 基尔帕特里克（Logan Kilpatrick）对此反驳称，Gemini 3.8 Cyber 在许多网络安全测试、实际应用能力已经超过 Anthropic 的 Mythos。谷",
+      "link": "https://www.ithome.com/1/000/954.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T10:12:09"
+    },
+    {
+      "title": "吉利汽车集团与沃尔沃汽车达成协议，沃尔沃将成领克在欧独家经销商",
+      "summary": "IT之家 9 月 10 日消息，领克汽车官微今天（10 日）傍晚发文宣布，吉利汽车集团与沃尔沃汽车就领克品牌在欧洲市场的商业合作计划，正式达成最终协议。IT之家从公告获悉，根据协议，自 2027 年 1 月起，沃尔沃汽车将成为领克在欧洲的独家经销商，全面负责该品牌在当地的商业及品牌运营。通过双方深度协同，将加速领克在欧洲市场的规模化增长。通过本次合作，领克将在欧洲向更具扩展性和规模化的零售模式转型",
+      "link": "https://www.ithome.com/1/000/947.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T10:09:22"
+    },
+    {
+      "title": "联发科 8 月营收 641.83 亿元新台币，同比增长 44.08%",
+      "summary": "IT之家 9 月 10 日消息，联发科 MediaTek 今日公布了 2026 年 8 月份营收报告。8 月营收 641.83 亿元新台币（IT之家注：现汇率约合 136.77 亿元人民币），同比增长 44.08%1-8 月营收 4,139.91 亿元新台币（现汇率约合 882.21 亿元人民币），同比增长 5.76%IT之家附联发科 1-7 月营收数据如下：1 月营收 469.77 亿元新台币（",
+      "link": "https://www.ithome.com/1/000/945.htm",
+      "source": "IT之家",
+      "published": "2026-09-10T10:05:58"
+    },
+    {
+      "title": "GPT-6 Astra × V2Fun：当大模型开始“调度”3D生成，AI建模的范式正在转移",
+      "summary": "从代码生成，走向模型协同",
+      "link": "https://www.tmtpost.com/8134523.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T10:12:44"
+    },
+    {
+      "title": "一支笔、一只狗、一套能力：京东的AI硬件爆款方法论",
+      "summary": "线上的入口早已成型，物理世界的入口，京东正打算一支笔、一盏灯、一台烤箱、一架轮椅地去攒。",
+      "link": "https://www.tmtpost.com/8135125.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T09:56:29"
+    },
+    {
+      "title": "那只旅行的青蛙，揭开了游戏IP生意最残酷的一面",
+      "summary": "《旅行青蛙》运营八年后因IP授权到期停运。一款成熟IP能帮游戏公司降低研发和冷启动风险，却也意味着持续分账、授权期限和更弱的长期控制权。相比自研，买IP究竟省了什么，又付出了什么？",
+      "link": "https://www.tmtpost.com/8134315.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T09:17:16"
+    }
+  ],
+  "hn": [
+    {
+      "title": "Discovery of a new OpenAI agent message board",
+      "summary": "💬 1599 评论 · ⬆️ 2298 赞",
+      "link": "https://collusion.wiki/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "GPT-6 Astra",
+      "summary": "💬 2077 评论 · ⬆️ 2274 赞",
+      "link": "https://openai.com/index/gpt-6-astra/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Claude, change the “Add to Cart” button to blue",
+      "summary": "💬 434 评论 · ⬆️ 1117 赞",
+      "link": "https://opusfived.dev/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Shopify acquires Tailwind",
+      "summary": "💬 395 评论 · ⬆️ 1041 赞",
+      "link": "https://tailwindcss.com/blog/tailwind-is-joining-shopify",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Mistral raises €3B",
+      "summary": "💬 597 评论 · ⬆️ 842 赞",
+      "link": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Your intellectual fly is open when you use an LLM to author a post (2025)",
+      "summary": "💬 433 评论 · ⬆️ 728 赞",
+      "link": "https://bcantrill.dtrace.org/2025/12/05/your-intellectual-fly-is-open/",
+      "source": "Hacker News"
+    }
+  ],
+  "hf_models": [
+    {
+      "model_id": "Qwen/Qwen3.8-27B",
+      "title": "Qwen/Qwen3.8-27B",
+      "pipeline": "image-text-to-text",
+      "downloads": 7322476,
+      "likes": 14568,
+      "downloads_str": "7.3M",
+      "summary": "📥 7.3M 下载 · ⭐ 14568 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-dev",
+      "title": "black-forest-labs/FLUX.1-dev",
+      "pipeline": "text-to-image",
+      "downloads": 807843,
+      "likes": 14565,
+      "downloads_str": "807.8k",
+      "summary": "📥 807.8k 下载 · ⭐ 14565 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "title": "deepseek-ai/DeepSeek-R1",
+      "pipeline": "text-generation",
+      "downloads": 709327,
+      "likes": 13617,
+      "downloads_str": "709.3k",
+      "summary": "📥 709.3k 下载 · ⭐ 13617 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1"
+    },
+    {
+      "model_id": "moonshotai/Kimi-K3",
+      "title": "moonshotai/Kimi-K3",
+      "pipeline": "image-text-to-text",
+      "downloads": 2319885,
+      "likes": 11263,
+      "downloads_str": "2.3M",
+      "summary": "📥 2.3M 下载 · ⭐ 11263 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/moonshotai/Kimi-K3"
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
+      "title": "stabilityai/stable-diffusion-xl-base-1.0",
+      "pipeline": "text-to-image",
+      "downloads": 2140894,
+      "likes": 8129,
+      "downloads_str": "2.1M",
+      "summary": "📥 2.1M 下载 · ⭐ 8129 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
+    },
+    {
+      "model_id": "CompVis/stable-diffusion-v1-4",
+      "title": "CompVis/stable-diffusion-v1-4",
+      "pipeline": "text-to-image",
+      "downloads": 590356,
+      "likes": 7062,
+      "downloads_str": "590.4k",
+      "summary": "📥 590.4k 下载 · ⭐ 7062 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/CompVis/stable-diffusion-v1-4"
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "title": "meta-llama/Llama-3.1-8B-Instruct",
+      "pipeline": "text-generation",
+      "downloads": 5630964,
+      "likes": 6866,
+      "downloads_str": "5.6M",
+      "summary": "📥 5.6M 下载 · ⭐ 6866 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "model_id": "hexgrad/Kokoro-82M",
+      "title": "hexgrad/Kokoro-82M",
+      "pipeline": "text-to-speech",
+      "downloads": 11643539,
+      "likes": 6841,
+      "downloads_str": "11.6M",
+      "summary": "📥 11.6M 下载 · ⭐ 6841 赞 · 🏷️ text-to-speech",
+      "link": "https://huggingface.co/hexgrad/Kokoro-82M"
+    },
+    {
+      "model_id": "meta-llama/Meta-Llama-3-8B",
+      "title": "meta-llama/Meta-Llama-3-8B",
+      "pipeline": "text-generation",
+      "downloads": 327218,
+      "likes": 6651,
+      "downloads_str": "327.2k",
+      "summary": "📥 327.2k 下载 · ⭐ 6651 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Meta-Llama-3-8B"
+    },
+    {
+      "model_id": "openai/whisper-large-v3",
+      "title": "openai/whisper-large-v3",
+      "pipeline": "automatic-speech-recognition",
+      "downloads": 5051898,
+      "likes": 6257,
+      "downloads_str": "5.1M",
+      "summary": "📥 5.1M 下载 · ⭐ 6257 赞 · 🏷️ automatic-speech-recognition",
+      "link": "https://huggingface.co/openai/whisper-large-v3"
+    },
+    {
+      "model_id": "MiniMaxAI/MiniMax-H3",
+      "title": "MiniMaxAI/MiniMax-H3",
+      "pipeline": "image-text-to-video",
+      "downloads": 5080204,
+      "likes": 5101,
+      "downloads_str": "5.1M",
+      "summary": "📥 5.1M 下载 · ⭐ 5101 赞 · 🏷️ image-text-to-video",
+      "link": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+    },
+    {
+      "model_id": "zai-org/GLM-5.2",
+      "title": "zai-org/GLM-5.2",
+      "pipeline": "text-generation",
+      "downloads": 934841,
+      "likes": 5076,
+      "downloads_str": "934.8k",
+      "summary": "📥 934.8k 下载 · ⭐ 5076 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/zai-org/GLM-5.2"
+    },
+    {
+      "model_id": "Qwen/Qwen3.8-Flash-Next",
+      "title": "Qwen/Qwen3.8-Flash-Next",
+      "pipeline": "image-text-to-text",
+      "downloads": 564079,
+      "likes": 5056,
+      "downloads_str": "564.1k",
+      "summary": "📥 564.1k 下载 · ⭐ 5056 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+    },
+    {
+      "model_id": "unsloth/Qwen3.8-27B-GGUF",
+      "title": "unsloth/Qwen3.8-27B-GGUF",
+      "pipeline": "通用模型",
+      "downloads": 11127203,
+      "likes": 3803,
+      "downloads_str": "11.1M",
+      "summary": "📥 11.1M 下载 · ⭐ 3803 赞 · 🏷️ 通用模型",
+      "link": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF"
+    },
+    {
+      "model_id": "Lightricks/LTX-2.5",
+      "title": "Lightricks/LTX-2.5",
+      "pipeline": "image-to-video",
+      "downloads": 1740572,
+      "likes": 3303,
+      "downloads_str": "1.7M",
+      "summary": "📥 1.7M 下载 · ⭐ 3303 赞 · 🏷️ image-to-video",
+      "link": "https://huggingface.co/Lightricks/LTX-2.5"
+    }
+  ]
+}
