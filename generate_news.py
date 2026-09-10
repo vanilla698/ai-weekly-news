@@ -1,11 +1,14 @@
-# AI 汽车科技每周情报 · 生成脚本
+#!/usr/bin/env python3
+"""
+AI 汽车科技每周情报 · 生成脚本
+每周生成一份独立 HTML 存到 news/ 目录，文件名带日期时间戳
+"""
 import json
 import os
 from datetime import datetime
 
-OUTPUT_HTML = "ai_auto_news_preview.html"
-OUTPUT_JSON = "news_data.json"
-
+OUTPUT_DIR = "news"
+JSON_FILE = "news_data.json"
 NEWS_DATA = {
     "key_points": [
         "🤖 Claude Fable 5.1：成本↓25%，Agent任务成本最高↓45%，多项基准超越GPT-5.6 Sol",
@@ -115,21 +118,19 @@ def gh_html(ghs):
     )
 
 
-def build_html(data):
+def build_html(data, archive_filename):
     today = datetime.now()
     issue = 36 + (today - datetime(2026, 9, 2)).days // 7
     date_str = today.strftime("%Y年%-m月%-d日")
-
+    week_tag = today.strftime("%Y%m%d-%H%M")
     kp_items = "".join(
         f'<div class="kp-item"><strong>{esc(k)}</strong></div>'
         for k in data["key_points"]
     )
-
     summary_blocks = "".join(
         hbox_html(s["title"], esc(s["content"]), s["color"])
         for s in data["summary"]
     )
-
     leadership_blocks = "".join(
         hbox_html(
             item["title"],
@@ -138,14 +139,13 @@ def build_html(data):
         )
         for item in data["leadership"]
     )
-
     return "\n".join([
         "<!DOCTYPE html>",
         '<html lang="zh-CN">',
         "<head>",
         '<meta charset="UTF-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
-        f"<title>AI汽车科技每周情报 | {date_str}</title>",
+        f"<title>AI汽车科技每周情报 | {date_str} 第{issue}期</title>",
         '<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">',
         "<style>",
         ":root{--ink:#111;--ink-mid:#3a3a3a;--ink-light:#666;--ink-faint:#999;--rule:#222;--rule-light:#ddd;--accent:#c0392b;--accent-blue:#1a3a5c;--accent-gold:#8b6914;--accent-green:#1a5c2a;--accent-purple:#5c1a5c;--paper:#faf9f6;--paper-dark:#ede9e0;}",
@@ -205,13 +205,12 @@ def build_html(data):
         "<body>",
         '<div id="root">',
         "<header class=\"masthead\">",
-        f'<div class="mh-left">{date_str} · 星期三<br>第 {issue} 期 · 总第 {issue+484} 期<br>每周三 08:00 推送</div>',
+        f'<div class="mh-left">{date_str} · 星期三<br>第 {issue} 期 · 总第 {issue+484} 期<br>归档：{archive_filename}</div>',
         '<div class="mh-center"><h1>AI · 汽车科技每周情报</h1><div class="sub">AI科技 · 车企动态 · 汽车AI技术 · 技术论文 · 行业总结</div></div>',
         '<div class="mh-right">关键词：情报<br>订阅：钉钉群推送</div>',
         "</header>",
         f'<div class="kp-bar">{kp_items}</div>',
         '<div class="main-grid">',
-        # --- 左侧栏 ---
         '<div class="col col-left">',
         '<div class="sec-hdr"><span class="sec-num accent">01</span><div class="sec-rule" style="background:var(--accent);"></div><span class="sec-title accent">AI 圈 新 闻</span></div>',
         f'<div class="multi-col">{stories_html(data["ai_news"])}</div>',
@@ -221,7 +220,6 @@ def build_html(data):
         '<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">07</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">本 周 总 结</span></div>',
         f'<div class="multi-col">{summary_blocks}</div>',
         "</div>",
-        # --- 中间栏 ---
         '<div class="col col-mid">',
         '<div class="sec-hdr"><span class="sec-num blue">02</span><div class="sec-rule" style="background:var(--accent-blue);"></div><span class="sec-title blue">车 企 科 技</span></div>',
         f'<div class="multi-col">{stories_html(data["auto_tech"])}</div>',
@@ -230,7 +228,6 @@ def build_html(data):
         '<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num green">04</span><div class="sec-rule" style="background:var(--accent-green);"></div><span class="sec-title green">汽 车 AI 技 术</span></div>',
         f'<div class="multi-col">{stories_html(data["auto_ai"])}</div>',
         "</div>",
-        # --- 右侧栏 ---
         '<div class="col col-right">',
         '<div class="sec-hdr"><span class="sec-num purple">05</span><div class="sec-rule" style="background:var(--accent-purple);"></div><span class="sec-title purple">技 术 论 文</span></div>',
         f'<div class="multi-col">{paper_html(data["papers"])}</div>',
@@ -238,7 +235,7 @@ def build_html(data):
         f'<div class="multi-col">{gh_html(data["github"])}</div>',
         "</div>",
         "</div>",
-        f'<footer class="footer"><span>&#128250; 本情报由 Mavis 每周自动抓取整理</span><span>每周三 08:00 定时推送至钉钉群</span><span>第 {issue} 期 · {date_str}</span></footer>',
+        f'<footer class="footer"><span>📡 本情报由 Mavis 每周自动抓取整理</span><span>每周三 08:00 定时推送至钉钉群</span><span>第 {issue} 期 · {date_str} · {week_tag}</span></footer>',
         "</div>",
         "</body>",
         "</html>",
@@ -246,16 +243,29 @@ def build_html(data):
 
 
 def main():
-    html = build_html(NEWS_DATA)
-    with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
-        f.write(html)
-    print(f"[OK] {OUTPUT_HTML} generated, {len(html)} chars")
-    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(NEWS_DATA, f, ensure_ascii=False, indent=2)
-    print(f"[OK] {OUTPUT_JSON} saved")
     today = datetime.now()
     issue = 36 + (today - datetime(2026, 9, 2)).days // 7
-    print(f"Issue #{issue} | {today.strftime('%Y-%m-%d')}")
+    week_tag = today.strftime("%Y%m%d")
+    # 归档文件名：news/20260902-issue36.html
+    archive_filename = f"{week_tag}-issue{issue}.html"
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    archive_path = os.path.join(OUTPUT_DIR, archive_filename)
+
+    html = build_html(NEWS_DATA, archive_filename)
+    with open(archive_path, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"[OK] Archived: {archive_path} ({len(html)} chars)")
+
+    with open(JSON_FILE, "w", encoding="utf-8") as f:
+        json.dump(NEWS_DATA, f, ensure_ascii=False, indent=2)
+    print(f"[OK] Data saved: {JSON_FILE}")
+
+    # 写入最新的固定文件名（latest.html），供钉钉消息使用
+    latest_path = os.path.join(OUTPUT_DIR, "latest.html")
+    with open(latest_path, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"[OK] Latest snapshot: {latest_path}")
+    print(f"Issue #{issue} | {today.strftime('%Y-%m-%d %H:%M')}")
 
 
 if __name__ == "__main__":
