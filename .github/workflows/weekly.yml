@@ -32,7 +32,8 @@ jobs:
         run: |
           git config user.name "Mavis Bot"
           git config user.email "mavis@ai-weekly-news"
-          git add ai_auto_news_preview.html || true
+          git add news/ || true
+          git add news_data.json || true
           git commit -m "📡 $(date '+%Y-%m-%d %H:%M') 自动更新" || echo "no changes"
           git push || echo "push skipped"
 
