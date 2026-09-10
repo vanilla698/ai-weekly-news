@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-fetch_news_sources.py — 抓取车企 / AI 巨头官网新闻 + HuggingFace 模型
+fetch_news_sources.py — 根据 sources.json 抓取各模块数据
 所有数据源全部免费、无需登录
 """
 import re
 import json
+import os
 import requests
 from datetime import datetime, timedelta
 from html import unescape
@@ -15,49 +16,22 @@ try:
 except ImportError:
     HAS_FEEDPARSER = False
 
-# ============================================================
-# 数据源配置
-# ============================================================
-AI_GIANT_RSS = {
-    "OpenAI": "https://openai.com/news/rss.xml",
-    "Anthropic": "https://www.anthropic.com/rss.xml",
-    "Google AI": "https://blog.google/technology/ai/rss/",
-    "DeepMind": "https://deepmind.google/blog/rss.xml",
-    "NVIDIA": "https://blogs.nvidia.com/feed/",
-    "HuggingFace": "https://huggingface.co/blog/feed.xml",
-    "PyTorch": "https://pytorch.org/feed.xml",
-}
+# 加载配置文件
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+CONFIG_PATH = os.path.join(SCRIPT_DIR, "sources.json")
 
-AUTO_COMPANY_RSS = {
-    "BMW": "https://www.press.bmwgroup.com/global/rss",
-    "Volkswagen": "https://www.volkswagen-newsroom.com/de/rss",
-    "Hyundai": "https://www.hyundaimotorgroup.com/en/news/rss.do",
-    "Polestar": "https://media.polestar.com/rss",
-    "Volvo": "https://www.media.volvocars.com/global/rss",
-    "Ford": "https://media.ford.com/content/fordmedia/feeds/us/news.rss",
-    "GM": "https://media.gm.com/media/us/en/gm/news.rss",
-    "BYD": "https://www.bydeurope.com/rss",
-    "XPeng": "https://www.xiaopeng.com/news/rss",
-    "Li Auto": "https://www.lixiang.com/news/rss",
-}
-
-CN_TECH_RSS = {
-    "爱范儿": "https://www.ifanr.com/feed",
-    "极客公园": "https://www.geekpark.net/rss",
-    "IT之家": "https://www.ithome.com/rss/",
-    "36氪": "https://36kr.com/feed",
-    "钛媒体": "https://www.tmtpost.com/rss.xml",
-    "新浪科技": "https://feed.mix.sina.com.cn/api/roll/get?pageid=153&lid=2516&num=20&versionNumber=1.2.4&page=1",
-}
-
-HN_API = "https://hn.algolia.com/api/v1/search?tags=story&numericFilters=points>=50,created_at_i>{}"
+def load_config():
+    if not os.path.exists(CONFIG_PATH):
+        print(f"[WARN] {CONFIG_PATH} not found, using defaults")
+        return None
+    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+        return json.load(f)
 
 
 # ============================================================
-# RSS 抓取（统一处理）
+# RSS 抓取
 # ============================================================
 def fetch_rss(url, source_name, max_items=5, days_limit=7):
-    """抓取 RSS，最近 N 天内的前 max_items 条"""
     if not HAS_FEEDPARSER:
         print(f"  [SKIP] {source_name}: feedparser not installed")
         return []
@@ -74,7 +48,6 @@ def fetch_rss(url, source_name, max_items=5, days_limit=7):
     cutoff = datetime.now() - timedelta(days=days_limit)
     items = []
     for entry in feed.entries[:max_items * 2]:
-        # 发布时间
         pub = None
         if hasattr(entry, "published_parsed") and entry.published_parsed:
             pub = datetime(*entry.published_parsed[:6])
@@ -84,7 +57,6 @@ def fetch_rss(url, source_name, max_items=5, days_limit=7):
             continue
         title = re.sub(r"\s+", " ", entry.get("title", "")).strip()
         summary = re.sub(r"\s+", " ", unescape(entry.get("summary", entry.get("description", "")))).strip()
-        # 去掉 HTML 标签
         summary = re.sub(r"<[^>]+>", "", summary)[:200]
         link = entry.get("link", "")
         if title and link:
@@ -104,10 +76,11 @@ def fetch_rss(url, source_name, max_items=5, days_limit=7):
 # ============================================================
 # Hacker News
 # ============================================================
-def fetch_hn(max_items=10):
-    """Hacker News 当周高赞"""
-    seven_days_ago = int((datetime.now() - timedelta(days=7)).timestamp())
-    url = HN_API.format(seven_days_ago)
+def fetch_hn(max_items=6, min_points=50, days=7, keywords=None):
+    if keywords is None:
+        keywords = ["ai", "ml", "llm", "gpt", "claude", "agent", "model", "robot"]
+    cutoff = int((datetime.now() - timedelta(days=days)).timestamp())
+    url = f"https://hn.algolia.com/api/v1/search?tags=story&numericFilters=points>={min_points},created_at_i>{cutoff}"
     try:
         resp = requests.get(url, timeout=20)
         resp.raise_for_status()
@@ -115,8 +88,6 @@ def fetch_hn(max_items=10):
     except Exception as e:
         print(f"  [WARN] HN: {e}")
         return []
-    # 关键词过滤：AI / ML / agent / 模型 / robot
-    keywords = ["ai", "ml", "llm", "gpt", "claude", "agent", "model", "robot", "deep learning", "transformer", "openai", "anthropic", "hugging"]
     filtered = [h for h in hits if any(k in (h.get("title") or "").lower() for k in keywords)]
     items = []
     for h in (filtered or hits)[:max_items]:
@@ -133,10 +104,8 @@ def fetch_hn(max_items=10):
 # ============================================================
 # HuggingFace 模型
 # ============================================================
-def fetch_hf_models(limit=15, days_limit=30):
-    """HF 热门模型：先按 likes 排序（社交热度），再按 downloads 补"""
+def fetch_hf_models(limit=15, days_limit=30, min_likes=10):
     cutoff = (datetime.now() - timedelta(days=days_limit)).strftime("%Y-%m-%d")
-    # 改用 likes 排序，更能反映社区认可
     url = f"https://huggingface.co/api/models?sort=likes&direction=-1&limit=50&full=false"
     try:
         resp = requests.get(url, timeout=30, headers={"User-Agent": "ai-weekly-bot/1.0"})
@@ -146,18 +115,15 @@ def fetch_hf_models(limit=15, days_limit=30):
         print(f"  [WARN] HF models: {e}")
         return []
 
-    # 二次过滤：最近 30 天有更新 + likes >= 10
     recent = []
     for m in models:
         last_mod = m.get("lastModified", "")
         likes = m.get("likes", 0)
-        # 排除太老或太小
-        if last_mod >= cutoff and likes >= 10:
+        if last_mod >= cutoff and likes >= min_likes:
             recent.append(m)
         if len(recent) >= limit * 2:
             break
 
-    # 如果按时间过滤后不够，用 likes top-N 补
     if len(recent) < limit:
         for m in models:
             if m.get("likes", 0) >= 50 and m not in recent:
@@ -173,7 +139,6 @@ def fetch_hf_models(limit=15, days_limit=30):
         pipeline = m.get("pipeline_tag", "通用模型")
         downloads = m.get("downloads", 0)
         likes = m.get("likes", 0)
-        # 简化大数字
         if downloads >= 1000:
             dl_str = f"{downloads/1000:.1f}k" if downloads < 1000000 else f"{downloads/1000000:.1f}M"
         else:
@@ -189,79 +154,137 @@ def fetch_hf_models(limit=15, days_limit=30):
             "link": f"https://huggingface.co/{model_id}",
         })
 
-    # 按 likes 降序
     items.sort(key=lambda x: x["likes"], reverse=True)
     print(f"  [OK] HuggingFace 模型: {len(items)} 个")
     return items[:limit]
 
 
 # ============================================================
-# 主流程
+# arXiv
+# ============================================================
+def fetch_arxiv(category="cs.AI", max_results=8):
+    url = f"http://export.arxiv.org/api/query?search_query=cat:{category}&sortBy=submittedDate&sortOrder=descending&max_results={max_results}"
+    try:
+        resp = requests.get(url, timeout=30)
+        resp.raise_for_status()
+    except Exception as e:
+        print(f"  [WARN] arxiv {category}: {e}")
+        return []
+    papers = []
+    entries = re.findall(r"<entry>(.*?)</entry>", resp.text, re.DOTALL)
+    for entry in entries:
+        title = re.search(r"<title>(.*?)</title>", entry, re.DOTALL)
+        summary = re.search(r"<summary>(.*?)</summary>", entry, re.DOTALL)
+        link = re.search(r"<id>(.*?)</id>", entry)
+        authors = re.findall(r"<author>\s*<name>(.*?)</name>", entry)
+        if title and link:
+            papers.append({
+                "title": re.sub(r"\s+", " ", title.group(1)).strip(),
+                "summary": re.sub(r"\s+", " ", summary.group(1)).strip()[:300] if summary else "",
+                "link": link.group(1).strip(),
+                "authors": authors[:3],
+            })
+    return papers
+
+
+# ============================================================
+# 工具：保证偶数条目
+# ============================================================
+def ensure_even(items, source_pool=None, source_name=""):
+    """保证返回列表的条目数是偶数；奇数时从 source_pool 补一条"""
+    if not items:
+        return items
+    if len(items) % 2 == 0:
+        return items
+    if source_pool and len(source_pool) > len(items):
+        # 从 source_pool 找一个不同标题的
+        existing_titles = {it.get("title", "")[:50] for it in items}
+        for extra in source_pool:
+            if extra.get("title", "")[:50] not in existing_titles:
+                items.append(extra)
+                print(f"  [+1] 从 {source_name} 补一条: {extra.get('title', '')[:50]}")
+                break
+    # 如果还是奇数，去掉最后一条
+    if len(items) % 2 == 1:
+        items = items[:-1]
+    return items
+
+
+# ============================================================
+# 主流程（从 sources.json 加载）
 # ============================================================
 def main():
-    print("=" * 60)
-    print("📡 抓取车企 / AI 巨头 + HF 模型 + HN")
-    print("=" * 60)
+    config = load_config()
+    if not config:
+        return None
 
+    modules = config.get("modules", {})
     data = {"fetched_at": datetime.now().isoformat()}
 
     # 1. AI 巨头
-    print("\n🤖 AI 巨头官网 RSS...")
-    ai_giants = []
-    for name, url in AI_GIANT_RSS.items():
-        ai_giants.extend(fetch_rss(url, name, max_items=3))
-    data["ai_giants"] = ai_giants
+    ai_cfg = modules.get("ai_giants", {})
+    if ai_cfg.get("enabled", True):
+        print("\n🤖 抓取 AI 巨头官网...")
+        items = []
+        for src in ai_cfg.get("sources", []):
+            items.extend(fetch_rss(src["url"], src["name"], max_items=ai_cfg.get("max_items", 3)))
+        data["ai_giants"] = ensure_even(items, items, "ai_giants")
 
     # 2. 车企
-    print("\n🚗 车企官网 RSS...")
-    auto_companies = []
-    for name, url in AUTO_COMPANY_RSS.items():
-        auto_companies.extend(fetch_rss(url, name, max_items=3))
-    data["auto_companies"] = auto_companies
+    auto_cfg = modules.get("auto_companies", {})
+    if auto_cfg.get("enabled", True):
+        print("\n🚗 抓取车企官网...")
+        items = []
+        for src in auto_cfg.get("sources", []):
+            items.extend(fetch_rss(src["url"], src["name"], max_items=auto_cfg.get("max_items", 3)))
+        data["auto_companies"] = ensure_even(items, items, "auto_companies")
 
     # 3. 中文科技媒体
-    print("\n📰 中文科技媒体 RSS...")
-    cn_tech = []
-    for name, url in CN_TECH_RSS.items():
-        cn_tech.extend(fetch_rss(url, name, max_items=3))
-    data["cn_tech"] = cn_tech
+    cn_cfg = modules.get("cn_tech", {})
+    if cn_cfg.get("enabled", True):
+        print("\n📰 抓取中文科技媒体...")
+        items = []
+        for src in cn_cfg.get("sources", []):
+            items.extend(fetch_rss(src["url"], src["name"], max_items=cn_cfg.get("max_items", 3)))
+        data["cn_tech"] = ensure_even(items, items, "cn_tech")
 
-    # 4. Hacker News
-    print("\n💬 Hacker News...")
-    data["hn"] = fetch_hn(max_items=10)
+    # 4. arXiv
+    arxiv_cfg = modules.get("arxiv", {})
+    if arxiv_cfg.get("enabled", True):
+        print("\n🔬 抓取 arXiv 论文...")
+        papers_ai = fetch_arxiv("cs.AI", arxiv_cfg.get("max_per_category", 8))
+        papers_ro = fetch_arxiv("cs.RO", arxiv_cfg.get("max_per_category", 8))
+        papers_cl = fetch_arxiv("cs.CL", arxiv_cfg.get("max_per_category", 8))
+        print(f"  cs.AI {len(papers_ai)} | cs.RO {len(papers_ro)} | cs.CL {len(papers_cl)}")
+        data["papers_ai"] = ensure_even(papers_ai, papers_ai + papers_ro + papers_cl, "arxiv")
+        data["papers_ro"] = ensure_even(papers_ro, papers_ai + papers_cl, "arxiv")
+        data["papers_cl"] = ensure_even(papers_cl, papers_ai + papers_ro, "arxiv")
 
-    # 5. HuggingFace 模型
-    print("\n🤗 HuggingFace 模型...")
-    data["hf_models"] = fetch_hf_models(limit=15)
+    # 5. Hacker News
+    hn_cfg = modules.get("hacker_news", {})
+    if hn_cfg.get("enabled", True):
+        print("\n💬 抓取 Hacker News...")
+        data["hn"] = fetch_hn(
+            max_items=hn_cfg.get("max_items", 6),
+            min_points=hn_cfg.get("min_points", 50),
+            days=hn_cfg.get("days", 7),
+            keywords=hn_cfg.get("keywords"),
+        )
 
-    # 保存
-    out = f"news_sources_{datetime.now().strftime('%Y%m%d')}.json"
+    # 6. HuggingFace 模型
+    hf_cfg = modules.get("huggingface_models", {})
+    if hf_cfg.get("enabled", True):
+        print("\n🤗 抓取 HuggingFace 模型...")
+        data["hf_models"] = fetch_hf_models(
+            limit=hf_cfg.get("max_items", 15),
+            days_limit=hf_cfg.get("days_limit", 30),
+            min_likes=hf_cfg.get("min_likes", 10),
+        )
+
+    out = f"news_sources_{datetime.now().strftime('%Y%m%d-%H%M')}.json"
     with open(out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"\n✅ 保存到: {out}")
-    print(f"📊 统计: AI 巨头 {len(ai_giants)} | 车企 {len(auto_companies)} | 中文 {len(cn_tech)} | HN {len(data['hn'])} | HF 模型 {len(data['hf_models'])}")
-
-    # 预览
-    print("\n" + "=" * 60)
-    print("📋 AI 巨头新闻预览:")
-    print("=" * 60)
-    for item in ai_giants[:3]:
-        print(f"\n• [{item['source']}] {item['title'][:80]}")
-
-    print("\n" + "=" * 60)
-    print("📋 车企新闻预览:")
-    print("=" * 60)
-    for item in auto_companies[:3]:
-        print(f"\n• [{item['source']}] {item['title'][:80]}")
-
-    print("\n" + "=" * 60)
-    print("🤗 HuggingFace 模型预览（按 likes 排序）:")
-    print("=" * 60)
-    for m in data["hf_models"][:5]:
-        print(f"\n⭐ {m['title']}")
-        print(f"  {m['summary']}")
-        print(f"  🔗 {m['link']}")
-
     return data
 
 

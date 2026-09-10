@@ -13,8 +13,8 @@ from datetime import datetime, timedelta
 # 让脚本能找到 fetch_news_sources
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from fetch_news_sources import (
-    fetch_rss, fetch_hn, fetch_hf_models,
-    AI_GIANT_RSS, AUTO_COMPANY_RSS, CN_TECH_RSS,
+    fetch_rss, fetch_hn, fetch_hf_models, fetch_arxiv,
+    load_config,
 )
 
 # ========== 配置 ==========
@@ -51,46 +51,93 @@ def fetch_arxiv(category="cs.AI", max_results=8):
     return papers
 
 
-# ========== 2. 抓取所有源 ==========
+# ========== 2. 抓取所有源（从 sources.json 加载）==========
+def ensure_even(items, source_pool=None, source_name=""):
+    """保证偶数条目"""
+    if not items:
+        return items
+    if len(items) % 2 == 0:
+        return items
+    if source_pool and len(source_pool) > len(items):
+        existing_titles = {it.get("title", "")[:50] for it in items}
+        for extra in source_pool:
+            if extra.get("title", "")[:50] not in existing_titles:
+                items.append(extra)
+                print(f"  [+1] 从 {source_name} 补一条: {extra.get('title', '')[:50]}")
+                break
+    if len(items) % 2 == 1:
+        items = items[:-1]
+    return items
+
+
 def fetch_all():
-    print("🔬 抓取 arXiv 论文...")
-    papers_ai = fetch_arxiv("cs.AI", 8)
-    papers_ro = fetch_arxiv("cs.RO", 6)
-    papers_cl = fetch_arxiv("cs.CL", 6)
-    print(f"  cs.AI {len(papers_ai)} | cs.RO {len(papers_ro)} | cs.CL {len(papers_cl)}")
+    config = load_config()
+    modules = config.get("modules", {}) if config else {}
 
-    print("🤖 抓取 AI 巨头官网...")
-    ai_giants = []
-    for name, url in AI_GIANT_RSS.items():
-        ai_giants.extend(fetch_rss(url, name, max_items=3))
+    data = {"fetched_at": datetime.now().isoformat()}
 
-    print("🚗 抓取车企官网...")
-    auto_companies = []
-    for name, url in AUTO_COMPANY_RSS.items():
-        auto_companies.extend(fetch_rss(url, name, max_items=3))
+    # arXiv
+    arxiv_cfg = modules.get("arxiv", {})
+    if arxiv_cfg.get("enabled", True):
+        print("🔬 抓取 arXiv 论文...")
+        max_cat = arxiv_cfg.get("max_per_category", 8)
+        papers_ai = fetch_arxiv("cs.AI", max_cat)
+        papers_ro = fetch_arxiv("cs.RO", max_cat)
+        papers_cl = fetch_arxiv("cs.CL", max_cat)
+        print(f"  cs.AI {len(papers_ai)} | cs.RO {len(papers_ro)} | cs.CL {len(papers_cl)}")
+        data["papers_ai"] = papers_ai
+        data["papers_ro"] = papers_ro
+        data["papers_cl"] = papers_cl
 
-    print("📰 抓取中文科技媒体...")
-    cn_tech = []
-    for name, url in CN_TECH_RSS.items():
-        cn_tech.extend(fetch_rss(url, name, max_items=3))
+    # AI 巨头
+    ai_cfg = modules.get("ai_giants", {})
+    if ai_cfg.get("enabled", True):
+        print("🤖 抓取 AI 巨头官网...")
+        items = []
+        for src in ai_cfg.get("sources", []):
+            items.extend(fetch_rss(src["url"], src["name"], max_items=ai_cfg.get("max_items", 3)))
+        data["ai_giants"] = ensure_even(items, items, "ai_giants")
 
-    print("💬 抓取 Hacker News...")
-    hn = fetch_hn(max_items=8)
+    # 车企
+    auto_cfg = modules.get("auto_companies", {})
+    if auto_cfg.get("enabled", True):
+        print("🚗 抓取车企官网...")
+        items = []
+        for src in auto_cfg.get("sources", []):
+            items.extend(fetch_rss(src["url"], src["name"], max_items=auto_cfg.get("max_items", 3)))
+        data["auto_companies"] = ensure_even(items, items, "auto_companies")
 
-    print("🤗 抓取 HuggingFace 模型...")
-    hf_models = fetch_hf_models(limit=15)
+    # 中文
+    cn_cfg = modules.get("cn_tech", {})
+    if cn_cfg.get("enabled", True):
+        print("📰 抓取中文科技媒体...")
+        items = []
+        for src in cn_cfg.get("sources", []):
+            items.extend(fetch_rss(src["url"], src["name"], max_items=cn_cfg.get("max_items", 3)))
+        data["cn_tech"] = ensure_even(items, items, "cn_tech")
 
-    return {
-        "fetched_at": datetime.now().isoformat(),
-        "papers_ai": papers_ai,
-        "papers_ro": papers_ro,
-        "papers_cl": papers_cl,
-        "ai_giants": ai_giants,
-        "auto_companies": auto_companies,
-        "cn_tech": cn_tech,
-        "hn": hn,
-        "hf_models": hf_models,
-    }
+    # HN
+    hn_cfg = modules.get("hacker_news", {})
+    if hn_cfg.get("enabled", True):
+        print("💬 抓取 Hacker News...")
+        data["hn"] = fetch_hn(
+            max_items=hn_cfg.get("max_items", 6),
+            min_points=hn_cfg.get("min_points", 50),
+            days=hn_cfg.get("days", 7),
+            keywords=hn_cfg.get("keywords"),
+        )
+
+    # HF
+    hf_cfg = modules.get("huggingface_models", {})
+    if hf_cfg.get("enabled", True):
+        print("🤗 抓取 HuggingFace 模型...")
+        data["hf_models"] = fetch_hf_models(
+            limit=hf_cfg.get("max_items", 15),
+            days_limit=hf_cfg.get("days_limit", 30),
+            min_likes=hf_cfg.get("min_likes", 10),
+        )
+
+    return data
 
 
 # ========== 3. AI 整理 ==========
@@ -517,6 +564,14 @@ def main():
         json.dump(news_data, f, ensure_ascii=False, indent=2)
     with open(JSON_FILE, "w", encoding="utf-8") as f:
         json.dump(news_data, f, ensure_ascii=False, indent=2)
+
+    # 后处理：保证所有模块条目数是偶数
+    for key in ["ai_news", "auto_tech", "leadership", "auto_ai", "papers", "github", "ai_deep", "models", "summary"]:
+        items = news_data.get(key, [])
+        if items and len(items) % 2 == 1:
+            items = items[:-1]
+            news_data[key] = items
+            print(f"  [偶数] {key}: 去掉 1 条 → {len(items)} 条")
 
     # Step 3: 渲染
     html = build_html(news_data, archive_filename)
