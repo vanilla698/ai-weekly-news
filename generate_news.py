@@ -98,7 +98,7 @@ def fetch_all():
         items = []
         for src in ai_cfg.get("sources", []):
             items.extend(fetch_rss(src["url"], src["name"], max_items=ai_cfg.get("max_items", 3)))
-        data["ai_giants"] = ensure_even(items, items, "ai_giants")
+        data["ai_giants"] = ensure_even(items)
 
     # 车企
     auto_cfg = modules.get("auto_companies", {})
@@ -107,7 +107,7 @@ def fetch_all():
         items = []
         for src in auto_cfg.get("sources", []):
             items.extend(fetch_rss(src["url"], src["name"], max_items=auto_cfg.get("max_items", 3)))
-        data["auto_companies"] = ensure_even(items, items, "auto_companies")
+        data["auto_companies"] = ensure_even(items)
 
     # 中文
     cn_cfg = modules.get("cn_tech", {})
@@ -116,7 +116,7 @@ def fetch_all():
         items = []
         for src in cn_cfg.get("sources", []):
             items.extend(fetch_rss(src["url"], src["name"], max_items=cn_cfg.get("max_items", 3)))
-        data["cn_tech"] = ensure_even(items, items, "cn_tech")
+        data["cn_tech"] = ensure_even(items)
 
     # HN
     hn_cfg = modules.get("hacker_news", {})
