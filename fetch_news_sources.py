@@ -6,9 +6,14 @@ fetch_news_sources.py — 抓取车企 / AI 巨头官网新闻 + HuggingFace 模
 import re
 import json
 import requests
-import feedparser
 from datetime import datetime, timedelta
 from html import unescape
+
+try:
+    import feedparser
+    HAS_FEEDPARSER = True
+except ImportError:
+    HAS_FEEDPARSER = False
 
 # ============================================================
 # 数据源配置
@@ -53,6 +58,9 @@ HN_API = "https://hn.algolia.com/api/v1/search?tags=story&numericFilters=points>
 # ============================================================
 def fetch_rss(url, source_name, max_items=5, days_limit=7):
     """抓取 RSS，最近 N 天内的前 max_items 条"""
+    if not HAS_FEEDPARSER:
+        print(f"  [SKIP] {source_name}: feedparser not installed")
+        return []
     try:
         resp = requests.get(url, timeout=20, headers={"User-Agent": "ai-weekly-bot/1.0"})
         resp.raise_for_status()
