@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          node-version: "24"   # ← 加这行
 
       - name: Install dependencies
         run: pip install requests feedparser
