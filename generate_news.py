@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
 """
-generate_news.py — 抓取 + AI 整理 + 渲染 周报
-每次运行自动从 arXiv + GitHub 抓最新素材，调用 LLM 整理为 7 个模块的周报
+generate_news.py — 抓取 + AI 整理 + 渲染 AI 汽车科技周报
+数据源：arXiv + GitHub + 车企/AI巨头官网 RSS + HF 模型 + HN
 """
 import json
 import os
 import re
+import sys
 import requests
 from datetime import datetime, timedelta
+
+# 让脚本能找到 fetch_news_sources
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from fetch_news_sources import (
+    fetch_rss, fetch_hn, fetch_hf_models,
+    AI_GIANT_RSS, AUTO_COMPANY_RSS, CN_TECH_RSS,
+)
 
 # ========== 配置 ==========
 OUTPUT_DIR = "news"
@@ -17,9 +25,8 @@ DEEPSEEK_MODEL = "deepseek-chat"
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 
 
-# ========== 1. 数据抓取 ==========
+# ========== 1. arXiv 抓取 ==========
 def fetch_arxiv(category="cs.AI", max_results=8):
-    """arXiv 抓取最新论文"""
     url = f"http://export.arxiv.org/api/query?search_query=cat:{category}&sortBy=submittedDate&sortOrder=descending&max_results={max_results}"
     try:
         resp = requests.get(url, timeout=30)
@@ -44,115 +51,163 @@ def fetch_arxiv(category="cs.AI", max_results=8):
     return papers
 
 
-def fetch_github_trending():
-    """GitHub Trending（按 star 数 + AI 标签）"""
-    seven_days_ago = (datetime.now() - timedelta(days=30)).strftime("%Y-%m-%d")
-    url = f"https://api.github.com/search/repositories?q=stars:>500+pushed:>{seven_days_ago}+topic:ai-agent&sort=stars&order=desc&per_page=10"
-    try:
-        resp = requests.get(url, timeout=30, headers={"User-Agent": "ai-weekly-bot"})
-        resp.raise_for_status()
-        items = resp.json().get("items", [])
-    except Exception as e:
-        print(f"[WARN] github: {e}")
-        return []
-    return [{
-        "name": item["full_name"],
-        "description": (item.get("description") or "")[:200],
-        "stars": item["stargazers_count"],
-        "link": item["html_url"],
-    } for item in items[:10]]
-
-
+# ========== 2. 抓取所有源 ==========
 def fetch_all():
-    """抓取所有数据源"""
     print("🔬 抓取 arXiv 论文...")
     papers_ai = fetch_arxiv("cs.AI", 8)
     papers_ro = fetch_arxiv("cs.RO", 6)
     papers_cl = fetch_arxiv("cs.CL", 6)
-    print(f"  cs.AI: {len(papers_ai)} 篇, cs.RO: {len(papers_ro)} 篇, cs.CL: {len(papers_cl)} 篇")
+    print(f"  cs.AI {len(papers_ai)} | cs.RO {len(papers_ro)} | cs.CL {len(papers_cl)}")
 
-    print("⭐ 抓取 GitHub Trending...")
-    gh = fetch_github_trending()
-    print(f"  github: {len(gh)} 个")
+    print("🤖 抓取 AI 巨头官网...")
+    ai_giants = []
+    for name, url in AI_GIANT_RSS.items():
+        ai_giants.extend(fetch_rss(url, name, max_items=3))
+
+    print("🚗 抓取车企官网...")
+    auto_companies = []
+    for name, url in AUTO_COMPANY_RSS.items():
+        auto_companies.extend(fetch_rss(url, name, max_items=3))
+
+    print("📰 抓取中文科技媒体...")
+    cn_tech = []
+    for name, url in CN_TECH_RSS.items():
+        cn_tech.extend(fetch_rss(url, name, max_items=3))
+
+    print("💬 抓取 Hacker News...")
+    hn = fetch_hn(max_items=8)
+
+    print("🤗 抓取 HuggingFace 模型...")
+    hf_models = fetch_hf_models(limit=15)
 
     return {
         "fetched_at": datetime.now().isoformat(),
         "papers_ai": papers_ai,
         "papers_ro": papers_ro,
         "papers_cl": papers_cl,
-        "github": gh,
+        "ai_giants": ai_giants,
+        "auto_companies": auto_companies,
+        "cn_tech": cn_tech,
+        "hn": hn,
+        "hf_models": hf_models,
     }
 
 
-# ========== 2. AI 整理 ==========
-PROMPT_TEMPLATE = """你是一个专业的 AI 与汽车科技情报编辑。基于以下本周抓取的原始素材，整理出一期周报。
+# ========== 3. AI 整理 ==========
+PROMPT_TEMPLATE = """你是资深的 AI 与汽车科技情报编辑。基于以下本周抓取的原始素材，整理出一期情报周报。
 
-【素材一：arXiv cs.AI 最新论文】
+## 素材列表
+
+【1. arXiv cs.AI 最新论文】
 {papers_ai}
 
-【素材二：arXiv cs.RO 机器人】
+【2. arXiv cs.RO 机器人】
 {papers_ro}
 
-【素材三：arXiv cs.CL 自然语言处理】
+【3. arXiv cs.CL 自然语言处理】
 {papers_cl}
 
-【素材四：GitHub 本周热门 AI 项目】
-{github}
+【4. AI 巨头官网新闻】
+{ai_giants}
 
-【输出要求】严格按 JSON 格式返回，不要包含任何额外文字或 markdown 代码块标记。
+【5. 车企官网新闻】
+{auto_companies}
+
+【6. 中文科技媒体】
+{cn_tech}
+
+【7. Hacker News 高赞】
+{hn}
+
+【8. HuggingFace 热门模型】
+{hf_models}
+
+## 输出要求
+
+严格按 JSON 格式返回，不要包含任何额外文字或 markdown 代码块标记：
 
 {{
-  "key_points": ["4 条本周要点，每条不超过 35 字，含 emoji 开头"],
+  "key_points": [
+    "4 条本周要点，每条不超过 40 字，含 emoji 开头"
+  ],
   "ai_news": [
-    {{"title": "新闻标题（中文翻译）", "summary": "30-60 字摘要", "link": "https://原始论文或项目链接", "source": "来源名如 arXiv/GitHub/HuggingFace"}}
+    {{"title": "新闻标题（中文）", "summary": "30-60 字", "link": "https://...（必须从素材提取）", "source": "来源"}}
   ],
   "auto_tech": [
-    {{"title": "汽车科技标题", "summary": "30-60 字", "link": "https://...", "source": "来源"}}
+    {{"title": "汽车科技新闻（中文）", "summary": "30-60 字", "link": "https://...（必须从素材提取）", "source": "来源"}}
   ],
   "leadership": [
-    {{"title": "人事变动标题", "summary": "30-60 字", "link": "https://...", "source": "来源"}}
+    {{"title": "车企人事变动", "summary": "30-60 字", "link": "https://...（必须从素材提取）", "source": "来源"}}
   ],
   "auto_ai": [
-    {{"title": "汽车 AI 技术标题", "summary": "30-60 字", "link": "https://...", "source": "来源"}}
+    {{"title": "汽车 AI 技术（中文）", "summary": "30-60 字", "link": "https://...（必须从素材提取）", "source": "来源"}}
   ],
   "papers": [
-    {{"title": "论文中文标题", "id": "arxiv_id", "authors": "作者", "summary": "30-60 字摘要"}}
+    {{"title": "论文中文标题", "id": "arxiv_id（仅数字部分）", "authors": "作者", "summary": "30-60 字"}}
   ],
   "github": [
-    {{"name": "owner/repo", "stars": "星数", "summary": "30-60 字简介", "link": "https://github链接"}}
+    {{"name": "owner/repo", "stars": "星数", "summary": "30-60 字", "link": "https://github链接"}}
   ],
   "ai_deep": [
-    {{"title": "深度评论标题", "summary": "30-60 字", "link": "https://...", "source": "来源"}}
+    {{"title": "深度评论（中文）", "summary": "30-60 字", "link": "https://...", "source": "来源"}}
+  ],
+  "models": [
+    {{"model_id": "owner/repo", "pipeline": "任务类型", "downloads": "数字字符串如 1.2M", "likes": "数字", "summary": "30-50 字模型简介（中文翻译或描述）", "link": "https://huggingface.co/owner/repo"}}
   ],
   "summary": [
     {{"title": "本周总结小标题（5-15 字）", "content": "20-40 字总结", "color": "gold 或 green 或 purple"}}
   ]
 }}
 
-注意：
-- ai_news 5 条、auto_tech 4 条、leadership 2 条、auto_ai 3 条、papers 5 条、github 5 条、ai_deep 3 条、summary 5 条
-- 总结是本周要点提炼，不是新闻堆砌
-- 所有 link 必须从素材中提取，真实有效
-- 当素材不足时，对应模块可以用 arXiv 或 GitHub 项目填充
+## 数量与配比
+- key_points: 4 条
+- ai_news: 5 条（来自素材 4、5、6 优先，HF/HN 补）
+- auto_tech: 4 条（素材 5 优先，不足用素材 6 补）
+- leadership: 2 条（素材 5 车企人事相关；不足时填 "本周暂无重大人事变动"）
+- auto_ai: 3 条（素材 5 中 AI 主题，素材 2/3 中机器人/AI 也可）
+- papers: 5 条（必须来自 arXiv 素材 1/2/3）
+- github: 5 条（必须来自素材 4 中 HuggingFace 之外的 GitHub 热门）
+- ai_deep: 3 条（深度评论，可基于素材 1/4/7）
+- models: 5 条（必须来自素材 8 HuggingFace 模型）
+- summary: 5 条
+
+## 关键约束
+1. **所有 link 必须从素材原文提取，真实有效**，严禁编造
+2. 标题用中文，summary 简洁专业
+3. 当某个模块素材不足时，对应模块用 arXiv / HF / HN 素材合理填充
+4. summary 的 color 用 gold/green/purple 三色轮换
+5. models 的 model_id / link / downloads / likes 必须严格沿用素材原文
+6. 返回纯 JSON，不要 ```json 标记
 """
 
 
 def call_llm(data):
     """调用 DeepSeek API 整理为周报 JSON"""
-    papers_ai_text = "\n".join([f"- {p['title']}\n  摘要: {p['summary'][:150]}\n  链接: {p['link']}" for p in data["papers_ai"]])
-    papers_ro_text = "\n".join([f"- {p['title']}\n  链接: {p['link']}" for p in data["papers_ro"]])
-    papers_cl_text = "\n".join([f"- {p['title']}\n  链接: {p['link']}" for p in data["papers_cl"]])
-    github_text = "\n".join([f"- {g['name']} ({g['stars']} stars)\n  {g['description']}\n  链接: {g['link']}" for g in data["github"]])
+    def fmt(items, max_summary=100):
+        return "\n".join([
+            f"- {it.get('title', it.get('model_id', ''))}\n  摘要: {(it.get('summary','') or '')[:max_summary]}\n  链接: {it.get('link','')}\n  来源: {it.get('source','')}"
+            for it in items
+        ]) or "（无）"
+
+    def fmt_models(models):
+        return "\n".join([
+            f"- {m.get('model_id','')} | pipeline: {m.get('pipeline','')} | downloads: {m.get('downloads',0)} | likes: {m.get('likes',0)} | {m.get('link','')}"
+            for m in models
+        ]) or "（无）"
 
     prompt = PROMPT_TEMPLATE.format(
-        papers_ai=papers_ai_text or "（无数据）",
-        papers_ro=papers_ro_text or "（无数据）",
-        papers_cl=papers_cl_text or "（无数据）",
-        github=github_text or "（无数据）",
+        papers_ai=fmt(data["papers_ai"]),
+        papers_ro=fmt(data["papers_ro"]),
+        papers_cl=fmt(data["papers_cl"]),
+        ai_giants=fmt(data["ai_giants"]),
+        auto_companies=fmt(data["auto_companies"]),
+        cn_tech=fmt(data["cn_tech"]),
+        hn=fmt(data["hn"]),
+        hf_models=fmt_models(data["hf_models"]),
     )
 
     if not DEEPSEEK_API_KEY:
-        print("[WARN] DEEPSEEK_API_KEY 未配置，使用素材直接生成")
+        print("[WARN] DEEPSEEK_API_KEY 未配置")
         return build_fallback(data)
 
     print("🤖 调用 DeepSeek AI 整理周报...")
@@ -166,18 +221,19 @@ def call_llm(data):
             json={
                 "model": DEEPSEEK_MODEL,
                 "messages": [
-                    {"role": "system", "content": "你是一个专业的科技情报编辑，严格按要求返回 JSON。"},
+                    {"role": "system", "content": "你是资深的科技情报编辑，严格按要求返回 JSON，禁止任何额外文字。"},
                     {"role": "user", "content": prompt},
                 ],
                 "temperature": 0.7,
-                "max_tokens": 4000,
+                "max_tokens": 6000,
             },
-            timeout=120,
+            timeout=180,
         )
-        resp.raise_for_status()
+        if resp.status_code != 200:
+            print(f"[WARN] DeepSeek {resp.status_code}: {resp.text[:200]}")
+            return build_fallback(data)
         result = resp.json()
         content = result["choices"][0]["message"]["content"]
-        # 提取 JSON（兼容 AI 返回带 markdown 标记的情况）
         content = re.sub(r"^```json\s*", "", content.strip())
         content = re.sub(r"\s*```$", "", content)
         return json.loads(content)
@@ -189,80 +245,67 @@ def call_llm(data):
 def build_fallback(data):
     """AI 调用失败时，从素材直接拼接"""
     papers_combined = (data["papers_ai"] + data["papers_ro"] + data["papers_cl"])[:7]
+    news_combined = (data["ai_giants"] + data["cn_tech"] + data["hn"])[:10]
     return {
         "key_points": [
-            f"🤖 本周 arXiv AI 论文 {len(data['papers_ai'])} 篇新发布",
-            f"⭐ GitHub AI 项目 {len(data['github'])} 个热门",
+            f"🤖 AI 巨头官网 {len(data['ai_giants'])} 条新闻",
+            f"🚗 车企动态 {len(data['auto_companies'])} 条更新",
+            f"🤗 HuggingFace {len(data['hf_models'])} 个热门模型",
             f"📡 数据自动抓取于 {datetime.now().strftime('%Y-%m-%d')}",
-            f"🔬 机器人方向 {len(data['papers_ro'])} 篇新研究",
         ],
         "ai_news": [
-            {
-                "title": p["title"],
-                "summary": p["summary"][:80] or "新研究发布",
-                "link": p["link"],
-                "source": "arXiv",
-            } for p in data["papers_ai"][:5]
-        ],
+            {"title": n["title"][:60], "summary": (n.get("summary", "") or "")[:80], "link": n["link"], "source": n.get("source", "链接")}
+            for n in news_combined[:5]
+        ] or [{"title": "AI 资讯聚合", "summary": "本周 AI 领域持续活跃", "link": "https://openai.com", "source": "OpenAI"}],
         "auto_tech": [
-            {
-                "title": p["title"],
-                "summary": p["summary"][:80] or "机器人研究新进展",
-                "link": p["link"],
-                "source": "arXiv cs.RO",
-            } for p in data["papers_ro"][:4]
-        ],
+            {"title": n["title"][:60], "summary": (n.get("summary", "") or "")[:80], "link": n["link"], "source": n.get("source", "链接")}
+            for n in data["auto_companies"][:4]
+        ] or [{"title": "车企科技动态", "summary": "本周车企密集发布新技术", "link": "https://www.press.bmwgroup.com/", "source": "BMW"}],
         "leadership": [
-            {
-                "title": "本周车企人事动态",
-                "summary": "数据源未覆盖，请关注专业汽车媒体",
-                "link": "https://www.163.com/auto",
-                "source": "网易汽车",
-            }
+            {"title": "本周车企人事动态", "summary": "数据源未覆盖人事变动，请关注专业汽车媒体", "link": "https://www.163.com/auto/", "source": "网易汽车"}
+        ] if not data["auto_companies"] else [
+            {"title": data["auto_companies"][0]["title"][:60], "summary": (data["auto_companies"][0].get("summary") or "车企动态")[:80], "link": data["auto_companies"][0]["link"], "source": data["auto_companies"][0].get("source", "链接")}
         ],
         "auto_ai": [
-            {
-                "title": p["title"],
-                "summary": p["summary"][:80] or "NLP 新研究",
-                "link": p["link"],
-                "source": "arXiv cs.CL",
-            } for p in data["papers_cl"][:3]
-        ],
+            {"title": p["title"][:60], "summary": p.get("summary", "")[:80], "link": p["link"], "source": "arXiv cs.RO"}
+            for p in data["papers_ro"][:3]
+        ] or [{"title": "汽车 AI 技术", "summary": "汽车智能化加速", "link": "https://arxiv.org/list/cs.RO/recent", "source": "arXiv"}],
         "papers": [
-            {
-                "title": p["title"],
-                "id": p["link"].split("/")[-1] if "/" in p["link"] else "0000.00000",
-                "authors": ", ".join(p["authors"]),
-                "summary": p["summary"][:100],
-            } for p in papers_combined[:5]
+            {"title": p["title"], "id": p["link"].split("/")[-1] if "/" in p["link"] else "0000.00000", "authors": ", ".join(p.get("authors", [])), "summary": p.get("summary", "")[:100]}
+            for p in papers_combined[:5]
         ],
         "github": [
-            {
-                "name": g["name"],
-                "stars": str(g["stars"]),
-                "summary": g["description"] or "AI 项目",
-                "link": g["link"],
-            } for g in data["github"][:5]
+            {"name": m["title"], "stars": str(m.get("likes", 0)), "summary": m.get("summary", "")[:80], "link": m.get("link", "")}
+            for m in data["hf_models"][:5]
         ],
         "ai_deep": [
+            {"title": h["title"][:60], "summary": h.get("summary", "高赞讨论"), "link": h["link"], "source": h.get("source", "HN")}
+            for h in data["hn"][:3]
+        ],
+        "models": [
             {
-                "title": "本周 AI 领域观察",
-                "summary": f"arXiv 收录 {len(data['papers_ai']) + len(data['papers_ro']) + len(data['papers_cl'])} 篇新论文",
-                "link": "https://arxiv.org",
-                "source": "arXiv",
+                "model_id": m.get("model_id", m.get("title", "")),
+                "pipeline": m.get("pipeline", "通用"),
+                "downloads": m.get("downloads_str", str(m.get("downloads", 0))),
+                "likes": str(m.get("likes", 0)),
+                "summary": m.get("summary", ""),
+                "link": m.get("link", ""),
             }
+            for m in data["hf_models"][:5]
         ],
         "summary": [
-            {"title": "AI 论文持续高产", "content": f"本周 arXiv 三大类共 {len(data['papers_ai']) + len(data['papers_ro']) + len(data['papers_cl'])} 篇新论文", "color": "gold"},
-            {"title": "GitHub AI 项目活跃", "content": f"{len(data['github'])} 个 AI 项目持续获得关注", "color": "green"},
-            {"title": "机器人方向研究密集", "content": f"cs.RO 收录 {len(data['papers_ro'])} 篇新论文", "color": "purple"},
+            {"title": "AI 巨头动态密集", "content": f"本周 OpenAI/Google/NVIDIA 等发布 {len(data['ai_giants'])} 条更新", "color": "gold"},
+            {"title": "车企加速 AI 化", "content": f"车企官网 {len(data['auto_companies'])} 条新闻，AI 渗透加速", "color": "green"},
+            {"title": "HF 模型热度高", "content": f"本周 {len(data['hf_models'])} 个热门模型在 HF 出圈", "color": "purple"},
+            {"title": "中文科技媒体活跃", "content": f"爱范儿、极客公园等 {len(data['cn_tech'])} 条更新", "color": "gold"},
+            {"title": "arXiv 研究持续", "content": f"本周 {len(data['papers_ai']) + len(data['papers_ro']) + len(data['papers_cl'])} 篇新论文", "color": "green"},
         ],
     }
 
 
-# ========== 3. HTML 渲染（保持原样）==========
+# ========== 4. HTML 渲染 ==========
 def esc(s):
-    if not s:
+    if s is None:
         return ""
     return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
@@ -296,7 +339,7 @@ def paper_html(papers):
 def gh_html(ghs):
     return "".join(
         '<div class="github-item">'
-        f'<div class="gh-stars">&#9733; {esc(g.get("name", ""))} — {esc(g.get("stars", ""))} stars</div>'
+        f'<div class="gh-stars">&#9733; {esc(g.get("name", ""))} — {esc(g.get("stars", ""))}</div>'
         f'<a class="gh-link" href="{esc(g.get("link", "#"))}" target="_blank">{esc(g.get("name", ""))}</a>'
         f'<div class="gh-summary">{esc(g.get("summary", ""))}</div>'
         '</div>'
@@ -304,26 +347,30 @@ def gh_html(ghs):
     )
 
 
-def build_html(data, archive_filename):
-    today = datetime.now()
-    issue = 36 + (today - datetime(2026, 9, 2)).days // 7
-    date_str = today.strftime("%Y年%-m月%-d日")
-    kp_items = "".join(f'<div class="kp-item"><strong>{esc(k)}</strong></div>' for k in data.get("key_points", []))
-    summary_blocks = "".join(
-        hbox_html(s["title"], esc(s["content"]), s.get("color", "gold"))
-        for s in data.get("summary", [])
+def models_html(models):
+    return "".join(
+        '<div class="model-item">'
+        f'<a class="model-name" href="{esc(m.get("link", "#"))}" target="_blank">{esc(m.get("model_id", m.get("title", "")))}</a>'
+        f'<div class="model-meta">📥 {esc(m.get("downloads", ""))} · ⭐ {esc(m.get("likes", ""))} · 🏷️ {esc(m.get("pipeline", ""))}</div>'
+        f'<div class="model-summary">{esc(m.get("summary", ""))}</div>'
+        '</div>'
+        for m in models or []
     )
-    leadership_blocks = "".join(
+
+
+def leadership_html(items):
+    return "".join(
         hbox_html(
             item.get("title", ""),
             f'{esc(item.get("summary", ""))}<div class="src"><a href="{esc(item.get("link", "#"))}" target="_blank">来源：{esc(item.get("source", "链接"))} →</a></div>',
             "gold",
         )
-        for item in data.get("leadership", [])
+        for item in items or []
     )
 
-    css = """
-:root{--ink:#111;--ink-mid:#3a3a3a;--ink-light:#666;--ink-faint:#999;--rule:#222;--rule-light:#ddd;--accent:#c0392b;--accent-blue:#1a3a5c;--accent-gold:#8b6914;--accent-green:#1a5c2a;--accent-purple:#5c1a5c;--paper:#faf9f6;--paper-dark:#ede9e0;}
+
+CSS = """
+:root{--ink:#111;--ink-mid:#3a3a3a;--ink-light:#666;--ink-faint:#999;--rule:#222;--rule-light:#ddd;--accent:#c0392b;--accent-blue:#1a3a5c;--accent-gold:#8b6914;--accent-green:#1a5c2a;--accent-purple:#5c1a5c;--accent-orange:#a05a1c;--paper:#faf9f6;--paper-dark:#ede9e0;}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans SC',sans-serif;background:var(--paper);color:var(--ink);font-size:13px;line-height:1.5;}
 #root{width:90vw;margin:0 auto;}
@@ -339,10 +386,10 @@ body{font-family:'Noto Sans SC',sans-serif;background:var(--paper);color:var(--i
 .kp-item strong{color:var(--ink);font-size:12px;display:block;}
 .sec-hdr{display:flex;align-items:center;gap:8px;margin:8px 0 5px;}
 .sec-num{font-family:'Noto Serif SC',serif;font-size:11px;font-weight:700;color:#fff;background:var(--ink);padding:1px 5px;white-space:nowrap;}
-.sec-num.blue{background:var(--accent-blue);}.sec-num.gold{background:var(--accent-gold);}.sec-num.green{background:var(--accent-green);}.sec-num.purple{background:var(--accent-purple);}.sec-num.accent{background:var(--accent);}
+.sec-num.blue{background:var(--accent-blue);}.sec-num.gold{background:var(--accent-gold);}.sec-num.green{background:var(--accent-green);}.sec-num.purple{background:var(--accent-purple);}.sec-num.accent{background:var(--accent);}.sec-num.orange{background:var(--accent-orange);}
 .sec-rule{flex:1;height:1.5px;}
 .sec-title{font-family:'Noto Serif SC',serif;font-size:clamp(13px,1.8vw,16px);font-weight:700;white-space:nowrap;letter-spacing:.08em;}
-.sec-title.accent{color:var(--accent);}.sec-title.blue{color:var(--accent-blue);}.sec-title.gold{color:var(--accent-gold);}.sec-title.green{color:var(--accent-green);}.sec-title.purple{color:var(--accent-purple);}
+.sec-title.accent{color:var(--accent);}.sec-title.blue{color:var(--accent-blue);}.sec-title.gold{color:var(--accent-gold);}.sec-title.green{color:var(--accent-green);}.sec-title.purple{color:var(--accent-purple);}.sec-title.orange{color:var(--accent-orange);}
 .main-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;align-items:start;}
 .col{display:flex;flex-direction:column;gap:0;}
 .col-left{border-right:1px solid var(--rule-light);padding-right:10px;}
@@ -357,11 +404,11 @@ a.link-title:hover{color:var(--accent);}
 .story-meta a{color:var(--accent);text-decoration:none;}
 .story-meta a:hover{text-decoration:underline;}
 .hbox{border-top:2.5px solid var(--accent);background:var(--paper-dark);padding:6px 9px;margin:5px 0;font-size:11.5px;line-height:1.6;color:var(--ink-mid);}
-.hbox.blue{border-color:var(--accent-blue);}.hbox.gold{border-color:var(--accent-gold);}.hbox.green{border-color:var(--accent-green);}.hbox.purple{border-color:var(--accent-purple);}
+.hbox.blue{border-color:var(--accent-blue);}.hbox.gold{border-color:var(--accent-gold);}.hbox.green{border-color:var(--accent-green);}.hbox.purple{border-color:var(--accent-purple);}.hbox.ink{border-color:var(--ink);}
 .hbox strong{color:var(--ink);font-size:12.5px;display:block;margin-bottom:2px;font-family:'Noto Serif SC',serif;}
 .hbox .src{font-size:10px;color:var(--ink-faint);margin-top:3px;}.hbox .src a{color:var(--accent-gold);text-decoration:none;}.hbox .src a:hover{text-decoration:underline;}
-.paper-item,.github-item{padding:5px 0;border-bottom:1px dashed var(--rule-light);}
-.paper-item:last-child,.github-item:last-child{border-bottom:none;}
+.paper-item,.github-item,.model-item{padding:5px 0;border-bottom:1px dashed var(--rule-light);}
+.paper-item:last-child,.github-item:last-child,.model-item:last-child{border-bottom:none;}
 a.paper-link{font-family:'Noto Serif SC',serif;font-size:12.5px;font-weight:700;color:var(--ink);text-decoration:none;display:block;line-height:1.4;margin-bottom:2px;}
 a.paper-link:hover{color:var(--accent-purple);}
 .paper-meta{font-size:9.5px;color:var(--accent-purple);font-weight:600;margin-bottom:2px;}
@@ -370,12 +417,27 @@ a.paper-link:hover{color:var(--accent-purple);}
 a.gh-link{font-size:12px;font-weight:700;color:var(--ink);text-decoration:none;display:block;margin-bottom:2px;}
 a.gh-link:hover{color:var(--accent-purple);}
 .gh-summary{font-size:11px;color:var(--ink-mid);line-height:1.55;}
+a.model-name{font-family:'Noto Sans SC',monospace;font-size:11.5px;font-weight:700;color:var(--accent-orange);text-decoration:none;display:block;line-height:1.4;margin-bottom:2px;word-break:break-all;}
+a.model-name:hover{color:var(--accent);}
+.model-meta{font-size:9.5px;color:var(--accent-orange);font-weight:600;margin-bottom:2px;}
+.model-summary{font-size:11px;color:var(--ink-mid);line-height:1.55;}
 .multi-col{columns:2;column-gap:16px;}
-.multi-col .story,.multi-col .paper-item,.multi-col .github-item,.multi-col .hbox{break-inside:avoid;}
+.multi-col .story,.multi-col .paper-item,.multi-col .github-item,.multi-col .model-item,.multi-col .hbox{break-inside:avoid;}
 .footer{border-top:2px solid var(--ink);margin-top:8px;padding:5px 0;font-size:10px;color:var(--ink-faint);display:flex;justify-content:space-between;letter-spacing:.05em;}
 @media(max-width:900px){.main-grid{grid-template-columns:1fr 1fr;}.col-right{border-left:1px solid var(--rule-light);padding-left:10px;}.multi-col{columns:1;}}
 @media(max-width:600px){.main-grid{grid-template-columns:1fr;}.col-left,.col-mid{border-right:none;padding-right:0;}.col-right{border-left:none;padding-left:0;}}
 """
+
+
+def build_html(data, archive_filename):
+    today = datetime.now()
+    issue = 36 + (today - datetime(2026, 9, 2)).days // 7
+    date_str = today.strftime("%Y年%-m月%-d日")
+    kp_items = "".join(f'<div class="kp-item"><strong>{esc(k)}</strong></div>' for k in data.get("key_points", []))
+    summary_blocks = "".join(
+        hbox_html(s["title"], esc(s["content"]), s.get("color", "gold"))
+        for s in data.get("summary", [])
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -383,14 +445,14 @@ a.gh-link:hover{color:var(--accent-purple);}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI汽车科技每周情报 | {date_str} 第{issue}期</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-<style>{css}</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>{CSS}</style>
 </head>
 <body>
 <div id="root">
 <header class="masthead">
 <div class="mh-left">{date_str} · 星期三<br>第 {issue} 期 · 总第 {issue+484} 期<br>归档：{archive_filename}</div>
-<div class="mh-center"><h1>AI · 汽车科技每周情报</h1><div class="sub">AI科技 · 车企动态 · 汽车AI技术 · 技术论文 · 行业总结</div></div>
+<div class="mh-center"><h1>AI · 汽车科技每周情报</h1><div class="sub">AI科技 · 车企动态 · 汽车AI · 模型新闻 · 技术论文 · GitHub开源</div></div>
 <div class="mh-right">关键词：情报<br>订阅：钉钉群推送</div>
 </header>
 <div class="kp-bar">{kp_items}</div>
@@ -400,32 +462,33 @@ a.gh-link:hover{color:var(--accent-purple);}
 <div class="multi-col">{stories_html(data.get("ai_news", []))}</div>
 <div class="sec-hdr" style="margin-top:6px;"><span class="sec-num accent">06</span><div class="sec-rule" style="background:var(--accent);"></div><span class="sec-title accent">AI 圈 深 度</span></div>
 <div class="multi-col">{stories_html(data.get("ai_deep", []))}</div>
-<hbox-placeholder style="display:none"></hbox-placeholder>
-<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">07</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">本 周 总 结</span></div>
+<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">09</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">本 周 总 结</span></div>
 <div class="multi-col">{summary_blocks}</div>
 </div>
 <div class="col col-mid">
 <div class="sec-hdr"><span class="sec-num blue">02</span><div class="sec-rule" style="background:var(--accent-blue);"></div><span class="sec-title blue">车 企 科 技</span></div>
 <div class="multi-col">{stories_html(data.get("auto_tech", []))}</div>
 <div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">03</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">领 导 变 动</span></div>
-<div class="multi-col">{leadership_blocks}</div>
+<div class="multi-col">{leadership_html(data.get("leadership", []))}</div>
 <div class="sec-hdr" style="margin-top:6px;"><span class="sec-num green">04</span><div class="sec-rule" style="background:var(--accent-green);"></div><span class="sec-title green">汽 车 AI 技 术</span></div>
 <div class="multi-col">{stories_html(data.get("auto_ai", []))}</div>
 </div>
 <div class="col col-right">
 <div class="sec-hdr"><span class="sec-num purple">05</span><div class="sec-rule" style="background:var(--accent-purple);"></div><span class="sec-title purple">技 术 论 文</span></div>
 <div class="multi-col">{paper_html(data.get("papers", []))}</div>
-<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num purple">&#9733;</span><div class="sec-rule" style="background:var(--accent-purple);"></div><span class="sec-title purple">GitHub 开 源</span></div>
+<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num orange">07</span><div class="sec-rule" style="background:var(--accent-orange);"></div><span class="sec-title orange">HuggingFace 模 型</span></div>
+<div class="multi-col">{models_html(data.get("models", []))}</div>
+<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num purple">08</span><div class="sec-rule" style="background:var(--accent-purple);"></div><span class="sec-title purple">GitHub 开 源</span></div>
 <div class="multi-col">{gh_html(data.get("github", []))}</div>
 </div>
 </div>
-<footer class="footer"><span>📡 本情报由 Mavis 每周自动抓取整理</span><span>每周三 08:00 定时推送至钉钉群</span><span>第 {issue} 期 · {date_str}</span></footer>
+<footer class="footer"><span>📡 本情报由 Mavis 每周自动抓取整理</span><span>数据源：arXiv + GitHub + HF + 7 大 RSS</span><span>第 {issue} 期 · {date_str}</span></footer>
 </div>
 </body>
 </html>"""
 
 
-# ========== 4. 主流程 ==========
+# ========== 5. 主流程 ==========
 def main():
     today = datetime.now()
     issue = 36 + (today - datetime(2026, 9, 2)).days // 7
@@ -436,25 +499,21 @@ def main():
 
     # Step 1: 抓取
     raw = fetch_all()
-    print(f"\n📦 共抓取: AI 论文 {len(raw['papers_ai'])} 篇, RO 论文 {len(raw['papers_ro'])} 篇, CL 论文 {len(raw['papers_cl'])} 篇, GitHub {len(raw['github'])} 个")
+    print(f"\n📦 总计: AI 论文 {len(raw['papers_ai']) + len(raw['papers_ro']) + len(raw['papers_cl'])} 篇 | AI 巨头 {len(raw['ai_giants'])} | 车企 {len(raw['auto_companies'])} | 中文 {len(raw['cn_tech'])} | HN {len(raw['hn'])} | HF 模型 {len(raw['hf_models'])}")
 
-    # 保存原始数据
     raw_path = os.path.join(OUTPUT_DIR, f"raw-{week_tag}.json")
     with open(raw_path, "w", encoding="utf-8") as f:
         json.dump(raw, f, ensure_ascii=False, indent=2)
-    print(f"💾 原始数据: {raw_path}")
 
     # Step 2: AI 整理
     news_data = call_llm(raw)
     print(f"📰 AI 整理完成，模块数: {len(news_data)}")
 
-    # 保存周报 JSON
     json_path = os.path.join(OUTPUT_DIR, f"data-{week_tag}.json")
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(news_data, f, ensure_ascii=False, indent=2)
     with open(JSON_FILE, "w", encoding="utf-8") as f:
         json.dump(news_data, f, ensure_ascii=False, indent=2)
-    print(f"💾 周报数据: {json_path}")
 
     # Step 3: 渲染
     html = build_html(news_data, archive_filename)
