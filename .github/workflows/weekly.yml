@@ -23,7 +23,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests feedparser
 
       - name: Generate news HTML
         run: python3 generate_news.py
@@ -43,3 +43,4 @@ jobs:
         run: python3 upload_and_push.py
         env:
           DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
+
