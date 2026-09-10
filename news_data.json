@@ -1,252 +1,252 @@
 {
   "key_points": [
-    "🤖 OpenAI 发布 GPT-6 Astra，主打企业工作场景",
-    "🚗 理想 i6 换装中创新航电芯，极氪 9X 光辉亮相",
-    "🧠 学界聚焦长上下文记忆与零样本物理泛化",
-    "📈 Mistral 融资 30 亿欧元，主权开源 AI 升温"
+    "🤖 GPT-6 Astra 发布，OpenAI 加码企业级智能体",
+    "🚗 理想 i6 换电芯，极氪 9X 光辉版现身",
+    "🧠 多篇 arXiv 论文聚焦 VLM 机器人与长上下文记忆",
+    "📈 Mistral 融资 30 亿欧元，Shopify 收购 Tailwind"
   ],
   "ai_news": [
     {
       "title": "OpenAI 发布 GPT-6 Astra：面向工作的下一代智能",
-      "summary": "OpenAI 推出迄今最强企业级模型 GPT-6 Astra，具备高级推理、计算机操作等能力，瞄准工作场景落地。",
+      "summary": "OpenAI 推出迄今最强企业模型，具备高级推理、计算机使用等能力，瞄准办公场景。",
       "link": "https://openai.com/index/gpt-6-astra-next-generation-work",
       "source": "OpenAI"
     },
     {
-      "title": "OpenAI 呼吁抓住 AI 政策窗口期",
-      "summary": "Chris Lehane 撰文指出，AI 能力越强越需要更强安全证据与共享标准，呼吁各方尽快行动完善治理。",
+      "title": "OpenAI 政策窗口开启，呼吁加强安全证据与标准",
+      "summary": "Chris Lehane 撰文指出，AI 能力越强越需安全证据与共享标准，呼吁行业行动。",
       "link": "https://openai.com/index/ai-policy-window",
       "source": "OpenAI"
     },
     {
-      "title": "DeepMind 发布 AlphaGenome Atlas 预测图谱",
-      "summary": "该图谱绘制人类基因组 90 亿个单字母 DNA 变异的分子效应，为遗传研究与药物开发提供预测地图。",
+      "title": "DeepMind 发布 AlphaGenome Atlas 预测 DNA 变异图谱",
+      "summary": "该图谱映射人类基因组 90 亿个单字母 DNA 变异的分子效应，助力遗传研究。",
       "link": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
       "source": "DeepMind"
     },
     {
       "title": "NVIDIA 在 IBC 展示广播与体育实时 AI",
-      "summary": "在阿姆斯特丹 IBC 大会上，NVIDIA 展示面向广播、体育与全球流媒体的实时 AI 方案，推动内容生产智能化。",
+      "summary": "NVIDIA 于阿姆斯特丹 IBC 大会展示面向广播、体育与全球流媒体的实时 AI 方案。",
       "link": "https://blogs.nvidia.com/blog/ibc-news-2026/",
       "source": "NVIDIA"
     },
     {
-      "title": "欧盟机构获准访问 GPT-6 Astra 与 Mythos 5",
-      "summary": "欧盟委员会证实 ENISA 已获准测试 Anthropic Mythos 5，并获 OpenAI GPT-6 Astra 访问权限，监管测试提速。",
-      "link": "https://www.ithome.com/1/000/898.htm",
-      "source": "IT之家"
+      "title": "荣耀退股进入实际退款阶段，离职员工收到退款",
+      "summary": "五年过去荣耀仍处上市辅导阶段，早期参与 IPO 故事的员工选择拿回资金。",
+      "link": "https://www.tmtpost.com/8135022.html",
+      "source": "钛媒体"
     }
   ],
   "auto_tech": [
     {
-      "title": "MINI Aceman SE 纯电跨界车亮相",
-      "summary": "MINI 推出 Aceman SE 纯电跨界车，Ocean Wave Green 配色带来城市驾驶新风格，强化电动化产品线。",
+      "title": "MINI Aceman SE 纯电跨界车发布",
+      "summary": "MINI Aceman SE 以海洋绿配色带来都市驾驶乐趣，定位全电动跨界车型。",
       "link": "https://www.press.bmwgroup.com/global/article/detail/T0460396EN?language=en",
       "source": "BMW"
     },
     {
-      "title": "理想 i6 换装中创新航电芯",
-      "summary": "理想 i6 采用中创新航电芯，极氪 9X 光辉与 Model Y 性能版同期现身，9 月新车型密集预热。",
+      "title": "理想 i6 换装中创新航电芯，极氪 9X 光辉版现身",
+      "summary": "9 月新车前瞻：理想 i6 采用中创新航电芯，极氪 9X 光辉版与 Model Y 性能版亮相。",
       "link": "https://www.ifanr.com/1679445?utm_source=rss&utm_medium=rss&utm_campaign=",
       "source": "爱范儿"
     },
     {
-      "title": "苹果首款折叠屏 iPhone Duo 发布",
-      "summary": "苹果发布首款折叠手机 iPhone Duo，国行 15999 元起，10 月开启预售，集邦预估今年市占近 25%。",
-      "link": "http://www.geekpark.net/news/370088",
+      "title": "千问办公发布多人工作台，重写企业软件最后一公里",
+      "summary": "千问办公推出多人协作工作台，瞄准企业软件协同场景，提升办公效率。",
+      "link": "http://www.geekpark.net/news/370061",
       "source": "极客公园"
     },
     {
-      "title": "iPhone Duo 首发上手：两万元折叠屏",
-      "summary": "爱范儿上手 iPhone Duo，评价其屏幕观感宛若透明、体验全方位超预期，定位高端折叠市场。",
-      "link": "https://www.ifanr.com/1679531?utm_source=rss&utm_medium=rss&utm_campaign=",
-      "source": "爱范儿"
+      "title": "中兴 U15 随身 WiFi 开售，10000mAh 支持对外放电",
+      "summary": "中兴 U15 随身 WiFi 配备 10000mAh 电池与 15W 对外放电，售价 99 元。",
+      "link": "https://www.ithome.com/1/000/931.htm",
+      "source": "IT之家"
     }
   ],
   "leadership": [
     {
-      "title": "Brad Binder 加盟 BMW Motorrad WorldSBK 车队",
-      "summary": "Brad Binder 将于 2027 年起驾驶 BMW M 1000 RR，代表 ROKiT BMW Motorrad WorldSBK 车队出战。",
+      "title": "Brad Binder 将于 2027 年加盟 BMW Motorrad WorldSBK 厂队",
+      "summary": "Brad Binder 将从 2027 年起驾驶 BMW M 1000 RR 代表 ROKiT BMW Motorrad WorldSBK 车队出战。",
       "link": "https://www.press.bmwgroup.com/global/article/detail/T0460598EN?language=en",
       "source": "BMW"
     },
     {
       "title": "Paul Christiano 加入 OpenAI Foundation 董事会",
-      "summary": "AI 安全研究者 Paul Christiano 加入 OpenAI Foundation 董事会及安全与安保委员会，带来对齐领域经验。",
+      "summary": "Paul Christiano 加入 OpenAI Foundation 董事会及安全与安保委员会，带来安全领域经验。",
       "link": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
       "source": "OpenAI"
     }
   ],
   "auto_ai": [
     {
+      "title": "Show-Harness：VLM 智能体即可操控机器人",
+      "summary": "研究显示基础视觉语言模型具备广泛世界智能，可被 harness 用于直接操控机器人。",
+      "link": "http://arxiv.org/abs/2609.10522v1",
+      "source": "arXiv cs.RO"
+    },
+    {
       "title": "DUET-DINO：机器人操作中的跨视角世界建模",
-      "summary": "该研究提出动作条件潜世界模型，实现跨视角同时建模，支持机器人操作中的零样本目标规划。",
+      "summary": "该工作提出同步跨视角世界模型，用于机器人操作的潜在规划，实现零样本目标泛化。",
       "link": "http://arxiv.org/abs/2609.10506v1",
       "source": "arXiv cs.RO"
     },
     {
       "title": "频率条件流匹配用于视觉-语言-动作模型",
-      "summary": "研究将机器人动作视为时间相关轨迹，用频率分量编码不同运动尺度，以流匹配提升 VLA 模型动作生成质量。",
+      "summary": "机器人动作是时间相关轨迹，其频率分量编码不同运动信息，该研究用流匹配建模。",
       "link": "http://arxiv.org/abs/2609.10405v1",
-      "source": "arXiv cs.RO"
-    },
-    {
-      "title": "多智能体强化学习助力野火响应无人机探索",
-      "summary": "该研究构建深度强化学习框架，训练无人机在野火响应场景中自主探索，提升复杂环境下的协同感知能力。",
-      "link": "http://arxiv.org/abs/2609.10433v1",
       "source": "arXiv cs.RO"
     }
   ],
   "papers": [
     {
-      "title": "Show-Harness：一个 VLM 智能体即可操控机器人",
+      "title": "Show-Harness：VLM 智能体即可玩转机器人",
       "id": "2609.10522",
       "authors": "未提供",
-      "summary": "利用基础视觉语言模型的广泛世界知识，通过 Show-Harness 框架让单一 VLM 智能体直接操控机器人。"
+      "summary": "基础视觉语言模型具备广泛世界智能，但将其转化为机器人操控能力仍需有效 harness。"
     },
     {
-      "title": "IBIB：以服务路由而非模型标识衡量企业 AI 系统",
+      "title": "IBIB：以服务路径而非模型标识衡量企业 AI 系统",
       "id": "2609.10494",
       "authors": "未提供",
-      "summary": "提出企业部署的是系统而非检查点，可用能力取决于权重、服务路由等联合因素，并给出测量协议。"
+      "summary": "企业部署的是系统而非检查点，可用能力取决于权重、服务路径等多因素联合。"
     },
     {
-      "title": "Semigroup-JEPA：面向零样本物理泛化的潜动态一致性",
+      "title": "Semigroup-JEPA：零样本物理泛化的潜在动力学一致性",
       "id": "2609.10464",
       "authors": "未提供",
-      "summary": "针对 JEPA 世界模型学习紧凑潜表示，提出半群结构约束的潜动态一致性方法，提升零样本物理泛化。"
+      "summary": "JEPA 世界模型学习紧凑潜在表示，该工作用半群结构提升零样本物理泛化能力。"
     },
     {
       "title": "JarvisGUI：面向跨设备 GUI 智能体的动态任务组合",
       "id": "2609.10451",
       "authors": "未提供",
-      "summary": "针对跨多设备与平台的 GUI 工作流，提出支持动态任务组合的跨设备 GUI 智能体框架 JarvisGUI。"
+      "summary": "真实 GUI 使用常跨多设备与平台，JarvisGUI 支持动态任务组合以应对复杂工作流。"
     },
     {
       "title": "ConvMem：面向长上下文推理的卷积记忆",
       "id": "2609.10441",
       "authors": "未提供",
-      "summary": "针对大模型长上下文推理困难，提出卷积记忆机制 ConvMem，以结构化记忆增强长程信息保留与推理。"
+      "summary": "大模型在长上下文推理上常显不足，ConvMem 提出卷积记忆机制以增强长程建模。"
     }
   ],
   "github": [
     {
-      "name": "openai/gpt-6-astra",
-      "stars": "2274",
-      "summary": "Hacker News 高赞讨论的 OpenAI GPT-6 Astra 发布页，聚焦其面向企业工作的推理与计算机操作能力。",
-      "link": "https://openai.com/index/gpt-6-astra/"
-    },
-    {
-      "name": "collusion.wiki/agent-message-board",
+      "name": "collusion.wiki",
       "stars": "2298",
-      "summary": "Hacker News 高赞发现的 OpenAI 智能体消息板，引发 1599 条评论，讨论智能体间通信与协作机制。",
+      "summary": "Hacker News 热议发现一个新的 OpenAI 智能体留言板，引发广泛讨论。",
       "link": "https://collusion.wiki/"
     },
     {
-      "name": "tailwindcss/tailwind",
-      "stars": "1024",
-      "summary": "Shopify 宣布收购 Tailwind CSS，Hacker News 热议其对前端工具链生态与开源商业模式的影响。",
+      "name": "opusfived.dev",
+      "stars": "1116",
+      "summary": "一个让 Claude 把“加入购物车”按钮改成蓝色的实验项目，引发开发者热议。",
+      "link": "https://opusfived.dev/"
+    },
+    {
+      "name": "tailwindcss/tailwindcss",
+      "stars": "1034",
+      "summary": "Shopify 宣布收购 Tailwind CSS，前端社区高度关注其后续发展方向。",
       "link": "https://tailwindcss.com/blog/tailwind-is-joining-shopify"
     },
     {
-      "name": "mistralai/mistral",
-      "stars": "841",
-      "summary": "Mistral 完成 30 亿欧元融资，主打主权开源权重 AI 并迈向前沿，Hacker News 关注欧洲 AI 自主路线。",
+      "name": "mistralai",
+      "stars": "842",
+      "summary": "Mistral 宣布融资 30 亿欧元，推进主权开源权重 AI 走向前沿。",
       "link": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/"
     },
     {
-      "name": "bcantrill/intellectual-fly",
+      "name": "bcantrill.dtrace.org",
       "stars": "728",
-      "summary": "技术评论文章批评用 LLM 代写文章如同“智力拉链没拉”，引发对 AI 写作与原创性边界的讨论。",
+      "summary": "一篇 2025 年文章批评用 LLM 撰写博文是“智力拉链没拉”，引发 HN 热议。",
       "link": "https://bcantrill.dtrace.org/2025/12/05/your-intellectual-fly-is-open/"
     }
   ],
   "ai_deep": [
     {
-      "title": "企业 AI 度量应从模型转向服务系统",
-      "summary": "IBIB 论文指出企业真正部署的是完整服务系统，能力取决于权重、路由与工程栈，模型标识已不足以衡量价值。",
-      "link": "http://arxiv.org/abs/2609.10494v1",
-      "source": "arXiv cs.AI"
-    },
-    {
-      "title": "AI 政策窗口期需要更强安全证据",
-      "summary": "OpenAI 政策负责人呼吁以共享标准与安全证据支撑更强 AI 能力，监管与创新需同步推进。",
-      "link": "https://openai.com/index/ai-policy-window",
-      "source": "OpenAI"
-    },
-    {
-      "title": "用 LLM 写文章是否算“智力不设防”",
-      "summary": "Hacker News 热文反思依赖 LLM 代笔对原创思考的侵蚀，引发对 AI 辅助写作边界与作者责任的讨论。",
+      "title": "用 LLM 写文章是“智力拉链没拉”？",
+      "summary": "文章批评用大模型代笔写作会暴露思维懒惰，引发 HN 关于 AI 写作伦理的讨论。",
       "link": "https://bcantrill.dtrace.org/2025/12/05/your-intellectual-fly-is-open/",
       "source": "Hacker News"
+    },
+    {
+      "title": "安全为谁？拒绝话题的正确子集而非整个话题",
+      "summary": "HuggingFace 博文探讨内容安全策略应精准拒绝敏感子集，而非一刀切封禁整个话题。",
+      "link": "https://huggingface.co/blog/MultiverseComputingCAI/safety-for-whom",
+      "source": "HuggingFace"
+    },
+    {
+      "title": "AI 政策窗口开启，行业需立即行动",
+      "summary": "OpenAI 政策负责人指出，能力越强越需安全证据与共享标准，呼吁把握政策窗口。",
+      "link": "https://openai.com/index/ai-policy-window",
+      "source": "OpenAI"
     }
   ],
   "models": [
     {
-      "model_id": "black-forest-labs/FLUX.1-dev",
-      "pipeline": "text-to-image",
-      "downloads": "807843",
-      "likes": "14565",
-      "summary": "Black Forest Labs 开源文生图模型，以高质量图像生成与细节表现成为社区热门选择。",
-      "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
-    },
-    {
       "model_id": "Qwen/Qwen3.8-27B",
       "pipeline": "image-text-to-text",
-      "downloads": "7322476",
-      "likes": "14562",
-      "summary": "通义千问 27B 多模态模型，支持图文输入到文本输出，下载量居前，社区认可度高。",
+      "downloads": "7.3M",
+      "likes": "14566",
+      "summary": "通义千问 3.8 系列 27B 多模态模型，支持图文输入，下载量与点赞均居前列。",
       "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-dev",
+      "pipeline": "text-to-image",
+      "downloads": "807.8K",
+      "likes": "14565",
+      "summary": "Black Forest Labs 出品的文生图模型 FLUX.1-dev，图像质量与社区热度极高。",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
     },
     {
       "model_id": "deepseek-ai/DeepSeek-R1",
       "pipeline": "text-generation",
-      "downloads": "709327",
+      "downloads": "709.3K",
       "likes": "13617",
-      "summary": "DeepSeek 推理模型 R1，以强推理能力与开放权重受到广泛关注，适合复杂文本生成任务。",
+      "summary": "DeepSeek 推理模型 R1，以强推理能力著称，是开源文本生成热门模型。",
       "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1"
     },
     {
       "model_id": "moonshotai/Kimi-K3",
       "pipeline": "image-text-to-text",
-      "downloads": "2319885",
+      "downloads": "2.3M",
       "likes": "11263",
-      "summary": "月之暗面 Kimi-K3 多模态模型，支持图文理解与文本生成，下载与点赞表现亮眼。",
+      "summary": "月之暗面 Kimi-K3 多模态模型，支持图文理解，下载量超两百万。",
       "link": "https://huggingface.co/moonshotai/Kimi-K3"
     },
     {
       "model_id": "hexgrad/Kokoro-82M",
       "pipeline": "text-to-speech",
-      "downloads": "11643539",
+      "downloads": "11.6M",
       "likes": "6841",
-      "summary": "轻量级 TTS 模型 Kokoro-82M，仅 8200 万参数却实现自然语音合成，下载量超千万。",
+      "summary": "Kokoro-82M 轻量文本转语音模型，以小巧体积实现高质量语音合成，下载量领先。",
       "link": "https://huggingface.co/hexgrad/Kokoro-82M"
     }
   ],
   "summary": [
     {
-      "title": "大模型进入工作场景",
-      "content": "GPT-6 Astra 发布，企业级推理与计算机操作成为竞争焦点。",
+      "title": "大模型竞速",
+      "content": "GPT-6 Astra 发布，Qwen3.8、Kimi-K3 等开源模型热度持续攀升。",
       "color": "gold"
     },
     {
-      "title": "开源与主权 AI 升温",
-      "content": "Mistral 融资 30 亿欧元，欧洲主权开源权重路线加速推进。",
+      "title": "机器人智能体",
+      "content": "arXiv 多篇论文聚焦 VLM 操控机器人、跨视角世界建模与动作流匹配。",
       "color": "green"
     },
     {
-      "title": "长上下文与记忆成热点",
-      "content": "ConvMem、Fortunate Recall 等论文聚焦 LLM 长程记忆管理。",
+      "title": "资本与并购",
+      "content": "Mistral 融资 30 亿欧元，Shopify 收购 Tailwind，行业整合加速。",
       "color": "purple"
     },
     {
-      "title": "机器人世界模型进展",
-      "content": "DUET-DINO 与频率条件流匹配推动 VLA 与潜规划研究。",
+      "title": "安全与政策",
+      "content": "OpenAI 呼吁强化安全证据，参议院就 HuggingFace 入侵事件展开调查。",
       "color": "gold"
     },
     {
-      "title": "折叠屏与新车密集发布",
-      "content": "苹果 iPhone Duo 与理想 i6、极氪 9X 等新车本周集中亮相。",
+      "title": "汽车科技",
+      "content": "MINI Aceman SE 发布，理想 i6 换电芯，9 月新车密集亮相。",
       "color": "green"
     }
   ]

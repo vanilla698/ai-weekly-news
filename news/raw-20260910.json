@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-10T09:17:37.681042",
+  "fetched_at": "2026-09-10T10:01:22.031095",
   "papers_ai": [
     {
       "title": "Show-Harness: Just a VLM Agent Can Play Robots",
@@ -363,25 +363,32 @@
       "published": "2026-09-09T07:07:04"
     },
     {
-      "title": "不止 Anthropic 的 Mythos 5，欧盟机构已获准访问 OpenAI GPT-6 Astra 模型",
-      "summary": "IT之家 9 月 10 日消息，据路透社报道，欧盟委员会发言人当地时间周四证实，欧盟网络与信息安全局（ENISA）已获准访问 Anthropic 的 Mythos 5 人工智能模型，目前正处于测试阶段。该发言人同时表示，ENISA 同样获准访问 OpenAI 的最新模型 GPT-6-Astra。IT之家注意到，美国白宫此前出台限制措施，禁止外国机构访问美国公司的高性能 AI 模型。虽然后来白宫放宽",
-      "link": "https://www.ithome.com/1/000/898.htm",
+      "title": "因模型入侵 Hugging Face，OpenAI 面临美国参议院调查",
+      "summary": "IT之家 9 月 10 日消息，据路透社报道，美国参议院一个由共和党主导、负责灾害管理监督的小组委员会，正就 OpenAI 如何应对 7 月 Hugging Face 遭入侵事件展开调查。当地时间 9 月 9 日，共和党参议员乔希 · 霍利致信 OpenAI CEO 萨姆 · 奥尔特曼，称此次调查针对的是事件中“新出现的、令人不安的证据”，并批评 OpenAI 发现 AI 出现失控行为后仍决定继续",
+      "link": "https://www.ithome.com/1/000/938.htm",
       "source": "IT之家",
-      "published": "2026-09-10T09:11:03"
+      "published": "2026-09-10T09:57:36"
     },
     {
-      "title": "可检测身边的人是否戴着 Meta 智能眼镜，波兰开发者打造“Zuckoff”应用",
-      "summary": "IT之家 9 月 10 日消息，据《商业内幕》今天报道，波兰软件开发者帕维乌 · 希德沃夫斯基（Pawel Szydlowski）最近开发了一款应用，可以检测身边的人是否戴着 Meta 智能眼镜拍摄 POV 视频。帕维乌今年 30 岁。他之前在 YouTube 等平台刷到过一些视频，内容是有人利用智能眼镜拍摄恶搞视频，并刻意将镜头对准那些毫不知情的陌生人，这让他感到不安。据介绍，他开发的这款应用名",
-      "link": "https://www.ithome.com/1/000/896.htm",
+      "title": "中兴 U15 随身 WiFi 开售：支持 10000mAh 电池、15W 对外放电，99 元",
+      "summary": "IT之家 9 月 10 日消息，中兴 U15 随身 WiFi 今日开售，配备 10000mAh 电池、15W 对外放电，售价 99 元。IT之家从商品页面获悉，该产品内置 10000mAh 电芯，支持长达 26 小时连续使用时间、长达 51 天待机时长。新品配备 Type-C 接口，与手机共用一根线，支持 18W 快速自充、15W 对外放电；Wi-Fi6 疾速加持，OFDMA 技术智能分流；内置多",
+      "link": "https://www.ithome.com/1/000/931.htm",
       "source": "IT之家",
-      "published": "2026-09-10T09:09:06"
+      "published": "2026-09-10T09:53:39"
     },
     {
-      "title": "集邦咨询：苹果首款折叠机带动供应链升级，预估今年 iPhone Duo 市占近 25%",
-      "summary": "IT之家 9 月 10 日消息，TrendForce 集邦咨询今天（10 日）新闻发布研报指出，预估 2026 年 iPhone Duo 出货量约 500 万台，将可助力苹果在折叠手机市场取得约 24.8% 市占率。TrendForce 集邦咨询预估，2026 年全球折叠手机出货量约 2,020 万台，较 2025 年微幅成长 0.5%。若排除苹果的贡献，2026 年安卓品牌合计出货量仅约 1,5",
-      "link": "https://www.ithome.com/1/000/895.htm",
+      "title": "《战争机器：事变日》有望首批支持，消息称微软 XBOX 成就系统将新增“白金奖杯”",
+      "summary": "IT之家 9 月 10 日消息，据游戏媒体 Insider Gaming 今天报道，微软 XBOX 将在 10 月 6 日正式推出《战争机器：事变日》游戏，本作有可能会成为 XBOX 平台首款具有“白金奖杯”的游戏。据报道，《战争机器：事变日》的成就列表最近遭遇泄露，其中一项成就“幸运的人死在了事变日”要求玩家取得游戏中其他所有成就才能解锁，且不提供任何成就点数（IT之家注：Gamerscore）",
+      "link": "https://www.ithome.com/1/000/930.htm",
       "source": "IT之家",
-      "published": "2026-09-10T09:08:51"
+      "published": "2026-09-10T09:52:07"
+    },
+    {
+      "title": "那只旅行的青蛙，揭开了游戏IP生意最残酷的一面",
+      "summary": "《旅行青蛙》运营八年后因IP授权到期停运。一款成熟IP能帮游戏公司降低研发和冷启动风险，却也意味着持续分账、授权期限和更弱的长期控制权。相比自研，买IP究竟省了什么，又付出了什么？",
+      "link": "https://www.tmtpost.com/8134315.html",
+      "source": "钛媒体",
+      "published": "2026-09-10T09:17:16"
     },
     {
       "title": "独家｜荣耀退股进入实际退款阶段，已有离职员工收到“回头钱”",
@@ -396,13 +403,6 @@
       "link": "https://www.tmtpost.com/8135238.html",
       "source": "钛媒体",
       "published": "2026-09-10T08:13:01"
-    },
-    {
-      "title": "基金市场概况与资产配置观点（08.31—09.06）",
-      "summary": "国内市场方面，8月制造业PMI为50.3%，较上月回升1.1个百分点，重回扩张区间，新订单、生产指数同步改善。非制造业商务活动指数51.2%，服务业景气边际修复。地产端，多地优化政策落地后，重点城市商品房成交环比有所改善，但同比仍处低位，政策传导效果仍需观察。央行维持流动性合理充裕，资金面平稳，市场等待8月社融、信贷数据验证信用扩张力度。",
-      "link": "https://www.tmtpost.com/8135325.html",
-      "source": "钛媒体",
-      "published": "2026-09-10T07:23:27"
     }
   ],
   "hn": [
@@ -420,19 +420,19 @@
     },
     {
       "title": "Claude, change the “Add to Cart” button to blue",
-      "summary": "💬 430 评论 · ⬆️ 1111 赞",
+      "summary": "💬 434 评论 · ⬆️ 1116 赞",
       "link": "https://opusfived.dev/",
       "source": "Hacker News"
     },
     {
       "title": "Shopify acquires Tailwind",
-      "summary": "💬 393 评论 · ⬆️ 1024 赞",
+      "summary": "💬 395 评论 · ⬆️ 1034 赞",
       "link": "https://tailwindcss.com/blog/tailwind-is-joining-shopify",
       "source": "Hacker News"
     },
     {
       "title": "Mistral raises €3B",
-      "summary": "💬 596 评论 · ⬆️ 841 赞",
+      "summary": "💬 597 评论 · ⬆️ 842 赞",
       "link": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/",
       "source": "Hacker News"
     },
@@ -445,6 +445,16 @@
   ],
   "hf_models": [
     {
+      "model_id": "Qwen/Qwen3.8-27B",
+      "title": "Qwen/Qwen3.8-27B",
+      "pipeline": "image-text-to-text",
+      "downloads": 7322476,
+      "likes": 14566,
+      "downloads_str": "7.3M",
+      "summary": "📥 7.3M 下载 · ⭐ 14566 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
       "model_id": "black-forest-labs/FLUX.1-dev",
       "title": "black-forest-labs/FLUX.1-dev",
       "pipeline": "text-to-image",
@@ -453,16 +463,6 @@
       "downloads_str": "807.8k",
       "summary": "📥 807.8k 下载 · ⭐ 14565 赞 · 🏷️ text-to-image",
       "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
-    },
-    {
-      "model_id": "Qwen/Qwen3.8-27B",
-      "title": "Qwen/Qwen3.8-27B",
-      "pipeline": "image-text-to-text",
-      "downloads": 7322476,
-      "likes": 14562,
-      "downloads_str": "7.3M",
-      "summary": "📥 7.3M 下载 · ⭐ 14562 赞 · 🏷️ image-text-to-text",
-      "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
     },
     {
       "model_id": "deepseek-ai/DeepSeek-R1",
@@ -489,9 +489,9 @@
       "title": "stabilityai/stable-diffusion-xl-base-1.0",
       "pipeline": "text-to-image",
       "downloads": 2140894,
-      "likes": 8128,
+      "likes": 8129,
       "downloads_str": "2.1M",
-      "summary": "📥 2.1M 下载 · ⭐ 8128 赞 · 🏷️ text-to-image",
+      "summary": "📥 2.1M 下载 · ⭐ 8129 赞 · 🏷️ text-to-image",
       "link": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
     },
     {
@@ -509,9 +509,9 @@
       "title": "meta-llama/Llama-3.1-8B-Instruct",
       "pipeline": "text-generation",
       "downloads": 5630964,
-      "likes": 6865,
+      "likes": 6866,
       "downloads_str": "5.6M",
-      "summary": "📥 5.6M 下载 · ⭐ 6865 赞 · 🏷️ text-generation",
+      "summary": "📥 5.6M 下载 · ⭐ 6866 赞 · 🏷️ text-generation",
       "link": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
     },
     {
@@ -549,9 +549,9 @@
       "title": "MiniMaxAI/MiniMax-H3",
       "pipeline": "image-text-to-video",
       "downloads": 5080204,
-      "likes": 5098,
+      "likes": 5101,
       "downloads_str": "5.1M",
-      "summary": "📥 5.1M 下载 · ⭐ 5098 赞 · 🏷️ image-text-to-video",
+      "summary": "📥 5.1M 下载 · ⭐ 5101 赞 · 🏷️ image-text-to-video",
       "link": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
     },
     {
@@ -579,9 +579,9 @@
       "title": "unsloth/Qwen3.8-27B-GGUF",
       "pipeline": "通用模型",
       "downloads": 11127203,
-      "likes": 3802,
+      "likes": 3803,
       "downloads_str": "11.1M",
-      "summary": "📥 11.1M 下载 · ⭐ 3802 赞 · 🏷️ 通用模型",
+      "summary": "📥 11.1M 下载 · ⭐ 3803 赞 · 🏷️ 通用模型",
       "link": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF"
     },
     {
@@ -589,9 +589,9 @@
       "title": "Lightricks/LTX-2.5",
       "pipeline": "image-to-video",
       "downloads": 1740572,
-      "likes": 3301,
+      "likes": 3302,
       "downloads_str": "1.7M",
-      "summary": "📥 1.7M 下载 · ⭐ 3301 赞 · 🏷️ image-to-video",
+      "summary": "📥 1.7M 下载 · ⭐ 3302 赞 · 🏷️ image-to-video",
       "link": "https://huggingface.co/Lightricks/LTX-2.5"
     }
   ]
