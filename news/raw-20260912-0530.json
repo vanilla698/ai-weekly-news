@@ -1,0 +1,724 @@
+{
+  "fetched_at": "2026-09-12T05:30:53.081689",
+  "papers_ai": [
+    {
+      "title": "GPU-CFR: 80x Faster Counterfactual Regret Minimization by Compiling the Game to Static Dataflow and CUDA Graph Replay",
+      "summary": "Counterfactual regret minimization (CFR) is one of the few large numerical workloads that still runs faster on CPUs than on GPUs. Each iteration sweeps a game tree with up to billions of states in millions of small, interdependent gather and scatter steps issued through a generic tree interface. On ",
+      "link": "http://arxiv.org/abs/2609.11923v1",
+      "authors": [
+        "Boning Li",
+        "Longbo Huang"
+      ]
+    },
+    {
+      "title": "General Quantification of Covariate and Concept Shifts",
+      "summary": "Generalization under distribution shift remains a core challenge in modern machine learning, yet existing learning bound theory is limited to narrow, idealized settings and is non-estimable from samples. In this paper, we bridge the gap between theory and practical applications. We first show that e",
+      "link": "http://arxiv.org/abs/2609.11918v1",
+      "authors": [
+        "Hongbo Chen",
+        "Li Charlie Xia"
+      ]
+    },
+    {
+      "title": "Can Edge-Deployable Vision-Language Models Identify Species?",
+      "summary": "Camera traps often run in the field on edge hardware with limited or no connectivity, making small, locally-deployable vision-language models (VLMs) -- not frontier-scale ones -- the practically relevant class to evaluate for species identification. We test whether models in this deployment-relevant",
+      "link": "http://arxiv.org/abs/2609.11916v1",
+      "authors": [
+        "William Zhou",
+        "Mayukha Siripuram",
+        "Xiao Yan"
+      ]
+    },
+    {
+      "title": "Generative Marketing Mix Modeling: A Causal Inference Framework Linking GEO and GEM to Business Impact",
+      "summary": "Generative artificial intelligence changes how firms reach customers, but standard marketing data do not record how often users see and notice a firm's name in generated answers. We develop Generative Marketing Mix Modeling (GMMM) to estimate the causal effects of Generative Engine Optimization (GEO",
+      "link": "http://arxiv.org/abs/2609.11915v1",
+      "authors": [
+        "Masahiro Kato",
+        "Daiki Honma",
+        "Taka Kato"
+      ]
+    },
+    {
+      "title": "Artificial Id: Drive and Persistent Alignment in Agentic AI",
+      "summary": "Agentic AI is moving from bounded task execution toward systems that retain consequential state, continue operating and adapt across task boundaries. That shift creates a control problem that current harnesses largely solve by hand: objectives, retries, verification, stopping rules and other behavio",
+      "link": "http://arxiv.org/abs/2609.11911v1",
+      "authors": [
+        "Yakov Pyotr Shkolnikov"
+      ]
+    },
+    {
+      "title": "MindTopo: Can Foundation Models Reason in Topological Space?",
+      "summary": "Spatial reasoning depends not only on metric properties such as distance, angle, and shape, but also on topological relations that remain invariant under continuous deformation. Cognitive science identifies these relations as foundational to spatial understanding, yet foundation-model evaluations la",
+      "link": "http://arxiv.org/abs/2609.11900v1",
+      "authors": [
+        "Yunfei Ge",
+        "Anbang Liu",
+        "Qineng Wang"
+      ]
+    },
+    {
+      "title": "Domain-Specific Hallucination Detection in Large Language Models",
+      "summary": "Large language models generate fluent text that can contain unfaithful claims -- a phenomenon known as hallucination. We present a multi-signal detection pipeline combining fine-tuned DeBERTa-v3 classification, Monte Carlo (MC) Dropout uncertainty quantification, and temperature-scaled calibration f",
+      "link": "http://arxiv.org/abs/2609.11878v1",
+      "authors": [
+        "Varun Teja Chundru",
+        "Debasmita Biswas"
+      ]
+    },
+    {
+      "title": "Biology-in-the-loop: Amortized Adaptive Hit Discovery in CRISPR Screens",
+      "summary": "Many biological discovery problems require experiments to be selected sequentially under constrained budgets. CRISPR screening is a prominent example, as exhaustive perturbation testing is often infeasible and candidate perturbations must instead be prioritized over multiple experimental rounds. Des",
+      "link": "http://arxiv.org/abs/2609.11877v1",
+      "authors": [
+        "Carl Edwards",
+        "Edward De Brouwer",
+        "Xiner Li"
+      ]
+    },
+    {
+      "title": "On the Regularization Landscape for the Linear Recommendation Models",
+      "summary": "Recently, a wide range of recommendation algorithms inspired by deep learning techniques have emerged as the performance leaders on several standard recommendation benchmarks. While these algorithms were built on different DL techniques (e.g., dropouts, autoencoder), they have similar performance an",
+      "link": "http://arxiv.org/abs/2609.11876v1",
+      "authors": [
+        "Dong Li",
+        "Zhenming Liu",
+        "Ruoming Jin"
+      ]
+    },
+    {
+      "title": "The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement",
+      "summary": "Recursive self-improvement (RSI) enables AI systems to turn experience and feedback into persistent changes that improve both their capabilities and the process of future improvement. We first use the Headroom-Closed Index (HCI) to reveal the problems of existing LLMs, then introduce the RSI concept",
+      "link": "http://arxiv.org/abs/2609.11873v1",
+      "authors": [
+        "Yi Duan",
+        "Ying Liu",
+        "Zirui Tang"
+      ]
+    }
+  ],
+  "papers_ro": [
+    {
+      "title": "EVPeriscope: Extended Perception across Aerial and Ground Vehicles with Event-based Propeller Tracking",
+      "summary": "Reliable relative localization between aerial and ground robots is a key requirement for tightly coordinated heterogeneous teams. This can be difficult to do using conventional frame-based cameras and fiducial markers because they are sensitive to motion blur, lighting variations, and payload constr",
+      "link": "http://arxiv.org/abs/2609.11920v1",
+      "authors": [
+        "Dexter Ong",
+        "Vijay Kumar",
+        "Pratik Chaudhari"
+      ]
+    },
+    {
+      "title": "UniMPA: A Unified Memory-Prediction-Action Model via Action-Grounded Transition Modeling",
+      "summary": "Recent advances in Vision-Language-Action (VLA) models have improved robotic manipulation, yet observation-to-action learning remains limited by a fundamental transition realizability gap, manifested in three tightly coupled problems: (i) Transition ambiguity. Visually similar current observations m",
+      "link": "http://arxiv.org/abs/2609.11875v1",
+      "authors": [
+        "Wei Li",
+        "Rui Shao",
+        "Jie He"
+      ]
+    },
+    {
+      "title": "Learning Agent-based Model Predictive Control for Holistic Vehicle Performance",
+      "summary": "Agent-based model predictive control (AMPC) has recently been proposed as a distributed scheme that collaborates with all agents to achieve optimal holistic performance. However, its optimality highly depends on the prediction accuracy that requires all agents or their contributions to be known, whi",
+      "link": "http://arxiv.org/abs/2609.11871v1",
+      "authors": [
+        "Jiaming Zhong",
+        "Reza Valiollahi Mehrizi",
+        "Mohammad Pirani"
+      ]
+    },
+    {
+      "title": "Rapid Learning of Dexterous In-Hand Pen Writing through Real-Time Jacobian Estimation",
+      "summary": "Dexterous in-hand manipulation of a grasped object with an anthropomorphic hand is an unsolved frontier for robot dexterity. The contact-richness and highly dynamic nature of object-hand interactions tend to require extensive modeling or data-collection efforts for learning-based approaches. Modern ",
+      "link": "http://arxiv.org/abs/2609.11775v1",
+      "authors": [
+        "Kai Stewart",
+        "Yasunori Toshimitsu",
+        "Robert K. Katzschmann"
+      ]
+    },
+    {
+      "title": "Visual-SLAM for the detection of hidden tomatoes in greenhouses by Hierarchical Localization and GLOMAPfor robotized harvesting",
+      "summary": "Advanced crop monitoring inside greenhouses is becoming one of the primary objectives of research centers. High-performance sensors, such as LiDAR or stereo cameras, have traditionally been employed for this purpose, though these often have a high cost. This work proposes a Visual-SLAM system using ",
+      "link": "http://arxiv.org/abs/2609.11766v1",
+      "authors": [
+        "Fernando Cañadas-Aránega",
+        "José C. Moreno",
+        "José L. Blanco-Claraco"
+      ]
+    },
+    {
+      "title": "SEED-UMI: Sharing the Exoskeleton between human and robot for onE-to-one Dexterous demonstration",
+      "summary": "Imitation learning for dexterous hands is bottlenecked by the difficulty of collecting contact-rich demonstrations that transfer faithfully to the robot. Prior wearable-exoskeleton systems record only on the human side and retarget via open-loop mappings calibrated in free space, which degrade under",
+      "link": "http://arxiv.org/abs/2609.11753v1",
+      "authors": [
+        "Tengbo Yu",
+        "Jiahao Wu",
+        "Daohan Li"
+      ]
+    },
+    {
+      "title": "ORCH: Organizational Principles Enable Collective Intelligence in Embodied AI",
+      "summary": "Collective intelligence depends not only on the capabilities of individual members, but also on how those members are organized. Yet artificial multi-agent systems are typically assembled using fixed organizational structures, even when the physical tasks they perform impose fundamentally different ",
+      "link": "http://arxiv.org/abs/2609.11737v1",
+      "authors": [
+        "Zhengran Ji",
+        "Jonathan Hyun",
+        "Boyuan Chen"
+      ]
+    },
+    {
+      "title": "Reflex-Informed Neuromuscular Reinforcement Learning for Muscle-Driven Locomotion",
+      "summary": "Muscle-driven locomotion provides a physically grounded approach to generating realistic human movement. However, achieving both physiological plausibility and adaptability to changes in musculoskeletal capacity and external disturbances remains a fundamental challenge. To address this limitation, w",
+      "link": "http://arxiv.org/abs/2609.11733v1",
+      "authors": [
+        "Jian Zhou",
+        "Xingyu Zhang",
+        "Rui Ma"
+      ]
+    },
+    {
+      "title": "MC-DeTra: Motion-Consistent Joint Object Detection and Socially-Aware Trajectory Forecasting in Bird's-Eye-View Images",
+      "summary": "Unified models for object detection and trajectory forecasting aim to merge perception and prediction for autonomous driving, refining actor trajectories directly over shared bird's-eye-view (BEV) images rasterized from LiDAR and high-definition maps. Their accuracy on dynamic, moving actors, howeve",
+      "link": "http://arxiv.org/abs/2609.11717v1",
+      "authors": [
+        "Vladislav Diuzhev",
+        "Dmitry Yudin"
+      ]
+    },
+    {
+      "title": "Aerodynamic Prior-Free Coordinated Trajectory Generation and Tracking Control for a Tail-Sitter UAV",
+      "summary": "This paper presents a coordinated trajectory generation and tracking control framework for a tail-sitter unmanned aerial vehicle (UAV), which does not require aerodynamic priors identified for a specific airframe while addressing the challenge of flight control under highly nonlinear aerodynamics ac",
+      "link": "http://arxiv.org/abs/2609.11698v1",
+      "authors": [
+        "Erchao Rong",
+        "Zihao Liu",
+        "Junning Liang"
+      ]
+    }
+  ],
+  "papers_cl": [
+    {
+      "title": "Data Scarcity and Model Sparsity: Mixtures-of-Experts Overfit More to Repeated Data",
+      "summary": "As the supply of human-written text is exhausted, it has become standard practice to repeat language model training data. Prior work has studied data repetition for densely activated Transformers, but the effects of data repetition remains largely unexplored for recently dominant sparse architecture",
+      "link": "http://arxiv.org/abs/2609.11917v1",
+      "authors": [
+        "Atindra Jha",
+        "Margaret Li",
+        "Jure Leskovec"
+      ]
+    },
+    {
+      "title": "Distance generalization in transformers: why bother with positional encoding?",
+      "summary": "Out-of-distribution length generalization, namely to extrapolate a task from short to longer context, has been studied intensively for transformers. Here we focus on distance generalization, which probes performance when inter-token distances are changed between training and inference, while keeping",
+      "link": "http://arxiv.org/abs/2609.11913v1",
+      "authors": [
+        "Daniel Henrik Nevermann",
+        "Claudius Gros"
+      ]
+    },
+    {
+      "title": "MindTopo: Can Foundation Models Reason in Topological Space?",
+      "summary": "Spatial reasoning depends not only on metric properties such as distance, angle, and shape, but also on topological relations that remain invariant under continuous deformation. Cognitive science identifies these relations as foundational to spatial understanding, yet foundation-model evaluations la",
+      "link": "http://arxiv.org/abs/2609.11900v1",
+      "authors": [
+        "Yunfei Ge",
+        "Anbang Liu",
+        "Qineng Wang"
+      ]
+    },
+    {
+      "title": "Nuha-Speech: Building General-Purpose Arabic Speech-LLMs",
+      "summary": "As Speech Large Language Models (speech-LLMs) become increasingly multilingual, Arabic remains significantly underrepresented, highlighting the need for dedicated infrastructure to train and evaluate Arabic speech-LLMs. To address this gap, we introduce Nuha-Speech, a comprehensive initiative to dev",
+      "link": "http://arxiv.org/abs/2609.11892v1",
+      "authors": [
+        "Yingzhi Wang",
+        "Reem Alhazzani",
+        "Muhammad Alqurishi"
+      ]
+    },
+    {
+      "title": "Domain-Specific Hallucination Detection in Large Language Models",
+      "summary": "Large language models generate fluent text that can contain unfaithful claims -- a phenomenon known as hallucination. We present a multi-signal detection pipeline combining fine-tuned DeBERTa-v3 classification, Monte Carlo (MC) Dropout uncertainty quantification, and temperature-scaled calibration f",
+      "link": "http://arxiv.org/abs/2609.11878v1",
+      "authors": [
+        "Varun Teja Chundru",
+        "Debasmita Biswas"
+      ]
+    },
+    {
+      "title": "Biology-in-the-loop: Amortized Adaptive Hit Discovery in CRISPR Screens",
+      "summary": "Many biological discovery problems require experiments to be selected sequentially under constrained budgets. CRISPR screening is a prominent example, as exhaustive perturbation testing is often infeasible and candidate perturbations must instead be prioritized over multiple experimental rounds. Des",
+      "link": "http://arxiv.org/abs/2609.11877v1",
+      "authors": [
+        "Carl Edwards",
+        "Edward De Brouwer",
+        "Xiner Li"
+      ]
+    },
+    {
+      "title": "The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement",
+      "summary": "Recursive self-improvement (RSI) enables AI systems to turn experience and feedback into persistent changes that improve both their capabilities and the process of future improvement. We first use the Headroom-Closed Index (HCI) to reveal the problems of existing LLMs, then introduce the RSI concept",
+      "link": "http://arxiv.org/abs/2609.11873v1",
+      "authors": [
+        "Yi Duan",
+        "Ying Liu",
+        "Zirui Tang"
+      ]
+    },
+    {
+      "title": "Augustinian BabyLM: What Ostensive Definition Can and Cannot Teach a Small Language Model",
+      "summary": "A language model normally begins training with random word embeddings: whatever 'banana' means must be learned from training corpora. I implement St. Augustine's picture of word learning, meaning by ostension, for a small masked language model (DeBERTa) trained on 10M words: before training, visuall",
+      "link": "http://arxiv.org/abs/2609.11870v1",
+      "authors": [
+        "Lisa Bylinina"
+      ]
+    },
+    {
+      "title": "Epistemic orientation predicts legislative effectiveness among members of the US Congress",
+      "summary": "Truth and evidence-based communication provide important foundations for democratic governance, accountability, and collective decision-making. Prior work shows that evidence-oriented language in US congressional floor speeches has declined since the mid-1970s, alongside broader changes in legislati",
+      "link": "http://arxiv.org/abs/2609.11865v1",
+      "authors": [
+        "Segun Aroyehun",
+        "Stephan Lewandowsky",
+        "David Garcia"
+      ]
+    },
+    {
+      "title": "RetroThinker: Enabling Retrospective Thinking in Speech LLMs",
+      "summary": "Speech large language models (SpeechLLMs) offer reduced latency and retain paralinguistic nuances that are typically lost in cascaded automatic speech recognition (ASR) and text-based LM architectures. However, they continue to lag behind text-only LLMs on complex reasoning tasks, while real-time sp",
+      "link": "http://arxiv.org/abs/2609.11864v1",
+      "authors": [
+        "Yi-Jen Shih",
+        "Puyuan Peng",
+        "Abdelrahman Mohamed"
+      ]
+    }
+  ],
+  "ai_giants": [
+    {
+      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+      "summary": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models.",
+      "link": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+      "source": "OpenAI",
+      "published": "2026-09-14T00:00:00"
+    },
+    {
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "summary": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second.",
+      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "source": "OpenAI",
+      "published": "2026-09-11T10:00:00"
+    },
+    {
+      "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
+      "summary": "GPT‑6 Astra improves Devin’s ability to test software and show that it works, with the goal of helping engineers review less code and ship more.",
+      "link": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "source": "OpenAI",
+      "published": "2026-09-11T16:00:00"
+    },
+    {
+      "title": "Lifesaving Lincoln Laboratory device wins 2026 Excellence in Technology Transfer Award",
+      "summary": "The handheld catheterization device AI-GUIDE, created by Lincoln Laboratory and Massachusetts General Hospital, promises improved health outcomes for injured service members and civilians.",
+      "link": "https://news.mit.edu/2026/lifesaving-lincoln-laboratory-technology-wins-tech-transfer-award-0911",
+      "source": "MIT News AI",
+      "published": "2026-09-11T13:45:00"
+    }
+  ],
+  "auto_companies": [],
+  "cn_tech": [
+    {
+      "title": "早报｜苹果CEO特努斯回应折叠屏迟到：不做半成品/长鑫存储利润率超三星海力士/36.9万，特斯拉Model Y高性能版上市",
+      "summary": "· 马斯克怒斥吉布尼纪录片《马斯克》是「抹黑之作」 · 特斯拉 Model Y 高性能版上市，售价 36.9 万元 · 微软计划到 2032 年把数据中心容量扩至 38 GW 以上#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679729?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-12T00:35:27"
+    },
+    {
+      "title": "制糖工厂发布「硬糖小魔头 Max60」：60W AVS 动态快充，15 分钟让 iPhone 18 Pro 充至 50%",
+      "summary": "制糖工厂 CANDYSIGN 宣布推出—— 60W 动态电源「硬糖小魔头 Max60」，支持 iPhone 18 Pro AVS 动态快充15 分钟可充至 50%。随着 iPhone 18 Pro / Pro Max 正式支持 AVS，这项技术开始走向更多用户，Max60 小魔头也为这一新一代快充体验而来。#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679798?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-11T13:02:01"
+    },
+    {
+      "title": "在外滩大会上，我看到健康 AI+ 硬件的新可能",
+      "summary": "如何把让硬件+AI，变成用户能够长期使用的健康服务#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679765?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-11T10:01:53"
+    },
+    {
+      "title": "GPT-6 爆火 3D 案例被扒出「用了现成素材」，这次我们真做了一个",
+      "summary": "GPT-6 + Hyper3D MCP 最强3D创作搭档#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679614?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-11T08:49:09"
+    },
+    {
+      "title": "iPhone Duo 最惊艳的一秒，让我重新理解液态玻璃",
+      "summary": "苹果折叠 iPhone，真正折叠的是 iOS#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679530?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-11T07:27:51"
+    },
+    {
+      "title": "国内首条：京雄快线开启全线贯通试运行，设计时速 200 公里、公交化运营模式",
+      "summary": "IT之家 9 月 12 日消息，据央视新闻报道，京雄快线今日正式启动全线贯通试运行。作为京雄一小时都市圈标志性工程，本次全线贯通试运行，标志着京雄快线与北京地铁大兴机场线贯通运营迈出关键性一步。京雄快线起自雄安城际站，跨越京冀两地三市，全长约 86 公里，是国内首条设计时速 200 公里、采用公交化运营模式的轨道快线，线路到达大兴机场后接入北京地铁大兴机场线，贯通运营至北京草桥站，待丽泽站开通后贯",
+      "link": "https://www.ithome.com/1/001/558.htm",
+      "source": "IT之家",
+      "published": "2026-09-12T05:24:02"
+    },
+    {
+      "title": "荣耀亲选 DigaCite AI 相册管家上架：11 英寸全高清面板、内置 AI 创作功能，999 元",
+      "summary": "IT之家 9 月 12 日消息，荣耀现已在京东上架荣耀亲选 DigaCite AI 相册管家，该产品可以看作是一款平板电脑，定价 1199 元，首发价 999 元。京东荣耀亲选 DigaCiteAI 相册管家券后 999 元领 200 元券该产品采用 6.9mm 金属机身，配备 11 英寸 1920x1200 分辨率面板，支持横竖双摆两种摆放方式，可自然融入各类家居环境。设备最高支持 4TB 拓展",
+      "link": "https://www.ithome.com/1/001/557.htm",
+      "source": "IT之家",
+      "published": "2026-09-12T05:23:59"
+    },
+    {
+      "title": "京东：购苹果 iPhone 18 Pro 系列手机以旧换新至高补 900 元、早鸟票中签用户赠 AppleCare Services 原厂服务",
+      "summary": "IT之家 9 月 12 日消息，苹果在 2026 年秋季发布会上发布了 iPhone 18 Pro 系列手机，其中 iPhone 18 Pro 起售价 9999 元，iPhone 18 Pro Max 起售价 10999 元，系列手机将于今晚 8 点接受预购，9 月 18 日发售。苹果 iPhone 18 Pro存储规格官方售价24 期参考月供256GBRMB 9,999RMB 417 / 月起5",
+      "link": "https://www.ithome.com/1/001/556.htm",
+      "source": "IT之家",
+      "published": "2026-09-12T05:05:55"
+    },
+    {
+      "title": "全球首次：吉林大学联合美国团队复原已灭绝“奥氏马”完整容貌",
+      "summary": "IT之家 9 月 12 日消息，吉林大学生物考古实验室与美国进化科技有限责任公司（Evolutio LLC）联合攻关，在全球首次完成已灭绝古生物“奥氏马”的完整形态复原，并证实其是马属动物第四个独立亚属。▲ 图为已灭绝古生物“奥氏马”的完整形态复原图。“奥氏马”是一种已灭绝的远古马类，其化石最早发现于俄罗斯西伯利亚西南部距今约 4 万年前的晚更新世岩洞。最初仅发现破碎的下颌骨和牙齿，没有完整头骨。",
+      "link": "https://www.ithome.com/1/001/555.htm",
+      "source": "IT之家",
+      "published": "2026-09-12T04:59:28"
+    },
+    {
+      "title": "25 位菲尔兹奖得主联合警告“AI 在数学领域严重错位”，邓煜调侃要退休回家写百合小说",
+      "summary": "IT之家 9 月 12 日消息，当地时间 9 月 11 日，陶哲轩、邓煜、彼得 · 舒尔茨（Peter Scholze）等 25 位菲尔兹奖得主作为最初签署人，联合发表声明《人工智能在数学中的严重错位》（A Severe Misalignment of AI in Mathematics），警告 AI 公司与数学共同体之间正在出现“严重错位”。声明称，在过去几个月里，大语言模型的数学能力有了显著提",
+      "link": "https://www.ithome.com/1/001/554.htm",
+      "source": "IT之家",
+      "published": "2026-09-12T04:55:37"
+    },
+    {
+      "title": "马斯克 SpaceX 星舰第 14 次飞行定档 9 月 18 日，首次执行商业收入型任务",
+      "summary": "IT之家 9 月 12 日消息，据美国联邦航空管理局（FAA）今日发布的最新航空运行通告，SpaceX 星舰第 14 次飞行任务（Flight 14）计划于 9 月 18 日从得州星际基地（Starbase）发射。这将是 SpaceX 首次执行能够产生商业收入的星舰飞行任务，目标是将量产版 V3 Starlink 卫星部署至太空。FCC 文件显示，星舰第 14 次飞行的主发射窗口（UTC）为 9 ",
+      "link": "https://www.ithome.com/1/001/552.htm",
+      "source": "IT之家",
+      "published": "2026-09-12T04:38:31"
+    },
+    {
+      "title": "飞傲 FT15 金刚石纳米级振膜平板头戴耳机发布，2999 元",
+      "summary": "IT之家 9 月 12 日消息，飞傲 FT15 头戴式耳机今日正式发布，宣称是“金刚石纳米级振膜平板头戴耳机”，售价 2,999 元，现已正式开售。飞傲 FT15 搭载 800 纳米特薄膜片，厚度相比前代降低了 86.7%；整面自研金刚石镀层，频响延伸至 40kHz。飞傲 FT15 配备 101mm 全尺寸单元，采用均匀等磁场专利设计，定制异形强磁，源头抑制分割振动与失真，还有 28 纳米芯片级电",
+      "link": "https://www.ithome.com/1/001/551.htm",
+      "source": "IT之家",
+      "published": "2026-09-12T04:25:27"
+    },
+    {
+      "title": "特斯拉纽约致命车祸引争议：马斯克否认涉及 Autopilot 并嘲讽 ABC 等传统媒体“故意往特斯拉身上带节奏”",
+      "summary": "IT之家 9 月 12 日消息，据纽约市警察局（NYPD）通报，一辆 2024 款特斯拉 Model Y 于当地时间周三凌晨在曼哈顿发生致命车祸，造成车内一名乘客死亡。特斯拉 CEO 埃隆 · 马斯克周四在 X 上反驳了 ABC News 对事故的报道，称该起事故与车辆本身及 Autopilot 系统无关。后续，ABC News 删除了原帖。马斯克还表示，“如果当时启用了 Autopilot，她们",
+      "link": "https://www.ithome.com/1/001/550.htm",
+      "source": "IT之家",
+      "published": "2026-09-12T04:17:37"
+    },
+    {
+      "title": "参议院调查OpenAI：1200个智能体私建\"留言板\"，5月就露馅，为何没人踩刹车",
+      "summary": "AI私建留言板互通，OpenAI被调查",
+      "link": "https://www.tmtpost.com/8137561.html",
+      "source": "钛媒体",
+      "published": "2026-09-12T04:41:19"
+    },
+    {
+      "title": "中国人寿利润暴涨背后的业绩AB面",
+      "summary": "投资驱动利润暴涨",
+      "link": "https://www.tmtpost.com/8137602.html",
+      "source": "钛媒体",
+      "published": "2026-09-12T04:41:17"
+    },
+    {
+      "title": "种草，开始被清算",
+      "summary": "种草没有消失，它正在被清算",
+      "link": "https://www.tmtpost.com/8137652.html",
+      "source": "钛媒体",
+      "published": "2026-09-12T04:41:16"
+    },
+    {
+      "title": "i人特努斯，会手抖的苹果CEO",
+      "summary": "一个人的性格偶尔会从细节里露出来。",
+      "link": "https://www.tmtpost.com/8137758.html",
+      "source": "钛媒体",
+      "published": "2026-09-12T04:41:13"
+    },
+    {
+      "title": "素人 IP 批量走红：热度易得，变现很难",
+      "summary": "流量红利过后，更难的是跨过“专业化”这道坎。",
+      "link": "https://www.tmtpost.com/8137813.html",
+      "source": "钛媒体",
+      "published": "2026-09-12T04:41:11"
+    },
+    {
+      "title": "AI新经济已来，不是轰然一响，而是悄然一新",
+      "summary": "AI新经济已来，但不是互联网经济Plus版。",
+      "link": "https://www.tmtpost.com/8137661.html",
+      "source": "钛媒体",
+      "published": "2026-09-12T04:41:00"
+    },
+    {
+      "title": "海底捞27.5亿港元减持背后，是家族信托的税务压力",
+      "summary": "当大股东是一个家族信托，股东层面的资金安排与公司股价之间，并不存在真正的隔离。",
+      "link": "https://www.tmtpost.com/8137293.html",
+      "source": "钛媒体",
+      "published": "2026-09-12T03:35:37"
+    }
+  ],
+  "hn": [
+    {
+      "title": "A misalignment of AI in mathematics",
+      "summary": "💬 783 评论 · ⬆️ 784 赞",
+      "link": "https://mathandai.org/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Ask HN: Can we please limit the AI news flood?",
+      "summary": "💬 364 评论 · ⬆️ 765 赞",
+      "link": "https://news.ycombinator.com/item?id=49657850",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Claude is only available to people over 18 years",
+      "summary": "💬 619 评论 · ⬆️ 607 赞",
+      "link": "https://support.claude.com/en/articles/15171100-age-assurance-on-claude",
+      "source": "Hacker News"
+    },
+    {
+      "title": "OpenAI agents carried out an undisclosed attack on RubyGems",
+      "summary": "💬 307 评论 · ⬆️ 525 赞",
+      "link": "https://www.rubyhack.ai/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Astra for Coding: Why Are We Doing This Again?",
+      "summary": "💬 318 评论 · ⬆️ 429 赞",
+      "link": "https://lucumr.pocoo.org/2026/9/7/astra-why/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "I spent $220 on Google app ads and 60% of the installs were robots",
+      "summary": "💬 212 评论 · ⬆️ 412 赞",
+      "link": "https://dayzlegame.com/blog/google-ads-bot-farm/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "The Waymo effect: how AI is quietly making research less collaborative",
+      "summary": "💬 295 评论 · ⬆️ 322 赞",
+      "link": "https://www.researchagenda.news/articles/the-waymo-effect.html",
+      "source": "Hacker News"
+    },
+    {
+      "title": "HuggingFace: Security.txt",
+      "summary": "💬 65 评论 · ⬆️ 254 赞",
+      "link": "https://huggingface.co/security.txt",
+      "source": "Hacker News"
+    }
+  ],
+  "hf_models": [
+    {
+      "model_id": "Qwen/Qwen3.8-27B",
+      "title": "Qwen/Qwen3.8-27B",
+      "pipeline": "image-text-to-text",
+      "downloads": 7563763,
+      "likes": 14780,
+      "downloads_str": "7.6M",
+      "summary": "📥 7.6M 下载 · ⭐ 14780 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-dev",
+      "title": "black-forest-labs/FLUX.1-dev",
+      "pipeline": "text-to-image",
+      "downloads": 834872,
+      "likes": 14607,
+      "downloads_str": "834.9k",
+      "summary": "📥 834.9k 下载 · ⭐ 14607 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "title": "deepseek-ai/DeepSeek-R1",
+      "pipeline": "text-generation",
+      "downloads": 670913,
+      "likes": 13619,
+      "downloads_str": "670.9k",
+      "summary": "📥 670.9k 下载 · ⭐ 13619 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1"
+    },
+    {
+      "model_id": "moonshotai/Kimi-K3",
+      "title": "moonshotai/Kimi-K3",
+      "pipeline": "image-text-to-text",
+      "downloads": 2307369,
+      "likes": 11290,
+      "downloads_str": "2.3M",
+      "summary": "📥 2.3M 下载 · ⭐ 11290 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/moonshotai/Kimi-K3"
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
+      "title": "stabilityai/stable-diffusion-xl-base-1.0",
+      "pipeline": "text-to-image",
+      "downloads": 2228484,
+      "likes": 8137,
+      "downloads_str": "2.2M",
+      "summary": "📥 2.2M 下载 · ⭐ 8137 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
+    },
+    {
+      "model_id": "CompVis/stable-diffusion-v1-4",
+      "title": "CompVis/stable-diffusion-v1-4",
+      "pipeline": "text-to-image",
+      "downloads": 598636,
+      "likes": 7063,
+      "downloads_str": "598.6k",
+      "summary": "📥 598.6k 下载 · ⭐ 7063 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/CompVis/stable-diffusion-v1-4"
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "title": "meta-llama/Llama-3.1-8B-Instruct",
+      "pipeline": "text-generation",
+      "downloads": 5620096,
+      "likes": 6905,
+      "downloads_str": "5.6M",
+      "summary": "📥 5.6M 下载 · ⭐ 6905 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "model_id": "hexgrad/Kokoro-82M",
+      "title": "hexgrad/Kokoro-82M",
+      "pipeline": "text-to-speech",
+      "downloads": 11603416,
+      "likes": 6854,
+      "downloads_str": "11.6M",
+      "summary": "📥 11.6M 下载 · ⭐ 6854 赞 · 🏷️ text-to-speech",
+      "link": "https://huggingface.co/hexgrad/Kokoro-82M"
+    },
+    {
+      "model_id": "meta-llama/Meta-Llama-3-8B",
+      "title": "meta-llama/Meta-Llama-3-8B",
+      "pipeline": "text-generation",
+      "downloads": 325633,
+      "likes": 6655,
+      "downloads_str": "325.6k",
+      "summary": "📥 325.6k 下载 · ⭐ 6655 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Meta-Llama-3-8B"
+    },
+    {
+      "model_id": "openai/whisper-large-v3",
+      "title": "openai/whisper-large-v3",
+      "pipeline": "automatic-speech-recognition",
+      "downloads": 5008122,
+      "likes": 6265,
+      "downloads_str": "5.0M",
+      "summary": "📥 5.0M 下载 · ⭐ 6265 赞 · 🏷️ automatic-speech-recognition",
+      "link": "https://huggingface.co/openai/whisper-large-v3"
+    },
+    {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "title": "sentence-transformers/all-MiniLM-L6-v2",
+      "pipeline": "sentence-similarity",
+      "downloads": 254035929,
+      "likes": 5835,
+      "downloads_str": "254.0M",
+      "summary": "📥 254.0M 下载 · ⭐ 5835 赞 · 🏷️ sentence-similarity",
+      "link": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-schnell",
+      "title": "black-forest-labs/FLUX.1-schnell",
+      "pipeline": "text-to-image",
+      "downloads": 782202,
+      "likes": 5789,
+      "downloads_str": "782.2k",
+      "summary": "📥 782.2k 下载 · ⭐ 5789 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-schnell"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-V4-Pro",
+      "title": "deepseek-ai/DeepSeek-V4-Pro",
+      "pipeline": "text-generation",
+      "downloads": 619127,
+      "likes": 5524,
+      "downloads_str": "619.1k",
+      "summary": "📥 619.1k 下载 · ⭐ 5524 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
+    },
+    {
+      "model_id": "Tongyi-MAI/Z-Image-Turbo",
+      "title": "Tongyi-MAI/Z-Image-Turbo",
+      "pipeline": "text-to-image",
+      "downloads": 688969,
+      "likes": 5233,
+      "downloads_str": "689.0k",
+      "summary": "📥 689.0k 下载 · ⭐ 5233 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo"
+    },
+    {
+      "model_id": "openai/gpt-oss-120b",
+      "title": "openai/gpt-oss-120b",
+      "pipeline": "text-generation",
+      "downloads": 5463732,
+      "likes": 5188,
+      "downloads_str": "5.5M",
+      "summary": "📥 5.5M 下载 · ⭐ 5188 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/openai/gpt-oss-120b"
+    },
+    {
+      "model_id": "MiniMaxAI/MiniMax-H3",
+      "title": "MiniMaxAI/MiniMax-H3",
+      "pipeline": "image-text-to-video",
+      "downloads": 4970363,
+      "likes": 5169,
+      "downloads_str": "5.0M",
+      "summary": "📥 5.0M 下载 · ⭐ 5169 赞 · 🏷️ image-text-to-video",
+      "link": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+    },
+    {
+      "model_id": "Qwen/Qwen3.8-Flash-Next",
+      "title": "Qwen/Qwen3.8-Flash-Next",
+      "pipeline": "image-text-to-text",
+      "downloads": 586040,
+      "likes": 5117,
+      "downloads_str": "586.0k",
+      "summary": "📥 586.0k 下载 · ⭐ 5117 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+    },
+    {
+      "model_id": "zai-org/GLM-5.2",
+      "title": "zai-org/GLM-5.2",
+      "pipeline": "text-generation",
+      "downloads": 933052,
+      "likes": 5080,
+      "downloads_str": "933.1k",
+      "summary": "📥 933.1k 下载 · ⭐ 5080 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/zai-org/GLM-5.2"
+    },
+    {
+      "model_id": "bigscience/bloom",
+      "title": "bigscience/bloom",
+      "pipeline": "text-generation",
+      "downloads": 16400,
+      "likes": 5044,
+      "downloads_str": "16.4k",
+      "summary": "📥 16.4k 下载 · ⭐ 5044 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/bigscience/bloom"
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-3-medium",
+      "title": "stabilityai/stable-diffusion-3-medium",
+      "pipeline": "text-to-image",
+      "downloads": 4384,
+      "likes": 5025,
+      "downloads_str": "4.4k",
+      "summary": "📥 4.4k 下载 · ⭐ 5025 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/stabilityai/stable-diffusion-3-medium"
+    }
+  ]
+}
