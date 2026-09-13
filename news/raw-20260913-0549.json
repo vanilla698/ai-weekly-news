@@ -1,0 +1,474 @@
+{
+  "fetched_at": "2026-09-13T05:49:38.621492",
+  "papers_ai": [
+    {
+      "title": "GPU-CFR: 80x Faster Counterfactual Regret Minimization by Compiling the Game to Static Dataflow and CUDA Graph Replay",
+      "summary": "Counterfactual regret minimization (CFR) is one of the few large numerical workloads that still runs faster on CPUs than on GPUs. Each iteration sweeps a game tree with up to billions of states in millions of small, interdependent gather and scatter steps issued through a generic tree interface. On ",
+      "link": "http://arxiv.org/abs/2609.11923v1",
+      "authors": [
+        "Boning Li",
+        "Longbo Huang"
+      ]
+    },
+    {
+      "title": "General Quantification of Covariate and Concept Shifts",
+      "summary": "Generalization under distribution shift remains a core challenge in modern machine learning, yet existing learning bound theory is limited to narrow, idealized settings and is non-estimable from samples. In this paper, we bridge the gap between theory and practical applications. We first show that e",
+      "link": "http://arxiv.org/abs/2609.11918v1",
+      "authors": [
+        "Hongbo Chen",
+        "Li Charlie Xia"
+      ]
+    },
+    {
+      "title": "Can Edge-Deployable Vision-Language Models Identify Species?",
+      "summary": "Camera traps often run in the field on edge hardware with limited or no connectivity, making small, locally-deployable vision-language models (VLMs) -- not frontier-scale ones -- the practically relevant class to evaluate for species identification. We test whether models in this deployment-relevant",
+      "link": "http://arxiv.org/abs/2609.11916v1",
+      "authors": [
+        "William Zhou",
+        "Mayukha Siripuram",
+        "Xiao Yan"
+      ]
+    },
+    {
+      "title": "Generative Marketing Mix Modeling: A Causal Inference Framework Linking GEO and GEM to Business Impact",
+      "summary": "Generative artificial intelligence changes how firms reach customers, but standard marketing data do not record how often users see and notice a firm's name in generated answers. We develop Generative Marketing Mix Modeling (GMMM) to estimate the causal effects of Generative Engine Optimization (GEO",
+      "link": "http://arxiv.org/abs/2609.11915v1",
+      "authors": [
+        "Masahiro Kato",
+        "Daiki Honma",
+        "Taka Kato"
+      ]
+    },
+    {
+      "title": "Artificial Id: Drive and Persistent Alignment in Agentic AI",
+      "summary": "Agentic AI is moving from bounded task execution toward systems that retain consequential state, continue operating and adapt across task boundaries. That shift creates a control problem that current harnesses largely solve by hand: objectives, retries, verification, stopping rules and other behavio",
+      "link": "http://arxiv.org/abs/2609.11911v1",
+      "authors": [
+        "Yakov Pyotr Shkolnikov"
+      ]
+    },
+    {
+      "title": "MindTopo: Can Foundation Models Reason in Topological Space?",
+      "summary": "Spatial reasoning depends not only on metric properties such as distance, angle, and shape, but also on topological relations that remain invariant under continuous deformation. Cognitive science identifies these relations as foundational to spatial understanding, yet foundation-model evaluations la",
+      "link": "http://arxiv.org/abs/2609.11900v1",
+      "authors": [
+        "Yunfei Ge",
+        "Anbang Liu",
+        "Qineng Wang"
+      ]
+    },
+    {
+      "title": "Domain-Specific Hallucination Detection in Large Language Models",
+      "summary": "Large language models generate fluent text that can contain unfaithful claims -- a phenomenon known as hallucination. We present a multi-signal detection pipeline combining fine-tuned DeBERTa-v3 classification, Monte Carlo (MC) Dropout uncertainty quantification, and temperature-scaled calibration f",
+      "link": "http://arxiv.org/abs/2609.11878v1",
+      "authors": [
+        "Varun Teja Chundru",
+        "Debasmita Biswas"
+      ]
+    },
+    {
+      "title": "Biology-in-the-loop: Amortized Adaptive Hit Discovery in CRISPR Screens",
+      "summary": "Many biological discovery problems require experiments to be selected sequentially under constrained budgets. CRISPR screening is a prominent example, as exhaustive perturbation testing is often infeasible and candidate perturbations must instead be prioritized over multiple experimental rounds. Des",
+      "link": "http://arxiv.org/abs/2609.11877v1",
+      "authors": [
+        "Carl Edwards",
+        "Edward De Brouwer",
+        "Xiner Li"
+      ]
+    },
+    {
+      "title": "On the Regularization Landscape for the Linear Recommendation Models",
+      "summary": "Recently, a wide range of recommendation algorithms inspired by deep learning techniques have emerged as the performance leaders on several standard recommendation benchmarks. While these algorithms were built on different DL techniques (e.g., dropouts, autoencoder), they have similar performance an",
+      "link": "http://arxiv.org/abs/2609.11876v1",
+      "authors": [
+        "Dong Li",
+        "Zhenming Liu",
+        "Ruoming Jin"
+      ]
+    },
+    {
+      "title": "The Last AI Built by Humans: Toward Genuine Recursive Self-Improvement",
+      "summary": "Recursive self-improvement (RSI) enables AI systems to turn experience and feedback into persistent changes that improve both their capabilities and the process of future improvement. We first use the Headroom-Closed Index (HCI) to reveal the problems of existing LLMs, then introduce the RSI concept",
+      "link": "http://arxiv.org/abs/2609.11873v1",
+      "authors": [
+        "Yi Duan",
+        "Ying Liu",
+        "Zirui Tang"
+      ]
+    }
+  ],
+  "papers_ro": [],
+  "papers_cl": [],
+  "ai_giants": [],
+  "auto_companies": [],
+  "cn_tech": [
+    {
+      "title": "特努斯回答一切，那个懂技术的苹果 CEO 回来了",
+      "summary": "「That’s your guy.」#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679848?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-12T08:30:04"
+    },
+    {
+      "title": "讲讲 Duo 作为科技产品命名的前世今生",
+      "summary": "这就是我们能够联想到的关于「Duo」的故事，当然还有很多其他公司、产品没有涉及到，欢迎你在评论区聊聊让你印象最深的同名产品。以及接下来，等拿到 iPhone Duo 真机，我们更想看看那块大屏又会让我们「Duo」做些什么。#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679899?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-12T06:14:09"
+    },
+    {
+      "title": "刚刚，Apple Watch 成为了苹果最新的 AI 硬件",
+      "summary": "刚刚，Apple Watch 成为了苹果最新的 AI 硬件#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679877?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-12T06:08:51"
+    },
+    {
+      "title": "OpenAI、Anthropic 再次发出「AI 末日」警告；小米澎程今日全国交付；Deepseek 灰度测试 AI 语音对话",
+      "summary": " OpenAI 首席执行官：今年不会上市，不能冒哪怕 10% 杀死所有人的风险 OpenAI 首席执行官 Sam Altman 在接受采访时表示，这家人工智能公司专注于解决围绕 AI 技术的安全担忧，今年不会上市。 Altman 表示，今年进行首次公开募股「时机不合适」，公司要到明年才会上市。 「我认为，哪怕冒着 10% 的在本十年结束前杀死所有人的风险，都是不可接受的，」Altman 说，「我认",
+      "link": "http://www.geekpark.net/news/370228",
+      "source": "极客公园",
+      "published": "2026-09-13T00:22:31"
+    },
+    {
+      "title": "AI 时代的「4399」，可把我玩嗨了｜AI 上新",
+      "summary": "打开 Pocket 的前十分钟，我以为自己打开了一个 Instagram 版的 4399。 不久前，Meta 在美国正式推出了 Pocket。Pocket 的玩法很好理解，用户不用写代码，只要告诉 AI「我想做一个什么东西」，几十秒后就能得到一个可以直接操作的小游戏、小工具或者互动页面。 做完以后，它就像发帖一样，发到了 Pocket 的信息流里，其他人刷到后，可以直接玩、评论、转发，或者拿去修改",
+      "link": "http://www.geekpark.net/news/370227",
+      "source": "极客公园",
+      "published": "2026-09-12T13:03:04"
+    },
+    {
+      "title": "磐镭 WO5 迷你主机新增 R5-3500U + 8G + 256G 规格，1549 元",
+      "summary": "IT之家 9 月 13 日消息，磐镭现已为旗下 WO5 迷你主机新增 R5-3500U + 8GB RAM + 256GB SSD 规格，定价为 1549 元。京东磐镭 WO5 迷你主机 1549 元直达链接该机采用黑色外观设计，造型方正，机身正面有 2 个 USB-A 3.2 Gen2 接口，背面有 2 个 HDMI 2.0 接口、1 个千兆 RJ45 网口、2 个 USB-A 2.0 接口、1",
+      "link": "https://www.ithome.com/1/001/749.htm",
+      "source": "IT之家",
+      "published": "2026-09-13T05:37:51"
+    },
+    {
+      "title": "雷神科技升级售后服务体系：笔记本、显示器、迷你主机全型号免费上门取送机，全流程可视化",
+      "summary": "IT之家 9 月 13 日消息，雷神科技宣布升级售后服务体系，为旗下笔记本、显示器、迷你主机三大品类实现“全型号免费上门取送机、全流程可视化、全年无休在线”服务。雷神表示，符合保修期内的雷神用户，在中国大陆地区（港澳台暂不支持）可申请免费上门取送机服务。用户通过“雷神科技”官方服务号或雷神商城小程序统一报修入口报修后，快递约 1 小时内联系取机；物流由顺丰或京东承运，运费与保价由售后承担。官方同步",
+      "link": "https://www.ithome.com/1/001/748.htm",
+      "source": "IT之家",
+      "published": "2026-09-13T05:27:24"
+    },
+    {
+      "title": "2026 国庆中秋假期临近，10 月 1 日至 7 日七座及以下小客车出行可享高速免费通行政策",
+      "summary": "IT之家 9 月 13 日消息，据央视新闻，2026 年中秋、国庆假期即将到来，本次中秋、国庆具体放假日期如下：中秋节：9 月 25 日（周五）至 27 日（周日）放假，共 3 天。国庆节：10 月 1 日（周四）至 7 日（周三）放假调休，共 7 天。9 月 20 日（周日）、10 月 10 日（周六）上班。IT之家获悉，今年中秋假期高速不免费，根据《国务院关于批转交通运输部等部门重大节假日免收",
+      "link": "https://www.ithome.com/1/001/746.htm",
+      "source": "IT之家",
+      "published": "2026-09-13T05:21:04"
+    },
+    {
+      "title": "北京 6G 空天地一体实验室落地，中国联通研究院、中国星网牵头建设",
+      "summary": "IT之家 9 月 13 日消息，据“北京亦庄”公众号今日消息，中国联通研究院、银河航天、中兴数字星云、蓝箭鸿擎等企业共同发布“北京 6G 空天地一体实验室”，标志着北京经济技术开发区 6G 产业、空天产业再添强引擎。IT之家注意到，北京 6G 空天地一体实验室在北京市的统筹指导下，由中国联通研究院与中国星网牵头建设。该实验室成立一年来，已汇聚涵盖运营商、设备制造商、高校及科研院所在内的 20 余家",
+      "link": "https://www.ithome.com/1/001/745.htm",
+      "source": "IT之家",
+      "published": "2026-09-13T04:42:20"
+    },
+    {
+      "title": "苹果将开放 FaceTime 通话手语翻译 API",
+      "summary": "IT之家 9 月 13 日消息，据科技媒体 MacObserver 昨天报道，苹果 FaceTime 通话将开放一项新 API，允许视频通话加入真人翻译员。该功能最初公布于 5 月，计划今年晚些时候推出。IT之家从原报道获悉，苹果并没有说明开发者如何适配、API 的实际运作方式。官方仅表示，“手语翻译”API 可以让开发者在视频通话中加入真人翻译员。同时，此处的“真人”描述与相比其他无障碍功能有所",
+      "link": "https://www.ithome.com/1/001/744.htm",
+      "source": "IT之家",
+      "published": "2026-09-13T04:28:16"
+    },
+    {
+      "title": "小米澎程迎来上海首批车主，雷军亲自为 30 位车主及家人交付新车",
+      "summary": "IT之家 9 月 13 日消息，小米汽车刚刚宣布，小米澎程迎来了上海首批车主，小米创办人、董事长兼 CEO 雷军亲自为首批 30 位车主及家人交付新车。据IT之家昨日报道，小米澎程已正式开启交付，覆盖全国 75 个城市。雷军现身江苏徐州的首批车主交付现场，为车主开车门、递钥匙。至于为什么选择在江苏徐州，项羽故都位于江苏省徐州市，古称彭城邑、彭城县，刚好与小米澎程谐音。小米澎程系列于 9 月 7 日",
+      "link": "https://www.ithome.com/1/001/743.htm",
+      "source": "IT之家",
+      "published": "2026-09-13T04:12:02"
+    },
+    {
+      "title": "赛洛斯推出 V12 鼠标：PAW NEXT I 传感器，nRF54H20 主控，349 元",
+      "summary": "IT之家 9 月 13 日消息，外设品牌 Scyrox（赛洛斯）昨日推出了 V12 鼠标。其搭载原相 PAW NEXT I 光学传感器，基于 Nordic nRF54H20 主控，到手价 349 元。V12 采用高背模具，提供面向中小手的 M 和面向大手的 L 两个分支变体，统一搭载 250mAh 电池。前者三维 122×58×38 (mm)，质量 50±3g；后者三维 126×60×40 (mm",
+      "link": "https://www.ithome.com/1/001/742.htm",
+      "source": "IT之家",
+      "published": "2026-09-13T04:10:08"
+    },
+    {
+      "title": "通用汽车计划在美国本土开发储能系统、纯电汽车电池",
+      "summary": "IT之家 9 月 13 日消息，据科技媒体 CNBC 昨天报道，通用汽车计划在美国开发下一代电池技术，并计划使用美国本土生产的材料。通用汽车电池与可持续发展副总裁 Kurt Kelty 对此表示：“我们正在开发电池供应链，希望两三年后能实现本土化生产。等产品进入市场时，我们能够拥有美国本地的供应源。”据悉，该副总裁所说的电池指的是储能系统（IT之家注：ESS）电芯，该类产品可用于家庭、数据中心等场",
+      "link": "https://www.ithome.com/1/001/741.htm",
+      "source": "IT之家",
+      "published": "2026-09-13T04:06:01"
+    },
+    {
+      "title": "独家对话吴德周：从工具到Agent，AI眼镜的竞争逻辑变了",
+      "summary": "“要活下来，必须转向垂直场景。”",
+      "link": "https://www.tmtpost.com/8138191.html",
+      "source": "钛媒体",
+      "published": "2026-09-13T05:15:46"
+    },
+    {
+      "title": "储能行业涨价潮起，阳光电源年内二度提价，行业不要价格战，逻辑回归价值兑现",
+      "summary": "阳光电源光储产品涨价，全产业链密集调价纠偏。",
+      "link": "https://www.tmtpost.com/8138239.html",
+      "source": "钛媒体",
+      "published": "2026-09-13T04:55:46"
+    },
+    {
+      "title": "电视都不好卖了，面板厂怎么还敢涨价？",
+      "summary": "卖不动的电视，正在吃掉更多面板。",
+      "link": "https://www.tmtpost.com/8138229.html",
+      "source": "钛媒体",
+      "published": "2026-09-13T04:55:40"
+    },
+    {
+      "title": "iPhone18 Pro首发货秒光：官网崩了、加价上千，真正的疯狂还没来",
+      "summary": "相比较iPhone Duo，iPhone18 Pro系列的讨论度以及关注度相差甚远。但即便如此，不耽误iPhone18 Pro系列预售的火热。",
+      "link": "https://www.tmtpost.com/8138182.html",
+      "source": "钛媒体",
+      "published": "2026-09-13T04:23:33"
+    },
+    {
+      "title": "2026年上半年基金换手率分析",
+      "summary": "本报告选取混合型与股票型基金作为换手率的统计分析对象。济安分类体系基于基金产品的合同约定投资范围、历史资产配置特征及投资策略风格，对公募基金进行科学分类，能够准确反映产品的风险收益特征与运作规律。",
+      "link": "https://www.tmtpost.com/8138219.html",
+      "source": "钛媒体",
+      "published": "2026-09-13T03:08:16"
+    },
+    {
+      "title": "福建上市公司价值重估：民营科技龙头抬升上限，制造与消费多点支撑",
+      "summary": "整体来看，福建的ESG-V结构可以概括为：民营科技龙头突出，制造与消费产业多点支撑，但中腰部企业仍占主体，产业之间和企业之间的价值兑现能力存在明显梯度。",
+      "link": "https://www.tmtpost.com/8138214.html",
+      "source": "钛媒体",
+      "published": "2026-09-13T03:08:07"
+    },
+    {
+      "title": "价值判断：涨停板的投资机会和风险提示（9月11日）｜上市公司观察",
+      "summary": "隔夜美股四连跌、油价破百与美债收益率走高压制风险偏好，但市场未现系统性恐慌，跌停家数有限，为价值型低估标的与题材型连板标的并存提供了土壤。",
+      "link": "https://www.tmtpost.com/8138207.html",
+      "source": "钛媒体",
+      "published": "2026-09-13T03:07:54"
+    }
+  ],
+  "hn": [
+    {
+      "title": "Nvidia is the central bank of AI",
+      "summary": "💬 306 评论 · ⬆️ 439 赞",
+      "link": "https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Everyone should slow down AI development except for me",
+      "summary": "💬 175 评论 · ⬆️ 324 赞",
+      "link": "https://xeiaso.net/notes/2026/everyone-slowdown-but-me/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Real-SWE: Benchmarking AI models on private, real-world, enterprise codebases",
+      "summary": "💬 99 评论 · ⬆️ 192 赞",
+      "link": "https://withspecific.com/benchmarks/real-swe",
+      "source": "Hacker News"
+    },
+    {
+      "title": "The worst spam emails: iLands AI agent hustle",
+      "summary": "💬 54 评论 · ⬆️ 111 赞",
+      "link": "https://tedium.co/2026/09/11/ilands-agents-email-spam-kaixin-tang/",
+      "source": "Hacker News"
+    }
+  ],
+  "hf_models": [
+    {
+      "model_id": "Qwen/Qwen3.8-27B",
+      "title": "Qwen/Qwen3.8-27B",
+      "pipeline": "image-text-to-text",
+      "downloads": 7726687,
+      "likes": 14879,
+      "downloads_str": "7.7M",
+      "summary": "📥 7.7M 下载 · ⭐ 14879 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-dev",
+      "title": "black-forest-labs/FLUX.1-dev",
+      "pipeline": "text-to-image",
+      "downloads": 830988,
+      "likes": 14630,
+      "downloads_str": "831.0k",
+      "summary": "📥 831.0k 下载 · ⭐ 14630 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "title": "deepseek-ai/DeepSeek-R1",
+      "pipeline": "text-generation",
+      "downloads": 682105,
+      "likes": 13626,
+      "downloads_str": "682.1k",
+      "summary": "📥 682.1k 下载 · ⭐ 13626 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1"
+    },
+    {
+      "model_id": "moonshotai/Kimi-K3",
+      "title": "moonshotai/Kimi-K3",
+      "pipeline": "image-text-to-text",
+      "downloads": 2277273,
+      "likes": 11307,
+      "downloads_str": "2.3M",
+      "summary": "📥 2.3M 下载 · ⭐ 11307 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/moonshotai/Kimi-K3"
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
+      "title": "stabilityai/stable-diffusion-xl-base-1.0",
+      "pipeline": "text-to-image",
+      "downloads": 2313797,
+      "likes": 8140,
+      "downloads_str": "2.3M",
+      "summary": "📥 2.3M 下载 · ⭐ 8140 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
+    },
+    {
+      "model_id": "CompVis/stable-diffusion-v1-4",
+      "title": "CompVis/stable-diffusion-v1-4",
+      "pipeline": "text-to-image",
+      "downloads": 602907,
+      "likes": 7065,
+      "downloads_str": "602.9k",
+      "summary": "📥 602.9k 下载 · ⭐ 7065 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/CompVis/stable-diffusion-v1-4"
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "title": "meta-llama/Llama-3.1-8B-Instruct",
+      "pipeline": "text-generation",
+      "downloads": 5591444,
+      "likes": 6922,
+      "downloads_str": "5.6M",
+      "summary": "📥 5.6M 下载 · ⭐ 6922 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "model_id": "hexgrad/Kokoro-82M",
+      "title": "hexgrad/Kokoro-82M",
+      "pipeline": "text-to-speech",
+      "downloads": 11576384,
+      "likes": 6863,
+      "downloads_str": "11.6M",
+      "summary": "📥 11.6M 下载 · ⭐ 6863 赞 · 🏷️ text-to-speech",
+      "link": "https://huggingface.co/hexgrad/Kokoro-82M"
+    },
+    {
+      "model_id": "meta-llama/Meta-Llama-3-8B",
+      "title": "meta-llama/Meta-Llama-3-8B",
+      "pipeline": "text-generation",
+      "downloads": 314945,
+      "likes": 6657,
+      "downloads_str": "314.9k",
+      "summary": "📥 314.9k 下载 · ⭐ 6657 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Meta-Llama-3-8B"
+    },
+    {
+      "model_id": "openai/whisper-large-v3",
+      "title": "openai/whisper-large-v3",
+      "pipeline": "automatic-speech-recognition",
+      "downloads": 4954242,
+      "likes": 6267,
+      "downloads_str": "5.0M",
+      "summary": "📥 5.0M 下载 · ⭐ 6267 赞 · 🏷️ automatic-speech-recognition",
+      "link": "https://huggingface.co/openai/whisper-large-v3"
+    },
+    {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "title": "sentence-transformers/all-MiniLM-L6-v2",
+      "pipeline": "sentence-similarity",
+      "downloads": 253739900,
+      "likes": 5871,
+      "downloads_str": "253.7M",
+      "summary": "📥 253.7M 下载 · ⭐ 5871 赞 · 🏷️ sentence-similarity",
+      "link": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-schnell",
+      "title": "black-forest-labs/FLUX.1-schnell",
+      "pipeline": "text-to-image",
+      "downloads": 761299,
+      "likes": 5801,
+      "downloads_str": "761.3k",
+      "summary": "📥 761.3k 下载 · ⭐ 5801 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-schnell"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-V4-Pro",
+      "title": "deepseek-ai/DeepSeek-V4-Pro",
+      "pipeline": "text-generation",
+      "downloads": 619426,
+      "likes": 5530,
+      "downloads_str": "619.4k",
+      "summary": "📥 619.4k 下载 · ⭐ 5530 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
+    },
+    {
+      "model_id": "Tongyi-MAI/Z-Image-Turbo",
+      "title": "Tongyi-MAI/Z-Image-Turbo",
+      "pipeline": "text-to-image",
+      "downloads": 691810,
+      "likes": 5242,
+      "downloads_str": "691.8k",
+      "summary": "📥 691.8k 下载 · ⭐ 5242 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo"
+    },
+    {
+      "model_id": "MiniMaxAI/MiniMax-H3",
+      "title": "MiniMaxAI/MiniMax-H3",
+      "pipeline": "image-text-to-video",
+      "downloads": 4860709,
+      "likes": 5204,
+      "downloads_str": "4.9M",
+      "summary": "📥 4.9M 下载 · ⭐ 5204 赞 · 🏷️ image-text-to-video",
+      "link": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+    },
+    {
+      "model_id": "openai/gpt-oss-120b",
+      "title": "openai/gpt-oss-120b",
+      "pipeline": "text-generation",
+      "downloads": 5465693,
+      "likes": 5194,
+      "downloads_str": "5.5M",
+      "summary": "📥 5.5M 下载 · ⭐ 5194 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/openai/gpt-oss-120b"
+    },
+    {
+      "model_id": "Qwen/Qwen3.8-Flash-Next",
+      "title": "Qwen/Qwen3.8-Flash-Next",
+      "pipeline": "image-text-to-text",
+      "downloads": 604992,
+      "likes": 5144,
+      "downloads_str": "605.0k",
+      "summary": "📥 605.0k 下载 · ⭐ 5144 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+    },
+    {
+      "model_id": "zai-org/GLM-5.2",
+      "title": "zai-org/GLM-5.2",
+      "pipeline": "text-generation",
+      "downloads": 932248,
+      "likes": 5084,
+      "downloads_str": "932.2k",
+      "summary": "📥 932.2k 下载 · ⭐ 5084 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/zai-org/GLM-5.2"
+    },
+    {
+      "model_id": "bigscience/bloom",
+      "title": "bigscience/bloom",
+      "pipeline": "text-generation",
+      "downloads": 16185,
+      "likes": 5045,
+      "downloads_str": "16.2k",
+      "summary": "📥 16.2k 下载 · ⭐ 5045 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/bigscience/bloom"
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-3-medium",
+      "title": "stabilityai/stable-diffusion-3-medium",
+      "pipeline": "text-to-image",
+      "downloads": 4419,
+      "likes": 5026,
+      "downloads_str": "4.4k",
+      "summary": "📥 4.4k 下载 · ⭐ 5026 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/stabilityai/stable-diffusion-3-medium"
+    }
+  ]
+}
