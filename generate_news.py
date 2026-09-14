@@ -145,30 +145,30 @@ def fetch_all():
 # ========== 3. AI 整理 ==========
 PROMPT_TEMPLATE = """你是资深的 AI 与汽车科技情报编辑。基于以下本周抓取的原始素材，整理出一期情报周报。
 
-## 素材列表
+## 素材列表（已按热度/时间筛选，每类只给最相关 N 条）
 
-【1. arXiv cs.AI 最新论文】
+【1. arXiv cs.AI 论文（5条）】
 {papers_ai}
 
-【2. arXiv cs.RO 机器人】
+【2. arXiv cs.RO 机器人（4条）】
 {papers_ro}
 
-【3. arXiv cs.CL 自然语言处理】
+【3. arXiv cs.CL 自然语言处理（4条）】
 {papers_cl}
 
-【4. AI 巨头官网新闻】
+【4. AI 巨头官网（5条）】
 {ai_giants}
 
-【5. 车企官网新闻】
+【5. 车企官网（4条）】
 {auto_companies}
 
-【6. 中文科技媒体】
+【6. 中文科技媒体（5条）】
 {cn_tech}
 
-【7. Hacker News 高赞】
+【7. Hacker News 高赞（5条）】
 {hn}
 
-【8. HuggingFace 热门模型】
+【8. HuggingFace 热门模型（5条）】
 {hf_models}
 
 ## 输出要求
@@ -233,28 +233,28 @@ PROMPT_TEMPLATE = """你是资深的 AI 与汽车科技情报编辑。基于以�
 
 
 def call_llm(data):
-    """调用 DeepSeek API 整理为周报 JSON"""
-    def fmt(items, max_summary=100):
+    """调用 DeepSeek API 整理为周报 JSON（限制每类素材 ≤5 条，省 token）"""
+    def fmt(items, max_items=5, max_summary=80):
         return "\n".join([
             f"- {it.get('title', it.get('model_id', ''))}\n  摘要: {(it.get('summary','') or '')[:max_summary]}\n  链接: {it.get('link','')}\n  来源: {it.get('source','')}"
-            for it in items
+            for it in items[:max_items]
         ]) or "（无）"
 
-    def fmt_models(models):
+    def fmt_models(models, max_items=5):
         return "\n".join([
-            f"- {m.get('model_id','')} | pipeline: {m.get('pipeline','')} | downloads: {m.get('downloads',0)} | likes: {m.get('likes',0)} | {m.get('link','')}"
-            for m in models
+            f"- {m.get('model_id','')} | pipeline: {m.get('pipeline','')} | downloads: {m.get('downloads_str', m.get('downloads',0))} | likes: {m.get('likes',0)} | {m.get('link','')}"
+            for m in models[:max_items]
         ]) or "（无）"
 
     prompt = PROMPT_TEMPLATE.format(
-        papers_ai=fmt(data["papers_ai"]),
-        papers_ro=fmt(data["papers_ro"]),
-        papers_cl=fmt(data["papers_cl"]),
-        ai_giants=fmt(data["ai_giants"]),
-        auto_companies=fmt(data["auto_companies"]),
-        cn_tech=fmt(data["cn_tech"]),
-        hn=fmt(data["hn"]),
-        hf_models=fmt_models(data["hf_models"]),
+        papers_ai=fmt(data.get("papers_ai", []), 5),
+        papers_ro=fmt(data.get("papers_ro", []), 4),
+        papers_cl=fmt(data.get("papers_cl", []), 4),
+        ai_giants=fmt(data.get("ai_giants", []), 5),
+        auto_companies=fmt(data.get("auto_companies", []), 4),
+        cn_tech=fmt(data.get("cn_tech", []), 5),
+        hn=fmt(data.get("hn", []), 5),
+        hf_models=fmt_models(data.get("hf_models", []), 5),
     )
 
     if not DEEPSEEK_API_KEY:
@@ -294,40 +294,64 @@ def call_llm(data):
 
 
 def build_fallback(data):
-    """AI 调用失败时，从素材直接拼接 + 翻译英文标题"""
-    def translate_if_en(text):
-        """简单判断：含中文则原样返回，否则尝试翻译"""
-        if not text:
-            return text
-        # 判断是否含中文
-        has_chinese = any('\u4e00' <= c <= '\u9fff' for c in text)
-        if has_chinese:
-            return text
-        # 调用 DeepSeek 翻译
-        if DEEPSEEK_API_KEY:
-            try:
-                resp = requests.post(
-                    DEEPSEEK_URL,
-                    headers={
-                        "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
-                        "Content-Type": "application/json",
-                    },
-                    json={
-                        "model": "deepseek-chat",
-                        "messages": [
-                            {"role": "system", "content": "你是一个翻译引擎，把英文翻译成简洁专业的中文，保留技术术语。直接输出中文，不要任何解释。"},
-                            {"role": "user", "content": f"翻译为中文（30-60字）: {text}"},
-                        ],
-                        "temperature": 0.3,
-                        "max_tokens": 200,
-                    },
-                    timeout=15,
-                )
-                if resp.status_code == 200:
-                    return resp.json()["choices"][0]["message"]["content"].strip()
-            except Exception:
-                pass
-        return text  # 翻译失败返回原文
+    """AI 调用失败时，从素材直接拼接，不调用翻译 API（节省 token）"""
+    papers_combined = (data["papers_ai"] + data["papers_ro"] + data["papers_cl"])[:7]
+    news_combined = (data["ai_giants"] + data["cn_tech"] + data["hn"])[:10]
+    return {
+        "key_points": [
+            f"🤖 AI 巨头官网 {len(data['ai_giants'])} 条新闻",
+            f"🚗 车企动态 {len(data['auto_companies'])} 条更新",
+            f"🤗 HuggingFace {len(data['hf_models'])} 个热门模型",
+            f"📡 数据自动抓取于 {datetime.now().strftime('%Y-%m-%d')}",
+        ],
+        "ai_news": [
+            {"title": n["title"][:60], "summary": (n.get("summary", "") or "")[:80], "link": n["link"], "source": n.get("source", "链接")}
+            for n in news_combined[:5]
+        ] or [{"title": "AI 资讯聚合", "summary": "本周 AI 领域持续活跃", "link": "https://openai.com", "source": "OpenAI"}],
+        "auto_tech": [
+            {"title": n["title"][:60], "summary": (n.get("summary", "") or "")[:80], "link": n["link"], "source": n.get("source", "链接")}
+            for n in data["auto_companies"][:4]
+        ] or [{"title": "车企科技动态", "summary": "本周车企密集发布新技术", "link": "https://www.press.bmwgroup.com/", "source": "BMW"}],
+        "leadership": [
+            {"title": "本周车企人事动态", "summary": "数据源未覆盖人事变动，请关注专业汽车媒体", "link": "https://www.163.com/auto/", "source": "网易汽车"}
+        ] if not data["auto_companies"] else [
+            {"title": data["auto_companies"][0]["title"][:60], "summary": (data["auto_companies"][0].get("summary") or "车企动态")[:80], "link": data["auto_companies"][0]["link"], "source": data["auto_companies"][0].get("source", "链接")}
+        ],
+        "auto_ai": [
+            {"title": p["title"][:60], "summary": p.get("summary", "")[:80], "link": p["link"], "source": "arXiv cs.RO"}
+            for p in data["papers_ro"][:3]
+        ] or [{"title": "汽车 AI 技术", "summary": "汽车智能化加速", "link": "https://arxiv.org/list/cs.RO/recent", "source": "arXiv"}],
+        "papers": [
+            {"title": p["title"], "id": p["link"].split("/")[-1] if "/" in p["link"] else "0000.00000", "authors": ", ".join(p.get("authors", [])), "summary": p.get("summary", "")[:100]}
+            for p in papers_combined[:5]
+        ],
+        "github": [
+            {"name": m["title"], "stars": str(m.get("likes", 0)), "summary": m.get("summary", "")[:80], "link": m.get("link", "")}
+            for m in data["hf_models"][:5]
+        ],
+        "ai_deep": [
+            {"title": h["title"][:60], "summary": h.get("summary", "高赞讨论"), "link": h["link"], "source": h.get("source", "HN")}
+            for h in data["hn"][:3]
+        ],
+        "models": [
+            {
+                "model_id": m.get("model_id", m.get("title", "")),
+                "pipeline": m.get("pipeline", "通用"),
+                "downloads": m.get("downloads_str", str(m.get("downloads", 0))),
+                "likes": str(m.get("likes", 0)),
+                "summary": m.get("summary", ""),
+                "link": m.get("link", ""),
+            }
+            for m in data["hf_models"][:5]
+        ],
+        "summary": [
+            {"title": "AI 巨头动态密集", "content": f"本周 OpenAI/Google/NVIDIA 等发布 {len(data['ai_giants'])} 条更新", "color": "gold"},
+            {"title": "车企加速 AI 化", "content": f"车企官网 {len(data['auto_companies'])} 条新闻，AI 渗透加速", "color": "green"},
+            {"title": "HF 模型热度高", "content": f"本周 {len(data['hf_models'])} 个热门模型在 HF 出圈", "color": "purple"},
+            {"title": "中文科技媒体活跃", "content": f"爱范儿、极客公园等 {len(data['cn_tech'])} 条更新", "color": "gold"},
+            {"title": "arXiv 研究持续", "content": f"本周 {len(data['papers_ai']) + len(data['papers_ro']) + len(data['papers_cl'])} 篇新论文", "color": "green"},
+        ],
+    }
     papers_combined = (data["papers_ai"] + data["papers_ro"] + data["papers_cl"])[:7]
     news_combined = (data["ai_giants"] + data["cn_tech"] + data["hn"])[:10]
     return {
@@ -399,60 +423,6 @@ def is_chinese(text):
         return False
     has_cjk = any('\u4e00' <= c <= '\u9fff' for c in text[:100])
     return has_cjk
-
-
-def translate_text(text):
-    """调用 DeepSeek 翻译成中文（保留技术术语）"""
-    if not text or is_chinese(text):
-        return text
-    if not DEEPSEEK_API_KEY:
-        return text
-    try:
-        resp = requests.post(
-            DEEPSEEK_URL,
-            headers={
-                "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
-                "Content-Type": "application/json",
-            },
-            json={
-                "model": "deepseek-chat",
-                "messages": [
-                    {"role": "system", "content": "你是英译中引擎。直接输出中文翻译，保留技术术语如 VLM/agent/fine-tune，简洁专业，30-60字。不要任何解释。"},
-                    {"role": "user", "content": f"翻译：{text}"},
-                ],
-                "temperature": 0.3,
-                "max_tokens": 200,
-            },
-            timeout=15,
-        )
-        if resp.status_code == 200:
-            return resp.json()["choices"][0]["message"]["content"].strip()
-    except Exception:
-        pass
-    return text
-
-
-def chinese_post_process(news_data):
-    """对所有标题/简介做一遍翻译后处理"""
-    print("🌐 后处理：翻译非中文标题/简介...")
-    list_keys = ["ai_news", "auto_tech", "leadership", "auto_ai", "papers", "github", "ai_deep", "models"]
-    for key in list_keys:
-        for item in news_data.get(key, []):
-            for field in ["title", "summary", "content", "name", "model_id"]:
-                if field in item:
-                    val = item[field]
-                    if val and not is_chinese(val):
-                        new_val = translate_text(val)
-                        if new_val and new_val != val:
-                            item[field] = new_val
-    # key_points
-    for i, kp in enumerate(news_data.get("key_points", [])):
-        if kp and not is_chinese(kp):
-            new_val = translate_text(kp)
-            if new_val:
-                news_data["key_points"][i] = new_val
-    print(f"  ✅ 完成")
-    return news_data
 
 
 def stories_html(items):
@@ -679,9 +649,6 @@ def main():
             items = items[:-1]
             news_data[key] = items
             print(f"  [偶数] {key}: 去掉 1 条 → {len(items)} 条")
-
-    # 强制中文翻译：不管 AI 整理还是 fallback，统一过一遍
-    news_data = chinese_post_process(news_data)
 
     # Step 3: 渲染
     html = build_html(news_data, archive_filename)
