@@ -1,0 +1,497 @@
+{
+  "fetched_at": "2026-09-14T07:31:03.048891",
+  "papers_ai": [
+    {
+      "title": "Autonomous Research for Open-Ended Problems: A Case Study on Telecom Ticket Retrieval",
+      "summary": "Recent breakthroughs in LLM-based systems and their abilities in problem solving and coding have allowed progress in the AI for Science paradigm, potentially replacing human roles in machine learning (ML) research. However, while several frameworks of fully autonomous end-to-end ML research have bee",
+      "link": "http://arxiv.org/abs/2609.13073v1",
+      "authors": [
+        "Junghyun Min",
+        "Huseyin Uzunalioglu",
+        "Mohamed Trabelsi"
+      ]
+    },
+    {
+      "title": "MAxBench: A Multinomial Concept Recovery Benchmark",
+      "summary": "Fine-grained control of language model behaviors (e.g., steering) is among the more actionable outcomes of interpretability research. For binary concepts such as refusal, a single direction in activation space often suffices for steering. However, many concepts are not binary: Animals and Countries ",
+      "link": "http://arxiv.org/abs/2609.13072v1",
+      "authors": [
+        "Divya Appapogu",
+        "Freya Behrens",
+        "Yonatan Belinkov"
+      ]
+    },
+    {
+      "title": "Involving before Evolving: A Vision for Trustworthy Enterprise Digital Twin Engineering",
+      "summary": "Enterprise Digital Twins (EDTs) promise data-driven decision support at organizational scale, but realizing them requires navigating siloed departments, tacit knowledge, and high-stakes decisions with long-horizon consequences. Existing approaches involve domain experts during model development but ",
+      "link": "http://arxiv.org/abs/2609.13071v1",
+      "authors": [
+        "Kérian Fiter",
+        "Adil Lagrou",
+        "Franck Dervault"
+      ]
+    },
+    {
+      "title": "Anchoring Clinical Events in Time: UID-Preserving Multimodal Reconstruction and Source-Grounded Adjudication",
+      "summary": "Clinical timelines support treatment-window analysis and leakage-free modeling, but discharge summaries often obscure chronology and structured EHR tables describe only part of the patient course. We present a UID-preserving framework that links each narrative event occurrence to its source span and",
+      "link": "http://arxiv.org/abs/2609.13062v1",
+      "authors": [
+        "Sayantan Kumar",
+        "Nicolas Grimaldi",
+        "Jack Cummins"
+      ]
+    },
+    {
+      "title": "Dynin-Robotics: Omnimodal Unified Diffusion Vision-Language-Action Model",
+      "summary": "Visual goal and dynamics prediction can provide language-conditioned robot policies with both a target outcome and a representation of action-dependent scene changes. We bring these predictions into action generation and selection through a shared trajectory model. Dynin-Robotics implements this for",
+      "link": "http://arxiv.org/abs/2609.13053v1",
+      "authors": [
+        "Hoeun Lee",
+        "Jaeik Kim",
+        "Jusang Oh"
+      ]
+    },
+    {
+      "title": "Diffusion Models and Concept Formation",
+      "summary": "Humans organize knowledge into a taxonomy of concepts with nested levels of abstraction and a \\emph{basic level} at which people recognize and name objects with the least cognitive effort. Cobweb is a classic cognitive account of this ability, an incremental learner that builds a probabilistic conce",
+      "link": "http://arxiv.org/abs/2609.13047v1",
+      "authors": [
+        "Zekun Wang",
+        "Karthik Singaravadivelan",
+        "Christopher J. MacLellan"
+      ]
+    },
+    {
+      "title": "Unified CT and MRI Pancreas Segmentation for Label-Efficient Cross-Modality Subregion Transfer",
+      "summary": "Robust medical image segmentation across imaging modalities is challenging because of large differences in appearance and intensity distributions. Models trained on a single modality often show substantial performance drops when applied to unseen domains. In this work, we develop a unified 3D pancre",
+      "link": "http://arxiv.org/abs/2609.13043v1",
+      "authors": [
+        "Ziliang Hong",
+        "Hongyi Pan",
+        "Halil Ertugrul Aktas"
+      ]
+    },
+    {
+      "title": "DynSHAP: Towards Explainable Dynamic Survival Analysis",
+      "summary": "Deep learning models for dynamic survival analysis (DSA) achieve strong predictive performance by incorporating longitudinal patient data, but their black box nature limits clinical trust and adoption. Existing explainability methods cannot handle longitudinal, irregular inputs and functional surviv",
+      "link": "http://arxiv.org/abs/2609.13042v1",
+      "authors": [
+        "Nastasya Anokhina",
+        "Jonas Jürß",
+        "Pietro Liò"
+      ]
+    },
+    {
+      "title": "Groupoid-Based Internal State Representations for Reinforcement Learning with Local Symmetries",
+      "summary": "Symmetries play a central role in reducing the complexity of reinforcement learning problems, yet most existing approaches rely on fixed group actions or predefined state abstractions. Classical reinforcement learning algorithms typically assume a globally structured Markov decision process with uni",
+      "link": "http://arxiv.org/abs/2609.13035v1",
+      "authors": [
+        "Ben Opperman",
+        "Eduardo Alonso",
+        "Esther Mondragón"
+      ]
+    },
+    {
+      "title": "Attention Quantization for Tabular Foundation Models",
+      "summary": "With the recent rise and adoption of tabular foundation models, optimizing their inference performance becomes an emerging field for efficiency research. While the models are architecturally similar to transformer-based large language models (LLMs), the size and serving patterns differ significantly",
+      "link": "http://arxiv.org/abs/2609.13031v1",
+      "authors": [
+        "Jonas M. Kübler",
+        "Benjamin Jäger",
+        "Klemens Flöge"
+      ]
+    }
+  ],
+  "papers_ro": [],
+  "papers_cl": [],
+  "ai_giants": [
+    {
+      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+      "summary": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models.",
+      "link": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+      "source": "OpenAI",
+      "published": "2026-09-14T00:00:00"
+    },
+    {
+      "title": "New method enables AI for safety-critical situations",
+      "summary": "The “HardFlow” algorithm could help generative AI models produce high-quality outputs that obey strict requirements when “pretty close” doesn’t cut it.",
+      "link": "https://news.mit.edu/2026/new-method-enables-ai-safety-critical-situations-0914",
+      "source": "MIT News AI",
+      "published": "2026-09-14T04:00:00"
+    }
+  ],
+  "auto_companies": [
+    {
+      "title": "DTM: Wittmann triumphs in the BMW M4 GT3 EVO at the Sachsenring and keeps title hopes alive.",
+      "summary": "+++ Wittmann converts pole position into the 21st DTM victory of his career on Saturday +++ BMW M Motorsport triumphs at the Sachsenring for the first time +++ Wittmann heads into the season finale in",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460678EN?language=en",
+      "source": "BMW",
+      "published": "2026-09-13T16:12:39"
+    },
+    {
+      "title": "IGTC: Team WRT wins Bronze category at the Suzuka 1000KM – Team KRC on the Pro-Am podium.",
+      "summary": "+++ Dan Harper, Anthony McIntosh and Parker Thompson celebrate class victory for Team WRT +++ Team KRC with Augusto Farfus on the Pro-Am podium +++ Max Hesse, Maxime Oosten and Ruan Cun Fan secure pol",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460675EN?language=en",
+      "source": "BMW",
+      "published": "2026-09-13T13:27:27"
+    }
+  ],
+  "cn_tech": [
+    {
+      "title": "新豆包手机助手首发体验，智能手机正在变成「行动终端」",
+      "summary": "真正的 AI 手机，应该是「行动终端」#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679983?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-14T06:00:21"
+    },
+    {
+      "title": "怎样让不戴眼镜的人，愿意每天戴一副AI眼镜？|专访应用材料公司副总裁 Paul Meissner",
+      "summary": "最近，爱范儿在上海见到了应用材料公司副总裁兼光子平台事业部总经理Paul Meissner，并体验了现场展示的多款智能眼镜技术样品#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679952?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-14T01:53:41"
+    },
+    {
+      "title": "早报｜iPhone 18 Pro首批售罄，发货延至10月/OpenAI放弃今年上市/罗永浩评价野人先生冰淇淋「难吃」",
+      "summary": "· 集邦咨询预计 iPhone Duo 今年出货 500 万台，占折叠屏市场近四分之一 · Kimi K2.8 Preview 全量上线，所有会员开放 100 万上下文 · Grok 4.7 延期，马斯克称模型会在难题上过早放弃#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679930?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-14T00:09:32"
+    },
+    {
+      "title": "专访爆火「机器鸭」背后的硬件推手：这是个信号，未来推动新故事的并非硬件",
+      "summary": " 最近这两周，一只「机器鸭」在 X 上刷屏了。 这只叫 Microduck 的机器鸭，由 Hugging Face 旗下的 Pollen Robotics 设计，售价 399 美元。高峰期平均每 4 秒卖出一台，五天后预售破万台，销售额突破 500 万美元，目前订单已经排到明年。      它火了，火出了科技圈，还可能会刷新消费级机器人出货纪录。 而这只全球爆款，由深圳制造，工程化公司是潘昊创办的",
+      "link": "http://www.geekpark.net/news/370269",
+      "source": "极客公园",
+      "published": "2026-09-14T05:14:43"
+    },
+    {
+      "title": "苹果的折叠屏等了十五年，体验还差临门一脚",
+      "summary": "  折叠屏七年没解决的问题，从来不在铰链上。  作者｜张勇毅 编辑｜靖宇  2011 年 9 月 30 日，苹果递交了一份名叫「Flexible electronic devices」的专利申请。它描述的是一台屏幕可以对折的设备，合起来能揣进口袋，靠传感器判断自己是开着还是合着。 这份专利 2015 年 1 月获授，发明人一共六位，其中一位叫特努斯（John P. Ternus）。  十五年之后的",
+      "link": "http://www.geekpark.net/news/370231",
+      "source": "极客公园",
+      "published": "2026-09-13T17:24:02"
+    },
+    {
+      "title": "华为 WATCH FIT 5 系列迎来鸿蒙 HarmonyOS 7 升级：系统界面全新升级，新增万象模块表盘",
+      "summary": "IT之家 9 月 14 日消息，今日，华为 WATCH FIT 5 系列迎来 HarmonyOS 7 重磅升级，全新沉浸光感设计，上线情绪健康新皮肤，新增万象模块表盘。IT之家整理如下：系统界面全新升级，引入柔和白边光影效果。表盘与多任务列表在光晕中显得格外通透灵动，仿佛清晨阳光洒在脸庞，清晰而不刺眼。锻炼记录、计算器等应用通过丰富的背景层次，营造出深邃而高级的视觉空间，让每一次交互都成为一种视觉",
+      "link": "https://www.ithome.com/1/002/100.htm",
+      "source": "IT之家",
+      "published": "2026-09-14T07:29:10"
+    },
+    {
+      "title": "比亚迪股份副总裁李柯称燃油车已没有未来",
+      "summary": "IT之家 9 月 14 日消息，比亚迪股份副总裁、比亚迪美洲地区总裁李柯前天接受外媒 carwow.es 采访，谈到公司的战略方向、海外策略等，并称比亚迪最快将在明年推出固态电池。谈到比亚迪的闪充技术时，主持人说道：“好的，我还有一个问题。我不知道这个问题是否有些尴尬，那就是燃油车前景如何，您如何看待中国市场、欧洲市场的具体情况？”IT之家注意到，李柯回应称：“在中国，随着比亚迪闪充技术发展，我认",
+      "link": "https://www.ithome.com/1/002/099.htm",
+      "source": "IT之家",
+      "published": "2026-09-14T07:28:29"
+    },
+    {
+      "title": "ATK 推出 YOGO 75 系列三模矮轴机械键盘，到手价 599.25 元起",
+      "summary": "IT之家 9 月 14 日消息，ATK 今日发布 YOGO 75 系列三模矮轴机械键盘，将于 9 月 20 日开售，到手价 599.25 元起：ATK YOGO 75：原价 705 元，到手价 599.25 元ATK YOGO 75 Pro：原价 823 元，到手价 699.55 元这款键盘提供 YOGO 75、YOGO 75 Pro 两个版本，Pro 版本额外配像素点阵屏、多功能媒体键与音量旋钮",
+      "link": "https://www.ithome.com/1/002/098.htm",
+      "source": "IT之家",
+      "published": "2026-09-14T07:24:31"
+    },
+    {
+      "title": "就 15 岁以下未成年人社交媒体禁令，法国向欧盟提交新版法案",
+      "summary": "IT之家 9 月 14 日消息，法国总统埃马纽埃尔 · 马克龙（Emmanuel Macron）表示，由于旧法案遭到本国最高宪法机构否决，法国政府现已提交一份修订草案，拟禁止 15 岁以下未成年儿童使用社交媒体。今年 8 月中旬，法国宪法委员会驳回了旧法案，认定法案中部分条款对相关人群的言论自由构成不必要的限制。IT之家注意到，马克龙在 X 平台发文称：“经过严谨的技术层面工作，政府今日已向欧盟委",
+      "link": "https://www.ithome.com/1/002/096.htm",
+      "source": "IT之家",
+      "published": "2026-09-14T07:20:09"
+    },
+    {
+      "title": "暴雪《暗黑破坏神》游戏 IP 全球触达玩家数超 1.3 亿，27 个月净增约 3000 万",
+      "summary": "IT之家 9 月 14 日消息，暗黑破坏神官方账号 @Diablo 昨日（9 月 13 日）发布推文，宣布《暗黑破坏神》游戏 IP 触达玩家数量累计已超过 1.3 亿。官方推文称全球已有超过 1.3 亿名玩家进入过“庇护之地”（Sanctuary），参与地狱的无尽战斗。需要注意的是，这里的玩家数量覆盖《暗黑破坏神》整个系列，可能包含试玩、订阅服务用户、免费游玩等玩家数量。IT之家查询公开资料，暗黑",
+      "link": "https://www.ithome.com/1/002/095.htm",
+      "source": "IT之家",
+      "published": "2026-09-14T07:16:59"
+    },
+    {
+      "title": "OPPO Enco X4 耳机三色亮相，9 月 22 日全球首发",
+      "summary": "IT之家 9 月 14 日消息，OPPO Enco X4 耳机将于 9 月 22 日 19:00 全球首发，新品提供柔白、粉金、钛灰三款配色。从图上可以看到，这款新品采用入耳式设计，配备较短耳机柄，整体小巧精致；充电盒采用圆形设计，预计带来不错的手感体验。据博主 @数码闲聊站 本月早些时候爆料，OPPO Enco X4 的 ID 细节和做工相比上代更加精致。音质和降噪体验相比上代有所升级，还落地了",
+      "link": "https://www.ithome.com/1/002/094.htm",
+      "source": "IT之家",
+      "published": "2026-09-14T07:12:04"
+    },
+    {
+      "title": "古尔曼预测：苹果未来会推出 iPhone Duo Max，还有 Duo SE 和 Duo Mini",
+      "summary": "IT之家 9 月 14 日消息，彭博社记者马克 · 古尔曼（Mark Gurman）透露，苹果将在未来几年推出 iPhone Duo Max 机型，并解读了苹果最终选用“Duo”作为后缀、放弃其他名称的原因。IT之家注意到，在 iPhone Duo 正式发布前的数月里，古尔曼曾报道，苹果内部员工一度将这款机型称作 iPhone Ultra，这一叫法大概率是受到了媒体报道与爆料信息的影响。但苹果最终",
+      "link": "https://www.ithome.com/1/002/093.htm",
+      "source": "IT之家",
+      "published": "2026-09-14T07:09:13"
+    },
+    {
+      "title": "深光影像推出 AF 18mm F2.2 LE APS-C 相机镜头：首发富士 X 卡口，预售价 649 元",
+      "summary": "IT之家 9 月 14 日消息，深光影像今日发布 AF 18mm F2.2 LE APS-C 相机镜头，首发富士 X 卡口，商品页面显示后续将推出 E、Z、M43 卡口，预售价 649 元。这款镜头采用金属镜身，重约 122g，尺寸为 29.5mm × 66mm，最近对焦距离 0.18m；光学结构为 6 组 8 片，搭载 1 枚 ED 低色散镜片、4 枚高折射率镜片，采用 9 枚光圈叶片设计，搭载",
+      "link": "https://www.ithome.com/1/002/092.htm",
+      "source": "IT之家",
+      "published": "2026-09-14T07:08:25"
+    },
+    {
+      "title": "敬一丹：在电视仍能抵达所有人的年代",
+      "summary": "她以温和而坚定的声音追问现实。",
+      "link": "https://www.tmtpost.com/8138600.html",
+      "source": "钛媒体",
+      "published": "2026-09-14T06:59:32"
+    },
+    {
+      "title": "猛犸象欠消费者一个说法",
+      "summary": "既不防晒，也不吱声",
+      "link": "https://www.tmtpost.com/8138895.html",
+      "source": "钛媒体",
+      "published": "2026-09-14T06:59:30"
+    },
+    {
+      "title": "用户时长不再是硬通货",
+      "summary": "字节拿下时长王，但市场正重新计算每一分钟的价格",
+      "link": "https://www.tmtpost.com/8138711.html",
+      "source": "钛媒体",
+      "published": "2026-09-14T06:59:26"
+    },
+    {
+      "title": "博迈医疗：利润过半依赖补助，腾讯创投等突击入股，实控人配偶上市前夕套现4.76亿｜IPO观察",
+      "summary": "笔者注意到，博迈医疗实控人配偶贺瑛在上会前转让全部股份套现4.76亿元，腾讯创投等机构亦在申报前突击入股，其入股价格相较上市预期估值近乎翻倍。",
+      "link": "https://www.tmtpost.com/8136837.html",
+      "source": "钛媒体",
+      "published": "2026-09-14T06:05:53"
+    },
+    {
+      "title": "一根头发丝般粗细的“针”，正在卡住万卡集群的脖子",
+      "summary": "国内99%的普通磨床的批量加工精度只能维持在1微米左右，根本无法进入高端算力供应链。",
+      "link": "https://www.tmtpost.com/8138933.html",
+      "source": "钛媒体",
+      "published": "2026-09-14T04:59:00"
+    },
+    {
+      "title": "AI制药的基建大赛开始了",
+      "summary": "下一个竞争高地",
+      "link": "https://www.tmtpost.com/8138778.html",
+      "source": "钛媒体",
+      "published": "2026-09-14T04:01:59"
+    },
+    {
+      "title": "【Fintech 周报】信用卡日均“销卡”超10万张；OpenAI推出金融版ChatGPT",
+      "summary": "保险法时隔11年再迎大修；金融监管总局丛林：大力整治“价格战”；5家支付机构同日被罚3661万元；中互金发布7条自律举措规范互联网贷款营销行为；9家银行AIC上半年净利润同比增长约1.4倍；四大国有行今年“秋招”缩招7000余人；年内多家银行拟停办个人贵金属代理业务；信用卡日均“销卡”超10万张；头部寿险公司营销员止跌，7年减少700万人；招商银行行长助理辞任；广州农商行收缩异地布局；6家上市助贷",
+      "link": "https://www.tmtpost.com/8138755.html",
+      "source": "钛媒体",
+      "published": "2026-09-14T03:21:44"
+    }
+  ],
+  "hn": [
+    {
+      "title": "Garry Tan wants US open-weight AI labs to 'distill' frontier models, too",
+      "summary": "💬 212 评论 · ⬆️ 385 赞",
+      "link": "https://techcrunch.com/2026/09/11/y-combinators-garry-tan-wants-u-s-open-weight-ai-labs-to-distill-frontier-models-too/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "David Sacks: OpenAI and Anthropic Don't Need Regulations to Pace Frontier Models",
+      "summary": "💬 216 评论 · ⬆️ 295 赞",
+      "link": "https://twitter.com/DavidSacks/status/2098973625252708460",
+      "source": "Hacker News"
+    }
+  ],
+  "hf_models": [
+    {
+      "model_id": "Qwen/Qwen3.8-27B",
+      "title": "Qwen/Qwen3.8-27B",
+      "pipeline": "image-text-to-text",
+      "downloads": 7768964,
+      "likes": 15048,
+      "downloads_str": "7.8M",
+      "summary": "📥 7.8M 下载 · ⭐ 15048 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-dev",
+      "title": "black-forest-labs/FLUX.1-dev",
+      "pipeline": "text-to-image",
+      "downloads": 822971,
+      "likes": 14681,
+      "downloads_str": "823.0k",
+      "summary": "📥 823.0k 下载 · ⭐ 14681 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "title": "deepseek-ai/DeepSeek-R1",
+      "pipeline": "text-generation",
+      "downloads": 648837,
+      "likes": 14229,
+      "downloads_str": "648.8k",
+      "summary": "📥 648.8k 下载 · ⭐ 14229 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1"
+    },
+    {
+      "model_id": "moonshotai/Kimi-K3",
+      "title": "moonshotai/Kimi-K3",
+      "pipeline": "image-text-to-text",
+      "downloads": 2207101,
+      "likes": 11340,
+      "downloads_str": "2.2M",
+      "summary": "📥 2.2M 下载 · ⭐ 11340 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/moonshotai/Kimi-K3"
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
+      "title": "stabilityai/stable-diffusion-xl-base-1.0",
+      "pipeline": "text-to-image",
+      "downloads": 2479895,
+      "likes": 8163,
+      "downloads_str": "2.5M",
+      "summary": "📥 2.5M 下载 · ⭐ 8163 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "title": "meta-llama/Llama-3.1-8B-Instruct",
+      "pipeline": "text-generation",
+      "downloads": 5574752,
+      "likes": 7587,
+      "downloads_str": "5.6M",
+      "summary": "📥 5.6M 下载 · ⭐ 7587 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "model_id": "CompVis/stable-diffusion-v1-4",
+      "title": "CompVis/stable-diffusion-v1-4",
+      "pipeline": "text-to-image",
+      "downloads": 601863,
+      "likes": 7086,
+      "downloads_str": "601.9k",
+      "summary": "📥 601.9k 下载 · ⭐ 7086 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/CompVis/stable-diffusion-v1-4"
+    },
+    {
+      "model_id": "hexgrad/Kokoro-82M",
+      "title": "hexgrad/Kokoro-82M",
+      "pipeline": "text-to-speech",
+      "downloads": 11571356,
+      "likes": 6908,
+      "downloads_str": "11.6M",
+      "summary": "📥 11.6M 下载 · ⭐ 6908 赞 · 🏷️ text-to-speech",
+      "link": "https://huggingface.co/hexgrad/Kokoro-82M"
+    },
+    {
+      "model_id": "meta-llama/Meta-Llama-3-8B",
+      "title": "meta-llama/Meta-Llama-3-8B",
+      "pipeline": "text-generation",
+      "downloads": 299632,
+      "likes": 6681,
+      "downloads_str": "299.6k",
+      "summary": "📥 299.6k 下载 · ⭐ 6681 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Meta-Llama-3-8B"
+    },
+    {
+      "model_id": "openai/whisper-large-v3",
+      "title": "openai/whisper-large-v3",
+      "pipeline": "automatic-speech-recognition",
+      "downloads": 4801728,
+      "likes": 6294,
+      "downloads_str": "4.8M",
+      "summary": "📥 4.8M 下载 · ⭐ 6294 赞 · 🏷️ automatic-speech-recognition",
+      "link": "https://huggingface.co/openai/whisper-large-v3"
+    },
+    {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "title": "sentence-transformers/all-MiniLM-L6-v2",
+      "pipeline": "sentence-similarity",
+      "downloads": 252806720,
+      "likes": 5957,
+      "downloads_str": "252.8M",
+      "summary": "📥 252.8M 下载 · ⭐ 5957 赞 · 🏷️ sentence-similarity",
+      "link": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-schnell",
+      "title": "black-forest-labs/FLUX.1-schnell",
+      "pipeline": "text-to-image",
+      "downloads": 738534,
+      "likes": 5846,
+      "downloads_str": "738.5k",
+      "summary": "📥 738.5k 下载 · ⭐ 5846 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-schnell"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-V4-Pro",
+      "title": "deepseek-ai/DeepSeek-V4-Pro",
+      "pipeline": "text-generation",
+      "downloads": 615947,
+      "likes": 5552,
+      "downloads_str": "615.9k",
+      "summary": "📥 615.9k 下载 · ⭐ 5552 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
+    },
+    {
+      "model_id": "Tongyi-MAI/Z-Image-Turbo",
+      "title": "Tongyi-MAI/Z-Image-Turbo",
+      "pipeline": "text-to-image",
+      "downloads": 690689,
+      "likes": 5275,
+      "downloads_str": "690.7k",
+      "summary": "📥 690.7k 下载 · ⭐ 5275 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo"
+    },
+    {
+      "model_id": "MiniMaxAI/MiniMax-H3",
+      "title": "MiniMaxAI/MiniMax-H3",
+      "pipeline": "image-text-to-video",
+      "downloads": 4819845,
+      "likes": 5262,
+      "downloads_str": "4.8M",
+      "summary": "📥 4.8M 下载 · ⭐ 5262 赞 · 🏷️ image-text-to-video",
+      "link": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+    },
+    {
+      "model_id": "openai/gpt-oss-120b",
+      "title": "openai/gpt-oss-120b",
+      "pipeline": "text-generation",
+      "downloads": 5415732,
+      "likes": 5231,
+      "downloads_str": "5.4M",
+      "summary": "📥 5.4M 下载 · ⭐ 5231 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/openai/gpt-oss-120b"
+    },
+    {
+      "model_id": "Qwen/Qwen3.8-Flash-Next",
+      "title": "Qwen/Qwen3.8-Flash-Next",
+      "pipeline": "image-text-to-text",
+      "downloads": 624390,
+      "likes": 5187,
+      "downloads_str": "624.4k",
+      "summary": "📥 624.4k 下载 · ⭐ 5187 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+    },
+    {
+      "model_id": "zai-org/GLM-5.2",
+      "title": "zai-org/GLM-5.2",
+      "pipeline": "text-generation",
+      "downloads": 941917,
+      "likes": 5109,
+      "downloads_str": "941.9k",
+      "summary": "📥 941.9k 下载 · ⭐ 5109 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/zai-org/GLM-5.2"
+    },
+    {
+      "model_id": "bigscience/bloom",
+      "title": "bigscience/bloom",
+      "pipeline": "text-generation",
+      "downloads": 15532,
+      "likes": 5065,
+      "downloads_str": "15.5k",
+      "summary": "📥 15.5k 下载 · ⭐ 5065 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/bigscience/bloom"
+    },
+    {
+      "model_id": "openai/gpt-oss-20b",
+      "title": "openai/gpt-oss-20b",
+      "pipeline": "text-generation",
+      "downloads": 6582044,
+      "likes": 5051,
+      "downloads_str": "6.6M",
+      "summary": "📥 6.6M 下载 · ⭐ 5051 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/openai/gpt-oss-20b"
+    }
+  ]
+}
