@@ -222,11 +222,13 @@ PROMPT_TEMPLATE = """你是资深的 AI 与汽车科技情报编辑。基于以�
 
 ## 关键约束
 1. **所有 link 必须从素材原文提取，真实有效**，严禁编造
-2. 标题用中文，summary 简洁专业
-3. 当某个模块素材不足时，对应模块用 arXiv / HF / HN 素材合理填充
-4. summary 的 color 用 gold/green/purple 三色轮换
-5. models 的 model_id / link / downloads / likes 必须严格沿用素材原文
-6. 返回纯 JSON，不要 ```json 标记
+2. **所有标题和简介必须是中文**——即使原素材是英文，也必须翻译成中文
+3. 翻译时保持专业术语（如 "agent"、"fine-tune"、"VLM" 可保留英文），但人话部分用中文
+4. summary 简洁专业，30-60 字
+5. 当某个模块素材不足时，对应模块用 arXiv / HF / HN 素材合理填充
+6. summary 的 color 用 gold/green/purple 三色轮换
+7. models 的 model_id / link / downloads / likes 必须严格沿用素材原文（但 summary 用中文）
+8. 返回纯 JSON，不要 ```json 标记
 """
 
 
@@ -292,7 +294,40 @@ def call_llm(data):
 
 
 def build_fallback(data):
-    """AI 调用失败时，从素材直接拼接"""
+    """AI 调用失败时，从素材直接拼接 + 翻译英文标题"""
+    def translate_if_en(text):
+        """简单判断：含中文则原样返回，否则尝试翻译"""
+        if not text:
+            return text
+        # 判断是否含中文
+        has_chinese = any('\u4e00' <= c <= '\u9fff' for c in text)
+        if has_chinese:
+            return text
+        # 调用 DeepSeek 翻译
+        if DEEPSEEK_API_KEY:
+            try:
+                resp = requests.post(
+                    DEEPSEEK_URL,
+                    headers={
+                        "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+                        "Content-Type": "application/json",
+                    },
+                    json={
+                        "model": "deepseek-chat",
+                        "messages": [
+                            {"role": "system", "content": "你是一个翻译引擎，把英文翻译成简洁专业的中文，保留技术术语。直接输出中文，不要任何解释。"},
+                            {"role": "user", "content": f"翻译为中文（30-60字）: {text}"},
+                        ],
+                        "temperature": 0.3,
+                        "max_tokens": 200,
+                    },
+                    timeout=15,
+                )
+                if resp.status_code == 200:
+                    return resp.json()["choices"][0]["message"]["content"].strip()
+            except Exception:
+                pass
+        return text  # 翻译失败返回原文
     papers_combined = (data["papers_ai"] + data["papers_ro"] + data["papers_cl"])[:7]
     news_combined = (data["ai_giants"] + data["cn_tech"] + data["hn"])[:10]
     return {
@@ -303,32 +338,32 @@ def build_fallback(data):
             f"📡 数据自动抓取于 {datetime.now().strftime('%Y-%m-%d')}",
         ],
         "ai_news": [
-            {"title": n["title"][:60], "summary": (n.get("summary", "") or "")[:80], "link": n["link"], "source": n.get("source", "链接")}
+            {"title": translate_if_en(n["title"][:60]), "summary": translate_if_en((n.get("summary", "") or "")[:80]), "link": n["link"], "source": n.get("source", "链接")}
             for n in news_combined[:5]
         ] or [{"title": "AI 资讯聚合", "summary": "本周 AI 领域持续活跃", "link": "https://openai.com", "source": "OpenAI"}],
         "auto_tech": [
-            {"title": n["title"][:60], "summary": (n.get("summary", "") or "")[:80], "link": n["link"], "source": n.get("source", "链接")}
+            {"title": translate_if_en(n["title"][:60]), "summary": translate_if_en((n.get("summary", "") or "")[:80]), "link": n["link"], "source": n.get("source", "链接")}
             for n in data["auto_companies"][:4]
         ] or [{"title": "车企科技动态", "summary": "本周车企密集发布新技术", "link": "https://www.press.bmwgroup.com/", "source": "BMW"}],
         "leadership": [
             {"title": "本周车企人事动态", "summary": "数据源未覆盖人事变动，请关注专业汽车媒体", "link": "https://www.163.com/auto/", "source": "网易汽车"}
         ] if not data["auto_companies"] else [
-            {"title": data["auto_companies"][0]["title"][:60], "summary": (data["auto_companies"][0].get("summary") or "车企动态")[:80], "link": data["auto_companies"][0]["link"], "source": data["auto_companies"][0].get("source", "链接")}
+            {"title": translate_if_en(data["auto_companies"][0]["title"][:60]), "summary": translate_if_en((data["auto_companies"][0].get("summary") or "车企动态")[:80]), "link": data["auto_companies"][0]["link"], "source": data["auto_companies"][0].get("source", "链接")}
         ],
         "auto_ai": [
-            {"title": p["title"][:60], "summary": p.get("summary", "")[:80], "link": p["link"], "source": "arXiv cs.RO"}
+            {"title": translate_if_en(p["title"][:60]), "summary": translate_if_en(p.get("summary", "")[:80]), "link": p["link"], "source": "arXiv cs.RO"}
             for p in data["papers_ro"][:3]
         ] or [{"title": "汽车 AI 技术", "summary": "汽车智能化加速", "link": "https://arxiv.org/list/cs.RO/recent", "source": "arXiv"}],
         "papers": [
-            {"title": p["title"], "id": p["link"].split("/")[-1] if "/" in p["link"] else "0000.00000", "authors": ", ".join(p.get("authors", [])), "summary": p.get("summary", "")[:100]}
+            {"title": translate_if_en(p["title"]), "id": p["link"].split("/")[-1] if "/" in p["link"] else "0000.00000", "authors": ", ".join(p.get("authors", [])), "summary": translate_if_en(p.get("summary", "")[:100])}
             for p in papers_combined[:5]
         ],
         "github": [
-            {"name": m["title"], "stars": str(m.get("likes", 0)), "summary": m.get("summary", "")[:80], "link": m.get("link", "")}
+            {"name": translate_if_en(m["title"]), "stars": str(m.get("likes", 0)), "summary": translate_if_en(m.get("summary", "")[:80]), "link": m.get("link", "")}
             for m in data["hf_models"][:5]
         ],
         "ai_deep": [
-            {"title": h["title"][:60], "summary": h.get("summary", "高赞讨论"), "link": h["link"], "source": h.get("source", "HN")}
+            {"title": translate_if_en(h["title"][:60]), "summary": translate_if_en(h.get("summary", "高赞讨论")), "link": h["link"], "source": h.get("source", "HN")}
             for h in data["hn"][:3]
         ],
         "models": [
@@ -337,7 +372,7 @@ def build_fallback(data):
                 "pipeline": m.get("pipeline", "通用"),
                 "downloads": m.get("downloads_str", str(m.get("downloads", 0))),
                 "likes": str(m.get("likes", 0)),
-                "summary": m.get("summary", ""),
+                "summary": translate_if_en(m.get("summary", "")),
                 "link": m.get("link", ""),
             }
             for m in data["hf_models"][:5]
