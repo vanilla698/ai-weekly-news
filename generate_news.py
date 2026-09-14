@@ -394,6 +394,67 @@ def esc(s):
     return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
+def is_chinese(text):
+    if not text or not isinstance(text, str):
+        return False
+    has_cjk = any('\u4e00' <= c <= '\u9fff' for c in text[:100])
+    return has_cjk
+
+
+def translate_text(text):
+    """调用 DeepSeek 翻译成中文（保留技术术语）"""
+    if not text or is_chinese(text):
+        return text
+    if not DEEPSEEK_API_KEY:
+        return text
+    try:
+        resp = requests.post(
+            DEEPSEEK_URL,
+            headers={
+                "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "model": "deepseek-chat",
+                "messages": [
+                    {"role": "system", "content": "你是英译中引擎。直接输出中文翻译，保留技术术语如 VLM/agent/fine-tune，简洁专业，30-60字。不要任何解释。"},
+                    {"role": "user", "content": f"翻译：{text}"},
+                ],
+                "temperature": 0.3,
+                "max_tokens": 200,
+            },
+            timeout=15,
+        )
+        if resp.status_code == 200:
+            return resp.json()["choices"][0]["message"]["content"].strip()
+    except Exception:
+        pass
+    return text
+
+
+def chinese_post_process(news_data):
+    """对所有标题/简介做一遍翻译后处理"""
+    print("🌐 后处理：翻译非中文标题/简介...")
+    list_keys = ["ai_news", "auto_tech", "leadership", "auto_ai", "papers", "github", "ai_deep", "models"]
+    for key in list_keys:
+        for item in news_data.get(key, []):
+            for field in ["title", "summary", "content", "name", "model_id"]:
+                if field in item:
+                    val = item[field]
+                    if val and not is_chinese(val):
+                        new_val = translate_text(val)
+                        if new_val and new_val != val:
+                            item[field] = new_val
+    # key_points
+    for i, kp in enumerate(news_data.get("key_points", [])):
+        if kp and not is_chinese(kp):
+            new_val = translate_text(kp)
+            if new_val:
+                news_data["key_points"][i] = new_val
+    print(f"  ✅ 完成")
+    return news_data
+
+
 def stories_html(items):
     return "".join(
         '<div class="story">'
@@ -618,6 +679,9 @@ def main():
             items = items[:-1]
             news_data[key] = items
             print(f"  [偶数] {key}: 去掉 1 条 → {len(items)} 条")
+
+    # 强制中文翻译：不管 AI 整理还是 fallback，统一过一遍
+    news_data = chinese_post_process(news_data)
 
     # Step 3: 渲染
     html = build_html(news_data, archive_filename)
