@@ -1,0 +1,532 @@
+{
+  "fetched_at": "2026-09-15T05:58:25.754334",
+  "papers_ai": [
+    {
+      "title": "Corrupt Plans, Clean Traces: Evading Chain-of-Thought Monitoring with Plan Injection",
+      "summary": "Chain-of-thought (CoT) monitoring is a safety strategy where the reasoning of a large language model \"actor\" is inspected by a \"monitor\" (often another language model) for signs of unsafe planning, deception, or misalignment. We find that planting harmful but benign-sounding reasoning in the actor's",
+      "link": "http://arxiv.org/abs/2609.15989v1",
+      "authors": [
+        "Keertana Chidambaram",
+        "Andrew Ilyas",
+        "Vasilis Syrgkanis"
+      ]
+    },
+    {
+      "title": "Stellar Colosseum: A Many-Agent Harness for Long-Horizon Research in Mathematics and Theoretical Computer Science",
+      "summary": "Language models can produce plausible short proofs, but may still be unreliable on long-horizon research problems, where progress depends on a sequence of uncertain and interdependent decisions. We introduce Stellar Colosseum, a model-agnostic harness for allocating inference across research in math",
+      "link": "http://arxiv.org/abs/2609.15983v1",
+      "authors": [
+        "Honghao Lin",
+        "David P. Woodruff",
+        "Yuan Deng"
+      ]
+    },
+    {
+      "title": "The Router Within: Eliciting Native Skill Routing from a Frozen LLM",
+      "summary": "Skills extend an LLM agent beyond its parametric knowledge, and the gain they promise rests on picking the right one. Deployed harnesses route by preloading every skill's metadata into the context, which disperses the agent's attention and caps the library size. Retrieval pipelines move the selectio",
+      "link": "http://arxiv.org/abs/2609.15982v1",
+      "authors": [
+        "Ruishuo Chen",
+        "Xun Wang",
+        "Yu Chen"
+      ]
+    },
+    {
+      "title": "Vulnerability Localization Benchmark: Measuring Agentic Security Analysis at Repository Scale",
+      "summary": "Language-model agents increasingly operate over complete software repositories, yet cybersecurity evaluations primarily measure whether they can detect, reproduce, or repair vulnerabilities rather than whether they can locate the relevant code. We study vulnerability localization: given a weakness c",
+      "link": "http://arxiv.org/abs/2609.15939v1",
+      "authors": [
+        "Aman Priyanshu",
+        "Supriti Vijay",
+        "Kimia Majd"
+      ]
+    },
+    {
+      "title": "Recurrent GraphNeural NetworkswithSet-BasedAggregation",
+      "summary": "Recurrent GNNs iterate message passing to convergence, and their logical characterizations to date rely on multi-set aggregation, graded (counting) logics, and halting or acceptance conditions that cannot be verified from the network's parameters. We study recurrent GNNs with set-based aggregation a",
+      "link": "http://arxiv.org/abs/2609.15932v1",
+      "authors": [
+        "Blai Bonet"
+      ]
+    },
+    {
+      "title": "Pilot Early, Commit Late: A Real-Options Model of Enterprise AI Adoption under Rapid Technological Progress",
+      "summary": "Artificial intelligence presents firms with an unusual timing problem. The technology frontier is improving rapidly, implementation is partly irreversible, and organization-specific capabilities are accumulated through action. This paper develops a two-period decision model of AI deployment under un",
+      "link": "http://arxiv.org/abs/2609.15919v1",
+      "authors": [
+        "Gaurav Tewari"
+      ]
+    },
+    {
+      "title": "SlipSense: Multimodal Tactile Learning for Low-Latency and Generalized Slip Detection",
+      "summary": "Slip detection is fundamental to dexterous manipulation, yet existing systems often lack precise characterization of detection latency and cross-platform generalization. We present SlipSense, a multimodal tactile slip-detection framework built on TacV5, a compact sensor integrating a $32 \\times 32$ ",
+      "link": "http://arxiv.org/abs/2609.15910v1",
+      "authors": [
+        "Tong Jian",
+        "Aditya Thurvas Senthil Kumar",
+        "Xinyi Li"
+      ]
+    },
+    {
+      "title": "Anatomical Grounding and Leakage-Aware Multimodal Contrastive Learning for Alzheimer's Disease Classification from Structural MRI",
+      "summary": "Deep networks trained on structural MRI for Alzheimer's disease (AD) staging often reach reasonable accuracy while attending to anatomically irrelevant regions, and multimodal models that add clinical tables frequently rely on variables that were used to assign the diagnostic label in the first plac",
+      "link": "http://arxiv.org/abs/2609.15888v1",
+      "authors": [
+        "Paul-Gabriel Nicolae",
+        "Irina Georgiana Mocanu"
+      ]
+    },
+    {
+      "title": "Privacy-enhanced federated learning via asynchronous aggregation and local differential perturbation",
+      "summary": "This study proposes a privacy-enhanced federated learning framework to address secure collaborative training in distributed data environments. The framework integrates Dynamic Differential Privacy (DDP), lightweight Homomorphic Encryption (HE), and Local Differential Privacy (LDP) mechanisms to ensu",
+      "link": "http://arxiv.org/abs/2609.15885v1",
+      "authors": [
+        "Zhen Zhong",
+        "Shini Yang",
+        "Liesheng Wei"
+      ]
+    },
+    {
+      "title": "Learning Multimodal One-step Flow Policy via Value-weighted Optimal Transport",
+      "summary": "Offline reinforcement learning aims to learn a policy solely from fixed datasets, which often contain multimodal action distributions. Flow policies can naturally represent such multimodal behaviors, but learning an efficient one-step flow policy remains challenging: standard value guidance often le",
+      "link": "http://arxiv.org/abs/2609.15883v1",
+      "authors": [
+        "Jaehun Shon",
+        "Jinha Choi",
+        "Jongwook Jeon"
+      ]
+    }
+  ],
+  "papers_ro": [],
+  "papers_cl": [],
+  "ai_giants": [
+    {
+      "title": "How Fyxer built an AI executive assistant people trust",
+      "summary": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice.",
+      "link": "https://openai.com/index/fyxer",
+      "source": "OpenAI",
+      "published": "2026-09-14T12:00:00"
+    },
+    {
+      "title": "Watch astronaut Christina Koch and Google’s James Manyika discuss space, technology, and discovery.",
+      "summary": "Christina Koch sits down with James Manyika, Google’s Senior Vice President of Research, Labs, Technology & Society.",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/dialogues-christina-koch/",
+      "source": "Google AI",
+      "published": "2026-09-14T19:00:00"
+    },
+    {
+      "title": "DevFest is back",
+      "summary": "Animation of the text \"{DevFest} 2026 Join us! Google Developer Groups\" with a globe icon, asterisk icon,  icon",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026/",
+      "source": "Google AI",
+      "published": "2026-09-14T16:00:00"
+    },
+    {
+      "title": "Perplexity Portable Computer Is Now Available on Windows, Powered by NVIDIA RTX",
+      "summary": "As local models become more capable, AI agents can handle more work directly on a PC while keeping sensitive information on the device. Portable Computer is a local version of the agent Perplexity Com",
+      "link": "https://blogs.nvidia.com/blog/local-ai-perplexity-windows-pcs/",
+      "source": "NVIDIA",
+      "published": "2026-09-14T15:00:52"
+    }
+  ],
+  "auto_companies": [
+    {
+      "title": "BMW Maps displays navigation and driver assistance information in a single 3D view",
+      "summary": "+++ Starting in October 2026, BMW Maps will display navigation and driver assistance in a single 3D view +++ This feature helps drivers orient themselves in complex traffic situations and makes assist",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460275EN?language=en",
+      "source": "BMW",
+      "published": "2026-09-14T12:00:00"
+    },
+    {
+      "title": "Carpathian Calling: The BMW Motorrad Int. GS Trophy 2026 Romania begins.",
+      "summary": "13 Teams. Six Days. One epic GS adventure.",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0460673EN?language=en",
+      "source": "BMW",
+      "published": "2026-09-14T09:00:00"
+    }
+  ],
+  "cn_tech": [
+    {
+      "title": "iOS 27 正式版体验：Siri AI 终于开窍了，老 iPhone 升级也有新东西",
+      "summary": "值得升级。#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1680134?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-15T05:00:50"
+    },
+    {
+      "title": "早报｜iOS27正式推送/比亚迪高管：燃油车在中国没有未来/iPhone 18 Pro渠道降价900元，苹果称不干预",
+      "summary": "· 广汽一汽签署重组意向协议，一汽拟成第二大股东 · 中国地震台网中心：正与苹果沟通 iOS 地震预警 · 马斯克旗下公司撤回对苹果的反垄断诉讼，继续起诉 OpenAI#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1680097?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-15T00:08:20"
+    },
+    {
+      "title": "在学会数学之前，AI 先学会了大厂的虚荣心",
+      "summary": "大厂的数学名题争夺赛#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1680046?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-14T13:05:26"
+    },
+    {
+      "title": "理想 i9 Home 来了，车内长滑轨+对坐模式，打造「市中心大平层」",
+      "summary": "理想的第二台 Home 级产品。#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1680033?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-14T10:15:12"
+    },
+    {
+      "title": "新豆包手机助手首发体验，智能手机正在变成「行动终端」",
+      "summary": "真正的 AI 手机，应该是「行动终端」#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1679983?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-14T06:00:21"
+    },
+    {
+      "title": "造物 100 #06｜自动驾驶上轮椅了，口袋相机学会飞行，AI 教练上了雪场",
+      "summary": "硬件创新力正在消失。 9 月 10 日，苹果发布了筹备多年的首款折叠屏 iPhone Duo，又是一款集大成之作，困扰多年的折叠屏折痕有了「苹果」解法。但我们明显发现硬件创新的品类迭代速度开始变得缓慢，这两年「原来还能有这种东西」的哇塞时刻越来越少。大家似乎默认，下一个时代级的硬件新品类短期内等不来，与其赌一个新物种的诞生，不如在成熟产品上做新的形态和能力。 所以硬件创新来到了大融合时代。你做手持",
+      "link": "http://www.geekpark.net/news/370325",
+      "source": "极客公园",
+      "published": "2026-09-15T05:54:51"
+    },
+    {
+      "title": "iOS 27、MacOS 27 正式发布；豆包手机助手消费者版亮相；李想：「大车」趋势一定会结束",
+      "summary": " 特朗普抨击 Anthropic CEO：AI 发展不能踩刹车，美国有「高智商总统」就足够 特朗普周一在社交媒体发文，明确表示其不认可 AI 数据中心引发的民众反弹及外界对前沿模型的忧虑。他写道：「AI 所需的唯一『护栏』，就是一位强悍而聪明（高智商！）的总统，而美国恰好拥有这样的总统。」 这一表态较他上周末承认需要某种程度监管的措辞明显趋于强硬。 争议的导火索是 Amodei 近日的公开表态。他",
+      "link": "http://www.geekpark.net/news/370306",
+      "source": "极客公园",
+      "published": "2026-09-15T00:17:23"
+    },
+    {
+      "title": "网易《无限大》不设任何角色卡池：纯外观付费，2027 年 1 月 15 日免费登陆 PC、PS5 和移动端",
+      "summary": "IT之家 9 月 15 日消息，网易都市开放世界 RPG《无限大》已经官宣于 2027 年 1 月 15 日全球同步上线，免费游玩，登陆 PC、PS5 和移动端，国内外版本完全统一。据官方介绍，该项目最早于 2023 年 8 月以代号形式首次亮相，开发周期超 1097 天，全球预约量已突破 1700 万，覆盖 110 余个国家地区。《无限大》官方公开了全新主城重霄，城市设计融合上海、杭州的城市风貌",
+      "link": "https://www.ithome.com/1/002/532.htm",
+      "source": "IT之家",
+      "published": "2026-09-15T05:55:34"
+    },
+    {
+      "title": "冲击英伟达护城河：开源项目让 AMD RX 9060 XT 显卡跑通部分 CUDA 库",
+      "summary": "IT之家 9 月 15 日消息，科技媒体 Tom's Hardware 昨日（9 月 14 日）发布博文，报道称开源项目 CUDA-for-AMD-Windows 正冲击英伟达的 CUDA 护城河，已在 AMD Radeon RX 9060 XT 演示运行部分 CUDA 库。IT之家注：CUDA 是英伟达的通用 GPU 加速计算平台，提供编译器、运行时、调试器、性能分析工具，以及可直接调用的 GP",
+      "link": "https://www.ithome.com/1/002/531.htm",
+      "source": "IT之家",
+      "published": "2026-09-15T05:52:41"
+    },
+    {
+      "title": "消息称英伟达内部限制使用 Anthropic 和 OpenAI 的前沿模型，敏感数据改用自家 AI",
+      "summary": "IT之家 9 月 15 日消息，据《The Information》昨日报道，包括英伟达、Palantir Technologies 和 Booz Allen Hamilton 在内的主要企业客户，因担忧专有企业数据的处理方式，正在限制使用 Anthropic 和 OpenAI 的前沿 AI 模型。报道称，这种不安可以追溯到 Anthropic 六月的政策变更，该政策允许其 Fable 模型保留客",
+      "link": "https://www.ithome.com/1/002/530.htm",
+      "source": "IT之家",
+      "published": "2026-09-15T05:52:32"
+    },
+    {
+      "title": "李柯：比亚迪在欧洲销售的产品最终都将实现本地生产，首款重卡 ETT44 明年进入欧洲",
+      "summary": "IT之家 9 月 15 日消息，当地时间 9 月 14 日，比亚迪在德国汉诺威 IAA Transportation 2026 运输展上发布旗舰电动重卡 ETT 44。该车最高续航 600 公里，并支持 1.5 兆瓦闪充。比亚迪股份副总裁兼国际业务负责人李柯在此次车展上表示，比亚迪计划明年向欧洲市场推出首款重型卡车 ETT44，并最终在欧洲实现本地化生产。“长期来看，我们在欧洲销售的所有产品都将在",
+      "link": "https://www.ithome.com/1/002/529.htm",
+      "source": "IT之家",
+      "published": "2026-09-15T05:42:51"
+    },
+    {
+      "title": "曝字节将发布独立智能网盘“ADrive”",
+      "summary": "IT之家 9 月 15 日消息，据《读佳》今日爆料，字节跳动将在 9 月发布全新且独立的智能网盘产品 ADrive，产品 Slogan 为“连接你的 AI 应用，让文件与产物持续可用”。爆料称，该产品由火山引擎打造，是一款面向 AI 智能体与人类用户协同办公的企业级智能网盘，主打统一文件存储与团队协作能力。目前官方已开启试用申请。在基础文件管理能力上，ADrive 覆盖企业日常办公全流程操作，支持",
+      "link": "https://www.ithome.com/1/002/528.htm",
+      "source": "IT之家",
+      "published": "2026-09-15T05:36:29"
+    },
+    {
+      "title": "谷歌拟精细化安卓高级保护功能，拆分 USB 保护、入侵检测等",
+      "summary": "IT之家 9 月 15 日消息，科技媒体 Android Authority 昨日（9 月 14 日）发布博文，报道称谷歌计划为安卓“高级保护”（Advanced Protection）引入更精细化的控制选项，支持单独启用 USB 保护、入侵检测等。IT之家注：在安卓 16 设备上，用户启用该功能之后，设备会启用防盗措施、应用限制、网络防护和网页安全等一系列设备级安全功能。谷歌强调，该功能可以帮助",
+      "link": "https://www.ithome.com/1/002/527.htm",
+      "source": "IT之家",
+      "published": "2026-09-15T05:31:51"
+    },
+    {
+      "title": "微软 CEO 纳德拉发布警告：AI 必须处于人类控制之下，支持更广泛的第三方测试",
+      "summary": "IT之家 9 月 15 日消息，当地时间 9 月 14 日晚，微软 CEO 萨提亚 · 纳德拉在公司留言板发布内部备忘录，就 AI 行业是否发展过快发表看法。他表示，AI 应保持在人类控制之下，支持更广泛的第三方测试，并警告公司必须花时间确保技术安全。“随着风险升高，人们应该需要多少时间就花多少时间。”“否则，你无论如何都会失去运营许可。”此前，一些 AI 研究人员上周警告称，AI 技术可能杀死所",
+      "link": "https://www.ithome.com/1/002/526.htm",
+      "source": "IT之家",
+      "published": "2026-09-15T05:29:28"
+    },
+    {
+      "title": "《哆啦 A 梦：大雄的蒸汽时间车》剧场版动画电影公布预告，2027 年日本上映",
+      "summary": "IT之家 9 月 15 日消息，《哆啦 A 梦》第 46 部剧场版动画电影 ——《哆啦 A 梦：大雄的蒸汽时间车》今日发布预告，将于 2027 年 3 月 5 日在日本地区上映。本作舞台设定在 19 世纪的英国伦敦。哆啦 A 梦和大雄他们将跨越时空，从 21 世纪的日本出发，展开一场完全原创的宏大冒险。该影片由森山瑠潮导演，上田诚编剧（《春宵苦短，少女前进吧！》《企鹅公路》）。IT之家小伙伴记得用",
+      "link": "https://www.ithome.com/1/002/525.htm",
+      "source": "IT之家",
+      "published": "2026-09-15T04:51:46"
+    },
+    {
+      "title": "全球首款生成式AI吉他天谱乐即将推出Pro款",
+      "summary": "Melo-D是全球首款生成式AI吉他，即将推出的Pro款“彩虹指弹”为核心看点。",
+      "link": "https://www.tmtpost.com/8140317.html",
+      "source": "钛媒体",
+      "published": "2026-09-15T05:17:33"
+    },
+    {
+      "title": "HARMONi-2读出OS阳性，中国数据亮眼",
+      "summary": "头对头击败K药，全球化考验仍存。",
+      "link": "https://www.tmtpost.com/8140123.html",
+      "source": "钛媒体",
+      "published": "2026-09-15T05:06:00"
+    },
+    {
+      "title": "330亿，意甲又要融资了",
+      "summary": "意甲第三次向私募基金开门。",
+      "link": "https://www.tmtpost.com/8140195.html",
+      "source": "钛媒体",
+      "published": "2026-09-15T05:02:00"
+    },
+    {
+      "title": "中国创新药的出海叙事，两周后将迎来一个重大变量",
+      "summary": "美国药品关税全面生效倒计时，26家药企、89%的品牌药已经落籍。",
+      "link": "https://www.tmtpost.com/8140161.html",
+      "source": "钛媒体",
+      "published": "2026-09-15T04:52:00"
+    },
+    {
+      "title": "钟睒睒和宗庆后，为何都在警惕平台？",
+      "summary": "不如转头学习可口可乐。",
+      "link": "https://www.tmtpost.com/8140143.html",
+      "source": "钛媒体",
+      "published": "2026-09-15T04:46:00"
+    },
+    {
+      "title": "铂力特VS华曙高科：“3D打印第一股”争霸战",
+      "summary": "争霸战的赢家，属于那个先让利润追上故事的人。",
+      "link": "https://www.tmtpost.com/8140135.html",
+      "source": "钛媒体",
+      "published": "2026-09-15T04:42:00"
+    },
+    {
+      "title": "一汽广汽重组意向的“三层解构”",
+      "summary": "双向下注。",
+      "link": "https://www.tmtpost.com/8140122.html",
+      "source": "钛媒体",
+      "published": "2026-09-15T04:36:00"
+    }
+  ],
+  "hn": [
+    {
+      "title": "OpenAI bots knew about the RubyGems caching vulnerability",
+      "summary": "💬 341 评论 · ⬆️ 421 赞",
+      "link": "https://tenderlovemaking.com/2026/09/11/what-a-time-to-be-alive/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Pion, an agent designed to run any company autonomously",
+      "summary": "💬 400 评论 · ⬆️ 356 赞",
+      "link": "https://andonlabs.com/blog/why-we-built-pion",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Apple's Siri AI Can Be Swapped Out for Claude, ChatGPT, Code Shows",
+      "summary": "💬 155 评论 · ⬆️ 221 赞",
+      "link": "https://www.macrumors.com/2026/09/14/siri-can-be-swapped-out-for-chatgpt-claude/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Oracle’s 6am layoff emails hit staff amid new wave of cuts",
+      "summary": "💬 152 评论 · ⬆️ 172 赞",
+      "link": "https://www.techtimes.co.uk/oracle-new-layoffs-restructuring-costs-2-8-billion-1808676",
+      "source": "Hacker News"
+    }
+  ],
+  "hf_models": [
+    {
+      "model_id": "Qwen/Qwen3.8-27B",
+      "title": "Qwen/Qwen3.8-27B",
+      "pipeline": "image-text-to-text",
+      "downloads": 7703400,
+      "likes": 15167,
+      "downloads_str": "7.7M",
+      "summary": "📥 7.7M 下载 · ⭐ 15167 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-dev",
+      "title": "black-forest-labs/FLUX.1-dev",
+      "pipeline": "text-to-image",
+      "downloads": 814988,
+      "likes": 14703,
+      "downloads_str": "815.0k",
+      "summary": "📥 815.0k 下载 · ⭐ 14703 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "title": "deepseek-ai/DeepSeek-R1",
+      "pipeline": "text-generation",
+      "downloads": 661679,
+      "likes": 14236,
+      "downloads_str": "661.7k",
+      "summary": "📥 661.7k 下载 · ⭐ 14236 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1"
+    },
+    {
+      "model_id": "moonshotai/Kimi-K3",
+      "title": "moonshotai/Kimi-K3",
+      "pipeline": "image-text-to-text",
+      "downloads": 2203379,
+      "likes": 11355,
+      "downloads_str": "2.2M",
+      "summary": "📥 2.2M 下载 · ⭐ 11355 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/moonshotai/Kimi-K3"
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
+      "title": "stabilityai/stable-diffusion-xl-base-1.0",
+      "pipeline": "text-to-image",
+      "downloads": 2479895,
+      "likes": 8167,
+      "downloads_str": "2.5M",
+      "summary": "📥 2.5M 下载 · ⭐ 8167 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "title": "meta-llama/Llama-3.1-8B-Instruct",
+      "pipeline": "text-generation",
+      "downloads": 5620539,
+      "likes": 7607,
+      "downloads_str": "5.6M",
+      "summary": "📥 5.6M 下载 · ⭐ 7607 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "model_id": "CompVis/stable-diffusion-v1-4",
+      "title": "CompVis/stable-diffusion-v1-4",
+      "pipeline": "text-to-image",
+      "downloads": 601863,
+      "likes": 7087,
+      "downloads_str": "601.9k",
+      "summary": "📥 601.9k 下载 · ⭐ 7087 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/CompVis/stable-diffusion-v1-4"
+    },
+    {
+      "model_id": "hexgrad/Kokoro-82M",
+      "title": "hexgrad/Kokoro-82M",
+      "pipeline": "text-to-speech",
+      "downloads": 11542998,
+      "likes": 6919,
+      "downloads_str": "11.5M",
+      "summary": "📥 11.5M 下载 · ⭐ 6919 赞 · 🏷️ text-to-speech",
+      "link": "https://huggingface.co/hexgrad/Kokoro-82M"
+    },
+    {
+      "model_id": "meta-llama/Meta-Llama-3-8B",
+      "title": "meta-llama/Meta-Llama-3-8B",
+      "pipeline": "text-generation",
+      "downloads": 299632,
+      "likes": 6682,
+      "downloads_str": "299.6k",
+      "summary": "📥 299.6k 下载 · ⭐ 6682 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Meta-Llama-3-8B"
+    },
+    {
+      "model_id": "openai/whisper-large-v3",
+      "title": "openai/whisper-large-v3",
+      "pipeline": "automatic-speech-recognition",
+      "downloads": 4801728,
+      "likes": 6297,
+      "downloads_str": "4.8M",
+      "summary": "📥 4.8M 下载 · ⭐ 6297 赞 · 🏷️ automatic-speech-recognition",
+      "link": "https://huggingface.co/openai/whisper-large-v3"
+    },
+    {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "title": "sentence-transformers/all-MiniLM-L6-v2",
+      "pipeline": "sentence-similarity",
+      "downloads": 252806720,
+      "likes": 5970,
+      "downloads_str": "252.8M",
+      "summary": "📥 252.8M 下载 · ⭐ 5970 赞 · 🏷️ sentence-similarity",
+      "link": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-schnell",
+      "title": "black-forest-labs/FLUX.1-schnell",
+      "pipeline": "text-to-image",
+      "downloads": 717598,
+      "likes": 5864,
+      "downloads_str": "717.6k",
+      "summary": "📥 717.6k 下载 · ⭐ 5864 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-schnell"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-V4-Pro",
+      "title": "deepseek-ai/DeepSeek-V4-Pro",
+      "pipeline": "text-generation",
+      "downloads": 610612,
+      "likes": 5556,
+      "downloads_str": "610.6k",
+      "summary": "📥 610.6k 下载 · ⭐ 5556 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro"
+    },
+    {
+      "model_id": "MiniMaxAI/MiniMax-H3",
+      "title": "MiniMaxAI/MiniMax-H3",
+      "pipeline": "image-text-to-video",
+      "downloads": 4827156,
+      "likes": 5295,
+      "downloads_str": "4.8M",
+      "summary": "📥 4.8M 下载 · ⭐ 5295 赞 · 🏷️ image-text-to-video",
+      "link": "https://huggingface.co/MiniMaxAI/MiniMax-H3"
+    },
+    {
+      "model_id": "Tongyi-MAI/Z-Image-Turbo",
+      "title": "Tongyi-MAI/Z-Image-Turbo",
+      "pipeline": "text-to-image",
+      "downloads": 688154,
+      "likes": 5283,
+      "downloads_str": "688.2k",
+      "summary": "📥 688.2k 下载 · ⭐ 5283 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/Tongyi-MAI/Z-Image-Turbo"
+    },
+    {
+      "model_id": "Qwen/Qwen3.8-Flash-Next",
+      "title": "Qwen/Qwen3.8-Flash-Next",
+      "pipeline": "image-text-to-text",
+      "downloads": 645881,
+      "likes": 5236,
+      "downloads_str": "645.9k",
+      "summary": "📥 645.9k 下载 · ⭐ 5236 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+    },
+    {
+      "model_id": "openai/gpt-oss-120b",
+      "title": "openai/gpt-oss-120b",
+      "pipeline": "text-generation",
+      "downloads": 5378443,
+      "likes": 5233,
+      "downloads_str": "5.4M",
+      "summary": "📥 5.4M 下载 · ⭐ 5233 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/openai/gpt-oss-120b"
+    },
+    {
+      "model_id": "zai-org/GLM-5.2",
+      "title": "zai-org/GLM-5.2",
+      "pipeline": "text-generation",
+      "downloads": 947075,
+      "likes": 5111,
+      "downloads_str": "947.1k",
+      "summary": "📥 947.1k 下载 · ⭐ 5111 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/zai-org/GLM-5.2"
+    },
+    {
+      "model_id": "bigscience/bloom",
+      "title": "bigscience/bloom",
+      "pipeline": "text-generation",
+      "downloads": 15532,
+      "likes": 5065,
+      "downloads_str": "15.5k",
+      "summary": "📥 15.5k 下载 · ⭐ 5065 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/bigscience/bloom"
+    },
+    {
+      "model_id": "openai/gpt-oss-20b",
+      "title": "openai/gpt-oss-20b",
+      "pipeline": "text-generation",
+      "downloads": 6564558,
+      "likes": 5049,
+      "downloads_str": "6.6M",
+      "summary": "📥 6.6M 下载 · ⭐ 5049 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/openai/gpt-oss-20b"
+    }
+  ]
+}
