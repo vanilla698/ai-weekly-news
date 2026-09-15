@@ -189,7 +189,14 @@ PROMPT_TEMPLATE = """你是资深的 AI 与汽车科技情报编辑。基于以�
     {{"title": "车企人事变动", "summary": "30-60 字", "link": "https://...（必须从素材提取）", "source": "来源"}}
   ],
   "auto_ai": [
-    {{"title": "汽车 AI 技术（中文）", "summary": "30-60 字", "link": "https://...（必须从素材提取）", "source": "来源"}}
+    {{
+      "title": "汽车座舱 AI 技术标题",
+      "summary": "30-60 字摘要",
+      "link": "https://...（必须从素材提取）",
+      "source": "来源",
+      "greatwall_value": "对长城汽车的价值一句话总结（不超过30字）",
+      "greatwall_feasibility": "在长城汽车落地的可行性分析（50-100字）"
+    }}
   ],
   "papers": [
     {{"title": "论文中文标题", "id": "arxiv_id（仅数字部分）", "authors": "作者", "summary": "30-60 字"}}
@@ -228,7 +235,8 @@ PROMPT_TEMPLATE = """你是资深的 AI 与汽车科技情报编辑。基于以�
 5. 当某个模块素材不足时，对应模块用 arXiv / HF / HN 素材合理填充
 6. summary 的 color 用 gold/green/purple 三色轮换
 7. models 的 model_id / link / downloads / likes 必须严格沿用素材原文（但 summary 用中文）
-8. 返回纯 JSON，不要 ```json 标记
+8. **auto_ai 模块必须包含 greatwall_value（不超过30字）和 greatwall_feasibility（50-100字）两个字段**，从座舱 AI / HMI / 车机系统 / 语音助手 角度分析对长城汽车的价值
+9. 返回纯 JSON，不要 ```json 标记
 """
 
 
@@ -318,9 +326,23 @@ def build_fallback(data):
             {"title": data["auto_companies"][0]["title"][:60], "summary": (data["auto_companies"][0].get("summary") or "车企动态")[:80], "link": data["auto_companies"][0]["link"], "source": data["auto_companies"][0].get("source", "链接")}
         ],
         "auto_ai": [
-            {"title": p["title"][:60], "summary": p.get("summary", "")[:80], "link": p["link"], "source": "arXiv cs.RO"}
+            {
+                "title": p["title"][:60],
+                "summary": p.get("summary", "")[:80],
+                "link": p["link"],
+                "source": "arXiv cs.RO",
+                "greatwall_value": "智能座舱技术参考",
+                "greatwall_feasibility": "需评估技术成熟度与成本，长城可小步快跑试点",
+            }
             for p in data["papers_ro"][:3]
-        ] or [{"title": "汽车 AI 技术", "summary": "汽车智能化加速", "link": "https://arxiv.org/list/cs.RO/recent", "source": "arXiv"}],
+        ] or [{
+            "title": "汽车 AI 技术",
+            "summary": "汽车智能化加速",
+            "link": "https://arxiv.org/list/cs.RO/recent",
+            "source": "arXiv",
+            "greatwall_value": "跟踪前沿技术",
+            "greatwall_feasibility": "建议持续关注",
+        }],
         "papers": [
             {"title": p["title"], "id": p["link"].split("/")[-1] if "/" in p["link"] else "0000.00000", "authors": ", ".join(p.get("authors", [])), "summary": p.get("summary", "")[:100]}
             for p in papers_combined[:5]
@@ -425,15 +447,29 @@ def is_chinese(text):
     return has_cjk
 
 
-def stories_html(items):
-    return "".join(
-        '<div class="story">'
-        f'<a class="link-title" href="{esc(item.get("link", "#"))}" target="_blank">{esc(item.get("title", ""))}</a>'
-        f'<div class="story-summary">{esc(item.get("summary", ""))}</div>'
-        f'<div class="story-meta"><a href="{esc(item.get("link", "#"))}" target="_blank">{esc(item.get("source", "链接"))} →</a></div>'
-        '</div>'
-        for item in items or []
-    )
+def stories_html(items, module_key=None):
+    out = []
+    for item in items or []:
+        gw_value = item.get("greatwall_value", "")
+        gw_feasibility = item.get("greatwall_feasibility", "")
+        gw_html = ""
+        # auto_ai 模块加长城价值 + 可行性分析
+        if module_key == "auto_ai" and (gw_value or gw_feasibility):
+            gw_html = (
+                '<div class="gw-box">'
+                f'<div class="gw-row"><span class="gw-label">长城价值</span>{esc(gw_value)}</div>'
+                f'<div class="gw-row"><span class="gw-label">可行性</span>{esc(gw_feasibility)}</div>'
+                '</div>'
+            )
+        out.append(
+            '<div class="story">'
+            f'<a class="link-title" href="{esc(item.get("link", "#"))}" target="_blank">{esc(item.get("title", ""))}</a>'
+            f'<div class="story-summary">{esc(item.get("summary", ""))}</div>'
+            f'<div class="story-meta"><a href="{esc(item.get("link", "#"))}" target="_blank">{esc(item.get("source", "链接"))} →</a></div>'
+            f'{gw_html}'
+            '</div>'
+        )
+    return "".join(out)
 
 
 def hbox_html(title, content, color):
@@ -518,6 +554,10 @@ a.link-title:hover{color:var(--accent);}
 .story-meta{font-size:10px;color:var(--accent);margin-top:3px;font-weight:500;}
 .story-meta a{color:var(--accent);text-decoration:none;}
 .story-meta a:hover{text-decoration:underline;}
+.gw-box{margin-top:5px;padding:5px 8px;background:var(--paper-dark);border-left:2.5px solid var(--accent-green);border-radius:2px;font-size:10.5px;line-height:1.5;color:var(--ink-mid);}
+.gw-row{margin-bottom:2px;}
+.gw-row:last-child{margin-bottom:0;}
+.gw-label{display:inline-block;font-weight:700;color:var(--accent-green);font-size:9.5px;background:#fff;padding:1px 4px;border-radius:2px;margin-right:4px;letter-spacing:.05em;}
 .hbox{border-top:2.5px solid var(--accent);background:var(--paper-dark);padding:6px 9px;margin:5px 0;font-size:11.5px;line-height:1.6;color:var(--ink-mid);}
 .hbox.blue{border-color:var(--accent-blue);}.hbox.gold{border-color:var(--accent-gold);}.hbox.green{border-color:var(--accent-green);}.hbox.purple{border-color:var(--accent-purple);}.hbox.ink{border-color:var(--ink);}
 .hbox strong{color:var(--ink);font-size:12.5px;display:block;margin-bottom:2px;font-family:'Noto Serif SC',serif;}
@@ -586,8 +626,8 @@ def build_html(data, archive_filename):
 <div class="multi-col">{stories_html(data.get("auto_tech", []))}</div>
 <div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">03</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">领 导 变 动</span></div>
 <div class="multi-col">{leadership_html(data.get("leadership", []))}</div>
-<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num green">04</span><div class="sec-rule" style="background:var(--accent-green);"></div><span class="sec-title green">汽 车 AI 技 术</span></div>
-<div class="multi-col">{stories_html(data.get("auto_ai", []))}</div>
+<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num green">04</span><div class="sec-rule" style="background:var(--accent-green);"></div><span class="sec-title green">汽 车 座 舱 AI</span></div>
+<div class="multi-col">{stories_html(data.get("auto_ai", []), module_key="auto_ai")}</div>
 </div>
 <div class="col col-right">
 <div class="sec-hdr"><span class="sec-num purple">05</span><div class="sec-rule" style="background:var(--accent-purple);"></div><span class="sec-title purple">技 术 论 文</span></div>
