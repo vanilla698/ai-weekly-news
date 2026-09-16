@@ -1,0 +1,314 @@
+{
+  "fetched_at": "2026-09-16T05:49:13.215945",
+  "papers_ai": [
+    {
+      "title": "Agentic Societies Need a Social Harness",
+      "summary": "An agentic society is a collection of AI agents that coordinate autonomously across trust boundaries, on behalf of different principals whose objectives may only partially align. We show experimentally that in agentic societies even honest, competent agents often fail to reach satisfactory outcomes ",
+      "link": "http://arxiv.org/abs/2609.17527v1",
+      "authors": [
+        "Tapan Chugh",
+        "Vidushi Singh",
+        "Krish Jain"
+      ]
+    },
+    {
+      "title": "ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+      "summary": "We introduce and release ScienceBuddy, an interactive scientific research workspace that brings continually improving scientific agents into researchers' everyday workflows. ScienceBuddy supports researchers in carrying out scientific tasks while transforming their requests, feedback, and execution ",
+      "link": "http://arxiv.org/abs/2609.17523v1",
+      "authors": [
+        "Shuhan Xue",
+        "Jianyuan Zhong",
+        "Ziyuan Nan"
+      ]
+    },
+    {
+      "title": "PhysStream: Streaming Physics-Grounded Video Generation with Structured Scene Memory and Fine-Grained Motion Control",
+      "summary": "Interactive control for video generation is moving from coarse prompts toward fine-grained, physically meaningful manipulation of dynamic scenes. Yet existing controllable methods either require the full control schedule before generation starts, or use pixel-space signals that dictate object positi",
+      "link": "http://arxiv.org/abs/2609.17521v1",
+      "authors": [
+        "Chuhao Chen",
+        "Peter Wonka",
+        "Chaoyang Wang"
+      ]
+    },
+    {
+      "title": "When Should LLMs Abstain? Chain-of-Self-Questioning for Selective Risk Control",
+      "summary": "Large language models can produce fluent answers when their factual support is weak. This paper introduces Chain-of-Self-Questioning (CoSQ), a prompt-only framework that makes answer commitment conditional on an explicit assessment of the information required to answer a question. We evaluate three ",
+      "link": "http://arxiv.org/abs/2609.17516v1",
+      "authors": [
+        "Ali Şenol"
+      ]
+    },
+    {
+      "title": "LACE: Layer-Wise Compression for Dynamic Frame Rate Codecs",
+      "summary": "Neural audio codecs are a key component in speech language modeling. However, their high frame rates lead to long sequence lengths, increasing computational costs. Dynamic frame rate codecs mitigate this by reducing the effective frame rate using a compression step to merge multiple frames together.",
+      "link": "http://arxiv.org/abs/2609.17509v1",
+      "authors": [
+        "Thanapat Trachu",
+        "Samuele Cornell",
+        "William Chen"
+      ]
+    },
+    {
+      "title": "ENCP: Episode-Normalized Conformal Prediction for Vision-and-Language Navigation",
+      "summary": "Uncertainty estimation for Vision-Language-Navigation (VLN) models is a critical task since it can help identify ambiguous and unreliable predictions, enabling agents to make safer navigation decisions. As one of the most advanced uncertainty estimation frameworks, conformal prediction (CP) offers a",
+      "link": "http://arxiv.org/abs/2609.17499v1",
+      "authors": [
+        "Vicky Feliren",
+        "A. Taufiq Asyhari",
+        "Muhamad Risqi U. Saputra"
+      ]
+    }
+  ],
+  "papers_ro": [
+    {
+      "title": "Modality-Autoregressive World-Action Models",
+      "summary": "World-action models (WAMs) jointly model future observations and actions, typically predicting the future as RGB images. Other visual modalities such as depth, pretrained visual features, and point tracks can more efficiently capture geometric, semantic, and motion features. However, how best to com",
+      "link": "http://arxiv.org/abs/2609.17524v1",
+      "authors": [
+        "Adam Hung",
+        "Bardienus P. Duisterhof",
+        "Deva Ramanan"
+      ]
+    },
+    {
+      "title": "ENCP: Episode-Normalized Conformal Prediction for Vision-and-Language Navigation",
+      "summary": "Uncertainty estimation for Vision-Language-Navigation (VLN) models is a critical task since it can help identify ambiguous and unreliable predictions, enabling agents to make safer navigation decisions. As one of the most advanced uncertainty estimation frameworks, conformal prediction (CP) offers a",
+      "link": "http://arxiv.org/abs/2609.17499v1",
+      "authors": [
+        "Vicky Feliren",
+        "A. Taufiq Asyhari",
+        "Muhamad Risqi U. Saputra"
+      ]
+    },
+    {
+      "title": "Dissecting Motion-Prior Regularization for Data-Scarce Robotic Insertion",
+      "summary": "This study asks whether training-time motion-prior regularization can improve insertion success when a diffusion policy is learned from only 15 demonstrations. Minimum jerk discourages abrupt changes in predicted translational acceleration; speed-curvature regularization instead couples movement spe",
+      "link": "http://arxiv.org/abs/2609.17484v1",
+      "authors": [
+        "Ning Hu",
+        "Shuai Li",
+        "Jindong Tan"
+      ]
+    },
+    {
+      "title": "Gaussian Processes for Modelling Spatial Fields with Robot Swarms",
+      "summary": "Robot swarms, by virtue of their decentralised architecture, are a natural tool for scalable, robust modelling of spatial fields, such as water temperature, wind velocity, or terrain elevation. However, existing methods rely on external positioning systems that allow each robot to determine its own ",
+      "link": "http://arxiv.org/abs/2609.17463v1",
+      "authors": [
+        "Guillermo Legarda Herranz",
+        "Gianpiero Francesca",
+        "Mauro Birattari"
+      ]
+    },
+    {
+      "title": "Hamilton-Jacobi Reachability for Hybrid Systems: Unified Goal-Driven Control with Safety Guarantees",
+      "summary": "Hybrid dynamical systems provide a powerful modeling framework for robotic systems, particularly in contact-rich environments. However, ensuring safety and performance in such systems remains challenging due to the intricate coupling between continuous dynamics and discrete mode transitions. In this",
+      "link": "http://arxiv.org/abs/2609.17430v1",
+      "authors": [
+        "Javier Borquez",
+        "Shuang Peng",
+        "Somil Bansal"
+      ]
+    },
+    {
+      "title": "SlotDiT: Object-Centric Representations for Diffusion Transformers",
+      "summary": "Text-conditioned latent diffusion models perform strongly in video generation and are promising backbones for robotic applications. However, existing approaches rely on pixel-level or VAE-based latent representations that lack explicit semantic structure, leaving the impact of the representation spa",
+      "link": "http://arxiv.org/abs/2609.17414v1",
+      "authors": [
+        "Gjergj Plepi",
+        "Sven Behnke"
+      ]
+    }
+  ],
+  "papers_cl": [
+    {
+      "title": "ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+      "summary": "We introduce and release ScienceBuddy, an interactive scientific research workspace that brings continually improving scientific agents into researchers' everyday workflows. ScienceBuddy supports researchers in carrying out scientific tasks while transforming their requests, feedback, and execution ",
+      "link": "http://arxiv.org/abs/2609.17523v1",
+      "authors": [
+        "Shuhan Xue",
+        "Jianyuan Zhong",
+        "Ziyuan Nan"
+      ]
+    },
+    {
+      "title": "When Should LLMs Abstain? Chain-of-Self-Questioning for Selective Risk Control",
+      "summary": "Large language models can produce fluent answers when their factual support is weak. This paper introduces Chain-of-Self-Questioning (CoSQ), a prompt-only framework that makes answer commitment conditional on an explicit assessment of the information required to answer a question. We evaluate three ",
+      "link": "http://arxiv.org/abs/2609.17516v1",
+      "authors": [
+        "Ali Şenol"
+      ]
+    },
+    {
+      "title": "What Breaks Under Pruning in Smart Homes, and When? Evaluating LLM Degradation Across Architectures and Task Complexity",
+      "summary": "Pruning can reduce the deployment cost of large language models (LLMs), but its impact on context-grounded tool calling remains poorly understood. We systematically study pruning-induced degradation in smart-home tool calling across four LLMs spanning dense Transformer, dense hybrid, and mixture-of-",
+      "link": "http://arxiv.org/abs/2609.17515v1",
+      "authors": [
+        "Congjing Zhang",
+        "Vashishtha Patil",
+        "Henning Lange"
+      ]
+    },
+    {
+      "title": "LACE: Layer-Wise Compression for Dynamic Frame Rate Codecs",
+      "summary": "Neural audio codecs are a key component in speech language modeling. However, their high frame rates lead to long sequence lengths, increasing computational costs. Dynamic frame rate codecs mitigate this by reducing the effective frame rate using a compression step to merge multiple frames together.",
+      "link": "http://arxiv.org/abs/2609.17509v1",
+      "authors": [
+        "Thanapat Trachu",
+        "Samuele Cornell",
+        "William Chen"
+      ]
+    },
+    {
+      "title": "Verifiable Social Reasoning for LLM Assistants",
+      "summary": "LLM assistants are widely used for daily social advice, yet evaluating their social reasoning in such consultation settings remains challenging since (i) it requires setups where the assistant learns about social situations from subjective user narratives, and (ii) social properties, such as others'",
+      "link": "http://arxiv.org/abs/2609.17496v1",
+      "authors": [
+        "Amir Taubenfeld",
+        "Zorik Gekhman",
+        "Avigail Grinstein-Dabush"
+      ]
+    },
+    {
+      "title": "Right Tool, Right Job: Native-Language Evaluation, Tokenizer Sensitivity, and Methodological Findings from a French-Only BabyLM",
+      "summary": "We submit MéTRON-FR, a 125M GPT-2 pretrained on 92.47M words of French, to the BabyLM 2026 Strict track. It scores 85.97 +/- 0.17% on QFrBLiMP (a native Quebec-French benchmark of grammatical minimal pairs) and 62.80% on the BabyLM-weighted leaderboard. A cross-lingual GLUE (General Language Underst",
+      "link": "http://arxiv.org/abs/2609.17435v1",
+      "authors": [
+        "Adam Zachary Wasserman",
+        "David Beauchemin"
+      ]
+    }
+  ],
+  "ai_giants": [],
+  "auto_companies": [],
+  "cn_tech": [],
+  "hn": [
+    {
+      "title": "Introducing System One Models and Jev",
+      "summary": "💬 324 评论 · ⬆️ 1065 赞",
+      "link": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Suspected sabotage causes major Netherlands rail disruption",
+      "summary": "💬 406 评论 · ⬆️ 463 赞",
+      "link": "https://www.bbc.com/news/articles/c8ly49w9g1edo",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Let's make quality the norm again",
+      "summary": "💬 370 评论 · ⬆️ 358 赞",
+      "link": "https://www.forbrukerradet.no/short-life/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "There's a 100% Chance AI Agents Are Ruining the Internet",
+      "summary": "💬 156 评论 · ⬆️ 216 赞",
+      "link": "https://www.404media.co/theres-a-100-chance-ai-agents-are-already-ruining-the-internet/",
+      "source": "Hacker News"
+    }
+  ],
+  "hf_models": [
+    {
+      "model_id": "Qwen/Qwen3.8-27B",
+      "title": "Qwen/Qwen3.8-27B",
+      "pipeline": "image-text-to-text",
+      "downloads": 7702543,
+      "likes": 15297,
+      "downloads_str": "7.7M",
+      "summary": "📥 7.7M 下载 · ⭐ 15297 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-dev",
+      "title": "black-forest-labs/FLUX.1-dev",
+      "pipeline": "text-to-image",
+      "downloads": 807362,
+      "likes": 14726,
+      "downloads_str": "807.4k",
+      "summary": "📥 807.4k 下载 · ⭐ 14726 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "title": "deepseek-ai/DeepSeek-R1",
+      "pipeline": "text-generation",
+      "downloads": 675517,
+      "likes": 14244,
+      "downloads_str": "675.5k",
+      "summary": "📥 675.5k 下载 · ⭐ 14244 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1"
+    },
+    {
+      "model_id": "moonshotai/Kimi-K3",
+      "title": "moonshotai/Kimi-K3",
+      "pipeline": "image-text-to-text",
+      "downloads": 2223723,
+      "likes": 11372,
+      "downloads_str": "2.2M",
+      "summary": "📥 2.2M 下载 · ⭐ 11372 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/moonshotai/Kimi-K3"
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
+      "title": "stabilityai/stable-diffusion-xl-base-1.0",
+      "pipeline": "text-to-image",
+      "downloads": 2570790,
+      "likes": 8174,
+      "downloads_str": "2.6M",
+      "summary": "📥 2.6M 下载 · ⭐ 8174 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "title": "meta-llama/Llama-3.1-8B-Instruct",
+      "pipeline": "text-generation",
+      "downloads": 5712837,
+      "likes": 7640,
+      "downloads_str": "5.7M",
+      "summary": "📥 5.7M 下载 · ⭐ 7640 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "model_id": "CompVis/stable-diffusion-v1-4",
+      "title": "CompVis/stable-diffusion-v1-4",
+      "pipeline": "text-to-image",
+      "downloads": 606866,
+      "likes": 7090,
+      "downloads_str": "606.9k",
+      "summary": "📥 606.9k 下载 · ⭐ 7090 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/CompVis/stable-diffusion-v1-4"
+    },
+    {
+      "model_id": "hexgrad/Kokoro-82M",
+      "title": "hexgrad/Kokoro-82M",
+      "pipeline": "text-to-speech",
+      "downloads": 11594066,
+      "likes": 6932,
+      "downloads_str": "11.6M",
+      "summary": "📥 11.6M 下载 · ⭐ 6932 赞 · 🏷️ text-to-speech",
+      "link": "https://huggingface.co/hexgrad/Kokoro-82M"
+    },
+    {
+      "model_id": "meta-llama/Meta-Llama-3-8B",
+      "title": "meta-llama/Meta-Llama-3-8B",
+      "pipeline": "text-generation",
+      "downloads": 304021,
+      "likes": 6684,
+      "downloads_str": "304.0k",
+      "summary": "📥 304.0k 下载 · ⭐ 6684 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Meta-Llama-3-8B"
+    },
+    {
+      "model_id": "openai/whisper-large-v3",
+      "title": "openai/whisper-large-v3",
+      "pipeline": "automatic-speech-recognition",
+      "downloads": 4849265,
+      "likes": 6302,
+      "downloads_str": "4.8M",
+      "summary": "📥 4.8M 下载 · ⭐ 6302 赞 · 🏷️ automatic-speech-recognition",
+      "link": "https://huggingface.co/openai/whisper-large-v3"
+    }
+  ]
+}
