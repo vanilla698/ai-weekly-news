@@ -592,7 +592,7 @@ def build_html(data, archive_filename):
 <div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">03</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">领 导 变 动</span></div>
 <div class="multi-col">{leadership_html(data.get("leadership", []))}</div>
 <div class="sec-hdr" style="margin-top:6px;"><span class="sec-num green">04</span><div class="sec-rule" style="background:var(--accent-green);"></div><span class="sec-title green">汽 车 座 舱 AI</span></div>
-<div class="multi-col">{stories_html(data.get("auto_ai", []), module_key="auto_ai")}</div>
+<div class="multi-col">{stories_html(data.get("auto_ai", []))}</div>
 </div>
 <div class="col col-right">
 <div class="sec-hdr"><span class="sec-num purple">05</span><div class="sec-rule" style="background:var(--accent-purple);"></div><span class="sec-title purple">技 术 论 文</span></div>
