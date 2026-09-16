@@ -17,7 +17,8 @@
         {"name": "HuggingFace", "name_zh": "HuggingFace", "url": "https://huggingface.co/blog"},
         {"name": "MIT News AI", "name_zh": "MIT 新闻 AI", "url": "https://news.mit.edu/topic/mitartificial-intelligence2"},
         {"name": "Apple ML", "name_zh": "Apple 机器学习", "url": "https://machinelearning.apple.com/"},
-        {"name": "BAIR", "name_zh": "BAIR 博客", "url": "https://bair.berkeley.edu/blog/"}
+        {"name": "BAIR", "name_zh": "BAIR 博客", "url": "https://bair.berkeley.edu/blog/"},
+        {"name": "Deepseek", "name_zh": "深度求索", "url": "https://www.deepseek.com/news/"}
       ]
     },
     "auto_companies": {
@@ -44,7 +45,12 @@
         {"name": "XPeng", "name_zh": "小鹏", "url": "https://www.xiaopeng.com/news"},
         {"name": "Li Auto", "name_zh": "理想", "url": "https://www.lixiang.com/news"},
         {"name": "BYD", "name_zh": "比亚迪", "url": "https://www.bydglobal.com/"},
-        {"name": "Nissan", "name_zh": "日产", "url": "https://www.nissan-global.com/EN/NEWS/"}
+        {"name": "Nissan", "name_zh": "日产", "url": "https://www.nissan-global.com/EN/NEWS/"},
+        {"name": "BYD", "name_zh": "比亚迪", "url": "https://www.byd.com/cn/news"},
+        {"name": "seres", "name_zh": "赛力斯", "url": "https://www.seres.cn/news.html"},
+        {"name": "geely", "name_zh": "吉利", "url": "https://zgh.com/media-center/news/"},
+        {"name": "geely", "name_zh": "吉利", "url": "https://www.geely.com/news"},
+        {"name": "JAC", "name_zh": "江汽汽车", "url": "https://www.jac.com.cn/news/"}
       ]
     },
     "cn_tech": {
@@ -55,7 +61,8 @@
         {"name": "爱范儿", "name_zh": "爱范儿", "url": "https://www.ifanr.com/"},
         {"name": "极客公园", "name_zh": "极客公园", "url": "https://www.geekpark.net/"},
         {"name": "IT之家", "name_zh": "IT之家", "url": "https://www.ithome.com/"},
-        {"name": "36氪", "name_zh": "36氪", "url": "https://36kr.com/"},
+        {"name": "36氪", "name_zh": "36氪", "url": "https://36kr.com/information/travel/"},
+        {"name": "36氪", "name_zh": "36氪", "url": "https://36kr.com/information/technology/"},
         {"name": "钛媒体", "name_zh": "钛媒体", "url": "https://www.tmtpost.com/"},
         {"name": "机器之心", "name_zh": "机器之心", "url": "https://www.jiqizhixin.com/"},
         {"name": "虎嗅", "name_zh": "虎嗅", "url": "https://www.huxiu.com/"},
@@ -63,6 +70,7 @@
         {"name": "新智元", "name_zh": "新智元", "url": "https://www.zhizhiyi.com/"},
         {"name": "智东西", "name_zh": "智东西", "url": "https://zhidx.com/"},
         {"name": "品玩", "name_zh": "品玩", "url": "https://www.pingwest.com/"},
+        {"name": "MarkLines", "name_zh": "全球汽车信息平台", "url": "https://www.marklines.com/cn/news?rf=left_menu"},
         {"name": "车东西", "name_zh": "车东西", "url": "https://chedongxi.com/"}
       ]
     },
@@ -78,7 +86,7 @@
       "max_items": 6,
       "min_points": 50,
       "days": 1,
-      "keywords": ["ai", "ml", "llm", "gpt", "claude", "agent", "model", "robot", "anthropic", "hugging"]
+      "keywords": ["ai", "ml", "llm", "gpt", "claude", "agent", "model", "robot", "anthropic", "hugging","harness","NLP","NLU","ASR","TTS","OCR","CNN","dl","rl","AGI","Embedding","AIGC","cot","RAG","Prompt","语音识别","RNN","cv"]
     },
     "huggingface_models": {
       "enabled": true,
