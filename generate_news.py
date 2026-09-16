@@ -210,22 +210,21 @@ PROMPT_TEMPLATE = """你是资深的 AI 与汽车科技情报编辑。基于以�
   "models": [
     {{"model_id": "owner/repo", "pipeline": "任务类型", "downloads": "数字字符串如 1.2M", "likes": "数字", "summary": "30-50 字模型简介（中文翻译或描述）", "link": "https://huggingface.co/owner/repo"}}
   ],
-  "summary": [
-    {{"title": "本周总结小标题（5-15 字）", "content": "20-40 字总结", "color": "gold 或 green 或 purple"}}
-  ]
+"summary": [
+      {{"title": "总结小标题（5-15 字）", "content": "对长城汽车的价值/可借鉴点（30-60字）", "color": "gold/green/purple"}}
+    ]
 }}
 
 ## 数量与配比
 - key_points: 4 条
-- ai_news: 5 条（来自素材 4、5、6 优先，HF/HN 补）
-- auto_tech: 4 条（素材 5 优先，不足用素材 6 补）
-- leadership: 2 条（素材 5 车企人事相关；不足时填 "本周暂无重大人事变动"）
-- auto_ai: 3 条（素材 5 中 AI 主题，素材 2/3 中机器人/AI 也可）
-- papers: 5 条（必须来自 arXiv 素材 1/2/3）
-- github: 5 条（必须来自素材 4 中 HuggingFace 之外的 GitHub 热门）
-- ai_deep: 3 条（深度评论，可基于素材 1/4/7）
-- models: 5 条（必须来自素材 8 HuggingFace 模型）
-- summary: 5 条
+- ai_news: 8 条（涵盖 AI 圈新闻+深度评论，素材 1/4/6/7 都可）
+  - auto_tech: 4 条（素材 5 优先，不足用素材 6 补）
+  - leadership: 2 条（素材 5 车企人事相关；不足时填 "本周暂无重大人事变动"）
+  - auto_ai: 4 条（素材 5 中 AI 主题，素材 2/3 中机器人/AI 也可）
+  - papers: 5 条（必须来自 arXiv 素材 1/2/3）
+  - github: 5 条（必须来自素材 4 中 HuggingFace 之外的 GitHub 热门）
+  - models: 5 条（必须来自素材 8 HuggingFace 模型）
+  - summary: 4 条
 
 ## 关键约束
 1. **所有 link 必须从素材原文提取，真实有效**，严禁编造
@@ -326,23 +325,9 @@ def build_fallback(data):
             {"title": data["auto_companies"][0]["title"][:60], "summary": (data["auto_companies"][0].get("summary") or "车企动态")[:80], "link": data["auto_companies"][0]["link"], "source": data["auto_companies"][0].get("source", "链接")}
         ],
         "auto_ai": [
-            {
-                "title": p["title"][:60],
-                "summary": p.get("summary", "")[:80],
-                "link": p["link"],
-                "source": "arXiv cs.RO",
-                "greatwall_value": "智能座舱技术参考",
-                "greatwall_feasibility": "需评估技术成熟度与成本，长城可小步快跑试点",
-            }
+            {"title": p["title"][:60], "summary": p.get("summary", "")[:80], "link": p["link"], "source": "arXiv cs.RO"}
             for p in data["papers_ro"][:3]
-        ] or [{
-            "title": "汽车 AI 技术",
-            "summary": "汽车智能化加速",
-            "link": "https://arxiv.org/list/cs.RO/recent",
-            "source": "arXiv",
-            "greatwall_value": "跟踪前沿技术",
-            "greatwall_feasibility": "建议持续关注",
-        }],
+        ] or [{"title": "汽车 AI 技术", "summary": "汽车智能化加速", "link": "https://arxiv.org/list/cs.RO/recent", "source": "arXiv"}],
         "papers": [
             {"title": p["title"], "id": p["link"].split("/")[-1] if "/" in p["link"] else "0000.00000", "authors": ", ".join(p.get("authors", [])), "summary": p.get("summary", "")[:100]}
             for p in papers_combined[:5]
@@ -447,29 +432,15 @@ def is_chinese(text):
     return has_cjk
 
 
-def stories_html(items, module_key=None):
-    out = []
-    for item in items or []:
-        gw_value = item.get("greatwall_value", "")
-        gw_feasibility = item.get("greatwall_feasibility", "")
-        gw_html = ""
-        # auto_ai 模块加长城价值 + 可行性分析
-        if module_key == "auto_ai" and (gw_value or gw_feasibility):
-            gw_html = (
-                '<div class="gw-box">'
-                f'<div class="gw-row"><span class="gw-label">长城价值</span>{esc(gw_value)}</div>'
-                f'<div class="gw-row"><span class="gw-label">可行性</span>{esc(gw_feasibility)}</div>'
-                '</div>'
-            )
-        out.append(
-            '<div class="story">'
-            f'<a class="link-title" href="{esc(item.get("link", "#"))}" target="_blank">{esc(item.get("title", ""))}</a>'
-            f'<div class="story-summary">{esc(item.get("summary", ""))}</div>'
-            f'<div class="story-meta"><a href="{esc(item.get("link", "#"))}" target="_blank">{esc(item.get("source", "链接"))} →</a></div>'
-            f'{gw_html}'
-            '</div>'
-        )
-    return "".join(out)
+def stories_html(items):
+    return "".join(
+        '<div class="story">'
+        f'<a class="link-title" href="{esc(item.get("link", "#"))}" target="_blank">{esc(item.get("title", ""))}</a>'
+        f'<div class="story-summary">{esc(item.get("summary", ""))}</div>'
+        f'<div class="story-meta"><a href="{esc(item.get("link", "#"))}" target="_blank">{esc(item.get("source", "链接"))} →</a></div>'
+        '</div>'
+        for item in items or []
+    )
 
 
 def hbox_html(title, content, color):
@@ -554,10 +525,6 @@ a.link-title:hover{color:var(--accent);}
 .story-meta{font-size:10px;color:var(--accent);margin-top:3px;font-weight:500;}
 .story-meta a{color:var(--accent);text-decoration:none;}
 .story-meta a:hover{text-decoration:underline;}
-.gw-box{margin-top:5px;padding:5px 8px;background:var(--paper-dark);border-left:2.5px solid var(--accent-green);border-radius:2px;font-size:10.5px;line-height:1.5;color:var(--ink-mid);}
-.gw-row{margin-bottom:2px;}
-.gw-row:last-child{margin-bottom:0;}
-.gw-label{display:inline-block;font-weight:700;color:var(--accent-green);font-size:9.5px;background:#fff;padding:1px 4px;border-radius:2px;margin-right:4px;letter-spacing:.05em;}
 .hbox{border-top:2.5px solid var(--accent);background:var(--paper-dark);padding:6px 9px;margin:5px 0;font-size:11.5px;line-height:1.6;color:var(--ink-mid);}
 .hbox.blue{border-color:var(--accent-blue);}.hbox.gold{border-color:var(--accent-gold);}.hbox.green{border-color:var(--accent-green);}.hbox.purple{border-color:var(--accent-purple);}.hbox.ink{border-color:var(--ink);}
 .hbox strong{color:var(--ink);font-size:12.5px;display:block;margin-bottom:2px;font-family:'Noto Serif SC',serif;}
@@ -600,25 +567,23 @@ def build_html(data, archive_filename):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI汽车科技每日情报 | {date_str} 第{issue}期</title>
+<title>AI汽车科技情报 | {date_str} 第{issue}期</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 </head>
 <body>
 <div id="root">
 <header class="masthead">
-<div class="mh-left">{date_str} · 星期{weekday_cn}<br>第 {issue} 期 · 总第 {issue+484} 期<br>归档：{archive_filename}</div>
-<div class="mh-center"><h1>AI · 汽车科技每日情报</h1><div class="sub">AI科技 · 车企动态 · 汽车AI · 模型新闻 · 技术论文 · GitHub开源</div></div>
-<div class="mh-right">关键词：情报<br>订阅：钉钉群推送</div>
+<div class="mh-left">{date_str} · 星期{weekday_cn}<br>第 {issue} 期<br>归档：{archive_filename}</div>
+<div class="mh-center"><h1>AI · 汽车科技情报</h1><div class="sub">AI科技 · 车企动态 · 汽车AI · 模型新闻 · 技术论文 · GitHub开源</div></div>
+<div class="mh-right">关键词：情报<br>订阅：钉钉群推送<br>📊 查看人数：<span id="busuanzi_value_site_uv">--</span> · 查看次数：<span id="busuanzi_value_page_pv">--</span></div>
 </header>
 <div class="kp-bar">{kp_items}</div>
 <div class="main-grid">
 <div class="col col-left">
-<div class="sec-hdr"><span class="sec-num accent">01</span><div class="sec-rule" style="background:var(--accent);"></div><span class="sec-title accent">AI 圈 新 闻</span></div>
-<div class="multi-col">{stories_html(data.get("ai_news", []))}</div>
-<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num accent">06</span><div class="sec-rule" style="background:var(--accent);"></div><span class="sec-title accent">AI 圈 深 度</span></div>
-<div class="multi-col">{stories_html(data.get("ai_deep", []))}</div>
-<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">09</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">本 日 总 结</span></div>
+<div class="sec-hdr"><span class="sec-num accent">01</span><div class="sec-rule" style="background:var(--accent);"></div><span class="sec-title accent">AI 圈 新 闻 与 深 度</span></div>
+<div class="multi-col">{stories_html(data.get("ai_news", []) + data.get("ai_deep", []))}</div>
+<div class="sec-hdr" style="margin-top:6px;"><span class="sec-num gold">09</span><div class="sec-rule" style="background:var(--accent-gold);"></div><span class="sec-title gold">总 结 · 价值与可行性</span></div>
 <div class="multi-col">{summary_blocks}</div>
 </div>
 <div class="col col-mid">
@@ -639,13 +604,15 @@ def build_html(data, archive_filename):
 </div>
 </div>
 <footer class="footer">
-<span>📡 本情报由 Mavis 每日自动抓取整理</span>
+<span>📡 本情报由 Mavis 自动抓取整理</span>
 <span><a href="index.html" style="color:var(--accent-gold);text-decoration:none;font-weight:700;">📋 查看历史归档</a></span>
 <span>第 {issue} 期 · {date_str}</span>
 </footer>
 </div>
 </body>
-</html>"""
+</html>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+"""
 
 
 # ========== 5. 主流程 ==========
