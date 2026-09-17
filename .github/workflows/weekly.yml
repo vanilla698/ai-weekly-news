@@ -26,6 +26,11 @@ jobs:
       - name: Install dependencies
         run: pip install requests feedparser
 
+      - name: Verify DeepSeek API key
+        run: python3 verify_deepseek_key.py
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+
       - name: Generate news HTML
         run: python3 generate_news.py
         env:

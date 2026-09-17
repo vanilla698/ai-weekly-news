@@ -21,7 +21,7 @@ from fetch_news_sources import (
 # ========== 配置 ==========
 OUTPUT_DIR = "news"
 JSON_FILE = "news_data.json"
-DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "sk-c58a295530e6456daa4a8b9119d57697")
+DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 DEEPSEEK_MODEL = "deepseek-chat"
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 REPORT_TZ = ZoneInfo("Asia/Shanghai")
