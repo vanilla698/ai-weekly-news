@@ -1,0 +1,1673 @@
+{
+  "fetched_at": "2026-09-17T09:19:25.894124",
+  "papers_ai": [
+    {
+      "title": "Objective vs. Search: Decomposing What Makes a Good Tokeniser",
+      "summary": "Two dominant tokenisation algorithms are used by modern language models: byte-pair encoding (BPE) and UnigramLM. These differ along two orthogonal axes: their optimisation objective (compression vs. log-likelihood) and their search procedure (bottom-up merging vs. top-down pruning). Existing compari",
+      "link": "http://arxiv.org/abs/2609.19145v1",
+      "authors": [
+        "Ahmetcan Yavuz",
+        "Clara Meister",
+        "Tiago Pimentel"
+      ]
+    },
+    {
+      "title": "A Zeroth-Order Paradigm for LLM Preference Alignment",
+      "summary": "Direct preference alignment methods are widely used to align large language models (LLMs) with human preferences because of their computational and memory efficiency. However, likelihood displacement motivates alternative ways to extract information from preference pairs with small likelihood margin",
+      "link": "http://arxiv.org/abs/2609.19144v1",
+      "authors": [
+        "Peter Chen",
+        "Xi Chen",
+        "Wotao Yin"
+      ]
+    },
+    {
+      "title": "Dreaming the Sound of Contact: Leveraging Video and Audio Generation for Zero-Shot Force-Aware Manipulation and Data Generation",
+      "summary": "Recent advances in video generation allow robots to learn manipulation trajectories from generated videos. However, these approaches produce purely kinematic trajectories that lack force information, causing failures in contact-rich tasks where appropriate contact forces are essential for success. I",
+      "link": "http://arxiv.org/abs/2609.19137v1",
+      "authors": [
+        "Guanhua Ji",
+        "Tianyu Li",
+        "Dayoon Suh"
+      ]
+    },
+    {
+      "title": "Cognitive Extensions for Dual-Process Language Agents: Memory and Self-Reflection in Interactive Environments",
+      "summary": "Language agents remain brittle in interactive environments, where success requires long-horizon state tracking, valid action execution, and recovery from failed steps. We extend SwiftSage, a dual-process agent that combines a fast action proposer with a slower planner, using two modular cognitive ex",
+      "link": "http://arxiv.org/abs/2609.19128v1",
+      "authors": [
+        "João Meneses dos Santos",
+        "Arlindo L. Oliveira"
+      ]
+    },
+    {
+      "title": "Affora: A Design System for Agent-Friendly Interfaces",
+      "summary": "Computer-use agents increasingly operate software designed for people, but interfaces often leave actions or task state unclear to machine readers. We present Affora, a design system that supports both readers while preserving visual freedom and familiar human workflows. Three controlled studies exa",
+      "link": "http://arxiv.org/abs/2609.19125v1",
+      "authors": [
+        "Jin Gao"
+      ]
+    },
+    {
+      "title": "Flag Game: A Toy Model for Mechanistic Swarm Interpretability",
+      "summary": "Emergent coordinated behaviors of AI agents are starting to present critical safety risks. A key phenomenon driving these behaviors is the rapid formation and spread of beliefs about the world, and mechanistic understanding is crucial for collective alignment. To this end, we introduce the Flag Game",
+      "link": "http://arxiv.org/abs/2609.19124v1",
+      "authors": [
+        "Elizabeth Pavlova",
+        "Hidenori Tanaka"
+      ]
+    }
+  ],
+  "papers_ro": [
+    {
+      "title": "PointZero: 3D Point Track Completion for Learning Transferable 3D Dynamics",
+      "summary": "World models endow perceptual systems with the ability to predict how scenes evolve under interaction. They are most beneficial when trained on diverse volumes of data, to instill a rich prior into downstream applications. Existing methods typically require robot action labels to learn action-condit",
+      "link": "http://arxiv.org/abs/2609.19142v1",
+      "authors": [
+        "Bardienus P. Duisterhof",
+        "Kaifeng Zhang",
+        "Adam Hung"
+      ]
+    },
+    {
+      "title": "In-Context Robot Learning with VLM Agents",
+      "summary": "Enabling robots to adapt to unfamiliar environments as readily as humans remains a moonshot goal of embodied AI. No finite collection of demonstrations can cover every task and situation a robot will encounter, making the ability to learn from context at deployment essential for generalization. Such",
+      "link": "http://arxiv.org/abs/2609.19138v1",
+      "authors": [
+        "Dongzhou Cheng",
+        "Taoran Yi",
+        "Ye Fang"
+      ]
+    },
+    {
+      "title": "Dreaming the Sound of Contact: Leveraging Video and Audio Generation for Zero-Shot Force-Aware Manipulation and Data Generation",
+      "summary": "Recent advances in video generation allow robots to learn manipulation trajectories from generated videos. However, these approaches produce purely kinematic trajectories that lack force information, causing failures in contact-rich tasks where appropriate contact forces are essential for success. I",
+      "link": "http://arxiv.org/abs/2609.19137v1",
+      "authors": [
+        "Guanhua Ji",
+        "Tianyu Li",
+        "Dayoon Suh"
+      ]
+    },
+    {
+      "title": "rMuscle: Robotic Muscle Memory for Efficient Vision-Language-Action Model Inference",
+      "summary": "Factory work is a promising early scenario for embodied AI: assigning repetitive manual jobs to robots has clear economic payoff, and a structured station keeps the jobs tractable for current policies. Vision-Language-Action (VLA) models now dominate as the policy paradigm for these robots. The infe",
+      "link": "http://arxiv.org/abs/2609.19104v1",
+      "authors": [
+        "Kaijun Zhou",
+        "Zhiyang Li",
+        "Le Chen"
+      ]
+    },
+    {
+      "title": "ElastiQP: An Always-Feasible QP Solver for Constrained Robot Control",
+      "summary": "As robot capabilities increase, quadratic programming (QP)-based controllers must account for a similarly increasing number of constraints to ensure safe, reliable operation. Yet, with each added constraint, this introduces more chances of momentary conflict: in which case, a QP solver that returns ",
+      "link": "http://arxiv.org/abs/2609.19080v1",
+      "authors": [
+        "Daniel Morton",
+        "Jon Arrizabalaga",
+        "Zachary Manchester"
+      ]
+    },
+    {
+      "title": "\"What's going to happen after I'm gone?\": Parent Perspectives on Technology in Supporting Independent Living for Adults with Intellectual Disabilities",
+      "summary": "Adults with intellectual and developmental disabilities (IDD) are increasingly transitioning from family homes towards semi-inde\\-pendent living. As parents hand off the role of primary caregiver, they face numerous challenges in arranging consistent and quality support. Our research centers on unde",
+      "link": "http://arxiv.org/abs/2609.18970v1",
+      "authors": [
+        "Alexander Tyshka",
+        "Andrea Macklem-Zabel",
+        "Absalat Getachew"
+      ]
+    }
+  ],
+  "papers_cl": [
+    {
+      "title": "Objective vs. Search: Decomposing What Makes a Good Tokeniser",
+      "summary": "Two dominant tokenisation algorithms are used by modern language models: byte-pair encoding (BPE) and UnigramLM. These differ along two orthogonal axes: their optimisation objective (compression vs. log-likelihood) and their search procedure (bottom-up merging vs. top-down pruning). Existing compari",
+      "link": "http://arxiv.org/abs/2609.19145v1",
+      "authors": [
+        "Ahmetcan Yavuz",
+        "Clara Meister",
+        "Tiago Pimentel"
+      ]
+    },
+    {
+      "title": "A Zeroth-Order Paradigm for LLM Preference Alignment",
+      "summary": "Direct preference alignment methods are widely used to align large language models (LLMs) with human preferences because of their computational and memory efficiency. However, likelihood displacement motivates alternative ways to extract information from preference pairs with small likelihood margin",
+      "link": "http://arxiv.org/abs/2609.19144v1",
+      "authors": [
+        "Peter Chen",
+        "Xi Chen",
+        "Wotao Yin"
+      ]
+    },
+    {
+      "title": "PANORAMA: Panoptic Grounded Captioning via Mask Proposal Selection",
+      "summary": "Intelligent systems that act in the world require image understanding that is both comprehensive and spatially grounded. Current vision-language models (VLMs) can generate fluent and detailed image captions, but reliably associating them with image pixels remains challenging. Existing methods that c",
+      "link": "http://arxiv.org/abs/2609.19143v1",
+      "authors": [
+        "Sara Pieri",
+        "Evangelos Kazakos",
+        "Shizhe Chen"
+      ]
+    },
+    {
+      "title": "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
+      "summary": "Scientific code repositories encode decades of human knowledge in executable models, methods, and tools. Yet fragmented toolchains, implicit domain conventions, and specialized correctness criteria make this knowledge difficult to convert into reliable learning experience-a challenge we call the sci",
+      "link": "http://arxiv.org/abs/2609.19134v1",
+      "authors": [
+        "Hejia Geng",
+        "Zesen Huang",
+        "Haoyang Li"
+      ]
+    },
+    {
+      "title": "Playing log(N)-Questions over Wikipedia Abstracts: Communication Efficiency Between Paired Frontier Models",
+      "summary": "We evaluate six frontier language models on the two-agent $\\log(N)$-Questions game. A questioner sees $N$ Wikipedia lead paragraphs and must identify a secretly chosen target using exactly $\\log_2 N$ yes/no questions. An answerer sees only the target and the question, and replies with one word. Both",
+      "link": "http://arxiv.org/abs/2609.19113v1",
+      "authors": [
+        "Peter Potash"
+      ]
+    },
+    {
+      "title": "Monitoring and Discovering Reward Hacking with Internal Representations during LLM Evaluations",
+      "summary": "As models scale, reward hacking becomes more frequent, more sophisticated, and more consequential. Does it leave a telltale signature in model representations? This work analyzes how reward hacking is represented internally in frontier open source LLMs, and how those representations can be used to u",
+      "link": "http://arxiv.org/abs/2609.19101v1",
+      "authors": [
+        "Leon Bergen",
+        "Usha Bhalla",
+        "Andrew Lee"
+      ]
+    }
+  ],
+  "ai_giants": [
+    {
+      "title": "Intelligence Age",
+      "summary": "",
+      "link": "https://openai.com/news/intelligence-age/",
+      "source": "OpenAI",
+      "published": ""
+    },
+    {
+      "title": "Global Affairs",
+      "summary": "",
+      "link": "https://openai.com/news/global-affairs/",
+      "source": "OpenAI",
+      "published": ""
+    },
+    {
+      "title": "Reimagining advertising with AI Product Sep 16, 2026",
+      "summary": "",
+      "link": "https://openai.com/index/reimagining-advertising-with-ai/",
+      "source": "OpenAI",
+      "published": ""
+    },
+    {
+      "title": "How to connect AI usage to business value Product Sep 16, 2026",
+      "summary": "",
+      "link": "https://openai.com/index/how-to-connect-ai-usage-to-business-value/",
+      "source": "OpenAI",
+      "published": ""
+    },
+    {
+      "title": "Our framework for reporting model misalignment Research Sep 16, 2026",
+      "summary": "",
+      "link": "https://openai.com/index/model-misalignment-reporting-framework/",
+      "source": "OpenAI",
+      "published": ""
+    },
+    {
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users Engineering Sep 11, 2026",
+      "summary": "",
+      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one/",
+      "source": "OpenAI",
+      "published": ""
+    },
+    {
+      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules Applied AI Sep 10, 2026",
+      "summary": "",
+      "link": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials/",
+      "source": "OpenAI",
+      "published": ""
+    },
+    {
+      "title": "Now everyone can put data to work Product Sep 10, 2026",
+      "summary": "",
+      "link": "https://openai.com/index/put-data-to-work/",
+      "source": "OpenAI",
+      "published": ""
+    },
+    {
+      "title": "How to get support",
+      "summary": "",
+      "link": "https://support.claude.com/en/articles/9015913-how-to-get-support",
+      "source": "Anthropic",
+      "published": ""
+    },
+    {
+      "title": "Download press kit",
+      "summary": "",
+      "link": "https://anthropic.com/press-kit",
+      "source": "Anthropic",
+      "published": ""
+    },
+    {
+      "title": "Product Jul 24, 2026 Introducing Claude Opus 5 Opus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.",
+      "summary": "",
+      "link": "https://www.anthropic.com/news/claude-opus-5",
+      "source": "Anthropic",
+      "published": ""
+    },
+    {
+      "title": "Sep 1, 2026 Announcements Developing Enterprise Frontier Safeguards with our customers",
+      "summary": "",
+      "link": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
+      "source": "Anthropic",
+      "published": ""
+    },
+    {
+      "title": "Aug 31, 2026 Announcements Improving our alignment and security efforts",
+      "summary": "",
+      "link": "https://www.anthropic.com/news/improving-alignment-security-efforts",
+      "source": "Anthropic",
+      "published": ""
+    },
+    {
+      "title": "Aug 27, 2026 Announcements Previewing the Model Hardware Standard",
+      "summary": "",
+      "link": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+      "source": "Anthropic",
+      "published": ""
+    },
+    {
+      "title": "Aug 27, 2026 Announcements Expanding our support for scientists",
+      "summary": "",
+      "link": "https://www.anthropic.com/news/expanding-support-for-scientists",
+      "source": "Anthropic",
+      "published": ""
+    },
+    {
+      "title": "Aug 25, 2026 Announcements Funding better evaluations of AI’s impact on wellbeing",
+      "summary": "",
+      "link": "https://www.anthropic.com/news/wellbeing-research-grants",
+      "source": "Anthropic",
+      "published": ""
+    },
+    {
+      "title": "Helping bring the world’s first large-scale, near-zero emissions steel plant online",
+      "summary": "Video opens with archival footage of smoky, coal-fired steel factories, then transitions to clean, modern exterior shots of Stegra's new facility and a clear digital animation showing how green hydrog",
+      "link": "https://blog.google/company-news/outreach-and-initiatives/sustainability/google-stegra-green-steel/",
+      "source": "Google AI",
+      "published": "2026-09-17T07:00:00"
+    },
+    {
+      "title": "3 new ways we're improving Search profiles for publishers",
+      "summary": "Search profiles",
+      "link": "https://blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers/",
+      "source": "Google AI",
+      "published": "2026-09-16T16:00:00"
+    },
+    {
+      "title": "Rethink your strategy to drive sales this holiday season.",
+      "summary": "In this Ads Decoded episode, we share steps you can take now to drive sales and reach customers during the holiday season.",
+      "link": "https://blog.google/products/ads-commerce/ads-decoded-podcast-holiday-sales-strategies/",
+      "source": "Google AI",
+      "published": "2026-09-16T16:00:00"
+    },
+    {
+      "title": "5 things to know about teens' views on AI today",
+      "summary": "Collage of images showing teenagers using devices like phones and tablets",
+      "link": "https://blog.google/innovation-and-ai/technology/families/teens-ai-research-findings/",
+      "source": "Google AI",
+      "published": "2026-09-16T15:00:00"
+    },
+    {
+      "title": "Boost your holiday sales with these agentic commerce updates",
+      "summary": "A woman standing at a counter and typing on a laptop. Behind her are shelves full of ceramics and supplies",
+      "link": "https://blog.google/products-and-platforms/products/shopping/google-shopping-updates-holiday-shopping/",
+      "source": "Google AI",
+      "published": "2026-09-16T14:00:00"
+    },
+    {
+      "title": "Rethink 2026",
+      "summary": "At Rethink 2026, we’re helping marketers prepare for the holiday season with new ways to connect with customers and boost ROI.",
+      "link": "https://blog.google/products/ads-commerce/rethink-2026/",
+      "source": "Google AI",
+      "published": "2026-09-16T14:00:00"
+    },
+    {
+      "title": "We’re catalyzing megaton-scale climate impact in Brazil",
+      "summary": "An aerial view of a flooded green rice paddy field under a bright blue sky filled with puffy white clouds, with flat-topped and conical hills visible in the background.",
+      "link": "https://blog.google/company-news/outreach-and-initiatives/sustainability/terradot-superpollutants-carbon-removal/",
+      "source": "Google AI",
+      "published": "2026-09-16T12:00:00"
+    },
+    {
+      "title": "Explore models",
+      "summary": "",
+      "link": "https://deepmind.google/models/",
+      "source": "DeepMind",
+      "published": ""
+    },
+    {
+      "title": "Gemini Build intelligent agents",
+      "summary": "",
+      "link": "https://deepmind.google/models/gemini/",
+      "source": "DeepMind",
+      "published": ""
+    },
+    {
+      "title": "Gemini Omni Create anything from anything",
+      "summary": "",
+      "link": "https://deepmind.google/models/gemini-omni/",
+      "source": "DeepMind",
+      "published": ""
+    },
+    {
+      "title": "Nano Banana Create and edit detailed images",
+      "summary": "",
+      "link": "https://deepmind.google/models/gemini-image/",
+      "source": "DeepMind",
+      "published": ""
+    },
+    {
+      "title": "Gemini Audio Talk, create and control audio",
+      "summary": "",
+      "link": "https://deepmind.google/models/gemini-audio/",
+      "source": "DeepMind",
+      "published": ""
+    },
+    {
+      "title": "Veo Generate cinematic video with audio",
+      "summary": "",
+      "link": "https://deepmind.google/models/veo/",
+      "source": "DeepMind",
+      "published": ""
+    },
+    {
+      "title": "Imagen Generate high-quality images from text",
+      "summary": "",
+      "link": "https://deepmind.google/models/imagen/",
+      "source": "DeepMind",
+      "published": ""
+    },
+    {
+      "title": "Lyria Generate high fidelity music and audio",
+      "summary": "",
+      "link": "https://deepmind.google/models/lyria/",
+      "source": "DeepMind",
+      "published": ""
+    },
+    {
+      "title": "NVIDIA Vera Rubin NVL72 Delivers Leading Performance in MLPerf Inference v6.1 Debut",
+      "summary": "System performance, efficient infrastructure scaling and continuous software optimization are key levers that determine AI inference economics. Higher system performance means more tokens generated, r",
+      "link": "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/",
+      "source": "NVIDIA",
+      "published": "2026-09-16T15:00:48"
+    },
+    {
+      "title": "Emerald AI, Google and NVIDIA Launch Alliance to Advance Flexible AI Data Centers",
+      "summary": "AI factories are the infrastructure of the intelligence era. Scaling them responsibly will depend as much on innovation across the grid as inside the data center. Today, Emerald AI, Google and NVIDIA ",
+      "link": "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
+      "source": "NVIDIA",
+      "published": "2026-09-16T13:00:33"
+    },
+    {
+      "title": "AI Developers",
+      "summary": "",
+      "link": "https://developer.meta.com/ai/?utm_source=ai_meta_site&utm_medium=web&utm_campaign=nav_AI-developers_07242026&utm_content=nav_AI-developers",
+      "source": "Meta AI",
+      "published": ""
+    },
+    {
+      "title": "Introducing Muse Spark 1.1",
+      "summary": "",
+      "link": "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/",
+      "source": "Meta AI",
+      "published": ""
+    },
+    {
+      "title": "Reimagining Independence: How Meta’s AI Models Are Helping the University of Pittsburgh Transform Assistive Robotics",
+      "summary": "",
+      "link": "https://ai.meta.com/blog/assistive-robotics-university-of-pittsburgh-sam-dino/",
+      "source": "Meta AI",
+      "published": ""
+    },
+    {
+      "title": "How Meta’s AI Models Are Powering the First Wave of Genesis Mission Projects",
+      "summary": "",
+      "link": "https://ai.meta.com/blog/genesis-mission-lawrence-berkeley-national-laboratory-segment-anything-dino/",
+      "source": "Meta AI",
+      "published": ""
+    },
+    {
+      "title": "Introducing Muse Image and Muse Video",
+      "summary": "",
+      "link": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/",
+      "source": "Meta AI",
+      "published": ""
+    },
+    {
+      "title": "From Brain Waves to Words: Brain2Qwerty Offers a New Path to Communication Without Surgery",
+      "summary": "",
+      "link": "https://ai.meta.com/blog/brain2qwerty-brain-ai-human-communication/",
+      "source": "Meta AI",
+      "published": ""
+    },
+    {
+      "title": "Media Generation",
+      "summary": "",
+      "link": "https://ai.meta.com/meta-ai/media-generation/",
+      "source": "Meta AI",
+      "published": ""
+    },
+    {
+      "title": "AI agents explained",
+      "summary": "",
+      "link": "https://ai.meta.com/learn/agentic-ai/what-are-ai-agents/",
+      "source": "Meta AI",
+      "published": ""
+    },
+    {
+      "title": "DeepSeek Harness",
+      "summary": "",
+      "link": "https://www.deepseek.com/harness/",
+      "source": "Deepseek",
+      "published": ""
+    },
+    {
+      "title": "å¨æ 2026 å¹´ 9 æ 10 æ¥ DeepSeek V4.1 Flashï¼æ´å¼ºãæ´å¿«ãæ´æ®æ DeepSeek V4.1 Flash æ­£å¼åå¸ï¼å ·å¤åçå¤æ¨¡æè§è§çè§£è½åãå ¨æ°éå¯¹ç§°æ¨¡åç»æï¼è½åæ´å¼ºãéåº¦æ´å¿«ãææ¬æ´ä½ã",
+      "summary": "",
+      "link": "https://www.deepseek.com/news/deepseek-v4-1-flash/",
+      "source": "Deepseek",
+      "published": ""
+    },
+    {
+      "title": "å¨æ 2026 å¹´ 4 æ 24 æ¥ DeepSeek-V4 é¢è§çï¼è¿å ¥ç¾ä¸ä¸ä¸ææ®æ æ¶ä»£ DeepSeek å ¨æ°ç³»åæ¨¡å V4 é¢è§çæ­£å¼ä¸çº¿å¹¶åæ­¥å¼æºï¼æ¥æç¾ä¸å­è¶ é¿ä¸ä¸æã",
+      "summary": "",
+      "link": "https://www.deepseek.com/news/v4-preview/",
+      "source": "Deepseek",
+      "published": ""
+    },
+    {
+      "title": "å¨æ 2025 å¹´ 9 æ 29 æ¥ DeepSeek-V3.2-Exp åå¸ï¼è®­ç»æ¨çææï¼API åæ­¥éä»· DeepSeek-V3.2-Exp æ­£å¼åå¸ï¼å¼å ¥ DeepSeek Sparse Attention ç¨çæ³¨æåæºå¶ï¼API ä»·æ ¼éä½ 50% ä»¥ä¸ã",
+      "summary": "",
+      "link": "https://www.deepseek.com/news/v3-2-exp/",
+      "source": "Deepseek",
+      "published": ""
+    },
+    {
+      "title": "å¨æ 2025 å¹´ 9 æ 22 æ¥ DeepSeek-V3.1 çæ¬æ´æ° DeepSeek-V3.1 æ´æ°è³ Terminus çæ¬ï¼ç¼è§£ä¸­è±ææ··æé®é¢ï¼ä¼å Code Agent ä¸ Search Agent è¡¨ç°ã",
+      "summary": "",
+      "link": "https://www.deepseek.com/news/v3-1-terminus/",
+      "source": "Deepseek",
+      "published": ""
+    },
+    {
+      "title": "2026 å¹´ 6 æ 24 æ¥ DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+      "summary": "",
+      "link": "https://arxiv.org/abs/2606.19348",
+      "source": "Deepseek",
+      "published": ""
+    },
+    {
+      "title": "2026 å¹´ 2 æ 25 æ¥ DualPath: Breaking the Storage Bandwidth Bottleneck in Agentic LLM Inference",
+      "summary": "",
+      "link": "https://arxiv.org/abs/2602.21548",
+      "source": "Deepseek",
+      "published": ""
+    }
+  ],
+  "auto_companies": [
+    {
+      "title": "Forgotten password",
+      "summary": "",
+      "link": "https://www.press.bmwgroup.com/global/forgot-password",
+      "source": "BMW",
+      "published": ""
+    },
+    {
+      "title": "Register now",
+      "summary": "",
+      "link": "https://www.press.bmwgroup.com/global/registration",
+      "source": "BMW",
+      "published": ""
+    },
+    {
+      "title": "open Streaming Website",
+      "summary": "",
+      "link": "https://www.live.bmwgroup.com/en/live-streaming/",
+      "source": "BMW",
+      "published": ""
+    },
+    {
+      "title": "Edit your settings",
+      "summary": "",
+      "link": "https://www.press.bmwgroup.com/my/newsletter",
+      "source": "BMW",
+      "published": ""
+    },
+    {
+      "title": "The new BMW X5.",
+      "summary": "",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0458636EN/the-new-bmw-x5",
+      "source": "BMW",
+      "published": ""
+    },
+    {
+      "title": "The new BMW M2 with M xDrive.",
+      "summary": "",
+      "link": "https://www.press.bmwgroup.com/global/article/detail/T0458189EN/the-new-bmw-m2-with-m-xdrive",
+      "source": "BMW",
+      "published": ""
+    },
+    {
+      "title": "Stuttgart, 04. September 2026 „140 Years. 140 Places“: Die globale Reise der neuen S-Klasse geht weiter in Afrika 57 Bilder",
+      "summary": "",
+      "link": "https://media.mercedes-benz.com/article/8bf0d6ad-1b36-482c-b62f-aa6c21b9a7e2",
+      "source": "Mercedes",
+      "published": ""
+    },
+    {
+      "title": "Hannover, 14. September 2026 Mercedes-Benz Vans gibt einen Ausblick auf die Zukunft der gewerblichen Transporter und unterstützt Kunden ganzheitlich für „Business Performance. Every Day.“ 83 Bilder 6 Dokumente",
+      "summary": "",
+      "link": "https://media.mercedes-benz.com/article/29cd87d7-a8f4-4382-9b01-8685b2c41599",
+      "source": "Mercedes",
+      "published": ""
+    },
+    {
+      "title": "Presseinformation Hohenstein-Ernstthal/Suzuka, 13. September 2026 Herausforderndes Rennwochenende für Mercedes-AMG Motorsport in der DTM und Intercontinental GT Challenge 12 Bilder 1 Dokument",
+      "summary": "",
+      "link": "https://media.mercedes-benz.com/article/a7a6bca9-1516-4ea1-b136-23b570e58539",
+      "source": "Mercedes",
+      "published": ""
+    },
+    {
+      "title": "Presseinformation Madrid, 12. September 2026 Großer Preis von Spanien 2026 - Samstag 19 Bilder 1 Dokument",
+      "summary": "",
+      "link": "https://media.mercedes-benz.com/article/dc55cad5-88fc-4d88-8a9d-6ec51bad3bce",
+      "source": "Mercedes",
+      "published": ""
+    },
+    {
+      "title": "Presseinformation Madrid, 11. September 2026 Großer Preis von Spanien 2026 - Freitag 23 Bilder 1 Dokument",
+      "summary": "",
+      "link": "https://media.mercedes-benz.com/article/3ddba1f4-0ed1-432b-96d0-f40f397a7d82",
+      "source": "Mercedes",
+      "published": ""
+    },
+    {
+      "title": "Presseinformation Brackley, 09. September 2026 Großer Preis von Spanien 2026 - Vorschau 2 Bilder 1 Dokument",
+      "summary": "",
+      "link": "https://media.mercedes-benz.com/article/8db8dc70-b4dc-4b8e-8f2d-30f2b0661b38",
+      "source": "Mercedes",
+      "published": ""
+    },
+    {
+      "title": "Hypercar and GTP",
+      "summary": "",
+      "link": "https://newsroom.porsche.com/en/motorsports/hypercar-gtp.html",
+      "source": "Porsche",
+      "published": ""
+    },
+    {
+      "title": "GT Customer Sports",
+      "summary": "",
+      "link": "https://newsroom.porsche.com/en/motorsports/media-guide.html",
+      "source": "Porsche",
+      "published": ""
+    },
+    {
+      "title": "Esports Racing",
+      "summary": "",
+      "link": "https://newsroom.porsche.com/en/motorsports/esports-racing.html",
+      "source": "Porsche",
+      "published": ""
+    },
+    {
+      "title": "Motorsport of the Future",
+      "summary": "",
+      "link": "https://newsroom.porsche.com/en/motorsports/motorsport-of-the-future.html",
+      "source": "Porsche",
+      "published": ""
+    },
+    {
+      "title": "Porsche at a Glance",
+      "summary": "",
+      "link": "https://newsroom.porsche.com/en/company/porsche-at-a-glance.html",
+      "source": "Porsche",
+      "published": ""
+    },
+    {
+      "title": "Executive Board",
+      "summary": "",
+      "link": "https://newsroom.porsche.com/en/company/executive-board-porsche-ag.html",
+      "source": "Porsche",
+      "published": ""
+    },
+    {
+      "title": "Our Picks Toyota announces the Winners of the 19th Toyota Dream Car Art Contest (2026)",
+      "summary": "",
+      "link": "https://www.toyota-dreamcarart.com/wining-artworks/?padid=ag478_from_news_pickup",
+      "source": "Toyota",
+      "published": ""
+    },
+    {
+      "title": "Our Picks May 28, 2026 Toyota Launches New Hilux in Japan",
+      "summary": "",
+      "link": "https://global.toyota/en/newsroom/toyota/44397819.html?padid=ag478_from_news_pickup",
+      "source": "Toyota",
+      "published": ""
+    },
+    {
+      "title": "Downloadable Assets",
+      "summary": "",
+      "link": "https://global.toyota/en/downloadable-assets/?padid=ag478_from_news_pickup2",
+      "source": "Toyota",
+      "published": ""
+    },
+    {
+      "title": "Sales, Production, and Export Results",
+      "summary": "",
+      "link": "https://global.toyota/en/company/profile/production-sales-figures/?padid=ag478_from_news_pickup2",
+      "source": "Toyota",
+      "published": ""
+    },
+    {
+      "title": "Executive Bios",
+      "summary": "",
+      "link": "https://global.toyota/en/company/profile/executives/?padid=ag478_from_news_pickup2",
+      "source": "Toyota",
+      "published": ""
+    },
+    {
+      "title": "Vehicle Gallery (News Releases, Images and Videos)",
+      "summary": "",
+      "link": "https://global.toyota/en/mobility/toyota-brand/gallery/?padid=ag478_from_news_pickup2",
+      "source": "Toyota",
+      "published": ""
+    },
+    {
+      "title": "HONDA The Power of Dreams .cls-1,.cls-2{stroke-width:0px;}.cls-2{fill:#c00;}",
+      "summary": "",
+      "link": "https://global.honda/en/?from=navi_header_global_en",
+      "source": "Honda",
+      "published": ""
+    },
+    {
+      "title": "HONDA The Power of Dreams .cls-1,.cls-2{stroke-width:0px;}.cls-2{fill:#c00;}",
+      "summary": "",
+      "link": "https://global.honda/en/?from=navi_header_drawer_global_en",
+      "source": "Honda",
+      "published": ""
+    },
+    {
+      "title": "The 47th Honda Prize 2026 to Be Awarded to Professor Graeme M. Clark and Dr. Ingeborg Hochmair",
+      "summary": "",
+      "link": "https://global.honda/en/topics/2026/c_2026-09-15eng.html",
+      "source": "Honda",
+      "published": ""
+    },
+    {
+      "title": "Honda Pledges Support for Nepal Flash Flood Relief",
+      "summary": "",
+      "link": "https://global.honda/en/topics/2026/c_2026-09-10eng.html",
+      "source": "Honda",
+      "published": ""
+    },
+    {
+      "title": "Honda Becomes Worldâs First Company to Receive the Highest, 5-Star Rating in FIA Road Safety Index",
+      "summary": "",
+      "link": "https://global.honda/en/topics/2026/c_2026-09-08eng.html",
+      "source": "Honda",
+      "published": ""
+    },
+    {
+      "title": "ï¼FIM Motocross World Championshipï¼ Jeffrey Herlings Claims MXGP World Championship Title",
+      "summary": "",
+      "link": "https://global.honda/en/newsroom/news/2026/2260907aeng.html",
+      "source": "Honda",
+      "published": ""
+    },
+    {
+      "title": "Dave Carroll Named President, Ford Energy; Lisa Drake to Retire from Ford at Year-End 27.08.26 Carroll joins Ford from ENGIE North America, where he led one of the largest renewables and storage platforms in the U.S.",
+      "summary": "",
+      "link": "https://www.fromtheroad.ford.com/us/en/articles/2026/dave-carroll-named-president-ford-energy-lisa-drake-to-retire",
+      "source": "Ford",
+      "published": ""
+    },
+    {
+      "title": "4 Things to Know About Ford’s Second-Quarter Results 28.07.26 The big picture story this quarter is simple: Our Ford+ plan is delivering, our industrial execution continues to strengthen, and our core underlying business is more resilient.",
+      "summary": "",
+      "link": "https://www.fromtheroad.ford.com/us/en/articles/2026/ford-reports-second-quarter-2026-financial-results",
+      "source": "Ford",
+      "published": ""
+    },
+    {
+      "title": "Ford Appoints Matt VanKuiken Chief Government Affairs Officer 10.07.26 Ford Motor Company today announced that Matt VanKuiken has been named Chief Government Affairs Officer, effective Aug. 3.",
+      "summary": "",
+      "link": "https://www.fromtheroad.ford.com/us/en/articles/2026/matt-vankuiken-ford-chief-government-affairs-officer",
+      "source": "Ford",
+      "published": ""
+    },
+    {
+      "title": "This Couple's Ford Transit Doesn't Just Haul Cargo — It Closes Sales Nick Bennett 14.09.26 Ford Pro",
+      "summary": "",
+      "link": "https://www.fromtheroad.ford.com/us/en/articles/2026/bad-goblin-games-uses-ford-transit-as-rolling-billboard",
+      "source": "Ford",
+      "published": ""
+    },
+    {
+      "title": "Six Teams. Six Branches of the Military. One Legendary Track. Will Ford 14.09.26 Proud to Honor",
+      "summary": "",
+      "link": "https://www.fromtheroad.ford.com/us/en/articles/2026/ford-proud-to-honor-tickets-daytona",
+      "source": "Ford",
+      "published": ""
+    },
+    {
+      "title": "Ford Deepens Commitment to Kentucky with New Investment in Manufacturing Growth Ford HQ 10.09.26 Company News",
+      "summary": "",
+      "link": "https://www.fromtheroad.ford.com/us/en/articles/2026/ford-new-investment-kentucky-truck-plant",
+      "source": "Ford",
+      "published": ""
+    },
+    {
+      "title": "Flagship Executive SUV",
+      "summary": "",
+      "link": "https://www.nio.com/es9",
+      "source": "NIO",
+      "published": ""
+    },
+    {
+      "title": "Smart Electric Tourer",
+      "summary": "",
+      "link": "https://www.nio.com/et5t",
+      "source": "NIO",
+      "published": ""
+    },
+    {
+      "title": "Smart Electric Mid-Size Sedan",
+      "summary": "",
+      "link": "https://www.nio.com/et5",
+      "source": "NIO",
+      "published": ""
+    },
+    {
+      "title": "Smart Electric All-Round SUV",
+      "summary": "",
+      "link": "https://www.nio.com/es6",
+      "source": "NIO",
+      "published": ""
+    },
+    {
+      "title": "Smart Electric Coupe SUV",
+      "summary": "",
+      "link": "https://www.nio.com/ec6",
+      "source": "NIO",
+      "published": ""
+    },
+    {
+      "title": "Smart Electric Executive Flagship",
+      "summary": "",
+      "link": "https://www.nio.com/et9",
+      "source": "NIO",
+      "published": ""
+    },
+    {
+      "title": "刘先明谈小鹏 XOS 6.3.0：面向物理 AI 的一次底层架构升级 2026-09-15",
+      "summary": "",
+      "link": "https://www.xiaopeng.com/news/company_news/5593.html",
+      "source": "XPeng",
+      "published": ""
+    },
+    {
+      "title": "小鹏机器人生产线正式启用，全球首位高阶通用人形机器人完成自动化总装并自主走下产线 2026-09-09",
+      "summary": "",
+      "link": "https://www.xiaopeng.com/news/company_news/5592.html",
+      "source": "XPeng",
+      "published": ""
+    },
+    {
+      "title": "小鹏第二代VLA大模型迎来首次重大升级，AI开始理解“时间” 2026-09-01",
+      "summary": "",
+      "link": "https://www.xiaopeng.com/news/company_news/5591.html",
+      "source": "XPeng",
+      "published": ""
+    },
+    {
+      "title": "小鹏集团碳中和绿色ABS成功发行，优先A级利率创系列新低 2026-09-01",
+      "summary": "",
+      "link": "https://www.xiaopeng.com/news/company_news/5590.html",
+      "source": "XPeng",
+      "published": ""
+    },
+    {
+      "title": "小鹏集团8月共交付新车39107台，实现同环比双增长 2026-09-01",
+      "summary": "",
+      "link": "https://www.xiaopeng.com/news/company_news/5589.html",
+      "source": "XPeng",
+      "published": ""
+    },
+    {
+      "title": "小鹏集团发布2026年第二季度财报：营收197.4亿元同比增长8.0%，毛利率20.7%同比提升3.4个百分点，经营质量持续改善 2026-08-25",
+      "summary": "",
+      "link": "https://www.xiaopeng.com/news/company_news/5586.html",
+      "source": "XPeng",
+      "published": ""
+    },
+    {
+      "title": "Go to Our Company",
+      "summary": "",
+      "link": "https://www.nissan-global.com/EN/COMPANY/",
+      "source": "Nissan",
+      "published": ""
+    },
+    {
+      "title": "Corporate Purpose",
+      "summary": "",
+      "link": "https://www.nissan-global.com/EN/COMPANY/PURPOSE/",
+      "source": "Nissan",
+      "published": ""
+    },
+    {
+      "title": "Vision & Business Plan",
+      "summary": "",
+      "link": "https://www.nissan-global.com/EN/COMPANY/PLAN/",
+      "source": "Nissan",
+      "published": ""
+    },
+    {
+      "title": "Re:Nissan Recovery Plan",
+      "summary": "",
+      "link": "https://www.nissan-global.com/EN/COMPANY/PLAN/RENISSAN/",
+      "source": "Nissan",
+      "published": ""
+    },
+    {
+      "title": "Nissan Vision & Business Plan History",
+      "summary": "",
+      "link": "https://www.nissan-global.com/EN/COMPANY/PLAN/HISTORY/",
+      "source": "Nissan",
+      "published": ""
+    },
+    {
+      "title": "Life at Nissan",
+      "summary": "",
+      "link": "https://www.nissan-global.com/EN/COMPANY/LIFE_AT_NISSAN/",
+      "source": "Nissan",
+      "published": ""
+    },
+    {
+      "title": "比亚迪郑州赛车场 河南省",
+      "summary": "",
+      "link": "https://www.byd.com/cn/race-track/race-zhengzhou",
+      "source": "BYD",
+      "published": ""
+    },
+    {
+      "title": "比亚迪合肥赛车场 安徽省",
+      "summary": "",
+      "link": "https://www.byd.com/cn/race-track/race-hefei",
+      "source": "BYD",
+      "published": ""
+    },
+    {
+      "title": "比亚迪绍兴赛车场 浙江省",
+      "summary": "",
+      "link": "https://www.byd.com/cn/race-track/race-shaoxing-new",
+      "source": "BYD",
+      "published": ""
+    },
+    {
+      "title": "比亚迪绍兴自然越野体验中心 浙江省",
+      "summary": "",
+      "link": "https://www.byd.com/cn/race-track/race-shaoxing-yueye",
+      "source": "BYD",
+      "published": ""
+    },
+    {
+      "title": "The United States / English",
+      "summary": "",
+      "link": "https://www.byd.com/us",
+      "source": "BYD",
+      "published": ""
+    },
+    {
+      "title": "Mexico / Español",
+      "summary": "",
+      "link": "https://www.byd.com/mx",
+      "source": "BYD",
+      "published": ""
+    },
+    {
+      "title": "2026.09.15 问界M9 Ultimate领世加长版先行者在工厂交付仪式圆满举行 了解更多",
+      "summary": "",
+      "link": "https://www.seres.cn/company-news/1500.html",
+      "source": "seres",
+      "published": ""
+    },
+    {
+      "title": "2026.09.03 央视新闻专访赛力斯张兴海：探索加强汽车全生命周期管理 了解更多",
+      "summary": "",
+      "link": "https://www.seres.cn/company-news/1462.html",
+      "source": "seres",
+      "published": ""
+    },
+    {
+      "title": "2026.08.20 一图读懂赛力斯2026年半年报 了解更多",
+      "summary": "",
+      "link": "https://www.seres.cn/quarterly-annual-reports/1425.html",
+      "source": "seres",
+      "published": ""
+    },
+    {
+      "title": "2026.08.17 横贯华夏两极 问界汽车品质万里行长测圆满达成 了解更多",
+      "summary": "",
+      "link": "https://www.seres.cn/company-news/1423.html",
+      "source": "seres",
+      "published": ""
+    },
+    {
+      "title": "2026.08.05 《财富》对话康波：赛力斯如何以ESG构建高端汽车品牌全球竞争力 了解更多",
+      "summary": "",
+      "link": "https://www.seres.cn/company-news/1421.html",
+      "source": "seres",
+      "published": ""
+    },
+    {
+      "title": "2026.07.18 赛力斯向重庆彭水县灾区捐款1000万元 了解更多",
+      "summary": "",
+      "link": "https://www.seres.cn/company-news/1418.html",
+      "source": "seres",
+      "published": ""
+    },
+    {
+      "title": "Global User Trip 2024",
+      "summary": "",
+      "link": "https://www.geely.com/en/geely-auto-global-user-experience-2024",
+      "source": "geely",
+      "published": ""
+    },
+    {
+      "title": "Geely EX5 EM-i",
+      "summary": "",
+      "link": "https://global.geely.com/digital/3d/en/p145",
+      "source": "geely",
+      "published": ""
+    },
+    {
+      "title": "Geely Unveils Full-Domain AI 2.0 Vision at Auto China 2026",
+      "summary": "",
+      "link": "https://www.geely.com/en/news/2026/geely-full-domain-ai-auto-china-2026",
+      "source": "geely",
+      "published": ""
+    },
+    {
+      "title": "Geely Auto Group Announced Changes to Its European Executive Structure",
+      "summary": "",
+      "link": "https://www.geely.com/en/news/2026/geely-auto-group-changes-european-executive-structure",
+      "source": "geely",
+      "published": ""
+    },
+    {
+      "title": "Geely E5 and Starray EM-i Debut in Five European Countries, Marking a Strategic Milestone in Global Expansion",
+      "summary": "",
+      "link": "https://www.geely.com/en/news/2026/geely-e5-starray-em-i-debut-five-european-countries",
+      "source": "geely",
+      "published": ""
+    },
+    {
+      "title": "Business Cooperation",
+      "summary": "",
+      "link": "https://www.geely.com/en/contact",
+      "source": "geely",
+      "published": ""
+    },
+    {
+      "title": "æ°é»æ´»å¨",
+      "summary": "",
+      "link": "https://www.jac.com.cn/news/",
+      "source": "JAC",
+      "published": ""
+    },
+    {
+      "title": "ä¼ä¸å å»º",
+      "summary": "",
+      "link": "https://info.jac.com.cn/info/ztjy/",
+      "source": "JAC",
+      "published": ""
+    },
+    {
+      "title": "å°çæ±½è½¦",
+      "summary": "",
+      "link": "https://hima.auto/zunjie/",
+      "source": "JAC",
+      "published": ""
+    },
+    {
+      "title": "ç²¾å½©æ´»å¨",
+      "summary": "",
+      "link": "https://www.jac.com.cn/activity2026/",
+      "source": "JAC",
+      "published": ""
+    },
+    {
+      "title": "ä¼ä¸ä»ç»",
+      "summary": "",
+      "link": "https://www.jac.com.cn/intro/",
+      "source": "JAC",
+      "published": ""
+    },
+    {
+      "title": "åçæå",
+      "summary": "",
+      "link": "https://www.jac.com.cn/ppwh/",
+      "source": "JAC",
+      "published": ""
+    }
+  ],
+  "cn_tech": [
+    {
+      "title": "我用 Vidu S2 找来了「乔布斯」，跟他聊了聊 iPhone Duo",
+      "summary": "体验真正的「边看边改」 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1680700?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-17T08:56:28"
+    },
+    {
+      "title": "ColorOS 17 发布，OPPO 想让 AI 往前一步，主动一些聪明一些",
+      "summary": "手机操作系统里的 AI，正在从被动走向主动。 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1680691?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-17T08:47:56"
+    },
+    {
+      "title": "独家实测｜15 分钟充 50%，iPhone 18 Pro 给出下一代快充的答案",
+      "summary": "不只是苹果一家的选择。 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1680682?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-17T08:06:10"
+    },
+    {
+      "title": "OPPO Find X10 体验：想得周到，拍得好看",
+      "summary": "功成事遂，谓我自然 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1680665?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-17T06:46:20"
+    },
+    {
+      "title": "用 Seedance 2.5 拍《沙丘 3》，我们替你把 AI 短片的坑全都踩过了",
+      "summary": "﻿ 看到这条视频，你会不会以为《沙丘 3》提前泄露了。 这其实是一部由我们团队的两位同事，花 12 天时间，结 […] #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1680580?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-17T06:45:13"
+    },
+    {
+      "title": "对话 vivo 高管：端侧大模型、Harness 与「个人化 AI」的下一步",
+      "summary": "「个人化」智能 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1680321?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-17T06:06:44"
+    },
+    {
+      "title": "这顿饭，我是用腿付的钱",
+      "summary": "跑步小白遇上专业教练，再加上手腕上的 vivo WATCH 6，能在地图上画出什么？这次，晚餐吃什么，由我们的运动轨迹决定。 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1680599?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-17T04:04:29"
+    },
+    {
+      "title": "早报｜曝苹果自研M8 Ultra服务器/36.98万，理想i9 Home发布/周鸿祎：不会再投新能源汽车",
+      "summary": "· SK 海力士员工通过新版奖金方案，现金与股票各半 · 抖音收紧财经内容治理，三季度处置 4.5 万多条违规内容 · 理想 i9 Home 正式发布：36.98 万元 #欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "link": "https://www.ifanr.com/1680630?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "source": "爱范儿",
+      "published": "2026-09-17T00:13:28"
+    },
+    {
+      "title": "新报告称 AI 电子垃圾规模被严重低估，到 2050 年或可绕地球六圈",
+      "summary": "IT之家 9 月 17 日消息，据外媒 The Verge 今天（17 日）报道，AI 热潮产生的电子垃圾规模被严重低估。巴塞尔行动网络（BAN）发布的新报告称， 到 2050 年，这些垃圾可能装满 2300 万个货运集装箱；如果使用约 12.2 米长的集装箱并首尾相连，长度足以绕地球六圈 。 这份报告之所以得出远高于过去研究的估算，是因为统计范围 不再局限于数据中心服务器 ，还包括支撑服务器运行",
+      "link": "https://www.ithome.com/1/003/736.htm",
+      "source": "IT之家",
+      "published": "2026-09-17T09:22:36"
+    },
+    {
+      "title": "消息称华为专营店将分“专卖问界”和“混卖其他‘四界’”两种，2027 年 1 月 1 日划分完成",
+      "summary": "IT之家 9 月 17 日消息，据界面新闻今日从华为渠道处获取的消息，已有多位经销商接到华为方面告知，明年 1 月 1 日开始， 问界正式撤出鸿蒙智行和华为专卖店 。 一位接近赛力斯的知情人士在接受《每日经济新闻》记者采访时表示，上述表述不准确，并不是 2027 年 1 月 1 日起问界撤出鸿蒙智行和华为专卖店，而是明年 1 月 1 日起，华为专营店将正式分成两种： 一种专卖问界车型，一种混卖其他",
+      "link": "https://www.ithome.com/1/003/735.htm",
+      "source": "IT之家",
+      "published": "2026-09-17T09:22:31"
+    },
+    {
+      "title": "消息称 AI 初创企业 Manus 即将完成 5 亿美元融资，估值翻倍至 40 亿美元",
+      "summary": "IT之家 9 月 17 日消息，据彭博社报道，AI 初创企业 Manus 即将完成融资。这是在其与 Meta 分拆之后的首轮募资，本轮融资计划将使其估值翻番，达到 40 亿美元（IT之家注：现汇率约合 268.89 亿元人民币）。 据知情人士透露，计划中的 5 亿美元（现汇率约合 33.61 亿元人民币）融资轮次很快就将完成。这笔交易落地之后，这家智能体 AI 初创企业将成为国内该赛道估值最高的初",
+      "link": "https://www.ithome.com/1/003/734.htm",
+      "source": "IT之家",
+      "published": "2026-09-17T09:21:28"
+    },
+    {
+      "title": "月之暗面发布 Kimi 金融行业 AI 解决方案，首批落地工商银行、中信建投等",
+      "summary": "IT之家 9 月 17 日消息，月之暗面今天宣布推出 Kimi 金融行业解决方案，整合 Kimi 金融行业的产品与能力，涵盖 10+ 权威数据源、9 项金融技能和 5 项合规安全措施，以及机构级的数据建模和报告交付能力。 IT之家从月之暗面公众号了解到，该解决方案将提供持仓早报、财报点评、项目筛选、深度研究和组合复盘等，将数据获取、专业分析与成果交付连接起来。该方案可将此前以天计的资料处理和初稿制",
+      "link": "https://www.ithome.com/1/003/733.htm",
+      "source": "IT之家",
+      "published": "2026-09-17T09:15:46"
+    },
+    {
+      "title": "振华公布 ZILLION PX 电源：ATX12V 3.1 规范，铂金效率，5 年质保",
+      "summary": "IT之家 9 月 17 日消息，振华 (Super Flower) 昨日公布了主流级 ATX 电源新品 ZILLION PX。其采用 140mm 标准长度和全模组线材设计，符合 ATX12V 3.1 规范，获得 Cybenetics 铂金转换效率认证， 享受 5 年质保 。 ZILLION PX 包含 850W / 1000W 两个额定功率等级 ，均提供原生 12V-2×6 接口。其可承受 200",
+      "link": "https://www.ithome.com/1/003/729.htm",
+      "source": "IT之家",
+      "published": "2026-09-17T09:12:33"
+    },
+    {
+      "title": "漫威索尼《蜘蛛侠：崭新之日》打破《星球大战：原力觉醒》尘封 11 年纪录，登顶北美影史票房冠军",
+      "summary": "IT之家 9 月 17 日消息，蜘蛛侠系列电影官方微博宣布，由漫威与索尼联合出品的《蜘蛛侠：崭新之日》 打破《星球大战：原力觉醒》尘封 11 年的纪录 ，登顶北美影史票房冠军。 IT之家查询获悉，《蜘蛛侠：崭新之日》全球票房已破 24.79 亿美元 （IT之家注：现汇率约合 166.65 亿元人民币） ， 其中北美票房为 9.36 亿 （现汇率约合 62.92 亿元人民币） 。而《星球大战：原力觉",
+      "link": "https://www.ithome.com/1/003/717.htm",
+      "source": "IT之家",
+      "published": "2026-09-17T09:10:19"
+    },
+    {
+      "title": "智谱 GLM 公开国内大模型首个递归自我改进实践：AI 在十万卡国产集群上自建推理系统",
+      "summary": "IT之家 9 月 17 日消息，今日，智谱 GLM 团队披露递归自我改进（Recursive Self‑Improvement，简称 RSI）方向首个工程化实践进展，也就是让 AI 自己动手改进自己的运行系统。 具体来说，由 GLM-5.3 驱动的 Infra Agent 完成了 GLM-5.3-Flash 推理基础设施的设计、调试与优化，实现模型对自身运行系统的反向改进。 据官方博客，Infra",
+      "link": "https://www.ithome.com/1/003/705.htm",
+      "source": "IT之家",
+      "published": "2026-09-17T08:58:58"
+    },
+    {
+      "title": "“双百”里程碑：鸿蒙智行问界汽车累计辅助驾驶里程达成 100 亿公里、活跃用户增至 100 万名",
+      "summary": "IT之家 9 月 17 日消息，鸿蒙智行问界汽车官方刚刚宣布达成“双百”里程碑： 问界汽车累计辅助驾驶里程达成 100 亿公里； 问界汽车累计辅助驾驶活跃用户增至 100 万名。 IT之家注：问界（AITO）是赛力斯联手华为推出高端智慧汽车品牌，发布于 2021 年，目前该品牌产品包括：问界 M9 系列全景智慧旗舰 SUV、问界 M8 系列家庭智慧旗舰 SUV、问界 M7 系列幸福旗舰、问界 M6",
+      "link": "https://www.ithome.com/1/003/704.htm",
+      "source": "IT之家",
+      "published": "2026-09-17T08:57:03"
+    },
+    {
+      "title": "厨房掀起“钛革命”：风口之下，谁来给钛材定规矩？",
+      "summary": "这是厨房消费一次从“功能满足”走向“品质引领”的代际跃迁，代表着消费者对于品质厨房、健康烹饪的需求上升到了一个新的高度。",
+      "link": "https://www.tmtpost.com/8143130.html",
+      "source": "钛媒体",
+      "published": "2026-09-17T16:44:51"
+    },
+    {
+      "title": "智谱融资背后：一场没有枪声的卡位战",
+      "summary": "一场空间与时间的交换。",
+      "link": "https://www.tmtpost.com/8143610.html",
+      "source": "钛媒体",
+      "published": "2026-09-17T16:28:44"
+    },
+    {
+      "title": "Altman 对话 Benioff：开源模型会不会失控",
+      "summary": "当开源模型的能力逼近闭源，而监管还没准备好，下一次逃逸，谁负责？",
+      "link": "https://www.tmtpost.com/8143199.html",
+      "source": "钛媒体",
+      "published": "2026-09-17T16:21:25"
+    },
+    {
+      "title": "取消“全网最低价”后，酒店为什么反而更便宜？",
+      "summary": "“全网最低价”受到限制后，酒店直营与OTA重新获得差异化定价空间。",
+      "link": "https://www.tmtpost.com/8143566.html",
+      "source": "钛媒体",
+      "published": "2026-09-17T16:14:00"
+    },
+    {
+      "title": "铜箔告急，锂价重挫：2027年一季度的供需变局，正在倒计时",
+      "summary": "电池产业链的供给约束和需求预期，正在以不同的方式重新定价。",
+      "link": "https://www.tmtpost.com/8143528.html",
+      "source": "钛媒体",
+      "published": "2026-09-17T16:09:00"
+    },
+    {
+      "title": "从130亿美元到1050亿美元，张一鸣的钱为什么越来越多",
+      "summary": "张一鸣卸任经营一线，账面身家却大幅攀升。财富增长根植于字节跳动的业务跃迁与AI估值重估，未上市企业的账面财富背后，同样暗藏预期波动的现实考验。",
+      "link": "https://www.tmtpost.com/8143493.html",
+      "source": "钛媒体",
+      "published": "2026-09-17T16:02:00"
+    },
+    {
+      "title": "世界模型入口战：字节向左，京东向右",
+      "summary": "世界模型带来的不仅是技术变革，更是人机交互方式的根本转变。",
+      "link": "https://www.tmtpost.com/8143284.html",
+      "source": "钛媒体",
+      "published": "2026-09-17T15:54:12"
+    },
+    {
+      "title": "候选人被截胡、岗位长期空缺：AI制药挖不来的大牛，长什么样？",
+      "summary": "AI制药求而不得的，是什么样的人？",
+      "link": "https://www.tmtpost.com/8143345.html",
+      "source": "钛媒体",
+      "published": "2026-09-17T15:54:08"
+    },
+    {
+      "title": "中国汽车：尾大不掉，必须出请",
+      "summary": "",
+      "link": "https://www.huxiu.com/article/4892005.html",
+      "source": "虎嗅",
+      "published": ""
+    },
+    {
+      "title": "谷歌给RSI找到了一条捷径：做梦",
+      "summary": "",
+      "link": "https://www.huxiu.com/article/4891963.html",
+      "source": "虎嗅",
+      "published": ""
+    },
+    {
+      "title": "在日渐缩小的市场里，重新活下去",
+      "summary": "",
+      "link": "https://www.huxiu.com/article/4891805.html",
+      "source": "虎嗅",
+      "published": ""
+    },
+    {
+      "title": "你为什么需要一部AI手机？",
+      "summary": "",
+      "link": "https://www.huxiu.com/article/4892012.html",
+      "source": "虎嗅",
+      "published": ""
+    },
+    {
+      "title": "豆包手机要开卖了，端侧智能争夺的其实是代办权",
+      "summary": "",
+      "link": "https://www.huxiu.com/article/4887888.html",
+      "source": "虎嗅",
+      "published": ""
+    },
+    {
+      "title": "豆包手机与超级App围墙的第二次交锋",
+      "summary": "",
+      "link": "https://www.huxiu.com/article/4891800.html",
+      "source": "虎嗅",
+      "published": ""
+    },
+    {
+      "title": "让马斯克破防的纪录片，究竟讲了什么？",
+      "summary": "",
+      "link": "https://www.huxiu.com/article/4891931.html",
+      "source": "虎嗅",
+      "published": ""
+    },
+    {
+      "title": "用了AI的纪录片还保真吗？",
+      "summary": "",
+      "link": "https://www.huxiu.com/article/4891737.html",
+      "source": "虎嗅",
+      "published": ""
+    },
+    {
+      "title": "马斯克睡进工地！为AI基建拼了",
+      "summary": "AI正火嘛，老马的待遇也算提升了一点：这回至少有房车了（doge）",
+      "link": "https://www.qbitai.com/2026/09/491280.html",
+      "source": "量子位",
+      "published": "2026-09-17T04:37:26"
+    },
+    {
+      "title": "首购积分加赠70%：SkyProduction天工工作台联合火山引擎推出中秋国庆三重福利",
+      "summary": "从9月15日开始，SkyProduction（天工工作台）和火山引擎(Seedance 2.5)隆重推出中秋国庆特惠活动",
+      "link": "https://www.qbitai.com/2026/09/491147.html",
+      "source": "量子位",
+      "published": "2026-09-17T03:39:43"
+    },
+    {
+      "title": "国产RSI模型交卷！Flash模型靠它反打旗舰",
+      "summary": "1亿Tokens人人免费领",
+      "link": "https://www.qbitai.com/2026/09/491091.html",
+      "source": "量子位",
+      "published": "2026-09-17T03:26:21"
+    },
+    {
+      "title": "比亚迪李云飞：中国汽车首登世界第一，这份荣耀属于所有中国汽车品牌",
+      "summary": "9月13日，2026比亚迪粉丝嘉年华在深圳坪山体育馆举行",
+      "link": "https://www.qbitai.com/2026/09/491062.html",
+      "source": "量子位",
+      "published": "2026-09-17T02:01:15"
+    },
+    {
+      "title": "网易有道周枫：AI能力竞争，正在进入「Model + Agent + Workflow」时代，网易有道AI Open Day展示AI时代“有道解法”",
+      "summary": "9月16日，网易有道「NEXT，AGENT｜有道AI Open Day」在北京举办。",
+      "link": "https://www.qbitai.com/2026/09/490974.html",
+      "source": "量子位",
+      "published": "2026-09-17T01:55:14"
+    },
+    {
+      "title": "罗福莉沉寂半年官宣小米强化学习！直播新模型训练过程，一小时烧3万美元",
+      "summary": "奖励曲线、显卡故障全公开",
+      "link": "https://www.qbitai.com/2026/09/490950.html",
+      "source": "量子位",
+      "published": "2026-09-17T01:09:25"
+    },
+    {
+      "title": "通用能力不打折，空间具身智能断层领先！ZDTaichu5.0-9B国产开源，跻身全球多模态第一梯队",
+      "summary": "九大空间测试10B规模通用模型中8项第一",
+      "link": "https://www.qbitai.com/2026/09/490839.html",
+      "source": "量子位",
+      "published": "2026-09-16T13:08:20"
+    },
+    {
+      "title": "刚刚，华为昇腾960超节点提前登场！韬定律立功性能翻倍，剑指英伟达",
+      "summary": "智东西 作者 | 李水青 编辑 | 心缘 智东西9月17日上海报道，昨日，华为监事会主席郭平关于“ 华为 ICT与计算 的 目标是成为‘英伟达’” 的内部访谈内容刚刚刷屏， 今日，华为就对外放出了憋了一年的算力“大招”。 在刚刚开幕的华为2026年全联接大会上，华为 灵衢互联架构及超节点集群方案 重磅亮相，华为推出了 昇腾960DT芯片、昇腾960超节点、鲲鹏950超节点升级、OceanStor ",
+      "link": "https://zhidx.com/p/594830.html",
+      "source": "智东西",
+      "published": "2026-09-17T13:34:12"
+    },
+    {
+      "title": "智能体如何改造芯片设计？新思科技掏出EDA家底，助攻中国创新",
+      "summary": "智东西 作者 | ZeR0 编辑 | 漠影 智东西9月17日报道，昨日，在2026新思科技开发者大会上，新思科技总裁兼CEO盖思新（Sassine Ghazi）提出重塑未来需要三项关键投资——协同设计、数字孪生、AI智能体，并分享了从芯片到系统的自主工程创新范式。 其中，AI智能体加速融入工程研发流程，提升工程生产力；协同设计推动芯片、软件与系统协同优化；电子数字孪生则通过高保真仿真和多物理场分析",
+      "link": "https://zhidx.com/p/594204.html",
+      "source": "智东西",
+      "published": "2026-09-17T10:35:51"
+    },
+    {
+      "title": "网易开源两款同传模型，延迟、准确率开源SOTA，快嘴也能实时翻译",
+      "summary": "AI应用风向标（公众号：ZhidxcomAI） 作者｜毕伟豪 编辑｜漠影 智东西9月16日报道，在刚刚结束的网易有道AI Open Day发布会上，网易有道发布并开源了两款全新的 同传模型子曰4-R2T2和子曰4-T3PO ，两款模型均具备流式输出能力，可以提供极低时延、高流畅度的实时同传体验。 同时，网易有道发布并开源了 办公Agent应用LobsterAI的2.0版本 ，在开源项目兼容、团队共",
+      "link": "https://zhidx.com/p/594580.html",
+      "source": "智东西",
+      "published": "2026-09-16T20:21:48"
+    },
+    {
+      "title": "vivo连甩四个自研新模型，首发蓝心Harness，新小V一句话搞定衣食住行",
+      "summary": "智东西 作者 | 云鹏 编辑 | 心缘 vivo的Agent Phone，亮剑了。 智东西9月16日深圳现场报道，今天vivo在开发者大会上正式发布了升级的 蓝心智能、OriginOS 7操作系统和蓝河操作系统4。 此次蓝心智能核心升级是个人化智能，包括 大模型+蓝心Harness+智能体安全架构； AI助理蓝心小V主打个人专属，能 一句话提供定制化服务帮你办事， 系统级AI 应用覆盖更完整，日常",
+      "link": "https://zhidx.com/p/594174.html",
+      "source": "智东西",
+      "published": "2026-09-16T18:54:49"
+    },
+    {
+      "title": "华为连发20款新品！工程商智能体来了，5分钟完成1小时组网工作",
+      "summary": "智东西 作者 | 杨京丽 编辑 | 李水青 智东西9月16日报道，今日，华为坤灵面向 办公、商业、教育和医疗 等场景，推出 20款新品 ，并升级 10个一站式解决方案 。新品包括融合网络与视频录像功能的 办公宝AR281、企业级Wi-Fi 7路由器Aura10、交互式协作平板IdeaHub B3 Bas e 等。 华为还推出 小灵智能体 ，面向工程商提供智能配单、智能组网和智能排障能力。小灵可根据",
+      "link": "https://zhidx.com/p/594310.html",
+      "source": "智东西",
+      "published": "2026-09-16T18:30:33"
+    },
+    {
+      "title": "打造产业智能体操作系统，百度智能云看到了下个十年的主战场",
+      "summary": "智东西 作者 | 王涵 编辑 | 漠影 今天，9月16日，智能经济论坛座无虚席。 来自产业界、学界的专家学者们共聚一堂，讨论的只有一件事： AI智能体到底给产业带来了什么变化？ 进入2026年，国内外AI巨头把AI办公打成To B最热战场。个人专属工作台、数字人同事、企业智能体等产品层出不穷，疯狂抢占办公中的每一个环节。 在这场狂欢中，百度智能云却提出一个新判断： 办公赛道会被通用智能体消化，模型",
+      "link": "https://zhidx.com/p/594505.html",
+      "source": "智东西",
+      "published": "2026-09-16T18:30:23"
+    },
+    {
+      "title": "蚂蚁开源大模型安全内生护栏SingProbe Infra，已适配29个主流开源模型",
+      "summary": "2026国家网络安全宣传周期间，蚂蚁AI安全实验室宣布开源大模型内生式安全护栏SingProbe，同步开放相关代码、模型和评测基准，为开发者提供与模型生成过程同步运行的安全检测能力。 目前，SingProbe已适配Ling-3.0系列、GLM-5.2/5.3、Qwen、DeepSeekV4等29个主流开源大模型，并接入SGLang、vLLM推理框架，支持开发者在现有推理流程中集成安全防护。 随着大",
+      "link": "https://zhidx.com/p/594440.html",
+      "source": "智东西",
+      "published": "2026-09-16T18:27:59"
+    },
+    {
+      "title": "5999元，努比亚“二代豆包手机”首发深度体验，Agent Phone成了？",
+      "summary": "智东西 作者 | 陈骏达 编辑 | 李水青 智东西9月16日报道，今天，中兴通讯旗下消费电子厂商努比亚正式发布了 旗舰AI智能体手机NaviX Ultra ，搭载了本周一字节发布的 豆包手机助手消费者版 。该助手能跨应用替人办事，一句话完成查航班、做行程规划、点外卖、发社媒等复杂任务。 搭载豆包手机助手消费者版的NaviX Ultra在 交互、个人Context及记忆、Agent及任务执行、隐私与",
+      "link": "https://zhidx.com/p/594375.html",
+      "source": "智东西",
+      "published": "2026-09-16T16:55:03"
+    },
+    {
+      "title": "教育最奢侈的“一人一解法”，即将变成日常",
+      "summary": "",
+      "link": "https://www.pingwest.com/a/317496",
+      "source": "品玩",
+      "published": ""
+    },
+    {
+      "title": "OriginOS 7 深度体验：当系统开始真正懂你",
+      "summary": "",
+      "link": "https://www.pingwest.com/a/317366",
+      "source": "品玩",
+      "published": ""
+    },
+    {
+      "title": "先进企业，先让 Agent 上飞书",
+      "summary": "",
+      "link": "https://www.pingwest.com/a/317445",
+      "source": "品玩",
+      "published": ""
+    },
+    {
+      "title": "实测最新版「豆包手机」助手：所有手机里的 AI 都该变成它这样",
+      "summary": "",
+      "link": "https://www.pingwest.com/a/317385",
+      "source": "品玩",
+      "published": ""
+    },
+    {
+      "title": "AI Costco，开始卖自有品牌了",
+      "summary": "",
+      "link": "https://www.pingwest.com/a/317353",
+      "source": "品玩",
+      "published": ""
+    },
+    {
+      "title": "Anthropic合并Claude Chat与Cowork 推出Docs与Slides功能",
+      "summary": "",
+      "link": "https://www.pingwest.com/w/317535",
+      "source": "品玩",
+      "published": ""
+    },
+    {
+      "title": "2026 OPPO开发者大会：迈向个性化主动智能，共建更懂你的数字未来",
+      "summary": "",
+      "link": "https://www.pingwest.com/w/317524",
+      "source": "品玩",
+      "published": ""
+    },
+    {
+      "title": "Google Home开放MCP协议 支持AI智能助手控制智能家居",
+      "summary": "",
+      "link": "https://www.pingwest.com/w/317521",
+      "source": "品玩",
+      "published": ""
+    },
+    {
+      "title": "按车型/电动车/国家等检索",
+      "summary": "",
+      "link": "https://www.marklines.com/cn/vehicle_sales/search?rf=left_menu",
+      "source": "MarkLines",
+      "published": ""
+    },
+    {
+      "title": "按车型/厂商/国家等检索",
+      "summary": "",
+      "link": "https://www.marklines.com/cn/vehicle_production/search?rf=left_menu",
+      "source": "MarkLines",
+      "published": ""
+    },
+    {
+      "title": "整车厂分布 / 零部件供应商首页",
+      "summary": "",
+      "link": "https://www.marklines.com/cn/global/top?rf=left_menu",
+      "source": "MarkLines",
+      "published": ""
+    },
+    {
+      "title": "联合国(UN)标准- 仅供英语",
+      "summary": "",
+      "link": "https://www.marklines.com/cn/ece/?rf=left_menu",
+      "source": "MarkLines",
+      "published": ""
+    },
+    {
+      "title": "Model3 CAD数据",
+      "summary": "",
+      "link": "https://www.marklines.com/cn/teardown/tesla_model3_cad_data?rf=left_menu",
+      "source": "MarkLines",
+      "published": ""
+    },
+    {
+      "title": "MarkLines生成式AI使用指南",
+      "summary": "",
+      "link": "https://www.marklines.com/cn/faq/gen_ai_guide/top",
+      "source": "MarkLines",
+      "published": ""
+    },
+    {
+      "title": "零跑汽车发布全新整车架构与三大核心技术",
+      "summary": "",
+      "link": "https://www.marklines.com/cn/news/351045",
+      "source": "MarkLines",
+      "published": ""
+    },
+    {
+      "title": "IAA Transportation (汉诺威国际交通运输博览会)",
+      "summary": "",
+      "link": "https://www.marklines.com/cn/news/tag/271/iaa-transportation",
+      "source": "MarkLines",
+      "published": ""
+    },
+    {
+      "title": "59.98万元起！奔驰长轴距GLE上市：后排可躺，智驾全国能开",
+      "summary": "车东西 文｜漠影 2026年9月16日，贵州遵义，梅赛德斯-奔驰正式宣布：全新长轴距GLE SUV上市。这款全场景大型智能豪华SUV共推出5款车型，厂商建议零售价区间为59.98万元至76.78万元。其中，为庆祝奔驰140周年打造的限量纪念版也同步亮相，售价726.8万元。 ▲北京梅赛德斯-奔驰销售服务有限公司销售执行副总裁张明霞公布新车售价 北京梅赛德斯-奔驰销售服务有限公司总裁兼首席执行官李德",
+      "link": "https://chedongxi.com/p/376353.html",
+      "source": "车东西",
+      "published": "2026-09-17T00:50:11"
+    },
+    {
+      "title": "零跑连发五个技术大招！第二品牌和机器人都来了，朱江明：要做车圈苹果",
+      "summary": "车东西 作者 ｜ 张睿 编辑 ｜ 志豪 零跑的技术大招来了！ 车东西9月16日消息，就在刚刚，零跑在浙江湖州举办了2026零跑技术日。零跑科技创始人、董事长兼CEO朱江明在发布会上表示，零跑将在明年推出第二品牌的产品，带来“智能手机代替功能手机的那种感觉”，同时零跑还将“争取成为汽车行业的苹果”。 ▲零跑科技创始人、董事长兼CEO朱江明 朱江明还提到了零跑在具身智能方面的进展。目前零跑对具身智能进",
+      "link": "https://chedongxi.com/p/376181.html",
+      "source": "车东西",
+      "published": "2026-09-16T21:54:11"
+    },
+    {
+      "title": "18.99万开卖！方程豹版“Model 3”来了，超跑同款悬架上车",
+      "summary": "车东西 作者 ｜ Janson 编辑 ｜ 志豪 车东西9月16日消息，就在刚刚，方程豹首款轿车方程S和猎装版方程S GT正式上市，两款新车共推出5个版本，售价区间为18.99万-25.99万元。 其中，方程S三厢版起售价18.99万元，900km长续航后驱版售价20.99万元，四驱版售价22.99万元。方程S GT售价则分别为23.99万元和25.99万元。 方程S系列各车型的主要区别在于电池大小",
+      "link": "https://chedongxi.com/p/376274.html",
+      "source": "车东西",
+      "published": "2026-09-16T21:47:08"
+    }
+  ],
+  "hn": [
+    {
+      "title": "Training a 4B model to produce 81% faster query plans than Postgres",
+      "summary": "💬 115 评论 · ⬆️ 547 赞",
+      "link": "https://rohanbansal.com/qorl",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Xiaomi Mimo 2.6 live post-training dashboard",
+      "summary": "💬 109 评论 · ⬆️ 428 赞",
+      "link": "https://mimo.xiaomi.com/rl/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "The Google Play app review process now regularly takes longer than a week",
+      "summary": "💬 337 评论 · ⬆️ 351 赞",
+      "link": "https://gultsch.social/@daniel/117280438824908947",
+      "source": "Hacker News"
+    },
+    {
+      "title": "PS5 Linux lead quits: \"a bunch of noobs using LLMs\" that \"they don't understand\"",
+      "summary": "💬 217 评论 · ⬆️ 313 赞",
+      "link": "https://frvr.com/blog/news/ps5-linux-lead-quits-as-open-source-projects-have-become-a-bunch-of-noobs-using-llms-that-they-dont-even-understand/",
+      "source": "Hacker News"
+    },
+    {
+      "title": "Claude Cowork and chat are now one Claude",
+      "summary": "💬 221 评论 · ⬆️ 220 赞",
+      "link": "https://claude.com/blog/cowork-is-now-claude",
+      "source": "Hacker News"
+    },
+    {
+      "title": "A warning about 'model welfare'",
+      "summary": "💬 602 评论 · ⬆️ 215 赞",
+      "link": "https://mustafa-suleyman.ai/a-warning-about-model-welfare",
+      "source": "Hacker News"
+    }
+  ],
+  "hf_models": [
+    {
+      "model_id": "Qwen/Qwen3.8-27B",
+      "title": "Qwen/Qwen3.8-27B",
+      "pipeline": "image-text-to-text",
+      "downloads": 7456257,
+      "likes": 15461,
+      "downloads_str": "7.5M",
+      "summary": "📥 7.5M 下载 · ⭐ 15461 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/Qwen/Qwen3.8-27B"
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-dev",
+      "title": "black-forest-labs/FLUX.1-dev",
+      "pipeline": "text-to-image",
+      "downloads": 798254,
+      "likes": 14764,
+      "downloads_str": "798.3k",
+      "summary": "📥 798.3k 下载 · ⭐ 14764 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/black-forest-labs/FLUX.1-dev"
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "title": "deepseek-ai/DeepSeek-R1",
+      "pipeline": "text-generation",
+      "downloads": 740958,
+      "likes": 14252,
+      "downloads_str": "741.0k",
+      "summary": "📥 741.0k 下载 · ⭐ 14252 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/deepseek-ai/DeepSeek-R1"
+    },
+    {
+      "model_id": "moonshotai/Kimi-K3",
+      "title": "moonshotai/Kimi-K3",
+      "pipeline": "image-text-to-text",
+      "downloads": 2210157,
+      "likes": 11387,
+      "downloads_str": "2.2M",
+      "summary": "📥 2.2M 下载 · ⭐ 11387 赞 · 🏷️ image-text-to-text",
+      "link": "https://huggingface.co/moonshotai/Kimi-K3"
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-xl-base-1.0",
+      "title": "stabilityai/stable-diffusion-xl-base-1.0",
+      "pipeline": "text-to-image",
+      "downloads": 2812569,
+      "likes": 8185,
+      "downloads_str": "2.8M",
+      "summary": "📥 2.8M 下载 · ⭐ 8185 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0"
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "title": "meta-llama/Llama-3.1-8B-Instruct",
+      "pipeline": "text-generation",
+      "downloads": 5887953,
+      "likes": 7676,
+      "downloads_str": "5.9M",
+      "summary": "📥 5.9M 下载 · ⭐ 7676 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct"
+    },
+    {
+      "model_id": "CompVis/stable-diffusion-v1-4",
+      "title": "CompVis/stable-diffusion-v1-4",
+      "pipeline": "text-to-image",
+      "downloads": 645293,
+      "likes": 7090,
+      "downloads_str": "645.3k",
+      "summary": "📥 645.3k 下载 · ⭐ 7090 赞 · 🏷️ text-to-image",
+      "link": "https://huggingface.co/CompVis/stable-diffusion-v1-4"
+    },
+    {
+      "model_id": "hexgrad/Kokoro-82M",
+      "title": "hexgrad/Kokoro-82M",
+      "pipeline": "text-to-speech",
+      "downloads": 11743198,
+      "likes": 6944,
+      "downloads_str": "11.7M",
+      "summary": "📥 11.7M 下载 · ⭐ 6944 赞 · 🏷️ text-to-speech",
+      "link": "https://huggingface.co/hexgrad/Kokoro-82M"
+    },
+    {
+      "model_id": "meta-llama/Meta-Llama-3-8B",
+      "title": "meta-llama/Meta-Llama-3-8B",
+      "pipeline": "text-generation",
+      "downloads": 304014,
+      "likes": 6685,
+      "downloads_str": "304.0k",
+      "summary": "📥 304.0k 下载 · ⭐ 6685 赞 · 🏷️ text-generation",
+      "link": "https://huggingface.co/meta-llama/Meta-Llama-3-8B"
+    },
+    {
+      "model_id": "openai/whisper-large-v3",
+      "title": "openai/whisper-large-v3",
+      "pipeline": "automatic-speech-recognition",
+      "downloads": 4806736,
+      "likes": 6310,
+      "downloads_str": "4.8M",
+      "summary": "📥 4.8M 下载 · ⭐ 6310 赞 · 🏷️ automatic-speech-recognition",
+      "link": "https://huggingface.co/openai/whisper-large-v3"
+    }
+  ]
+}
