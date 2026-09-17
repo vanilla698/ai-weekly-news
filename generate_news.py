@@ -9,6 +9,7 @@ import re
 import sys
 import requests
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 # 让脚本能找到 fetch_news_sources
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -23,6 +24,17 @@ JSON_FILE = "news_data.json"
 DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "sk-c58a295530e6456daa4a8b9119d57697")
 DEEPSEEK_MODEL = "deepseek-chat"
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
+REPORT_TZ = ZoneInfo("Asia/Shanghai")
+
+
+def report_datetime_and_issue():
+    """Return the Beijing report date and issue number from config.json."""
+    today = datetime.now(REPORT_TZ)
+    config = load_top_config() or {}
+    issue_config = config.get("issue", {})
+    base_date = datetime.strptime(issue_config.get("base_date", "2026-09-02"), "%Y-%m-%d")
+    base_issue = int(issue_config.get("base_issue", 36))
+    return today, base_issue + (today.date() - base_date.date()).days
 
 
 # ========== 1. arXiv 抓取 ==========
@@ -552,8 +564,7 @@ a.model-name:hover{color:var(--accent);}
 
 
 def build_html(data, archive_filename):
-    today = datetime.now()
-    issue = 36 + (today - datetime(2026, 9, 2)).days
+    today, issue = report_datetime_and_issue()
     date_str = today.strftime("%Y年%-m月%-d日")
     weekday_cn = ["一","二","三","四","五","六","日"][today.weekday()]
     kp_items = "".join(f'<div class="kp-item"><strong>{esc(k)}</strong></div>' for k in data.get("key_points", []))
@@ -620,9 +631,7 @@ def main():
     # 先同步 workflow（如果 config.json 改了 cron，weekly.yml 自动跟着变）
     sync_workflow()
 
-    today = datetime.now()
-    # 每天一期，期号从 2026-09-02 起递增
-    issue = 36 + (today - datetime(2026, 9, 2)).days
+    today, issue = report_datetime_and_issue()
     week_tag = today.strftime("%Y%m%d")
     week_tag_full = today.strftime("%Y%m%d-%H%M")
     archive_filename = f"{week_tag_full}-issue{issue}.html"

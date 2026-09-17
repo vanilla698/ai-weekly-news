@@ -4,17 +4,31 @@ upload_and_push.py — 推送钉钉消息，链接指向 GitHub Pages 历史归�
 """
 import os, requests
 from datetime import datetime
+import json
+from zoneinfo import ZoneInfo
 
 DINGTALK_WEBHOOK = os.environ.get("DINGTALK_WEBHOOK", "")
 GITHUB_PAGES_BASE = "https://vanilla698.github.io/ai-weekly-news"
+REPORT_TZ = ZoneInfo("Asia/Shanghai")
+
+
+def report_datetime_and_issue():
+    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json")
+    with open(config_path, "r", encoding="utf-8") as config_file:
+        config = json.load(config_file)
+    issue_config = config.get("issue", {})
+    base_date = datetime.strptime(issue_config.get("base_date", "2026-09-02"), "%Y-%m-%d")
+    base_issue = int(issue_config.get("base_issue", 36))
+    today = datetime.now(REPORT_TZ)
+    issue = base_issue + (today.date() - base_date.date()).days
+    return today, issue
 
 
 def send_dingtalk():
     if not DINGTALK_WEBHOOK:
         print("[SKIP] DINGTALK_WEBHOOK not set")
         return
-    today = datetime.now()
-    issue = 36 + (today - datetime(2026, 9, 2)).days
+    today, issue = report_datetime_and_issue()
     date_str = today.strftime("%Y年%m月%d日")
     wk = ["一","二","三","四","五","六","日"][today.weekday()]
 
