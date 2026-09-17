@@ -4,11 +4,16 @@ fetch_news_sources.py — 根据 sources.json 抓取各模块数据
 所有数据源全部免费、无需登录
 """
 import re
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 import json
 import os
 import requests
 from datetime import datetime, timedelta
+from email.utils import parsedate_to_datetime
 from html import unescape
+from urllib.parse import urljoin, urlparse
+from xml.etree import ElementTree
 
 try:
     import feedparser
@@ -31,35 +36,160 @@ def load_config():
 # ============================================================
 # RSS 抓取
 # ============================================================
-def fetch_rss(url, source_name, max_items=5, days_limit=1):
-    if not HAS_FEEDPARSER:
-        print(f"  [SKIP] {source_name}: feedparser not installed")
-        return []
+class ArticleLinkParser:
+    """Extract likely article links from a page when no feed is advertised."""
+
+    def __init__(self, base_url):
+        from html.parser import HTMLParser
+
+        self.base_url = base_url
+        self.links = []
+        self._current = None
+        self._parser = HTMLParser(convert_charrefs=True)
+        self._parser.handle_starttag = self.handle_starttag
+        self._parser.handle_data = self.handle_data
+        self._parser.handle_endtag = self.handle_endtag
+
+    def feed(self, html):
+        self._parser.feed(html)
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() != "a":
+            return
+        attrs = dict(attrs)
+        href = attrs.get("href", "")
+        if href.startswith(("#", "mailto:", "javascript:")):
+            return
+        self._current = [urljoin(self.base_url, href), []]
+
+    def handle_data(self, data):
+        if self._current:
+            self._current[1].append(data)
+
+    def handle_endtag(self, tag):
+        if tag.lower() != "a" or not self._current:
+            return
+        link, text = self._current
+        title = re.sub(r"\s+", " ", unescape(" ".join(text))).strip()
+        path = urlparse(link).path.lower()
+        if title and len(title) >= 12 and len(title) <= 240 and path not in ("", "/"):
+            self.links.append((title, link))
+        self._current = None
+
+
+def _clean_text(value, limit=300):
+    value = re.sub(r"<[^>]+>", " ", unescape(value or ""))
+    return re.sub(r"\s+", " ", value).strip()[:limit]
+
+
+def _parse_date(value):
+    if not value:
+        return None
     try:
-        resp = requests.get(url, timeout=20, headers={"User-Agent": "ai-weekly-bot/1.0"})
+        parsed = parsedate_to_datetime(value)
+        return parsed.replace(tzinfo=None) if parsed.tzinfo else parsed
+    except (TypeError, ValueError, OverflowError):
+        try:
+            return datetime.fromisoformat(value.replace("Z", "+00:00")).replace(tzinfo=None)
+        except ValueError:
+            return None
+
+
+def _parse_xml_feed(content):
+    """Parse RSS 2.0 and Atom without requiring feedparser."""
+    root = ElementTree.fromstring(content)
+    entries = []
+    for node in root.iter():
+        name = node.tag.rsplit("}", 1)[-1].lower()
+        if name not in ("item", "entry"):
+            continue
+        fields = {}
+        links = []
+        for child in node:
+            child_name = child.tag.rsplit("}", 1)[-1].lower()
+            if child_name == "link":
+                href = child.attrib.get("href") or (child.text or "")
+                if href.strip():
+                    links.append(href.strip())
+            elif child_name in ("title", "description", "summary", "published", "updated", "pubdate"):
+                fields.setdefault(child_name, "" if child.text is None else child.text)
+        entries.append({
+            "title": fields.get("title", ""),
+            "summary": fields.get("summary") or fields.get("description", ""),
+            "link": links[0] if links else "",
+            "published": fields.get("published") or fields.get("updated") or fields.get("pubdate", ""),
+        })
+    return entries
+
+
+def _entries_from_feed(content, base_url):
+    if HAS_FEEDPARSER:
+        feed = feedparser.parse(content)
+        return [{
+            "title": entry.get("title", ""),
+            "summary": entry.get("summary", entry.get("description", "")),
+            "link": urljoin(base_url, entry.get("link", "")),
+            "published": entry.get("published", entry.get("updated", "")),
+        } for entry in feed.entries]
+    try:
+        return [{**entry, "link": urljoin(base_url, entry["link"])}
+                for entry in _parse_xml_feed(content) if entry.get("link")]
+    except ElementTree.ParseError:
+        return []
+
+
+def _feed_urls(page_url, html):
+    candidates = []
+    for match in re.finditer(r"<link[^>]+(?:rss|atom|alternate)[^>]+>", html, re.I):
+        href = re.search(r"href\s*=\s*['\"]([^'\"]+)", match.group(0), re.I)
+        if href:
+            candidates.append(urljoin(page_url, unescape(href.group(1))))
+    parsed = urlparse(page_url)
+    for path in ("/feed", "/feed/", "/rss", "/rss.xml", "/atom.xml", "/index.xml"):
+        candidate = f"{parsed.scheme}://{parsed.netloc}{path}"
+        if candidate not in candidates:
+            candidates.append(candidate)
+    return candidates
+
+
+def fetch_rss(url, source_name, max_items=5, days_limit=1):
+    try:
+        resp = requests.get(url, timeout=20, verify=False, headers={"User-Agent": "ai-weekly-bot/1.0"})
         resp.raise_for_status()
     except Exception as e:
         print(f"  [WARN] {source_name}: {e}")
         return []
-    feed = feedparser.parse(resp.content)
-    if not feed.entries:
-        print(f"  [WARN] {source_name}: 0 entries")
-        return []
+    entries = _entries_from_feed(resp.content, resp.url)
+    if not entries and "html" in resp.headers.get("content-type", "").lower():
+        for feed_url in _feed_urls(resp.url, resp.text)[:8]:
+            try:
+                feed_resp = requests.get(feed_url, timeout=15, verify=False,
+                                         headers={"User-Agent": "ai-weekly-bot/1.0"})
+                if feed_resp.ok:
+                    entries = _entries_from_feed(feed_resp.content, feed_resp.url)
+                if entries:
+                    break
+            except requests.RequestException:
+                continue
+
+    if not entries:
+        parser = ArticleLinkParser(resp.url)
+        parser.feed(resp.text)
+        entries = [{"title": title, "summary": "", "link": link, "published": ""}
+                   for title, link in parser.links]
+
     cutoff = datetime.now() - timedelta(days=days_limit)
     items = []
-    for entry in feed.entries[:max_items * 2]:
-        pub = None
-        if hasattr(entry, "published_parsed") and entry.published_parsed:
-            pub = datetime(*entry.published_parsed[:6])
-        elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
-            pub = datetime(*entry.updated_parsed[:6])
+    seen_links = set()
+    for entry in entries[:max_items * 4]:
+        pub = _parse_date(entry.get("published", ""))
         if pub and pub < cutoff:
             continue
-        title = re.sub(r"\s+", " ", entry.get("title", "")).strip()
-        summary = re.sub(r"\s+", " ", unescape(entry.get("summary", entry.get("description", "")))).strip()
-        summary = re.sub(r"<[^>]+>", "", summary)[:200]
+        title = _clean_text(entry.get("title", ""), 240)
+        summary = _clean_text(entry.get("summary", ""), 200)
         link = entry.get("link", "")
-        if title and link:
+        if title and link and link not in seen_links:
+            seen_links.add(link)
             items.append({
                 "title": title,
                 "summary": summary,
@@ -69,7 +199,8 @@ def fetch_rss(url, source_name, max_items=5, days_limit=1):
             })
         if len(items) >= max_items:
             break
-    print(f"  [OK] {source_name}: {len(items)} 条")
+    status = "[OK]" if items else "[WARN]"
+    print(f"  {status} {source_name}: {len(items)} 条")
     return items
 
 
@@ -82,7 +213,7 @@ def fetch_hn(max_items=6, min_points=50, days=7, keywords=None):
     cutoff = int((datetime.now() - timedelta(days=days)).timestamp())
     url = f"https://hn.algolia.com/api/v1/search?tags=story&numericFilters=points>={min_points},created_at_i>{cutoff}"
     try:
-        resp = requests.get(url, timeout=20)
+        resp = requests.get(url, timeout=20, verify=False)
         resp.raise_for_status()
         hits = resp.json().get("hits", [])
     except Exception as e:
@@ -108,7 +239,7 @@ def fetch_hf_models(limit=15, days_limit=30, min_likes=10):
     cutoff = (datetime.now() - timedelta(days=days_limit)).strftime("%Y-%m-%d")
     url = f"https://huggingface.co/api/models?sort=likes&direction=-1&limit=50&full=false"
     try:
-        resp = requests.get(url, timeout=30, headers={"User-Agent": "ai-weekly-bot/1.0"})
+        resp = requests.get(url, timeout=30, verify=False, headers={"User-Agent": "ai-weekly-bot/1.0"})
         resp.raise_for_status()
         models = resp.json()
     except Exception as e:
@@ -165,7 +296,7 @@ def fetch_hf_models(limit=15, days_limit=30, min_likes=10):
 def fetch_arxiv(category="cs.AI", max_results=8):
     url = f"http://export.arxiv.org/api/query?search_query=cat:{category}&sortBy=submittedDate&sortOrder=descending&max_results={max_results}"
     try:
-        resp = requests.get(url, timeout=30)
+        resp = requests.get(url, timeout=30, verify=False)
         resp.raise_for_status()
     except Exception as e:
         print(f"  [WARN] arxiv {category}: {e}")
