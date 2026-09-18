@@ -21,9 +21,31 @@ from fetch_news_sources import (
 # ========== 配置 ==========
 OUTPUT_DIR = "news"
 JSON_FILE = "news_data.json"
-DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
-DEEPSEEK_MODEL = "deepseek-chat"
-DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
+LLM_CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "llm_config.json")
+
+
+def load_llm_config():
+    defaults = {
+        "base_url": "https://api.deepseek.com",
+        "chat_endpoint": "/chat/completions",
+        "model": "deepseek-chat",
+        "temperature": 0.7,
+        "max_tokens": 6000,
+        "request_timeout_seconds": 180,
+        "api_key_env": "DEEPSEEK_API_KEY",
+    }
+    try:
+        with open(LLM_CONFIG_PATH, "r", encoding="utf-8") as config_file:
+            defaults.update(json.load(config_file))
+    except (OSError, ValueError) as exc:
+        print(f"[WARN] 加载 llm_config.json 失败，使用默认配置: {exc}")
+    return defaults
+
+
+LLM_CONFIG = load_llm_config()
+DEEPSEEK_API_KEY = os.environ.get(LLM_CONFIG["api_key_env"], "")
+DEEPSEEK_MODEL = LLM_CONFIG["model"]
+DEEPSEEK_URL = f"{LLM_CONFIG['base_url'].rstrip('/')}/{LLM_CONFIG['chat_endpoint'].lstrip('/')}"
 REPORT_TZ = ZoneInfo("Asia/Shanghai")
 
 
@@ -253,17 +275,40 @@ PROMPT_TEMPLATE = """你是资深的 AI 与汽车科技情报编辑。基于以�
 
 def call_llm(data):
     """调用 DeepSeek API 整理为周报 JSON（限制每类素材 ≤5 条，省 token）"""
-    def fmt(items, max_items=5, max_summary=80):
-        return "\n".join([
-            f"- {it.get('title', it.get('model_id', ''))}\n  摘要: {(it.get('summary','') or '')[:max_summary]}\n  链接: {it.get('link','')}\n  来源: {it.get('source','')}"
-            for it in items[:max_items]
-        ]) or "（无）"
+    def unique_items(items):
+        seen = set()
+        result = []
+        for item in items:
+            link = item.get("link", "").strip()
+            title = item.get("title", item.get("model_id", "")).strip()
+            identity = link or f"title:{title}"
+            if not title or identity in seen:
+                continue
+            seen.add(identity)
+            result.append(item)
+        return result
+
+    def fmt(items, max_items=5, max_summary=60):
+        """Use one line per item; URLs and source names remain lossless."""
+        compact = []
+        for item in unique_items(items)[:max_items]:
+            title = item.get("title", item.get("model_id", "")).strip()
+            summary = (item.get("summary", "") or "").strip()[:max_summary]
+            link = item.get("link", "").strip()
+            source = item.get("source", "").strip()
+            authors = ", ".join(item.get("authors", []))
+            extra = f"｜作者:{authors}" if authors else ""
+            compact.append(f"{title}｜{summary}｜{link}｜来源:{source}{extra}")
+        return "\n".join(compact) or "（无）"
 
     def fmt_models(models, max_items=5):
-        return "\n".join([
-            f"- {m.get('model_id','')} | pipeline: {m.get('pipeline','')} | downloads: {m.get('downloads_str', m.get('downloads',0))} | likes: {m.get('likes',0)} | {m.get('link','')}"
-            for m in models[:max_items]
-        ]) or "（无）"
+        compact = []
+        for model in unique_items(models)[:max_items]:
+            compact.append(
+                f"{model.get('model_id','')}｜任务:{model.get('pipeline','')}｜下载:{model.get('downloads_str', model.get('downloads', 0))}"
+                f"｜赞:{model.get('likes', 0)}｜{model.get('link', '')}"
+            )
+        return "\n".join(compact) or "（无）"
 
     prompt = PROMPT_TEMPLATE.format(
         papers_ai=fmt(data.get("papers_ai", []), 5),
@@ -280,7 +325,7 @@ def call_llm(data):
         print("[WARN] DEEPSEEK_API_KEY 未配置")
         return build_fallback(data)
 
-    print("🤖 调用 DeepSeek AI 整理周报...")
+    print(f"🤖 调用 DeepSeek AI 整理周报... 输入约 {len(prompt):,} 字符")
     try:
         resp = requests.post(
             DEEPSEEK_URL,
@@ -294,15 +339,22 @@ def call_llm(data):
                     {"role": "system", "content": "你是资深的科技情报编辑，严格按要求返回 JSON，禁止任何额外文字。"},
                     {"role": "user", "content": prompt},
                 ],
-                "temperature": 0.7,
-                "max_tokens": 6000,
+                "temperature": LLM_CONFIG["temperature"],
+                "max_tokens": LLM_CONFIG["max_tokens"],
             },
-            timeout=180,
+            timeout=LLM_CONFIG["request_timeout_seconds"],
         )
         if resp.status_code != 200:
             print(f"[WARN] DeepSeek {resp.status_code}: {resp.text[:200]}")
             return build_fallback(data)
         result = resp.json()
+        usage = result.get("usage", {})
+        if usage:
+            print(
+                f"  📊 tokens: prompt={usage.get('prompt_tokens', '?')} "
+                f"completion={usage.get('completion_tokens', '?')} "
+                f"total={usage.get('total_tokens', '?')}"
+            )
         content = result["choices"][0]["message"]["content"]
         content = re.sub(r"^```json\s*", "", content.strip())
         content = re.sub(r"\s*```$", "", content)
@@ -794,6 +846,11 @@ jobs:
       - name: Install dependencies
         run: pip install requests feedparser
 
+            - name: Verify DeepSeek API key
+                run: python3 verify_deepseek_key.py
+                env:
+                    DEEPSEEK_API_KEY: ${{{{ secrets.DEEPSEEK_API_KEY }}}}
+
       - name: Generate news HTML
         run: python3 generate_news.py
         env:
@@ -805,6 +862,7 @@ jobs:
           git config user.email "mavis@ai-weekly-news"
           git add news/ || true
           git add config.json sources.json || true
+          git add llm_config.json || true
           git add .github/workflows/weekly.yml || true
           git commit -m "📡 $(date '+%Y-%m-%d %H:%M') 自动更新" || echo "no changes"
           git push || echo "push skipped"

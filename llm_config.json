@@ -1,0 +1,10 @@
+{
+  "provider": "deepseek",
+  "base_url": "https://api.deepseek.com",
+  "chat_endpoint": "/chat/completions",
+  "model": "deepseek-chat",
+  "temperature": 0.7,
+  "max_tokens": 6000,
+  "request_timeout_seconds": 180,
+  "api_key_env": "DEEPSEEK_API_KEY"
+}

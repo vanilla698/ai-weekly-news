@@ -2,34 +2,48 @@
 """Verify that DEEPSEEK_API_KEY can access a DeepSeek chat model."""
 import os
 import sys
+import json
 
 import requests
 
 
-API_URL = "https://api.deepseek.com/chat/completions"
-MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+CONFIG_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "llm_config.json")
+
+
+def load_config():
+    try:
+        with open(CONFIG_PATH, "r", encoding="utf-8") as config_file:
+            return json.load(config_file)
+    except (OSError, ValueError) as exc:
+        print(f"FAIL: cannot load llm_config.json: {exc}")
+        return None
 
 
 def main():
-    api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
+    config = load_config()
+    if not config:
+        return 1
+    api_url = f"{config['base_url'].rstrip('/')}/{config['chat_endpoint'].lstrip('/')}"
+    model = config["model"]
+    api_key = os.environ.get(config.get("api_key_env", "DEEPSEEK_API_KEY"), "").strip()
     if not api_key:
         print("FAIL: DEEPSEEK_API_KEY is not set")
         return 1
 
     try:
         response = requests.post(
-            API_URL,
+            api_url,
             headers={
                 "Authorization": f"Bearer {api_key}",
                 "Content-Type": "application/json",
             },
             json={
-                "model": MODEL,
+                "model": model,
                 "messages": [{"role": "user", "content": "Reply with OK."}],
                 "max_tokens": 4,
                 "temperature": 0,
             },
-            timeout=30,
+            timeout=config.get("request_timeout_seconds", 30),
         )
     except requests.RequestException as exc:
         print(f"FAIL: request error: {exc}")
@@ -46,7 +60,7 @@ def main():
         print("FAIL: DeepSeek returned an unexpected response")
         return 1
 
-    print(f"OK: {MODEL} is accessible; model reply: {content.strip()}")
+    print(f"OK: {model} is accessible; model reply: {content.strip()}")
     return 0
 
 
